@@ -24,9 +24,6 @@ Partial Class ADMIN
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.sidepanel = New System.Windows.Forms.Panel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.usersbtn = New System.Windows.Forms.Button()
@@ -38,15 +35,14 @@ Partial Class ADMIN
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.sidepanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'sidepanel
         '
         Me.sidepanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.sidepanel.Controls.Add(Me.Panel4)
-        Me.sidepanel.Controls.Add(Me.Panel3)
-        Me.sidepanel.Controls.Add(Me.Panel2)
         Me.sidepanel.Controls.Add(Me.Panel1)
         Me.sidepanel.Controls.Add(Me.Label2)
         Me.sidepanel.Controls.Add(Me.usersbtn)
@@ -58,36 +54,6 @@ Partial Class ADMIN
         Me.sidepanel.Name = "sidepanel"
         Me.sidepanel.Size = New System.Drawing.Size(200, 500)
         Me.sidepanel.TabIndex = 0
-        '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.Panel4.ForeColor = System.Drawing.Color.Coral
-        Me.Panel4.Location = New System.Drawing.Point(10, 260)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(5, 35)
-        Me.Panel4.TabIndex = 3
-        Me.Panel4.Visible = False
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.Panel3.ForeColor = System.Drawing.Color.Coral
-        Me.Panel3.Location = New System.Drawing.Point(10, 220)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(5, 35)
-        Me.Panel3.TabIndex = 3
-        Me.Panel3.Visible = False
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.Panel2.ForeColor = System.Drawing.Color.Coral
-        Me.Panel2.Location = New System.Drawing.Point(10, 180)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(5, 35)
-        Me.Panel2.TabIndex = 3
-        Me.Panel2.Visible = False
         '
         'Panel1
         '
@@ -184,19 +150,46 @@ Partial Class ADMIN
         '
         'Timer1
         '
-        Me.Timer1.Interval = 10
+        Me.Timer1.Interval = 15
         '
         'Timer2
         '
-        Me.Timer2.Interval = 10
+        Me.Timer2.Interval = 15
         '
         'Timer3
         '
-        Me.Timer3.Interval = 10
+        Me.Timer3.Interval = 15
         '
         'Timer4
         '
-        Me.Timer4.Interval = 10
+        Me.Timer4.Interval = 15
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(53, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("8_bit_1_6", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(968, 0)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(32, 32)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "X"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("8_bit_1_6", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(935, 0)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(32, 32)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "_"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'ADMIN
         '
@@ -204,6 +197,8 @@ Partial Class ADMIN
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1000, 500)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.sidepanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ADMIN"
@@ -222,12 +217,11 @@ Partial Class ADMIN
     Friend WithEvents usersbtn As Button
     Friend WithEvents vehiclesbtn As Button
     Friend WithEvents visitorsbtn As Button
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Timer2 As Timer
     Friend WithEvents Timer3 As Timer
     Friend WithEvents Timer4 As Timer
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class
