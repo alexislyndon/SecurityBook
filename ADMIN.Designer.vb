@@ -29,9 +29,9 @@ Partial Class ADMIN
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.usersbtn = New System.Windows.Forms.Button()
+        Me.vehiclesbtn = New System.Windows.Forms.Button()
+        Me.visitorsbtn = New System.Windows.Forms.Button()
         Me.dashbtn = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
@@ -49,9 +49,9 @@ Partial Class ADMIN
         Me.sidepanel.Controls.Add(Me.Panel2)
         Me.sidepanel.Controls.Add(Me.Panel1)
         Me.sidepanel.Controls.Add(Me.Label2)
-        Me.sidepanel.Controls.Add(Me.Button3)
-        Me.sidepanel.Controls.Add(Me.Button2)
-        Me.sidepanel.Controls.Add(Me.Button1)
+        Me.sidepanel.Controls.Add(Me.usersbtn)
+        Me.sidepanel.Controls.Add(Me.vehiclesbtn)
+        Me.sidepanel.Controls.Add(Me.visitorsbtn)
         Me.sidepanel.Controls.Add(Me.dashbtn)
         Me.sidepanel.Controls.Add(Me.Label1)
         Me.sidepanel.Location = New System.Drawing.Point(0, 0)
@@ -110,50 +110,50 @@ Partial Class ADMIN
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Logged in as"
         '
-        'Button3
+        'usersbtn
         '
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer))
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Tai Le", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.Silver
-        Me.Button3.Location = New System.Drawing.Point(16, 260)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(184, 35)
-        Me.Button3.TabIndex = 1
-        Me.Button3.Text = "Users"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.usersbtn.FlatAppearance.BorderSize = 0
+        Me.usersbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.usersbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer))
+        Me.usersbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.usersbtn.Font = New System.Drawing.Font("Microsoft Tai Le", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.usersbtn.ForeColor = System.Drawing.Color.Silver
+        Me.usersbtn.Location = New System.Drawing.Point(16, 260)
+        Me.usersbtn.Name = "usersbtn"
+        Me.usersbtn.Size = New System.Drawing.Size(184, 35)
+        Me.usersbtn.TabIndex = 1
+        Me.usersbtn.Text = "Users"
+        Me.usersbtn.UseVisualStyleBackColor = True
         '
-        'Button2
+        'vehiclesbtn
         '
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer))
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Tai Le", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Silver
-        Me.Button2.Location = New System.Drawing.Point(16, 220)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(184, 35)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Vehicles"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.vehiclesbtn.FlatAppearance.BorderSize = 0
+        Me.vehiclesbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.vehiclesbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer))
+        Me.vehiclesbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.vehiclesbtn.Font = New System.Drawing.Font("Microsoft Tai Le", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.vehiclesbtn.ForeColor = System.Drawing.Color.Silver
+        Me.vehiclesbtn.Location = New System.Drawing.Point(16, 220)
+        Me.vehiclesbtn.Name = "vehiclesbtn"
+        Me.vehiclesbtn.Size = New System.Drawing.Size(184, 35)
+        Me.vehiclesbtn.TabIndex = 1
+        Me.vehiclesbtn.Text = "Vehicles"
+        Me.vehiclesbtn.UseVisualStyleBackColor = True
         '
-        'Button1
+        'visitorsbtn
         '
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Tai Le", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Silver
-        Me.Button1.Location = New System.Drawing.Point(16, 180)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(184, 35)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Visitors"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.visitorsbtn.FlatAppearance.BorderSize = 0
+        Me.visitorsbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.visitorsbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer))
+        Me.visitorsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.visitorsbtn.Font = New System.Drawing.Font("Microsoft Tai Le", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.visitorsbtn.ForeColor = System.Drawing.Color.Silver
+        Me.visitorsbtn.Location = New System.Drawing.Point(16, 180)
+        Me.visitorsbtn.Name = "visitorsbtn"
+        Me.visitorsbtn.Size = New System.Drawing.Size(184, 35)
+        Me.visitorsbtn.TabIndex = 1
+        Me.visitorsbtn.Text = "Visitors"
+        Me.visitorsbtn.UseVisualStyleBackColor = True
         '
         'dashbtn
         '
@@ -219,9 +219,9 @@ Partial Class ADMIN
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents dashbtn As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents usersbtn As Button
+    Friend WithEvents vehiclesbtn As Button
+    Friend WithEvents visitorsbtn As Button
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel2 As Panel

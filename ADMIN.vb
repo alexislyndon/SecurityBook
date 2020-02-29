@@ -49,24 +49,31 @@
         falsifier()
         tem.Y = Panel1.Location.Y
         Timer1.Start()
+        dashbtn.BackColor = Color.FromArgb(45, 45, 45)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles visitorsbtn.Click
         falsifier()
         tem.Y = Panel1.Location.Y
         Timer2.Start()
+        visitorsbtn.BackColor = Color.FromArgb(45, 45, 45)
+
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles vehiclesbtn.Click
         falsifier()
         tem.Y = Panel1.Location.Y
         Timer3.Start()
+        vehiclesbtn.BackColor = Color.FromArgb(45, 45, 45)
+
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles usersbtn.Click
         falsifier()
         tem.Y = Panel1.Location.Y
         Timer4.Start()
+        usersbtn.BackColor = Color.FromArgb(45, 45, 45)
+
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -123,6 +130,10 @@
     End Sub
 
     Public Sub falsifier()
+        dashbtn.BackColor = Color.FromArgb(35, 35, 35)
+        visitorsbtn.BackColor = Color.FromArgb(35, 35, 35)
+        vehiclesbtn.BackColor = Color.FromArgb(35, 35, 35)
+        usersbtn.BackColor = Color.FromArgb(35, 35, 35)
 
     End Sub
 
