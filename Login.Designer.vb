@@ -29,16 +29,16 @@ Partial Class Login
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(107, 259)
+        Me.Button1.Location = New System.Drawing.Point(123, 225)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Button1"
+        Me.Button1.Text = "Login"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(96, 88)
+        Me.TextBox1.Location = New System.Drawing.Point(110, 105)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 20)
         Me.TextBox1.TabIndex = 1
@@ -46,7 +46,7 @@ Partial Class Login
         '
         'MaskedTextBox1
         '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(96, 188)
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(110, 168)
         Me.MaskedTextBox1.Name = "MaskedTextBox1"
         Me.MaskedTextBox1.Size = New System.Drawing.Size(100, 20)
         Me.MaskedTextBox1.TabIndex = 2
@@ -62,6 +62,7 @@ Partial Class Login
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Button1)
         Me.Name = "Login"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

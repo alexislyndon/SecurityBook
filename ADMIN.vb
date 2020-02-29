@@ -1,4 +1,4 @@
-﻿Public Class Login
+﻿Public Class ADMIN
     Private IsFormBeingDragged As Boolean = False
     Private MouseDownX As Integer
     Private MouseDownY As Integer
@@ -31,9 +31,4 @@
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.Hide()
-        ADMIN.Show()
-
-    End Sub
 End Class
