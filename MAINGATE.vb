@@ -107,27 +107,34 @@
         Panel1.Location = tem
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click 'HOME
+        falsifier()
         tem.Y = Panel1.Location.Y
         Timer1.Start()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click 'Add Visitors
+        falsifier()
+        AddVisitor1.Visible = True
         tem.Y = Panel1.Location.Y
         Timer2.Start()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click 'View Visitors
+        falsifier()
+        ViewVisitor1.Visible = True
         tem.Y = Panel1.Location.Y
         Timer3.Start()
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        falsifier()
         tem.Y = Panel1.Location.Y
         Timer4.Start()
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        falsifier()
         tem.Y = Panel1.Location.Y
         Timer5.Start()
     End Sub
@@ -162,5 +169,10 @@
 
     Private Sub Button6_Click_1(sender As Object, e As EventArgs) Handles Button6.Click
         Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Public Sub falsifier()
+        AddVisitor1.Visible = False
+        ViewVisitor1.Visible = False
     End Sub
 End Class

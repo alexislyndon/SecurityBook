@@ -120,6 +120,11 @@
     <Compile Include="adminVisitors.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="db1DS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db1DS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +165,12 @@
     <Compile Include="ucHOME.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="viewVisitor.Designer.vb">
+      <DependentUpon>viewVisitor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="viewVisitor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AddVisitor.resx">
@@ -192,8 +203,22 @@
     <EmbeddedResource Include="ucHOME.resx">
       <DependentUpon>ucHOME.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="viewVisitor.resx">
+      <DependentUpon>viewVisitor.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="db1DS.xsc">
+      <DependentUpon>db1DS.xsd</DependentUpon>
+    </None>
+    <None Include="db1DS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db1DS.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db1DS.xss">
+      <DependentUpon>db1DS.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

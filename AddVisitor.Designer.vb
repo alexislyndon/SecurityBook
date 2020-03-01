@@ -23,33 +23,33 @@ Partial Class AddVisitor
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.fname = New System.Windows.Forms.TextBox()
-        Me.mname = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.lname = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.sex = New System.Windows.Forms.ComboBox()
+        Me.capportrait = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.phone = New System.Windows.Forms.TextBox()
+        Me.sex = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lname = New System.Windows.Forms.TextBox()
+        Me.mname = New System.Windows.Forms.TextBox()
+        Me.phone = New System.Windows.Forms.TextBox()
+        Me.fname = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.dest = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.capid = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.purp = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.idsurr = New System.Windows.Forms.ComboBox()
+        Me.badge = New System.Windows.Forms.ComboBox()
+        Me.dest = New System.Windows.Forms.ComboBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.badge = New System.Windows.Forms.ComboBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.idsurr = New System.Windows.Forms.ComboBox()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.capportrait = New System.Windows.Forms.Button()
-        Me.capid = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -83,77 +83,17 @@ Partial Class AddVisitor
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Personal Information"
         '
-        'Label1
+        'capportrait
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.White
-        Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(26, 23)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(105, 25)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "First Name"
-        '
-        'fname
-        '
-        Me.fname.BackColor = System.Drawing.Color.White
-        Me.fname.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.fname.Location = New System.Drawing.Point(21, 46)
-        Me.fname.MaxLength = 35
-        Me.fname.Name = "fname"
-        Me.fname.Size = New System.Drawing.Size(175, 34)
-        Me.fname.TabIndex = 1
-        '
-        'mname
-        '
-        Me.mname.BackColor = System.Drawing.Color.White
-        Me.mname.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.mname.Location = New System.Drawing.Point(230, 46)
-        Me.mname.MaxLength = 30
-        Me.mname.Name = "mname"
-        Me.mname.Size = New System.Drawing.Size(175, 34)
-        Me.mname.TabIndex = 2
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.White
-        Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(235, 23)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(129, 25)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Middle Name"
-        '
-        'lname
-        '
-        Me.lname.BackColor = System.Drawing.Color.White
-        Me.lname.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lname.Location = New System.Drawing.Point(439, 46)
-        Me.lname.MaxLength = 30
-        Me.lname.Name = "lname"
-        Me.lname.Size = New System.Drawing.Size(175, 34)
-        Me.lname.TabIndex = 3
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.White
-        Me.Label3.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(444, 23)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(103, 25)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Last Name"
-        '
-        'sex
-        '
-        Me.sex.FormattingEnabled = True
-        Me.sex.Items.AddRange(New Object() {"Male", "Female", "Other/Unspecified"})
-        Me.sex.Location = New System.Drawing.Point(230, 126)
-        Me.sex.Name = "sex"
-        Me.sex.Size = New System.Drawing.Size(88, 29)
-        Me.sex.TabIndex = 5
+        Me.capportrait.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.capportrait.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.capportrait.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.capportrait.Location = New System.Drawing.Point(614, 190)
+        Me.capportrait.Name = "capportrait"
+        Me.capportrait.Size = New System.Drawing.Size(96, 42)
+        Me.capportrait.TabIndex = 6
+        Me.capportrait.Text = "Capture Portrait"
+        Me.capportrait.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -166,15 +106,37 @@ Partial Class AddVisitor
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Sex"
         '
-        'phone
+        'sex
         '
-        Me.phone.BackColor = System.Drawing.Color.White
-        Me.phone.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.phone.Location = New System.Drawing.Point(21, 121)
-        Me.phone.MaxLength = 35
-        Me.phone.Name = "phone"
-        Me.phone.Size = New System.Drawing.Size(175, 34)
-        Me.phone.TabIndex = 4
+        Me.sex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.sex.FormattingEnabled = True
+        Me.sex.Items.AddRange(New Object() {"Male", "Female", "Other/Unspecified"})
+        Me.sex.Location = New System.Drawing.Point(230, 126)
+        Me.sex.Name = "sex"
+        Me.sex.Size = New System.Drawing.Size(88, 29)
+        Me.sex.TabIndex = 5
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.White
+        Me.Label3.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(444, 23)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(103, 25)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Last Name"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.White
+        Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(235, 23)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(129, 25)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "Middle Name"
         '
         'Label5
         '
@@ -186,6 +148,57 @@ Partial Class AddVisitor
         Me.Label5.Size = New System.Drawing.Size(67, 25)
         Me.Label5.TabIndex = 0
         Me.Label5.Text = "Phone"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.White
+        Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(26, 23)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(105, 25)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "First Name"
+        '
+        'lname
+        '
+        Me.lname.BackColor = System.Drawing.Color.White
+        Me.lname.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lname.Location = New System.Drawing.Point(439, 46)
+        Me.lname.MaxLength = 30
+        Me.lname.Name = "lname"
+        Me.lname.Size = New System.Drawing.Size(175, 34)
+        Me.lname.TabIndex = 3
+        '
+        'mname
+        '
+        Me.mname.BackColor = System.Drawing.Color.White
+        Me.mname.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mname.Location = New System.Drawing.Point(230, 46)
+        Me.mname.MaxLength = 30
+        Me.mname.Name = "mname"
+        Me.mname.Size = New System.Drawing.Size(175, 34)
+        Me.mname.TabIndex = 2
+        '
+        'phone
+        '
+        Me.phone.BackColor = System.Drawing.Color.White
+        Me.phone.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.phone.Location = New System.Drawing.Point(21, 121)
+        Me.phone.MaxLength = 35
+        Me.phone.Name = "phone"
+        Me.phone.Size = New System.Drawing.Size(175, 34)
+        Me.phone.TabIndex = 4
+        '
+        'fname
+        '
+        Me.fname.BackColor = System.Drawing.Color.White
+        Me.fname.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.fname.Location = New System.Drawing.Point(21, 46)
+        Me.fname.MaxLength = 35
+        Me.fname.Name = "fname"
+        Me.fname.Size = New System.Drawing.Size(175, 34)
+        Me.fname.TabIndex = 1
         '
         'GroupBox2
         '
@@ -206,25 +219,17 @@ Partial Class AddVisitor
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Security Information"
         '
-        'dest
+        'capid
         '
-        Me.dest.FormattingEnabled = True
-        Me.dest.Items.AddRange(New Object() {"Registrar", "Finance"})
-        Me.dest.Location = New System.Drawing.Point(21, 56)
-        Me.dest.Name = "dest"
-        Me.dest.Size = New System.Drawing.Size(196, 29)
-        Me.dest.TabIndex = 6
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.SystemColors.Control
-        Me.Label6.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(23, 31)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(108, 25)
-        Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Destination"
+        Me.capid.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.capid.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.capid.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.capid.Location = New System.Drawing.Point(614, 14)
+        Me.capid.Name = "capid"
+        Me.capid.Size = New System.Drawing.Size(96, 42)
+        Me.capid.TabIndex = 6
+        Me.capid.Text = "Capture ID"
+        Me.capid.UseVisualStyleBackColor = True
         '
         'Label7
         '
@@ -246,6 +251,65 @@ Partial Class AddVisitor
         Me.purp.Name = "purp"
         Me.purp.Size = New System.Drawing.Size(196, 34)
         Me.purp.TabIndex = 7
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.SystemColors.Control
+        Me.Label11.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(293, 117)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(144, 25)
+        Me.Label11.TabIndex = 0
+        Me.Label11.Text = "ID Surrendered"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.SystemColors.Control
+        Me.Label10.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(293, 31)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(186, 25)
+        Me.Label10.TabIndex = 0
+        Me.Label10.Text = "Visitor Pass Number"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.SystemColors.Control
+        Me.Label6.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(23, 31)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(108, 25)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "Destination"
+        '
+        'idsurr
+        '
+        Me.idsurr.FormattingEnabled = True
+        Me.idsurr.Items.AddRange(New Object() {"School ID", "Company ID", "Driver's License", "UMID", "Postal ID"})
+        Me.idsurr.Location = New System.Drawing.Point(290, 142)
+        Me.idsurr.Name = "idsurr"
+        Me.idsurr.Size = New System.Drawing.Size(214, 29)
+        Me.idsurr.TabIndex = 6
+        '
+        'badge
+        '
+        Me.badge.FormattingEnabled = True
+        Me.badge.Location = New System.Drawing.Point(290, 56)
+        Me.badge.Name = "badge"
+        Me.badge.Size = New System.Drawing.Size(214, 29)
+        Me.badge.TabIndex = 6
+        '
+        'dest
+        '
+        Me.dest.FormattingEnabled = True
+        Me.dest.Items.AddRange(New Object() {"Registrar", "Finance"})
+        Me.dest.Location = New System.Drawing.Point(21, 56)
+        Me.dest.Name = "dest"
+        Me.dest.Size = New System.Drawing.Size(196, 29)
+        Me.dest.TabIndex = 6
         '
         'PictureBox1
         '
@@ -287,45 +351,6 @@ Partial Class AddVisitor
         Me.Label9.TabIndex = 4
         Me.Label9.Text = "ID Card"
         '
-        'badge
-        '
-        Me.badge.FormattingEnabled = True
-        Me.badge.Location = New System.Drawing.Point(290, 56)
-        Me.badge.Name = "badge"
-        Me.badge.Size = New System.Drawing.Size(214, 29)
-        Me.badge.TabIndex = 6
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.SystemColors.Control
-        Me.Label10.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(293, 31)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(186, 25)
-        Me.Label10.TabIndex = 0
-        Me.Label10.Text = "Visitor Pass Number"
-        '
-        'idsurr
-        '
-        Me.idsurr.FormattingEnabled = True
-        Me.idsurr.Items.AddRange(New Object() {"School ID", "Company ID", "Driver's License", "UMID", "Postal ID"})
-        Me.idsurr.Location = New System.Drawing.Point(290, 142)
-        Me.idsurr.Name = "idsurr"
-        Me.idsurr.Size = New System.Drawing.Size(214, 29)
-        Me.idsurr.TabIndex = 6
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.SystemColors.Control
-        Me.Label11.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(293, 117)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(144, 25)
-        Me.Label11.TabIndex = 0
-        Me.Label11.Text = "ID Surrendered"
-        '
         'PictureBox3
         '
         Me.PictureBox3.Location = New System.Drawing.Point(742, 356)
@@ -344,31 +369,10 @@ Partial Class AddVisitor
         Me.Label12.Text = "Click on Image to Toggle Frontside/Backside"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'capportrait
-        '
-        Me.capportrait.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.capportrait.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.capportrait.Location = New System.Drawing.Point(614, 190)
-        Me.capportrait.Name = "capportrait"
-        Me.capportrait.Size = New System.Drawing.Size(96, 42)
-        Me.capportrait.TabIndex = 6
-        Me.capportrait.Text = "Capture Portrait"
-        Me.capportrait.UseVisualStyleBackColor = True
-        '
-        'capid
-        '
-        Me.capid.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.capid.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.capid.Location = New System.Drawing.Point(614, 14)
-        Me.capid.Name = "capid"
-        Me.capid.Size = New System.Drawing.Size(96, 42)
-        Me.capid.TabIndex = 6
-        Me.capid.Text = "Capture ID"
-        Me.capid.UseVisualStyleBackColor = True
-        '
         'Button3
         '
         Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(180, Byte), Integer))
         Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
@@ -385,9 +389,10 @@ Partial Class AddVisitor
         'Button4
         '
         Me.Button4.BackColor = System.Drawing.Color.Gainsboro
+        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.Button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
+        Me.Button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Font = New System.Drawing.Font("Microsoft JhengHei", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Button4.ForeColor = System.Drawing.Color.DimGray

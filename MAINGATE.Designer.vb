@@ -43,10 +43,11 @@ Partial Class MAINGATE
         Me.Timer6 = New System.Windows.Forms.Timer(Me.components)
         Me.minimizebtn = New System.Windows.Forms.Button()
         Me.closelbl = New System.Windows.Forms.PictureBox()
-        Me.AddVisitor1 = New SecurityBook.AddVisitor()
         Me.maximizebtn = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.AddVisitor1 = New SecurityBook.AddVisitor()
+        Me.ViewVisitor1 = New SecurityBook.viewVisitor()
         Me.sidepanel.SuspendLayout()
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -265,14 +266,6 @@ Partial Class MAINGATE
         Me.closelbl.TabIndex = 0
         Me.closelbl.TabStop = False
         '
-        'AddVisitor1
-        '
-        Me.AddVisitor1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.AddVisitor1.Location = New System.Drawing.Point(250, 0)
-        Me.AddVisitor1.Name = "AddVisitor1"
-        Me.AddVisitor1.Size = New System.Drawing.Size(1116, 768)
-        Me.AddVisitor1.TabIndex = 5
-        '
         'maximizebtn
         '
         Me.maximizebtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
@@ -309,6 +302,21 @@ Partial Class MAINGATE
         Me.PictureBox1.TabIndex = 6
         Me.PictureBox1.TabStop = False
         '
+        'AddVisitor1
+        '
+        Me.AddVisitor1.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.AddVisitor1.Location = New System.Drawing.Point(250, 0)
+        Me.AddVisitor1.Name = "AddVisitor1"
+        Me.AddVisitor1.Size = New System.Drawing.Size(1116, 768)
+        Me.AddVisitor1.TabIndex = 5
+        '
+        'ViewVisitor1
+        '
+        Me.ViewVisitor1.Location = New System.Drawing.Point(250, 0)
+        Me.ViewVisitor1.Name = "ViewVisitor1"
+        Me.ViewVisitor1.Size = New System.Drawing.Size(1116, 768)
+        Me.ViewVisitor1.TabIndex = 9
+        '
         'MAINGATE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -318,10 +326,11 @@ Partial Class MAINGATE
         Me.Controls.Add(Me.maximizebtn)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.AddVisitor1)
         Me.Controls.Add(Me.minimizebtn)
         Me.Controls.Add(Me.sidepanel)
         Me.Controls.Add(Me.closelbl)
+        Me.Controls.Add(Me.AddVisitor1)
+        Me.Controls.Add(Me.ViewVisitor1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "MAINGATE"
         Me.sidepanel.ResumeLayout(False)
@@ -356,4 +365,5 @@ Partial Class MAINGATE
     Friend WithEvents maximizebtn As Button
     Friend WithEvents Button6 As Button
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents ViewVisitor1 As viewVisitor
 End Class
