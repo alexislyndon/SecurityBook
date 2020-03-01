@@ -227,7 +227,7 @@ Partial Class AddVisitor
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Italic)
         Me.GroupBox2.Location = New System.Drawing.Point(20, 344)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(730, 252)
+        Me.GroupBox2.Size = New System.Drawing.Size(716, 252)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Security Information"
@@ -340,6 +340,7 @@ Partial Class AddVisitor
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox1.Image = Global.SecurityBook.My.Resources.Resources._2618259
         Me.PictureBox1.Location = New System.Drawing.Point(742, 88)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(320, 240)
@@ -350,6 +351,8 @@ Partial Class AddVisitor
         'PictureBox2
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox2.Image = Global.SecurityBook.My.Resources.Resources._2618259
+        Me.PictureBox2.InitialImage = Global.SecurityBook.My.Resources.Resources._2618259
         Me.PictureBox2.Location = New System.Drawing.Point(742, 356)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(320, 240)
@@ -379,6 +382,7 @@ Partial Class AddVisitor
         '
         'PictureBox3
         '
+        Me.PictureBox3.InitialImage = Global.SecurityBook.My.Resources.Resources._2618259
         Me.PictureBox3.Location = New System.Drawing.Point(742, 356)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(320, 240)
@@ -484,10 +488,10 @@ Partial Class AddVisitor
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox3)
         Me.Name = "AddVisitor"
         Me.Size = New System.Drawing.Size(1116, 768)

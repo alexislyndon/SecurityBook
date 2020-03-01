@@ -4060,23 +4060,23 @@ Namespace db1DSTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Badges] WHERE (([badge] = @Original_badge) AND ([available] = @Origi"& _ 
-                "nal_available))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Badges] WHERE (([badge] = @Original_badge) AND ([available] = "& _ 
+                "@Original_available))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_badge", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "badge", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_available", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "available", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Badges] ([badge], [available]) VALUES (@badge, @available);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT "& _ 
-                "badge, available FROM Badges WHERE (badge = @badge)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Badges] ([badge], [available]) VALUES (@badge, @available);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"S"& _ 
+                "ELECT badge, available FROM Badges WHERE (badge = @badge)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@badge", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "badge", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@available", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "available", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [Badges] SET [badge] = @badge, [available] = @available WHERE (([badge] = "& _ 
-                "@Original_badge) AND ([available] = @Original_available));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT badge, availa"& _ 
-                "ble FROM Badges WHERE (badge = @badge)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Badges] SET [badge] = @badge, [available] = @available WHERE (([bad"& _ 
+                "ge] = @Original_badge) AND ([available] = @Original_available));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT badge, "& _ 
+                "available FROM Badges WHERE (badge = @badge)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@badge", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "badge", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@available", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "available", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -4097,7 +4097,7 @@ Namespace db1DSTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT badge, available FROM Badges"
+            Me._commandCollection(0).CommandText = "SELECT badge, available FROM dbo.Badges"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
@@ -4133,13 +4133,24 @@ Namespace db1DSTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function AvailableBadges(ByVal dataTable As db1DS.BadgesDataTable) As Integer
+        Public Overloads Overridable Function AvailableBadge(ByVal dataTable As db1DS.BadgesDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
             Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
             Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetAvailableBadge() As db1DS.BadgesDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Dim dataTable As db1DS.BadgesDataTable = New db1DS.BadgesDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4400,12 +4411,12 @@ Namespace db1DSTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [users] WHERE (([id] = @Original_id) AND ((@IsNull_username = 1 AND ["& _ 
-                "username] IS NULL) OR ([username] = @Original_username)) AND ((@IsNull_password "& _ 
-                "= 1 AND [password] IS NULL) OR ([password] = @Original_password)) AND ((@IsNull_"& _ 
-                "designation = 1 AND [designation] IS NULL) OR ([designation] = @Original_designa"& _ 
-                "tion)) AND ([created] = @Original_created) AND ((@IsNull_name = 1 AND [name] IS "& _ 
-                "NULL) OR ([name] = @Original_name)) AND ([active] = @Original_active))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[users] WHERE (([id] = @Original_id) AND ((@IsNull_username = 1"& _ 
+                " AND [username] IS NULL) OR ([username] = @Original_username)) AND ((@IsNull_pas"& _ 
+                "sword = 1 AND [password] IS NULL) OR ([password] = @Original_password)) AND ((@I"& _ 
+                "sNull_designation = 1 AND [designation] IS NULL) OR ([designation] = @Original_d"& _ 
+                "esignation)) AND ([created] = @Original_created) AND ((@IsNull_name = 1 AND [nam"& _ 
+                "e] IS NULL) OR ([name] = @Original_name)) AND ([active] = @Original_active))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_username", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "username", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -4420,10 +4431,10 @@ Namespace db1DSTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_active", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "active", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [users] ([username], [password], [designation], [created], [name], [a"& _ 
-                "ctive]) VALUES (@username, @password, @designation, @created, @name, @active);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
-                "SELECT id, username, password, designation, created, name, active FROM users WHE"& _ 
-                "RE (id = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[users] ([username], [password], [designation], [created], [nam"& _ 
+                "e], [active]) VALUES (@username, @password, @designation, @created, @name, @acti"& _ 
+                "ve);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, username, password, designation, created, name, active FROM use"& _ 
+                "rs WHERE (id = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@username", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "username", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -4433,15 +4444,15 @@ Namespace db1DSTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@active", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "active", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [users] SET [username] = @username, [password] = @password, [designation] "& _ 
-                "= @designation, [created] = @created, [name] = @name, [active] = @active WHERE ("& _ 
-                "([id] = @Original_id) AND ((@IsNull_username = 1 AND [username] IS NULL) OR ([us"& _ 
-                "ername] = @Original_username)) AND ((@IsNull_password = 1 AND [password] IS NULL"& _ 
-                ") OR ([password] = @Original_password)) AND ((@IsNull_designation = 1 AND [desig"& _ 
-                "nation] IS NULL) OR ([designation] = @Original_designation)) AND ([created] = @O"& _ 
-                "riginal_created) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @Origin"& _ 
-                "al_name)) AND ([active] = @Original_active));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, username, password, de"& _ 
-                "signation, created, name, active FROM users WHERE (id = @id)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[users] SET [username] = @username, [password] = @password, [designa"& _ 
+                "tion] = @designation, [created] = @created, [name] = @name, [active] = @active W"& _ 
+                "HERE (([id] = @Original_id) AND ((@IsNull_username = 1 AND [username] IS NULL) O"& _ 
+                "R ([username] = @Original_username)) AND ((@IsNull_password = 1 AND [password] I"& _ 
+                "S NULL) OR ([password] = @Original_password)) AND ((@IsNull_designation = 1 AND "& _ 
+                "[designation] IS NULL) OR ([designation] = @Original_designation)) AND ([created"& _ 
+                "] = @Original_created) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @"& _ 
+                "Original_name)) AND ([active] = @Original_active));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, username, passwo"& _ 
+                "rd, designation, created, name, active FROM users WHERE (id = @id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@username", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "username", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -4476,7 +4487,7 @@ Namespace db1DSTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT id, username, password, designation, created, name, active FROM users"
+            Me._commandCollection(0).CommandText = "SELECT id, username, password, designation, created, name, active FROM dbo.users"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -4848,12 +4859,12 @@ Namespace db1DSTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Vehicles] WHERE (([Id] = @Original_Id) AND ([make] = @Original_make)"& _ 
-                " AND ([model] = @Original_model) AND ([color] = @Original_color) AND ([type] = @"& _ 
-                "Original_type) AND ([plate] = @Original_plate) AND ((@IsNull_driver = 1 AND [dri"& _ 
-                "ver] IS NULL) OR ([driver] = @Original_driver)) AND ([time_in] = @Original_time_"& _ 
-                "in) AND ((@IsNull_time_out = 1 AND [time_out] IS NULL) OR ([time_out] = @Origina"& _ 
-                "l_time_out)) AND ([userid] = @Original_userid))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Vehicles] WHERE (([Id] = @Original_Id) AND ([make] = @Original"& _ 
+                "_make) AND ([model] = @Original_model) AND ([color] = @Original_color) AND ([typ"& _ 
+                "e] = @Original_type) AND ([plate] = @Original_plate) AND ((@IsNull_driver = 1 AN"& _ 
+                "D [driver] IS NULL) OR ([driver] = @Original_driver)) AND ([time_in] = @Original"& _ 
+                "_time_in) AND ((@IsNull_time_out = 1 AND [time_out] IS NULL) OR ([time_out] = @O"& _ 
+                "riginal_time_out)) AND ([userid] = @Original_userid))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_make", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "make", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -4869,10 +4880,11 @@ Namespace db1DSTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_userid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "userid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Vehicles] ([make], [model], [color], [type], [plate], [driver], [tim"& _ 
-                "e_in], [time_out], [userid]) VALUES (@make, @model, @color, @type, @plate, @driv"& _ 
-                "er, @time_in, @time_out, @userid);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, make, model, color, type, plate, "& _ 
-                "driver, time_in, time_out, userid FROM Vehicles WHERE (Id = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Vehicles] ([make], [model], [color], [type], [plate], [driver]"& _ 
+                ", [time_in], [time_out], [userid]) VALUES (@make, @model, @color, @type, @plate,"& _ 
+                " @driver, @time_in, @time_out, @userid);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, make, model, color, type, p"& _ 
+                "late, driver, time_in, time_out, userid FROM Vehicles WHERE (Id = SCOPE_IDENTITY"& _ 
+                "())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@make", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "make", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@model", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "model", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -4885,16 +4897,16 @@ Namespace db1DSTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@userid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "userid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [Vehicles] SET [make] = @make, [model] = @model, [color] = @color, [type] "& _ 
-                "= @type, [plate] = @plate, [driver] = @driver, [time_in] = @time_in, [time_out] "& _ 
-                "= @time_out, [userid] = @userid WHERE (([Id] = @Original_Id) AND ([make] = @Orig"& _ 
-                "inal_make) AND ([model] = @Original_model) AND ([color] = @Original_color) AND ("& _ 
-                "[type] = @Original_type) AND ([plate] = @Original_plate) AND ((@IsNull_driver = "& _ 
-                "1 AND [driver] IS NULL) OR ([driver] = @Original_driver)) AND ([time_in] = @Orig"& _ 
-                "inal_time_in) AND ((@IsNull_time_out = 1 AND [time_out] IS NULL) OR ([time_out] "& _ 
-                "= @Original_time_out)) AND ([userid] = @Original_userid));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, make, mod"& _ 
-                "el, color, type, plate, driver, time_in, time_out, userid FROM Vehicles WHERE (I"& _ 
-                "d = @Id)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Vehicles] SET [make] = @make, [model] = @model, [color] = @color, ["& _ 
+                "type] = @type, [plate] = @plate, [driver] = @driver, [time_in] = @time_in, [time"& _ 
+                "_out] = @time_out, [userid] = @userid WHERE (([Id] = @Original_Id) AND ([make] ="& _ 
+                " @Original_make) AND ([model] = @Original_model) AND ([color] = @Original_color)"& _ 
+                " AND ([type] = @Original_type) AND ([plate] = @Original_plate) AND ((@IsNull_dri"& _ 
+                "ver = 1 AND [driver] IS NULL) OR ([driver] = @Original_driver)) AND ([time_in] ="& _ 
+                " @Original_time_in) AND ((@IsNull_time_out = 1 AND [time_out] IS NULL) OR ([time"& _ 
+                "_out] = @Original_time_out)) AND ([userid] = @Original_userid));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, mak"& _ 
+                "e, model, color, type, plate, driver, time_in, time_out, userid FROM Vehicles WH"& _ 
+                "ERE (Id = @Id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@make", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "make", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@model", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "model", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -4934,7 +4946,7 @@ Namespace db1DSTableAdapters
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT Id, make, model, color, type, plate, driver, time_in, time_out, userid FRO"& _ 
-                "M Vehicles"
+                "M dbo.Vehicles"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -5400,19 +5412,19 @@ Namespace db1DSTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [VIP] WHERE (([vip_ID] = @Original_vip_ID) AND ((@IsNull_fname = 1 AN"& _ 
-                "D [fname] IS NULL) OR ([fname] = @Original_fname)) AND ((@IsNull_mname = 1 AND ["& _ 
-                "mname] IS NULL) OR ([mname] = @Original_mname)) AND ((@IsNull_lname = 1 AND [lna"& _ 
-                "me] IS NULL) OR ([lname] = @Original_lname)) AND ((@IsNull_sex = 1 AND [sex] IS "& _ 
-                "NULL) OR ([sex] = @Original_sex)) AND ((@IsNull_destination = 1 AND [destination"& _ 
-                "] IS NULL) OR ([destination] = @Original_destination)) AND ((@IsNull_purpose = 1"& _ 
-                " AND [purpose] IS NULL) OR ([purpose] = @Original_purpose)) AND ((@IsNull_phone "& _ 
-                "= 1 AND [phone] IS NULL) OR ([phone] = @Original_phone)) AND ([FullName] = @Orig"& _ 
-                "inal_FullName) AND ((@IsNull_contactperson = 1 AND [contactperson] IS NULL) OR ("& _ 
-                "[contactperson] = @Original_contactperson)) AND ((@IsNull_contactperson_phone = "& _ 
-                "1 AND [contactperson_phone] IS NULL) OR ([contactperson_phone] = @Original_conta"& _ 
-                "ctperson_phone)) AND ((@IsNull_remarks = 1 AND [remarks] IS NULL) OR ([remarks] "& _ 
-                "= @Original_remarks)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[VIP] WHERE (([vip_ID] = @Original_vip_ID) AND ((@IsNull_fname "& _ 
+                "= 1 AND [fname] IS NULL) OR ([fname] = @Original_fname)) AND ((@IsNull_mname = 1"& _ 
+                " AND [mname] IS NULL) OR ([mname] = @Original_mname)) AND ((@IsNull_lname = 1 AN"& _ 
+                "D [lname] IS NULL) OR ([lname] = @Original_lname)) AND ((@IsNull_sex = 1 AND [se"& _ 
+                "x] IS NULL) OR ([sex] = @Original_sex)) AND ((@IsNull_destination = 1 AND [desti"& _ 
+                "nation] IS NULL) OR ([destination] = @Original_destination)) AND ((@IsNull_purpo"& _ 
+                "se = 1 AND [purpose] IS NULL) OR ([purpose] = @Original_purpose)) AND ((@IsNull_"& _ 
+                "phone = 1 AND [phone] IS NULL) OR ([phone] = @Original_phone)) AND ([FullName] ="& _ 
+                " @Original_FullName) AND ((@IsNull_contactperson = 1 AND [contactperson] IS NULL"& _ 
+                ") OR ([contactperson] = @Original_contactperson)) AND ((@IsNull_contactperson_ph"& _ 
+                "one = 1 AND [contactperson_phone] IS NULL) OR ([contactperson_phone] = @Original"& _ 
+                "_contactperson_phone)) AND ((@IsNull_remarks = 1 AND [remarks] IS NULL) OR ([rem"& _ 
+                "arks] = @Original_remarks)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_vip_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "vip_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_fname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -5438,12 +5450,12 @@ Namespace db1DSTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_remarks", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "remarks", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [VIP] ([fname], [mname], [lname], [sex], [destination], [purpose], [p"& _ 
-                "ic], [phone], [contactperson], [contactperson_phone], [remarks]) VALUES (@fname,"& _ 
-                " @mname, @lname, @sex, @destination, @purpose, @pic, @phone, @contactperson, @co"& _ 
-                "ntactperson_phone, @remarks);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT vip_ID, fname, mname, lname, sex, destinat"& _ 
-                "ion, purpose, pic, phone, FullName, contactperson, contactperson_phone, remarks "& _ 
-                "FROM VIP WHERE (vip_ID = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[VIP] ([fname], [mname], [lname], [sex], [destination], [purpos"& _ 
+                "e], [pic], [phone], [contactperson], [contactperson_phone], [remarks]) VALUES (@"& _ 
+                "fname, @mname, @lname, @sex, @destination, @purpose, @pic, @phone, @contactperso"& _ 
+                "n, @contactperson_phone, @remarks);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT vip_ID, fname, mname, lname, sex, de"& _ 
+                "stination, purpose, pic, phone, FullName, contactperson, contactperson_phone, re"& _ 
+                "marks FROM VIP WHERE (vip_ID = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -5458,24 +5470,24 @@ Namespace db1DSTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@remarks", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "remarks", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [VIP] SET [fname] = @fname, [mname] = @mname, [lname] = @lname, [sex] = @s"& _ 
-                "ex, [destination] = @destination, [purpose] = @purpose, [pic] = @pic, [phone] = "& _ 
-                "@phone, [contactperson] = @contactperson, [contactperson_phone] = @contactperson"& _ 
-                "_phone, [remarks] = @remarks WHERE (([vip_ID] = @Original_vip_ID) AND ((@IsNull_"& _ 
-                "fname = 1 AND [fname] IS NULL) OR ([fname] = @Original_fname)) AND ((@IsNull_mna"& _ 
-                "me = 1 AND [mname] IS NULL) OR ([mname] = @Original_mname)) AND ((@IsNull_lname "& _ 
-                "= 1 AND [lname] IS NULL) OR ([lname] = @Original_lname)) AND ((@IsNull_sex = 1 A"& _ 
-                "ND [sex] IS NULL) OR ([sex] = @Original_sex)) AND ((@IsNull_destination = 1 AND "& _ 
-                "[destination] IS NULL) OR ([destination] = @Original_destination)) AND ((@IsNull"& _ 
-                "_purpose = 1 AND [purpose] IS NULL) OR ([purpose] = @Original_purpose)) AND ((@I"& _ 
-                "sNull_phone = 1 AND [phone] IS NULL) OR ([phone] = @Original_phone)) AND ([FullN"& _ 
-                "ame] = @Original_FullName) AND ((@IsNull_contactperson = 1 AND [contactperson] I"& _ 
-                "S NULL) OR ([contactperson] = @Original_contactperson)) AND ((@IsNull_contactper"& _ 
-                "son_phone = 1 AND [contactperson_phone] IS NULL) OR ([contactperson_phone] = @Or"& _ 
-                "iginal_contactperson_phone)) AND ((@IsNull_remarks = 1 AND [remarks] IS NULL) OR"& _ 
-                " ([remarks] = @Original_remarks)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT vip_ID, fname, mname, lname, sex, de"& _ 
-                "stination, purpose, pic, phone, FullName, contactperson, contactperson_phone, re"& _ 
-                "marks FROM VIP WHERE (vip_ID = @vip_ID)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[VIP] SET [fname] = @fname, [mname] = @mname, [lname] = @lname, [sex"& _ 
+                "] = @sex, [destination] = @destination, [purpose] = @purpose, [pic] = @pic, [pho"& _ 
+                "ne] = @phone, [contactperson] = @contactperson, [contactperson_phone] = @contact"& _ 
+                "person_phone, [remarks] = @remarks WHERE (([vip_ID] = @Original_vip_ID) AND ((@I"& _ 
+                "sNull_fname = 1 AND [fname] IS NULL) OR ([fname] = @Original_fname)) AND ((@IsNu"& _ 
+                "ll_mname = 1 AND [mname] IS NULL) OR ([mname] = @Original_mname)) AND ((@IsNull_"& _ 
+                "lname = 1 AND [lname] IS NULL) OR ([lname] = @Original_lname)) AND ((@IsNull_sex"& _ 
+                " = 1 AND [sex] IS NULL) OR ([sex] = @Original_sex)) AND ((@IsNull_destination = "& _ 
+                "1 AND [destination] IS NULL) OR ([destination] = @Original_destination)) AND ((@"& _ 
+                "IsNull_purpose = 1 AND [purpose] IS NULL) OR ([purpose] = @Original_purpose)) AN"& _ 
+                "D ((@IsNull_phone = 1 AND [phone] IS NULL) OR ([phone] = @Original_phone)) AND ("& _ 
+                "[FullName] = @Original_FullName) AND ((@IsNull_contactperson = 1 AND [contactper"& _ 
+                "son] IS NULL) OR ([contactperson] = @Original_contactperson)) AND ((@IsNull_cont"& _ 
+                "actperson_phone = 1 AND [contactperson_phone] IS NULL) OR ([contactperson_phone]"& _ 
+                " = @Original_contactperson_phone)) AND ((@IsNull_remarks = 1 AND [remarks] IS NU"& _ 
+                "LL) OR ([remarks] = @Original_remarks)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT vip_ID, fname, mname, lname, s"& _ 
+                "ex, destination, purpose, pic, phone, FullName, contactperson, contactperson_pho"& _ 
+                "ne, remarks FROM VIP WHERE (vip_ID = @vip_ID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -5527,7 +5539,7 @@ Namespace db1DSTableAdapters
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT vip_ID, fname, mname, lname, sex, destination, purpose, pic, phone, FullNa"& _ 
-                "me, contactperson, contactperson_phone, remarks FROM VIP"
+                "me, contactperson, contactperson_phone, remarks FROM dbo.VIP"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -6265,7 +6277,7 @@ Namespace db1DSTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        visit_ID, fname, mname, lname, CASE WHEN sex = 'm' THEN 'Male' WHEN"& _ 
@@ -6299,6 +6311,12 @@ Namespace db1DSTableAdapters
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@phone", Global.System.Data.SqlDbType.VarChar, 25, Global.System.Data.ParameterDirection.Input, 0, 0, "phone", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@userid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "userid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@alert", Global.System.Data.SqlDbType.TinyInt, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "alert", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "UPDATE       Visitors"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                exited = @exited, time_out = GETDATE()"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (visit_ID = @visit_ID) AND (time_out IS NULL)"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@exited", Global.System.Data.SqlDbType.[Char], 1, Global.System.Data.ParameterDirection.Input, 0, 0, "exited", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visit_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6892,6 +6910,34 @@ Namespace db1DSTableAdapters
             Else
                 command.Parameters(14).Value = Global.System.DBNull.Value
             End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
+        Public Overloads Overridable Function CheckOut(ByVal exited As String, ByVal visit_ID As Integer) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
+            If (exited Is Nothing) Then
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(0).Value = CType(exited,String)
+            End If
+            command.Parameters(1).Value = CType(visit_ID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then

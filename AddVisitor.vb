@@ -10,6 +10,7 @@ Public Class AddVisitor
     Private Sub checkinbtn_Click(sender As Object, e As EventArgs) Handles checkinbtn.Click
 
         Dim gtg = True
+
         For Each ctrls In Me.Controls
             ctrls.Text = byeSpace(ctrls.Text)
         Next
@@ -67,7 +68,7 @@ Public Class AddVisitor
                 'maxid = VisitorsTableAdapter.MaxID() + 1
                 'v_id.Text = maxid
                 refreshAll()
-                clear(Me)
+                Clear(Me)
 
             Catch ex As Exception
                 MsgBox(ex.ToString)

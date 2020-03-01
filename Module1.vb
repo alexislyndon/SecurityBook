@@ -22,7 +22,7 @@ Module Module1
         End If
     End Function
 
-    Public Sub clear(obj)
+    Public Sub Clear(obj)
         For Each ctrl In obj.Controls
             Dim tb = TryCast(ctrl, TextBox)
             Dim cb = TryCast(ctrl, ComboBox)
