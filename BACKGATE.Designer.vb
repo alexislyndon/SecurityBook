@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class MAINGATE
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class BACKGATE
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,9 +20,10 @@ Partial Class MAINGATE
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Me.closelbl = New System.Windows.Forms.PictureBox()
         Me.sidepanel = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -42,19 +43,24 @@ Partial Class MAINGATE
         Me.Timer5 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer6 = New System.Windows.Forms.Timer(Me.components)
         Me.minimizebtn = New System.Windows.Forms.Button()
-        Me.closelbl = New System.Windows.Forms.PictureBox()
-        Me.AddVisitor1 = New SecurityBook.AddVisitor()
         Me.maximizebtn = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.sidepanel.SuspendLayout()
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.sidepanel.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'closelbl
+        '
+        Me.closelbl.Image = Global.SecurityBook.My.Resources.Resources.Contols___Add_On_36_512
+        Me.closelbl.Location = New System.Drawing.Point(1332, -1)
+        Me.closelbl.Name = "closelbl"
+        Me.closelbl.Size = New System.Drawing.Size(36, 36)
+        Me.closelbl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.closelbl.TabIndex = 0
+        Me.closelbl.TabStop = False
         '
         'sidepanel
         '
-        Me.sidepanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.sidepanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.sidepanel.Controls.Add(Me.Panel1)
         Me.sidepanel.Controls.Add(Me.Button5)
         Me.sidepanel.Controls.Add(Me.Button4)
@@ -81,7 +87,6 @@ Partial Class MAINGATE
         '
         'Button5
         '
-        Me.Button5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button5.FlatAppearance.BorderSize = 0
         Me.Button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.Button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(60, Byte), Integer))
@@ -92,12 +97,11 @@ Partial Class MAINGATE
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(238, 50)
         Me.Button5.TabIndex = 2
-        Me.Button5.Text = "View Vehicles"
+        Me.Button5.Text = "Placeholder"
         Me.Button5.UseVisualStyleBackColor = True
         '
         'Button4
         '
-        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button4.FlatAppearance.BorderSize = 0
         Me.Button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.Button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(60, Byte), Integer))
@@ -108,12 +112,11 @@ Partial Class MAINGATE
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(238, 50)
         Me.Button4.TabIndex = 2
-        Me.Button4.Text = "Vehicles"
+        Me.Button4.Text = "Placeholder"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(60, Byte), Integer))
@@ -129,7 +132,6 @@ Partial Class MAINGATE
         '
         'Button2
         '
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(60, Byte), Integer))
@@ -145,7 +147,6 @@ Partial Class MAINGATE
         '
         'Button1
         '
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(60, Byte), Integer))
@@ -175,9 +176,9 @@ Partial Class MAINGATE
         Me.Label2.ForeColor = System.Drawing.Color.Gainsboro
         Me.Label2.Location = New System.Drawing.Point(12, 11)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(222, 42)
+        Me.Label2.Size = New System.Drawing.Size(232, 42)
         Me.Label2.TabIndex = 0
-        Me.Label2.Text = "MAIN GATE"
+        Me.Label2.Text = "BACK GATE"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label4
@@ -248,30 +249,12 @@ Partial Class MAINGATE
         Me.minimizebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.minimizebtn.Font = New System.Drawing.Font("8_bit_1_6", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.minimizebtn.ForeColor = System.Drawing.Color.White
-        Me.minimizebtn.Location = New System.Drawing.Point(1299, 1)
+        Me.minimizebtn.Location = New System.Drawing.Point(1270, 2)
         Me.minimizebtn.Name = "minimizebtn"
         Me.minimizebtn.Size = New System.Drawing.Size(30, 30)
         Me.minimizebtn.TabIndex = 4
         Me.minimizebtn.Text = "_"
         Me.minimizebtn.UseVisualStyleBackColor = False
-        '
-        'closelbl
-        '
-        Me.closelbl.Image = Global.SecurityBook.My.Resources.Resources.Contols___Add_On_36_512
-        Me.closelbl.Location = New System.Drawing.Point(1333, -3)
-        Me.closelbl.Name = "closelbl"
-        Me.closelbl.Size = New System.Drawing.Size(36, 36)
-        Me.closelbl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.closelbl.TabIndex = 0
-        Me.closelbl.TabStop = False
-        '
-        'AddVisitor1
-        '
-        Me.AddVisitor1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.AddVisitor1.Location = New System.Drawing.Point(250, 0)
-        Me.AddVisitor1.Name = "AddVisitor1"
-        Me.AddVisitor1.Size = New System.Drawing.Size(1116, 768)
-        Me.AddVisitor1.TabIndex = 5
         '
         'maximizebtn
         '
@@ -279,55 +262,28 @@ Partial Class MAINGATE
         Me.maximizebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.maximizebtn.Font = New System.Drawing.Font("Wingdings", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
         Me.maximizebtn.ForeColor = System.Drawing.Color.White
-        Me.maximizebtn.Location = New System.Drawing.Point(1300, 1)
+        Me.maximizebtn.Location = New System.Drawing.Point(1302, 2)
         Me.maximizebtn.Name = "maximizebtn"
         Me.maximizebtn.Size = New System.Drawing.Size(30, 30)
-        Me.maximizebtn.TabIndex = 8
+        Me.maximizebtn.TabIndex = 4
         Me.maximizebtn.Text = "o"
         Me.maximizebtn.UseVisualStyleBackColor = False
         '
-        'Button6
-        '
-        Me.Button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Font = New System.Drawing.Font("8_bit_1_6", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.ForeColor = System.Drawing.Color.White
-        Me.Button6.Location = New System.Drawing.Point(1268, 1)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(30, 30)
-        Me.Button6.TabIndex = 7
-        Me.Button6.Text = "_"
-        Me.Button6.UseVisualStyleBackColor = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.SecurityBook.My.Resources.Resources.Contols___Add_On_36_512
-        Me.PictureBox1.Location = New System.Drawing.Point(1330, -2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(36, 36)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 6
-        Me.PictureBox1.TabStop = False
-        '
-        'MAINGATE
+        'BACKGATE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1366, 768)
         Me.ControlBox = False
         Me.Controls.Add(Me.maximizebtn)
-        Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.AddVisitor1)
         Me.Controls.Add(Me.minimizebtn)
         Me.Controls.Add(Me.sidepanel)
         Me.Controls.Add(Me.closelbl)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "MAINGATE"
+        Me.Name = "BACKGATE"
+        CType(Me.closelbl, System.ComponentModel.ISupportInitialize).EndInit()
         Me.sidepanel.ResumeLayout(False)
         Me.sidepanel.PerformLayout()
-        CType(Me.closelbl, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -339,8 +295,6 @@ Partial Class MAINGATE
     Friend WithEvents Button1 As Button
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button4 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Timer1 As Timer
@@ -352,8 +306,7 @@ Partial Class MAINGATE
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents minimizebtn As Button
-    Friend WithEvents AddVisitor1 As AddVisitor
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button4 As Button
     Friend WithEvents maximizebtn As Button
-    Friend WithEvents Button6 As Button
-    Friend WithEvents PictureBox1 As PictureBox
 End Class

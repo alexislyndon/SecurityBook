@@ -14,6 +14,21 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -58,6 +73,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -80,17 +96,41 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddVisitor.Designer.vb">
+      <DependentUpon>AddVisitor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddVisitor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ADMIN.Designer.vb">
       <DependentUpon>ADMIN.vb</DependentUpon>
     </Compile>
     <Compile Include="ADMIN.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="adminDASH.Designer.vb">
+      <DependentUpon>adminDASH.vb</DependentUpon>
+    </Compile>
+    <Compile Include="adminDASH.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="adminVisitors.Designer.vb">
+      <DependentUpon>adminVisitors.vb</DependentUpon>
+    </Compile>
+    <Compile Include="adminVisitors.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BACKGATE.Designer.vb">
+      <DependentUpon>BACKGATE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BACKGATE.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MAINGATE.Designer.vb">
@@ -114,13 +154,31 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ucHOME.Designer.vb">
+      <DependentUpon>ucHOME.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ucHOME.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddVisitor.resx">
+      <DependentUpon>AddVisitor.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ADMIN.resx">
       <DependentUpon>ADMIN.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="adminDASH.resx">
+      <DependentUpon>adminDASH.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminVisitors.resx">
+      <DependentUpon>adminVisitors.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BACKGATE.resx">
+      <DependentUpon>BACKGATE.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MAINGATE.resx">
       <DependentUpon>MAINGATE.vb</DependentUpon>
@@ -130,6 +188,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucHOME.resx">
+      <DependentUpon>ucHOME.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +214,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Contols_-_Add_On-36-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\persons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="db1.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="db1_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>db1.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

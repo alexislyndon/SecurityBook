@@ -1,4 +1,4 @@
-﻿Public Class MAINGATE
+﻿Public Class BACKGATE
     Private IsFormBeingDragged As Boolean = False
     Private MouseDownX As Integer
     Private MouseDownY As Integer
@@ -9,7 +9,7 @@
     Dim y4 As Integer = 430
     Dim y5 As Integer = 490
 
-    Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseDown, sidepanel.MouseDown, AddVisitor1.MouseDown
+    Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseDown, sidepanel.MouseDown
 
         If e.Button = MouseButtons.Left Then
             IsFormBeingDragged = True
@@ -18,14 +18,14 @@
         End If
     End Sub
 
-    Private Sub Form1_MouseUp(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseUp, sidepanel.MouseUp, AddVisitor1.MouseUp
+    Private Sub Form1_MouseUp(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseUp, sidepanel.MouseDown
 
         If e.Button = MouseButtons.Left Then
             IsFormBeingDragged = False
         End If
     End Sub
 
-    Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseMove, sidepanel.MouseMove, AddVisitor1.MouseMove
+    Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseMove, sidepanel.MouseDown
 
         If IsFormBeingDragged Then
             Dim temp As Point = New Point()
@@ -149,18 +149,10 @@
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        Me.Close()
-    End Sub
-
     Private Sub maximizebtn_Click(sender As Object, e As EventArgs) Handles maximizebtn.Click
         Dim zero As Point = New Point()
         zero.X = 0
         zero.Y = 0
         Me.Location = zero
-    End Sub
-
-    Private Sub Button6_Click_1(sender As Object, e As EventArgs) Handles Button6.Click
-        Me.WindowState = FormWindowState.Minimized
     End Sub
 End Class
