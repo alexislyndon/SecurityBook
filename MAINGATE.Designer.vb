@@ -45,12 +45,12 @@ Partial Class MAINGATE
         Me.closelbl = New System.Windows.Forms.PictureBox()
         Me.maximizebtn = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.closebtn = New System.Windows.Forms.PictureBox()
         Me.AddVisitor1 = New SecurityBook.AddVisitor()
         Me.ViewVisitor1 = New SecurityBook.viewVisitor()
         Me.sidepanel.SuspendLayout()
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.closebtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'sidepanel
@@ -292,15 +292,15 @@ Partial Class MAINGATE
         Me.Button6.Text = "_"
         Me.Button6.UseVisualStyleBackColor = False
         '
-        'PictureBox1
+        'closebtn
         '
-        Me.PictureBox1.Image = Global.SecurityBook.My.Resources.Resources.Contols___Add_On_36_512
-        Me.PictureBox1.Location = New System.Drawing.Point(1330, -2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(36, 36)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 6
-        Me.PictureBox1.TabStop = False
+        Me.closebtn.Image = Global.SecurityBook.My.Resources.Resources.Contols___Add_On_36_512
+        Me.closebtn.Location = New System.Drawing.Point(1330, -2)
+        Me.closebtn.Name = "closebtn"
+        Me.closebtn.Size = New System.Drawing.Size(36, 36)
+        Me.closebtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.closebtn.TabIndex = 6
+        Me.closebtn.TabStop = False
         '
         'AddVisitor1
         '
@@ -327,7 +327,7 @@ Partial Class MAINGATE
         Me.ControlBox = False
         Me.Controls.Add(Me.maximizebtn)
         Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.closebtn)
         Me.Controls.Add(Me.minimizebtn)
         Me.Controls.Add(Me.sidepanel)
         Me.Controls.Add(Me.closelbl)
@@ -338,7 +338,7 @@ Partial Class MAINGATE
         Me.sidepanel.ResumeLayout(False)
         Me.sidepanel.PerformLayout()
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.closebtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -366,6 +366,6 @@ Partial Class MAINGATE
     Friend WithEvents AddVisitor1 As AddVisitor
     Friend WithEvents maximizebtn As Button
     Friend WithEvents Button6 As Button
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents closebtn As PictureBox
     Friend WithEvents ViewVisitor1 As viewVisitor
 End Class

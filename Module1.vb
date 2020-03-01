@@ -22,7 +22,7 @@ Module Module1
         End If
     End Function
 
-    Public Sub Clear(obj)
+    Public Sub Clear(ByRef obj)
         For Each ctrl In obj.Controls
             Dim tb = TryCast(ctrl, TextBox)
             Dim cb = TryCast(ctrl, ComboBox)
@@ -37,18 +37,18 @@ Module Module1
                 cb.SelectedIndex = -1
             End If
 
-            If pb.Image IsNot Nothing Then
-                If pb.Name = "Picturebox1" Then
-                    'pb.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\portrait.jpg")
-                End If
-                If pb.Name = "Picturebox2" Then
-                    'pb.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\blankid.jpg")
-                End If
-                If pb.Name = "Picturebox3" Then
-                    'pb.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\backside.jpg")
-                End If
-                pb.Image = Nothing
-            End If
+            'If pb.Image IsNot Nothing Then
+            '    If pb.Name = "Picturebox1" Then
+            '        'pb.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\portrait.jpg")
+            '    End If
+            '    If pb.Name = "Picturebox2" Then
+            '        'pb.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\blankid.jpg")
+            '    End If
+            '    If pb.Name = "Picturebox3" Then
+            '        'pb.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\backside.jpg")
+            '    End If
+            '    pb.Image = Nothing
+            'End If
         Next
     End Sub
 

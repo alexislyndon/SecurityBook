@@ -38,7 +38,9 @@ Partial Class AddVisitor
         Me.fname = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.capid = New System.Windows.Forms.Button()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.contactperson = New System.Windows.Forms.TextBox()
         Me.purp = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -102,14 +104,14 @@ Partial Class AddVisitor
         Me.capportrait.Location = New System.Drawing.Point(614, 190)
         Me.capportrait.Name = "capportrait"
         Me.capportrait.Size = New System.Drawing.Size(96, 42)
-        Me.capportrait.TabIndex = 0
+        Me.capportrait.TabIndex = 11
         Me.capportrait.Text = "Capture Portrait"
         Me.capportrait.UseVisualStyleBackColor = True
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.White
+        Me.Label4.BackColor = System.Drawing.SystemColors.Control
         Me.Label4.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(235, 103)
         Me.Label4.Name = "Label4"
@@ -132,7 +134,7 @@ Partial Class AddVisitor
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.White
+        Me.Label3.BackColor = System.Drawing.SystemColors.Control
         Me.Label3.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(444, 23)
         Me.Label3.Name = "Label3"
@@ -143,7 +145,7 @@ Partial Class AddVisitor
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.White
+        Me.Label2.BackColor = System.Drawing.SystemColors.Control
         Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(235, 23)
         Me.Label2.Name = "Label2"
@@ -154,7 +156,7 @@ Partial Class AddVisitor
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.White
+        Me.Label5.BackColor = System.Drawing.SystemColors.Control
         Me.Label5.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(26, 98)
         Me.Label5.Name = "Label5"
@@ -165,7 +167,7 @@ Partial Class AddVisitor
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.White
+        Me.Label1.BackColor = System.Drawing.SystemColors.Control
         Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(26, 23)
         Me.Label1.Name = "Label1"
@@ -216,7 +218,9 @@ Partial Class AddVisitor
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.capid)
+        Me.GroupBox2.Controls.Add(Me.Label13)
         Me.GroupBox2.Controls.Add(Me.Label7)
+        Me.GroupBox2.Controls.Add(Me.contactperson)
         Me.GroupBox2.Controls.Add(Me.purp)
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.Label10)
@@ -227,7 +231,7 @@ Partial Class AddVisitor
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Italic)
         Me.GroupBox2.Location = New System.Drawing.Point(20, 344)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(716, 252)
+        Me.GroupBox2.Size = New System.Drawing.Size(710, 252)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Security Information"
@@ -240,26 +244,47 @@ Partial Class AddVisitor
         Me.capid.Location = New System.Drawing.Point(614, 14)
         Me.capid.Name = "capid"
         Me.capid.Size = New System.Drawing.Size(96, 42)
-        Me.capid.TabIndex = 0
+        Me.capid.TabIndex = 11
         Me.capid.Text = "Capture ID"
         Me.capid.UseVisualStyleBackColor = True
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.BackColor = System.Drawing.SystemColors.Control
+        Me.Label13.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(26, 185)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(144, 25)
+        Me.Label13.TabIndex = 3
+        Me.Label13.Text = "Contact Person"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.SystemColors.Control
         Me.Label7.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(26, 117)
+        Me.Label7.Location = New System.Drawing.Point(26, 103)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(83, 25)
         Me.Label7.TabIndex = 3
         Me.Label7.Text = "Purpose"
         '
+        'contactperson
+        '
+        Me.contactperson.BackColor = System.Drawing.Color.White
+        Me.contactperson.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.contactperson.Location = New System.Drawing.Point(21, 208)
+        Me.contactperson.MaxLength = 35
+        Me.contactperson.Name = "contactperson"
+        Me.contactperson.Size = New System.Drawing.Size(196, 34)
+        Me.contactperson.TabIndex = 10
+        '
         'purp
         '
         Me.purp.BackColor = System.Drawing.Color.White
         Me.purp.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.purp.Location = New System.Drawing.Point(21, 140)
+        Me.purp.Location = New System.Drawing.Point(21, 126)
         Me.purp.MaxLength = 35
         Me.purp.Name = "purp"
         Me.purp.Size = New System.Drawing.Size(196, 34)
@@ -270,7 +295,7 @@ Partial Class AddVisitor
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.SystemColors.Control
         Me.Label11.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(293, 117)
+        Me.Label11.Location = New System.Drawing.Point(293, 103)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(144, 25)
         Me.Label11.TabIndex = 0
@@ -302,7 +327,7 @@ Partial Class AddVisitor
         '
         Me.idsurr.FormattingEnabled = True
         Me.idsurr.Items.AddRange(New Object() {"School ID", "Company ID", "Driver's License", "UMID", "Postal ID"})
-        Me.idsurr.Location = New System.Drawing.Point(290, 142)
+        Me.idsurr.Location = New System.Drawing.Point(290, 131)
         Me.idsurr.Name = "idsurr"
         Me.idsurr.Size = New System.Drawing.Size(214, 29)
         Me.idsurr.TabIndex = 9
@@ -340,8 +365,7 @@ Partial Class AddVisitor
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Image = Global.SecurityBook.My.Resources.Resources._2618259
-        Me.PictureBox1.Location = New System.Drawing.Point(742, 88)
+        Me.PictureBox1.Location = New System.Drawing.Point(772, 88)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(320, 240)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -351,9 +375,8 @@ Partial Class AddVisitor
         'PictureBox2
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox2.Image = Global.SecurityBook.My.Resources.Resources._2618259
-        Me.PictureBox2.InitialImage = Global.SecurityBook.My.Resources.Resources._2618259
-        Me.PictureBox2.Location = New System.Drawing.Point(742, 356)
+        Me.PictureBox2.InitialImage = Nothing
+        Me.PictureBox2.Location = New System.Drawing.Point(772, 356)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(320, 240)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -364,7 +387,7 @@ Partial Class AddVisitor
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(747, 69)
+        Me.Label8.Location = New System.Drawing.Point(777, 65)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(111, 21)
         Me.Label8.TabIndex = 3
@@ -374,7 +397,7 @@ Partial Class AddVisitor
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(746, 337)
+        Me.Label9.Location = New System.Drawing.Point(776, 334)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(62, 21)
         Me.Label9.TabIndex = 4
@@ -382,8 +405,8 @@ Partial Class AddVisitor
         '
         'PictureBox3
         '
-        Me.PictureBox3.InitialImage = Global.SecurityBook.My.Resources.Resources._2618259
-        Me.PictureBox3.Location = New System.Drawing.Point(742, 356)
+        Me.PictureBox3.InitialImage = Nothing
+        Me.PictureBox3.Location = New System.Drawing.Point(772, 356)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(320, 240)
         Me.PictureBox3.TabIndex = 2
@@ -392,11 +415,11 @@ Partial Class AddVisitor
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(842, 599)
+        Me.Label12.Location = New System.Drawing.Point(862, 599)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(220, 13)
+        Me.Label12.Size = New System.Drawing.Size(230, 13)
         Me.Label12.TabIndex = 5
-        Me.Label12.Text = "Click on Image to Toggle Frontside/Backside"
+        Me.Label12.Text = "Click on image toggle between front/back view"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'checkinbtn
@@ -549,4 +572,6 @@ Partial Class AddVisitor
     Friend WithEvents Db1DS As db1DS
     Friend WithEvents BadgesBindingSource As BindingSource
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents Label13 As Label
+    Friend WithEvents contactperson As TextBox
 End Class

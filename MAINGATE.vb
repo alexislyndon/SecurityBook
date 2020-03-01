@@ -37,7 +37,7 @@
         End If
     End Sub
 
-    Private Sub closelbl_Click(sender As Object, e As EventArgs) Handles closelbl.Click
+    Private Sub closelbl_Click(sender As Object, e As EventArgs) Handles closebtn.Click
         Me.Close()
     End Sub
 
@@ -157,7 +157,7 @@
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles closebtn.Click
         Me.Close()
     End Sub
 

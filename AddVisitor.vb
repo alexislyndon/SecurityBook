@@ -6,12 +6,18 @@ Public Class AddVisitor
     Dim uc As Point = New Point()
     Dim x = 62 '62
     'y = 17
+    Public hadcappor As Boolean = False 'had captured a portrait
+    Public hadcapid As Boolean = False 'had captured id 
+    Public hadcapback As Boolean = False 'had captured id 
 
     Private Sub checkinbtn_Click(sender As Object, e As EventArgs) Handles checkinbtn.Click
 
         Dim gtg = True
 
-        For Each ctrls In Me.Controls
+        For Each ctrls In Me.GroupBox1.Controls
+            ctrls.Text = byeSpace(ctrls.Text)
+        Next
+        For Each ctrls In Me.GroupBox2.Controls
             ctrls.Text = byeSpace(ctrls.Text)
         Next
 
@@ -55,7 +61,8 @@ Public Class AddVisitor
 
         If gtg Then
             Try
-                Me.VisitorsTableAdapter.CheckIn(fname.Text, mname.Text, lname.Text, sex.Text, "m", dest.Text, purp.Text, badge.SelectedValue, imgtobyte(PictureBox1.Image, False), imgtobyte(PictureBox2.Image, False), imgtobyte(PictureBox3.Image, False), idsurr.Text, phone.Text, 1, 0)
+                Me.VisitorsTableAdapter.CheckIn(fname.Text, mname.Text, lname.Text, sex.Text, "m", dest.Text, purp.Text, badge.SelectedValue, imgtobyte(PictureBox1.Image, hadcappor), imgtobyte(PictureBox2.Image, hadcapid), imgtobyte(PictureBox3.Image, hadcapback), idsurr.Text, phone.Text, 1, 0)
+                Me.BadgesTableAdapter.TakeBadge(badge.SelectedValue)
                 MsgBox("Successfully Checked in visitor!")
                 ErrorProvider1.Clear()
                 'hadcapid = False
@@ -68,7 +75,9 @@ Public Class AddVisitor
                 'maxid = VisitorsTableAdapter.MaxID() + 1
                 'v_id.Text = maxid
                 refreshAll()
-                Clear(Me)
+                'Clear(Me)
+                Clear(Me.GroupBox1)
+                Clear(Me.GroupBox2)
 
             Catch ex As Exception
                 MsgBox(ex.ToString)
@@ -82,11 +91,11 @@ Public Class AddVisitor
         tem.Y = 17
         'uc.X = -93
         'uc.Y = 17
-        Me.BadgesTableAdapter.AvailableBadges(Me.Db1DS.Badges)
+        Me.BadgesTableAdapter.AvailableBadge(Me.Db1DS.Badges)
     End Sub
 
     Private Sub badge_SelectedIndexChanged(sender As Object, e As EventArgs) Handles badge.GotFocus
-        Me.BadgesTableAdapter.AvailableBadges(Me.Db1DS.Badges)
+        Me.BadgesTableAdapter.AvailableBadge(Me.Db1DS.Badges)
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
@@ -114,5 +123,29 @@ Public Class AddVisitor
 
     Public Sub setuc()
         'uclabel.Location = uc
+    End Sub
+
+    Private Sub captureID_Click(sender As Object, e As EventArgs) Handles capid.Click
+        'take picture of ID
+        PictureBox2.Image = Nothing
+        Dim cid As New captureID(Me)
+        cid.Show()
+    End Sub
+
+    Private Sub portrait_Click(sender As Object, e As EventArgs) Handles capportrait.Click
+        'take picture of person
+        PictureBox1.Image = Nothing
+        Dim cp As New capturePortrait(Me)
+        cp.Show()
+    End Sub
+
+    Public Sub setportraitpic(img As Image)
+        PictureBox1.Image = img
+    End Sub
+    Public Sub setidpic(img As Image)
+        PictureBox2.Image = img
+    End Sub
+    Public Sub setidback(img As Image)
+        PictureBox3.Image = img
     End Sub
 End Class
