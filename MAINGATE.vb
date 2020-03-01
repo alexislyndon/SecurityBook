@@ -114,29 +114,30 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click 'Add Visitors
-        falsifier()
-        AddVisitor1.Visible = True
         tem.Y = Panel1.Location.Y
         Timer2.Start()
+        falsifier()
+        AddVisitor1.Visible = True
+        AddVisitor1.Timer1.Start()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click 'View Visitors
-        falsifier()
-        ViewVisitor1.Visible = True
         tem.Y = Panel1.Location.Y
         Timer3.Start()
+        falsifier()
+        ViewVisitor1.Visible = True
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        falsifier()
         tem.Y = Panel1.Location.Y
         Timer4.Start()
+        falsifier()
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        falsifier()
         tem.Y = Panel1.Location.Y
         Timer5.Start()
+        falsifier()
     End Sub
 
     Private Sub MAINGATE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -173,6 +174,7 @@
 
     Public Sub falsifier()
         AddVisitor1.Visible = False
+        Me.AddVisitor1.setuc()
         ViewVisitor1.Visible = False
     End Sub
 End Class

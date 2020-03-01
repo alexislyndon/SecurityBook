@@ -309,6 +309,7 @@ Partial Class MAINGATE
         Me.AddVisitor1.Name = "AddVisitor1"
         Me.AddVisitor1.Size = New System.Drawing.Size(1116, 768)
         Me.AddVisitor1.TabIndex = 5
+        Me.AddVisitor1.Visible = False
         '
         'ViewVisitor1
         '
@@ -316,6 +317,7 @@ Partial Class MAINGATE
         Me.ViewVisitor1.Name = "ViewVisitor1"
         Me.ViewVisitor1.Size = New System.Drawing.Size(1116, 768)
         Me.ViewVisitor1.TabIndex = 9
+        Me.ViewVisitor1.Visible = False
         '
         'MAINGATE
         '

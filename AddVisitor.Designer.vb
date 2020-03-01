@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class AddVisitor
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,8 +20,10 @@ Partial Class AddVisitor
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddVisitor))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.capportrait = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -43,6 +45,8 @@ Partial Class AddVisitor
         Me.Label6 = New System.Windows.Forms.Label()
         Me.idsurr = New System.Windows.Forms.ComboBox()
         Me.badge = New System.Windows.Forms.ComboBox()
+        Me.BadgesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Db1DS = New SecurityBook.db1DS()
         Me.dest = New System.Windows.Forms.ComboBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -50,16 +54,23 @@ Partial Class AddVisitor
         Me.Label9 = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.checkinbtn = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.Label13 = New System.Windows.Forms.Label()
+        Me.uclabel = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.VisitorsTableAdapter = New SecurityBook.db1DSTableAdapters.VisitorsTableAdapter()
+        Me.BadgesTableAdapter = New SecurityBook.db1DSTableAdapters.BadgesTableAdapter()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.BadgesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -91,7 +102,7 @@ Partial Class AddVisitor
         Me.capportrait.Location = New System.Drawing.Point(614, 190)
         Me.capportrait.Name = "capportrait"
         Me.capportrait.Size = New System.Drawing.Size(96, 42)
-        Me.capportrait.TabIndex = 6
+        Me.capportrait.TabIndex = 0
         Me.capportrait.Text = "Capture Portrait"
         Me.capportrait.UseVisualStyleBackColor = True
         '
@@ -108,9 +119,11 @@ Partial Class AddVisitor
         '
         'sex
         '
+        Me.sex.BackColor = System.Drawing.Color.White
         Me.sex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.sex.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.sex.FormattingEnabled = True
-        Me.sex.Items.AddRange(New Object() {"Male", "Female", "Other/Unspecified"})
+        Me.sex.Items.AddRange(New Object() {"Male", "Female", "Other"})
         Me.sex.Location = New System.Drawing.Point(230, 126)
         Me.sex.Name = "sex"
         Me.sex.Size = New System.Drawing.Size(88, 29)
@@ -214,7 +227,7 @@ Partial Class AddVisitor
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Italic)
         Me.GroupBox2.Location = New System.Drawing.Point(20, 344)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(716, 252)
+        Me.GroupBox2.Size = New System.Drawing.Size(730, 252)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Security Information"
@@ -227,7 +240,7 @@ Partial Class AddVisitor
         Me.capid.Location = New System.Drawing.Point(614, 14)
         Me.capid.Name = "capid"
         Me.capid.Size = New System.Drawing.Size(96, 42)
-        Me.capid.TabIndex = 6
+        Me.capid.TabIndex = 0
         Me.capid.Text = "Capture ID"
         Me.capid.UseVisualStyleBackColor = True
         '
@@ -292,15 +305,28 @@ Partial Class AddVisitor
         Me.idsurr.Location = New System.Drawing.Point(290, 142)
         Me.idsurr.Name = "idsurr"
         Me.idsurr.Size = New System.Drawing.Size(214, 29)
-        Me.idsurr.TabIndex = 6
+        Me.idsurr.TabIndex = 9
         '
         'badge
         '
+        Me.badge.DataSource = Me.BadgesBindingSource
+        Me.badge.DisplayMember = "badge"
         Me.badge.FormattingEnabled = True
         Me.badge.Location = New System.Drawing.Point(290, 56)
         Me.badge.Name = "badge"
         Me.badge.Size = New System.Drawing.Size(214, 29)
-        Me.badge.TabIndex = 6
+        Me.badge.TabIndex = 8
+        Me.badge.ValueMember = "badge"
+        '
+        'BadgesBindingSource
+        '
+        Me.BadgesBindingSource.DataMember = "Badges"
+        Me.BadgesBindingSource.DataSource = Me.Db1DS
+        '
+        'Db1DS
+        '
+        Me.Db1DS.DataSetName = "db1DS"
+        Me.Db1DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'dest
         '
@@ -369,22 +395,22 @@ Partial Class AddVisitor
         Me.Label12.Text = "Click on Image to Toggle Frontside/Backside"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'Button3
+        'checkinbtn
         '
-        Me.Button3.BackColor = System.Drawing.Color.GreenYellow
-        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Microsoft JhengHei", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.Black
-        Me.Button3.Location = New System.Drawing.Point(905, 683)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(158, 58)
-        Me.Button3.TabIndex = 6
-        Me.Button3.Text = "Check In"
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.checkinbtn.BackColor = System.Drawing.Color.GreenYellow
+        Me.checkinbtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.checkinbtn.FlatAppearance.BorderSize = 0
+        Me.checkinbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.checkinbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.checkinbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.checkinbtn.Font = New System.Drawing.Font("Microsoft JhengHei", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.checkinbtn.ForeColor = System.Drawing.Color.Black
+        Me.checkinbtn.Location = New System.Drawing.Point(905, 683)
+        Me.checkinbtn.Name = "checkinbtn"
+        Me.checkinbtn.Size = New System.Drawing.Size(158, 58)
+        Me.checkinbtn.TabIndex = 6
+        Me.checkinbtn.Text = "Check In"
+        Me.checkinbtn.UseVisualStyleBackColor = False
         '
         'Button4
         '
@@ -403,15 +429,15 @@ Partial Class AddVisitor
         Me.Button4.Text = "Clear"
         Me.Button4.UseVisualStyleBackColor = False
         '
-        'Label13
+        'uclabel
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft JhengHei", 18.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(62, 17)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(138, 30)
-        Me.Label13.TabIndex = 7
-        Me.Label13.Text = "Add Visitor"
+        Me.uclabel.AutoSize = True
+        Me.uclabel.Font = New System.Drawing.Font("Microsoft JhengHei", 18.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.uclabel.Location = New System.Drawing.Point(-88, 17)
+        Me.uclabel.Name = "uclabel"
+        Me.uclabel.Size = New System.Drawing.Size(138, 30)
+        Me.uclabel.TabIndex = 7
+        Me.uclabel.Text = "Add Visitor"
         '
         'Panel1
         '
@@ -428,15 +454,33 @@ Partial Class AddVisitor
         Me.Panel2.Size = New System.Drawing.Size(200, 5)
         Me.Panel2.TabIndex = 9
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.BlinkRate = 50
+        Me.ErrorProvider1.ContainerControl = Me
+        Me.ErrorProvider1.Icon = CType(resources.GetObject("ErrorProvider1.Icon"), System.Drawing.Icon)
+        '
+        'VisitorsTableAdapter
+        '
+        Me.VisitorsTableAdapter.ClearBeforeFill = True
+        '
+        'BadgesTableAdapter
+        '
+        Me.BadgesTableAdapter.ClearBeforeFill = True
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 15
+        '
         'AddVisitor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.uclabel)
         Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.checkinbtn)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
@@ -451,9 +495,12 @@ Partial Class AddVisitor
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.BadgesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -487,9 +534,15 @@ Partial Class AddVisitor
     Friend WithEvents Label12 As Label
     Friend WithEvents capportrait As Button
     Friend WithEvents capid As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents checkinbtn As Button
     Friend WithEvents Button4 As Button
-    Friend WithEvents Label13 As Label
+    Friend WithEvents uclabel As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents VisitorsTableAdapter As db1DSTableAdapters.VisitorsTableAdapter
+    Friend WithEvents BadgesTableAdapter As db1DSTableAdapters.BadgesTableAdapter
+    Friend WithEvents Db1DS As db1DS
+    Friend WithEvents BadgesBindingSource As BindingSource
+    Friend WithEvents Timer1 As Timer
 End Class

@@ -1466,7 +1466,7 @@ Partial Public Class db1DS
         
         Private columnmname As Global.System.Data.DataColumn
         
-        Private columnsname As Global.System.Data.DataColumn
+        Private columnlname As Global.System.Data.DataColumn
         
         Private columnsex As Global.System.Data.DataColumn
         
@@ -1547,9 +1547,9 @@ Partial Public Class db1DS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property snameColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property lnameColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnsname
+                Return Me.columnlname
             End Get
         End Property
         
@@ -1662,9 +1662,9 @@ Partial Public Class db1DS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddVIPRow(ByVal fname As String, ByVal mname As String, ByVal sname As String, ByVal sex As String, ByVal destination As String, ByVal purpose As String, ByVal pic() As Byte, ByVal phone As String, ByVal FullName As String, ByVal contactperson As String, ByVal contactperson_phone As String, ByVal remarks As String) As VIPRow
+        Public Overloads Function AddVIPRow(ByVal fname As String, ByVal mname As String, ByVal lname As String, ByVal sex As String, ByVal destination As String, ByVal purpose As String, ByVal pic() As Byte, ByVal phone As String, ByVal FullName As String, ByVal contactperson As String, ByVal contactperson_phone As String, ByVal remarks As String) As VIPRow
             Dim rowVIPRow As VIPRow = CType(Me.NewRow,VIPRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, fname, mname, sname, sex, destination, purpose, pic, phone, FullName, contactperson, contactperson_phone, remarks}
+            Dim columnValuesArray() As Object = New Object() {Nothing, fname, mname, lname, sex, destination, purpose, pic, phone, FullName, contactperson, contactperson_phone, remarks}
             rowVIPRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowVIPRow)
             Return rowVIPRow
@@ -1696,7 +1696,7 @@ Partial Public Class db1DS
             Me.columnvip_ID = MyBase.Columns("vip_ID")
             Me.columnfname = MyBase.Columns("fname")
             Me.columnmname = MyBase.Columns("mname")
-            Me.columnsname = MyBase.Columns("sname")
+            Me.columnlname = MyBase.Columns("lname")
             Me.columnsex = MyBase.Columns("sex")
             Me.columndestination = MyBase.Columns("destination")
             Me.columnpurpose = MyBase.Columns("purpose")
@@ -1717,8 +1717,8 @@ Partial Public Class db1DS
             MyBase.Columns.Add(Me.columnfname)
             Me.columnmname = New Global.System.Data.DataColumn("mname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmname)
-            Me.columnsname = New Global.System.Data.DataColumn("sname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnsname)
+            Me.columnlname = New Global.System.Data.DataColumn("lname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnlname)
             Me.columnsex = New Global.System.Data.DataColumn("sex", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnsex)
             Me.columndestination = New Global.System.Data.DataColumn("destination", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -1746,7 +1746,7 @@ Partial Public Class db1DS
             Me.columnvip_ID.Unique = true
             Me.columnfname.MaxLength = 30
             Me.columnmname.MaxLength = 30
-            Me.columnsname.MaxLength = 30
+            Me.columnlname.MaxLength = 30
             Me.columnsex.MaxLength = 1
             Me.columndestination.MaxLength = 35
             Me.columnpurpose.MaxLength = 30
@@ -1899,13 +1899,7 @@ Partial Public Class db1DS
         
         Private columnmname As Global.System.Data.DataColumn
         
-        Private columnsname As Global.System.Data.DataColumn
-        
-        Private columnsex As Global.System.Data.DataColumn
-        
-        Private columnentry As Global.System.Data.DataColumn
-        
-        Private columnexited As Global.System.Data.DataColumn
+        Private columnlname As Global.System.Data.DataColumn
         
         Private columndestination As Global.System.Data.DataColumn
         
@@ -1932,6 +1926,12 @@ Partial Public Class db1DS
         Private columnFullName As Global.System.Data.DataColumn
         
         Private columnalert As Global.System.Data.DataColumn
+        
+        Private columnSex As Global.System.Data.DataColumn
+        
+        Private columnEntry As Global.System.Data.DataColumn
+        
+        Private columnExited As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -1994,33 +1994,9 @@ Partial Public Class db1DS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property snameColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property lnameColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnsname
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property sexColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnsex
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property entryColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnentry
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property exitedColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnexited
+                Return Me.columnlname
             End Get
         End Property
         
@@ -2129,6 +2105,30 @@ Partial Public Class db1DS
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property SexColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSex
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property EntryColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnEntry
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property ExitedColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnExited
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -2168,10 +2168,7 @@ Partial Public Class db1DS
         Public Overloads Function AddVisitorsRow( _
                     ByVal fname As String,  _
                     ByVal mname As String,  _
-                    ByVal sname As String,  _
-                    ByVal sex As String,  _
-                    ByVal entry As String,  _
-                    ByVal exited As String,  _
+                    ByVal lname As String,  _
                     ByVal destination As String,  _
                     ByVal purpose As String,  _
                     ByVal time_in As Date,  _
@@ -2184,14 +2181,17 @@ Partial Public Class db1DS
                     ByVal phone As String,  _
                     ByVal parentusersRowByFK_Visitors_users As usersRow,  _
                     ByVal FullName As String,  _
-                    ByVal alert As Byte) As VisitorsRow
+                    ByVal alert As Byte,  _
+                    ByVal Sex As String,  _
+                    ByVal Entry As String,  _
+                    ByVal Exited As String) As VisitorsRow
             Dim rowVisitorsRow As VisitorsRow = CType(Me.NewRow,VisitorsRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, fname, mname, sname, sex, entry, exited, destination, purpose, time_in, time_out, Nothing, portrait, id_pic, id_back, ID_surrendered, phone, Nothing, FullName, alert}
+            Dim columnValuesArray() As Object = New Object() {Nothing, fname, mname, lname, destination, purpose, time_in, time_out, Nothing, portrait, id_pic, id_back, ID_surrendered, phone, Nothing, FullName, alert, Sex, Entry, Exited}
             If (Not (parentBadgesRowByFK_Vehicles_Badges) Is Nothing) Then
-                columnValuesArray(11) = parentBadgesRowByFK_Vehicles_Badges(0)
+                columnValuesArray(8) = parentBadgesRowByFK_Vehicles_Badges(0)
             End If
             If (Not (parentusersRowByFK_Visitors_users) Is Nothing) Then
-                columnValuesArray(17) = parentusersRowByFK_Visitors_users(0)
+                columnValuesArray(14) = parentusersRowByFK_Visitors_users(0)
             End If
             rowVisitorsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowVisitorsRow)
@@ -2224,10 +2224,7 @@ Partial Public Class db1DS
             Me.columnvisit_ID = MyBase.Columns("visit_ID")
             Me.columnfname = MyBase.Columns("fname")
             Me.columnmname = MyBase.Columns("mname")
-            Me.columnsname = MyBase.Columns("sname")
-            Me.columnsex = MyBase.Columns("sex")
-            Me.columnentry = MyBase.Columns("entry")
-            Me.columnexited = MyBase.Columns("exited")
+            Me.columnlname = MyBase.Columns("lname")
             Me.columndestination = MyBase.Columns("destination")
             Me.columnpurpose = MyBase.Columns("purpose")
             Me.columntime_in = MyBase.Columns("time_in")
@@ -2241,6 +2238,9 @@ Partial Public Class db1DS
             Me.columnuserid = MyBase.Columns("userid")
             Me.columnFullName = MyBase.Columns("FullName")
             Me.columnalert = MyBase.Columns("alert")
+            Me.columnSex = MyBase.Columns("Sex")
+            Me.columnEntry = MyBase.Columns("Entry")
+            Me.columnExited = MyBase.Columns("Exited")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2252,14 +2252,8 @@ Partial Public Class db1DS
             MyBase.Columns.Add(Me.columnfname)
             Me.columnmname = New Global.System.Data.DataColumn("mname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmname)
-            Me.columnsname = New Global.System.Data.DataColumn("sname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnsname)
-            Me.columnsex = New Global.System.Data.DataColumn("sex", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnsex)
-            Me.columnentry = New Global.System.Data.DataColumn("entry", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnentry)
-            Me.columnexited = New Global.System.Data.DataColumn("exited", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnexited)
+            Me.columnlname = New Global.System.Data.DataColumn("lname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnlname)
             Me.columndestination = New Global.System.Data.DataColumn("destination", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columndestination)
             Me.columnpurpose = New Global.System.Data.DataColumn("purpose", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -2286,6 +2280,12 @@ Partial Public Class db1DS
             MyBase.Columns.Add(Me.columnFullName)
             Me.columnalert = New Global.System.Data.DataColumn("alert", GetType(Byte), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnalert)
+            Me.columnSex = New Global.System.Data.DataColumn("Sex", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSex)
+            Me.columnEntry = New Global.System.Data.DataColumn("Entry", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEntry)
+            Me.columnExited = New Global.System.Data.DataColumn("Exited", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnExited)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnvisit_ID}, true))
             Me.columnvisit_ID.AutoIncrement = true
             Me.columnvisit_ID.AutoIncrementSeed = -1
@@ -2295,10 +2295,7 @@ Partial Public Class db1DS
             Me.columnvisit_ID.Unique = true
             Me.columnfname.MaxLength = 35
             Me.columnmname.MaxLength = 30
-            Me.columnsname.MaxLength = 30
-            Me.columnsex.MaxLength = 1
-            Me.columnentry.MaxLength = 1
-            Me.columnexited.MaxLength = 1
+            Me.columnlname.MaxLength = 30
             Me.columndestination.MaxLength = 35
             Me.columnpurpose.MaxLength = 30
             Me.columnbadge_number.MaxLength = 4
@@ -2306,6 +2303,12 @@ Partial Public Class db1DS
             Me.columnphone.MaxLength = 25
             Me.columnFullName.ReadOnly = true
             Me.columnFullName.MaxLength = 97
+            Me.columnSex.ReadOnly = true
+            Me.columnSex.MaxLength = 6
+            Me.columnEntry.ReadOnly = true
+            Me.columnEntry.MaxLength = 9
+            Me.columnExited.ReadOnly = true
+            Me.columnExited.MaxLength = 9
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2887,16 +2890,16 @@ Partial Public Class db1DS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property sname() As String
+        Public Property lname() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableVIP.snameColumn),String)
+                    Return CType(Me(Me.tableVIP.lnameColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'sname' in table 'VIP' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'lname' in table 'VIP' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableVIP.snameColumn) = value
+                Me(Me.tableVIP.lnameColumn) = value
             End Set
         End Property
         
@@ -3061,14 +3064,14 @@ Partial Public Class db1DS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IssnameNull() As Boolean
-            Return Me.IsNull(Me.tableVIP.snameColumn)
+        Public Function IslnameNull() As Boolean
+            Return Me.IsNull(Me.tableVIP.lnameColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetsnameNull()
-            Me(Me.tableVIP.snameColumn) = Global.System.Convert.DBNull
+        Public Sub SetlnameNull()
+            Me(Me.tableVIP.lnameColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3238,61 +3241,16 @@ Partial Public Class db1DS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property sname() As String
+        Public Property lname() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableVisitors.snameColumn),String)
+                    Return CType(Me(Me.tableVisitors.lnameColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'sname' in table 'Visitors' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'lname' in table 'Visitors' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableVisitors.snameColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property sex() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableVisitors.sexColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'sex' in table 'Visitors' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableVisitors.sexColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property entry() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableVisitors.entryColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'entry' in table 'Visitors' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableVisitors.entryColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property exited() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableVisitors.exitedColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'exited' in table 'Visitors' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableVisitors.exitedColumn) = value
+                Me(Me.tableVisitors.lnameColumn) = value
             End Set
         End Property
         
@@ -3493,6 +3451,51 @@ Partial Public Class db1DS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property Sex() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableVisitors.SexColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Sex' in table 'Visitors' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableVisitors.SexColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property Entry() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableVisitors.EntryColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Entry' in table 'Visitors' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableVisitors.EntryColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property Exited() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableVisitors.ExitedColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Exited' in table 'Visitors' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableVisitors.ExitedColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property BadgesRow() As BadgesRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_Vehicles_Badges")),BadgesRow)
@@ -3539,50 +3542,14 @@ Partial Public Class db1DS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IssnameNull() As Boolean
-            Return Me.IsNull(Me.tableVisitors.snameColumn)
+        Public Function IslnameNull() As Boolean
+            Return Me.IsNull(Me.tableVisitors.lnameColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetsnameNull()
-            Me(Me.tableVisitors.snameColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IssexNull() As Boolean
-            Return Me.IsNull(Me.tableVisitors.sexColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetsexNull()
-            Me(Me.tableVisitors.sexColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsentryNull() As Boolean
-            Return Me.IsNull(Me.tableVisitors.entryColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetentryNull()
-            Me(Me.tableVisitors.entryColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsexitedNull() As Boolean
-            Return Me.IsNull(Me.tableVisitors.exitedColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetexitedNull()
-            Me(Me.tableVisitors.exitedColumn) = Global.System.Convert.DBNull
+        Public Sub SetlnameNull()
+            Me(Me.tableVisitors.lnameColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3739,6 +3706,42 @@ Partial Public Class db1DS
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetalertNull()
             Me(Me.tableVisitors.alertColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsSexNull() As Boolean
+            Return Me.IsNull(Me.tableVisitors.SexColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetSexNull()
+            Me(Me.tableVisitors.SexColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsEntryNull() As Boolean
+            Return Me.IsNull(Me.tableVisitors.EntryColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetEntryNull()
+            Me(Me.tableVisitors.EntryColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsExitedNull() As Boolean
+            Return Me.IsNull(Me.tableVisitors.ExitedColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetExitedNull()
+            Me(Me.tableVisitors.ExitedColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -4057,23 +4060,23 @@ Namespace db1DSTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Badges] WHERE (([badge] = @Original_badge) AND ([available] = "& _ 
-                "@Original_available))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Badges] WHERE (([badge] = @Original_badge) AND ([available] = @Origi"& _ 
+                "nal_available))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_badge", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "badge", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_available", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "available", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Badges] ([badge], [available]) VALUES (@badge, @available);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"S"& _ 
-                "ELECT badge, available FROM Badges WHERE (badge = @badge)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Badges] ([badge], [available]) VALUES (@badge, @available);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT "& _ 
+                "badge, available FROM Badges WHERE (badge = @badge)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@badge", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "badge", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@available", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "available", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Badges] SET [badge] = @badge, [available] = @available WHERE (([bad"& _ 
-                "ge] = @Original_badge) AND ([available] = @Original_available));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT badge, "& _ 
-                "available FROM Badges WHERE (badge = @badge)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [Badges] SET [badge] = @badge, [available] = @available WHERE (([badge] = "& _ 
+                "@Original_badge) AND ([available] = @Original_available));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT badge, availa"& _ 
+                "ble FROM Badges WHERE (badge = @badge)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@badge", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "badge", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@available", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "available", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -4091,11 +4094,15 @@ Namespace db1DSTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT badge, available FROM dbo.Badges"
+            Me._commandCollection(0).CommandText = "SELECT badge, available FROM Badges"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT badge, available FROM Badges WHERE (available = 1)"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4120,6 +4127,19 @@ Namespace db1DSTableAdapters
             Dim dataTable As db1DS.BadgesDataTable = New db1DS.BadgesDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function AvailableBadges(ByVal dataTable As db1DS.BadgesDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4380,12 +4400,12 @@ Namespace db1DSTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[users] WHERE (([id] = @Original_id) AND ((@IsNull_username = 1"& _ 
-                " AND [username] IS NULL) OR ([username] = @Original_username)) AND ((@IsNull_pas"& _ 
-                "sword = 1 AND [password] IS NULL) OR ([password] = @Original_password)) AND ((@I"& _ 
-                "sNull_designation = 1 AND [designation] IS NULL) OR ([designation] = @Original_d"& _ 
-                "esignation)) AND ([created] = @Original_created) AND ((@IsNull_name = 1 AND [nam"& _ 
-                "e] IS NULL) OR ([name] = @Original_name)) AND ([active] = @Original_active))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [users] WHERE (([id] = @Original_id) AND ((@IsNull_username = 1 AND ["& _ 
+                "username] IS NULL) OR ([username] = @Original_username)) AND ((@IsNull_password "& _ 
+                "= 1 AND [password] IS NULL) OR ([password] = @Original_password)) AND ((@IsNull_"& _ 
+                "designation = 1 AND [designation] IS NULL) OR ([designation] = @Original_designa"& _ 
+                "tion)) AND ([created] = @Original_created) AND ((@IsNull_name = 1 AND [name] IS "& _ 
+                "NULL) OR ([name] = @Original_name)) AND ([active] = @Original_active))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_username", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "username", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -4400,10 +4420,10 @@ Namespace db1DSTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_active", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "active", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[users] ([username], [password], [designation], [created], [nam"& _ 
-                "e], [active]) VALUES (@username, @password, @designation, @created, @name, @acti"& _ 
-                "ve);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, username, password, designation, created, name, active FROM use"& _ 
-                "rs WHERE (id = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [users] ([username], [password], [designation], [created], [name], [a"& _ 
+                "ctive]) VALUES (@username, @password, @designation, @created, @name, @active);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                "SELECT id, username, password, designation, created, name, active FROM users WHE"& _ 
+                "RE (id = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@username", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "username", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -4413,15 +4433,15 @@ Namespace db1DSTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@active", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "active", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[users] SET [username] = @username, [password] = @password, [designa"& _ 
-                "tion] = @designation, [created] = @created, [name] = @name, [active] = @active W"& _ 
-                "HERE (([id] = @Original_id) AND ((@IsNull_username = 1 AND [username] IS NULL) O"& _ 
-                "R ([username] = @Original_username)) AND ((@IsNull_password = 1 AND [password] I"& _ 
-                "S NULL) OR ([password] = @Original_password)) AND ((@IsNull_designation = 1 AND "& _ 
-                "[designation] IS NULL) OR ([designation] = @Original_designation)) AND ([created"& _ 
-                "] = @Original_created) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @"& _ 
-                "Original_name)) AND ([active] = @Original_active));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, username, passwo"& _ 
-                "rd, designation, created, name, active FROM users WHERE (id = @id)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [users] SET [username] = @username, [password] = @password, [designation] "& _ 
+                "= @designation, [created] = @created, [name] = @name, [active] = @active WHERE ("& _ 
+                "([id] = @Original_id) AND ((@IsNull_username = 1 AND [username] IS NULL) OR ([us"& _ 
+                "ername] = @Original_username)) AND ((@IsNull_password = 1 AND [password] IS NULL"& _ 
+                ") OR ([password] = @Original_password)) AND ((@IsNull_designation = 1 AND [desig"& _ 
+                "nation] IS NULL) OR ([designation] = @Original_designation)) AND ([created] = @O"& _ 
+                "riginal_created) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @Origin"& _ 
+                "al_name)) AND ([active] = @Original_active));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, username, password, de"& _ 
+                "signation, created, name, active FROM users WHERE (id = @id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@username", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "username", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@password", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -4456,7 +4476,7 @@ Namespace db1DSTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT id, username, password, designation, created, name, active FROM dbo.users"
+            Me._commandCollection(0).CommandText = "SELECT id, username, password, designation, created, name, active FROM users"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -4828,12 +4848,12 @@ Namespace db1DSTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Vehicles] WHERE (([Id] = @Original_Id) AND ([make] = @Original"& _ 
-                "_make) AND ([model] = @Original_model) AND ([color] = @Original_color) AND ([typ"& _ 
-                "e] = @Original_type) AND ([plate] = @Original_plate) AND ((@IsNull_driver = 1 AN"& _ 
-                "D [driver] IS NULL) OR ([driver] = @Original_driver)) AND ([time_in] = @Original"& _ 
-                "_time_in) AND ((@IsNull_time_out = 1 AND [time_out] IS NULL) OR ([time_out] = @O"& _ 
-                "riginal_time_out)) AND ([userid] = @Original_userid))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Vehicles] WHERE (([Id] = @Original_Id) AND ([make] = @Original_make)"& _ 
+                " AND ([model] = @Original_model) AND ([color] = @Original_color) AND ([type] = @"& _ 
+                "Original_type) AND ([plate] = @Original_plate) AND ((@IsNull_driver = 1 AND [dri"& _ 
+                "ver] IS NULL) OR ([driver] = @Original_driver)) AND ([time_in] = @Original_time_"& _ 
+                "in) AND ((@IsNull_time_out = 1 AND [time_out] IS NULL) OR ([time_out] = @Origina"& _ 
+                "l_time_out)) AND ([userid] = @Original_userid))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_make", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "make", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -4849,11 +4869,10 @@ Namespace db1DSTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_userid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "userid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Vehicles] ([make], [model], [color], [type], [plate], [driver]"& _ 
-                ", [time_in], [time_out], [userid]) VALUES (@make, @model, @color, @type, @plate,"& _ 
-                " @driver, @time_in, @time_out, @userid);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, make, model, color, type, p"& _ 
-                "late, driver, time_in, time_out, userid FROM Vehicles WHERE (Id = SCOPE_IDENTITY"& _ 
-                "())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Vehicles] ([make], [model], [color], [type], [plate], [driver], [tim"& _ 
+                "e_in], [time_out], [userid]) VALUES (@make, @model, @color, @type, @plate, @driv"& _ 
+                "er, @time_in, @time_out, @userid);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, make, model, color, type, plate, "& _ 
+                "driver, time_in, time_out, userid FROM Vehicles WHERE (Id = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@make", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "make", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@model", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "model", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -4866,16 +4885,16 @@ Namespace db1DSTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@userid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "userid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Vehicles] SET [make] = @make, [model] = @model, [color] = @color, ["& _ 
-                "type] = @type, [plate] = @plate, [driver] = @driver, [time_in] = @time_in, [time"& _ 
-                "_out] = @time_out, [userid] = @userid WHERE (([Id] = @Original_Id) AND ([make] ="& _ 
-                " @Original_make) AND ([model] = @Original_model) AND ([color] = @Original_color)"& _ 
-                " AND ([type] = @Original_type) AND ([plate] = @Original_plate) AND ((@IsNull_dri"& _ 
-                "ver = 1 AND [driver] IS NULL) OR ([driver] = @Original_driver)) AND ([time_in] ="& _ 
-                " @Original_time_in) AND ((@IsNull_time_out = 1 AND [time_out] IS NULL) OR ([time"& _ 
-                "_out] = @Original_time_out)) AND ([userid] = @Original_userid));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, mak"& _ 
-                "e, model, color, type, plate, driver, time_in, time_out, userid FROM Vehicles WH"& _ 
-                "ERE (Id = @Id)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [Vehicles] SET [make] = @make, [model] = @model, [color] = @color, [type] "& _ 
+                "= @type, [plate] = @plate, [driver] = @driver, [time_in] = @time_in, [time_out] "& _ 
+                "= @time_out, [userid] = @userid WHERE (([Id] = @Original_Id) AND ([make] = @Orig"& _ 
+                "inal_make) AND ([model] = @Original_model) AND ([color] = @Original_color) AND ("& _ 
+                "[type] = @Original_type) AND ([plate] = @Original_plate) AND ((@IsNull_driver = "& _ 
+                "1 AND [driver] IS NULL) OR ([driver] = @Original_driver)) AND ([time_in] = @Orig"& _ 
+                "inal_time_in) AND ((@IsNull_time_out = 1 AND [time_out] IS NULL) OR ([time_out] "& _ 
+                "= @Original_time_out)) AND ([userid] = @Original_userid));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, make, mod"& _ 
+                "el, color, type, plate, driver, time_in, time_out, userid FROM Vehicles WHERE (I"& _ 
+                "d = @Id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@make", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "make", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@model", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "model", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -4915,7 +4934,7 @@ Namespace db1DSTableAdapters
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT Id, make, model, color, type, plate, driver, time_in, time_out, userid FRO"& _ 
-                "M dbo.Vehicles"
+                "M Vehicles"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -5368,7 +5387,7 @@ Namespace db1DSTableAdapters
             tableMapping.ColumnMappings.Add("vip_ID", "vip_ID")
             tableMapping.ColumnMappings.Add("fname", "fname")
             tableMapping.ColumnMappings.Add("mname", "mname")
-            tableMapping.ColumnMappings.Add("sname", "sname")
+            tableMapping.ColumnMappings.Add("lname", "lname")
             tableMapping.ColumnMappings.Add("sex", "sex")
             tableMapping.ColumnMappings.Add("destination", "destination")
             tableMapping.ColumnMappings.Add("purpose", "purpose")
@@ -5381,27 +5400,27 @@ Namespace db1DSTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[VIP] WHERE (([vip_ID] = @Original_vip_ID) AND ((@IsNull_fname "& _ 
-                "= 1 AND [fname] IS NULL) OR ([fname] = @Original_fname)) AND ((@IsNull_mname = 1"& _ 
-                " AND [mname] IS NULL) OR ([mname] = @Original_mname)) AND ((@IsNull_sname = 1 AN"& _ 
-                "D [sname] IS NULL) OR ([sname] = @Original_sname)) AND ((@IsNull_sex = 1 AND [se"& _ 
-                "x] IS NULL) OR ([sex] = @Original_sex)) AND ((@IsNull_destination = 1 AND [desti"& _ 
-                "nation] IS NULL) OR ([destination] = @Original_destination)) AND ((@IsNull_purpo"& _ 
-                "se = 1 AND [purpose] IS NULL) OR ([purpose] = @Original_purpose)) AND ((@IsNull_"& _ 
-                "phone = 1 AND [phone] IS NULL) OR ([phone] = @Original_phone)) AND ([FullName] ="& _ 
-                " @Original_FullName) AND ((@IsNull_contactperson = 1 AND [contactperson] IS NULL"& _ 
-                ") OR ([contactperson] = @Original_contactperson)) AND ((@IsNull_contactperson_ph"& _ 
-                "one = 1 AND [contactperson_phone] IS NULL) OR ([contactperson_phone] = @Original"& _ 
-                "_contactperson_phone)) AND ((@IsNull_remarks = 1 AND [remarks] IS NULL) OR ([rem"& _ 
-                "arks] = @Original_remarks)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [VIP] WHERE (([vip_ID] = @Original_vip_ID) AND ((@IsNull_fname = 1 AN"& _ 
+                "D [fname] IS NULL) OR ([fname] = @Original_fname)) AND ((@IsNull_mname = 1 AND ["& _ 
+                "mname] IS NULL) OR ([mname] = @Original_mname)) AND ((@IsNull_lname = 1 AND [lna"& _ 
+                "me] IS NULL) OR ([lname] = @Original_lname)) AND ((@IsNull_sex = 1 AND [sex] IS "& _ 
+                "NULL) OR ([sex] = @Original_sex)) AND ((@IsNull_destination = 1 AND [destination"& _ 
+                "] IS NULL) OR ([destination] = @Original_destination)) AND ((@IsNull_purpose = 1"& _ 
+                " AND [purpose] IS NULL) OR ([purpose] = @Original_purpose)) AND ((@IsNull_phone "& _ 
+                "= 1 AND [phone] IS NULL) OR ([phone] = @Original_phone)) AND ([FullName] = @Orig"& _ 
+                "inal_FullName) AND ((@IsNull_contactperson = 1 AND [contactperson] IS NULL) OR ("& _ 
+                "[contactperson] = @Original_contactperson)) AND ((@IsNull_contactperson_phone = "& _ 
+                "1 AND [contactperson_phone] IS NULL) OR ([contactperson_phone] = @Original_conta"& _ 
+                "ctperson_phone)) AND ((@IsNull_remarks = 1 AND [remarks] IS NULL) OR ([remarks] "& _ 
+                "= @Original_remarks)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_vip_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "vip_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_fname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_fname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_mname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_mname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mname", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_sname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_sname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sname", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_lname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_lname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_sex", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sex", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_sex", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sex", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_destination", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "destination", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -5419,16 +5438,16 @@ Namespace db1DSTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_remarks", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "remarks", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[VIP] ([fname], [mname], [sname], [sex], [destination], [purpos"& _ 
-                "e], [pic], [phone], [contactperson], [contactperson_phone], [remarks]) VALUES (@"& _ 
-                "fname, @mname, @sname, @sex, @destination, @purpose, @pic, @phone, @contactperso"& _ 
-                "n, @contactperson_phone, @remarks);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT vip_ID, fname, mname, sname, sex, de"& _ 
-                "stination, purpose, pic, phone, FullName, contactperson, contactperson_phone, re"& _ 
-                "marks FROM VIP WHERE (vip_ID = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [VIP] ([fname], [mname], [lname], [sex], [destination], [purpose], [p"& _ 
+                "ic], [phone], [contactperson], [contactperson_phone], [remarks]) VALUES (@fname,"& _ 
+                " @mname, @lname, @sex, @destination, @purpose, @pic, @phone, @contactperson, @co"& _ 
+                "ntactperson_phone, @remarks);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT vip_ID, fname, mname, lname, sex, destinat"& _ 
+                "ion, purpose, pic, phone, FullName, contactperson, contactperson_phone, remarks "& _ 
+                "FROM VIP WHERE (vip_ID = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@sname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@sex", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sex", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@destination", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "destination", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@purpose", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "purpose", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -5439,28 +5458,28 @@ Namespace db1DSTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@remarks", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "remarks", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[VIP] SET [fname] = @fname, [mname] = @mname, [sname] = @sname, [sex"& _ 
-                "] = @sex, [destination] = @destination, [purpose] = @purpose, [pic] = @pic, [pho"& _ 
-                "ne] = @phone, [contactperson] = @contactperson, [contactperson_phone] = @contact"& _ 
-                "person_phone, [remarks] = @remarks WHERE (([vip_ID] = @Original_vip_ID) AND ((@I"& _ 
-                "sNull_fname = 1 AND [fname] IS NULL) OR ([fname] = @Original_fname)) AND ((@IsNu"& _ 
-                "ll_mname = 1 AND [mname] IS NULL) OR ([mname] = @Original_mname)) AND ((@IsNull_"& _ 
-                "sname = 1 AND [sname] IS NULL) OR ([sname] = @Original_sname)) AND ((@IsNull_sex"& _ 
-                " = 1 AND [sex] IS NULL) OR ([sex] = @Original_sex)) AND ((@IsNull_destination = "& _ 
-                "1 AND [destination] IS NULL) OR ([destination] = @Original_destination)) AND ((@"& _ 
-                "IsNull_purpose = 1 AND [purpose] IS NULL) OR ([purpose] = @Original_purpose)) AN"& _ 
-                "D ((@IsNull_phone = 1 AND [phone] IS NULL) OR ([phone] = @Original_phone)) AND ("& _ 
-                "[FullName] = @Original_FullName) AND ((@IsNull_contactperson = 1 AND [contactper"& _ 
-                "son] IS NULL) OR ([contactperson] = @Original_contactperson)) AND ((@IsNull_cont"& _ 
-                "actperson_phone = 1 AND [contactperson_phone] IS NULL) OR ([contactperson_phone]"& _ 
-                " = @Original_contactperson_phone)) AND ((@IsNull_remarks = 1 AND [remarks] IS NU"& _ 
-                "LL) OR ([remarks] = @Original_remarks)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT vip_ID, fname, mname, sname, s"& _ 
-                "ex, destination, purpose, pic, phone, FullName, contactperson, contactperson_pho"& _ 
-                "ne, remarks FROM VIP WHERE (vip_ID = @vip_ID)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [VIP] SET [fname] = @fname, [mname] = @mname, [lname] = @lname, [sex] = @s"& _ 
+                "ex, [destination] = @destination, [purpose] = @purpose, [pic] = @pic, [phone] = "& _ 
+                "@phone, [contactperson] = @contactperson, [contactperson_phone] = @contactperson"& _ 
+                "_phone, [remarks] = @remarks WHERE (([vip_ID] = @Original_vip_ID) AND ((@IsNull_"& _ 
+                "fname = 1 AND [fname] IS NULL) OR ([fname] = @Original_fname)) AND ((@IsNull_mna"& _ 
+                "me = 1 AND [mname] IS NULL) OR ([mname] = @Original_mname)) AND ((@IsNull_lname "& _ 
+                "= 1 AND [lname] IS NULL) OR ([lname] = @Original_lname)) AND ((@IsNull_sex = 1 A"& _ 
+                "ND [sex] IS NULL) OR ([sex] = @Original_sex)) AND ((@IsNull_destination = 1 AND "& _ 
+                "[destination] IS NULL) OR ([destination] = @Original_destination)) AND ((@IsNull"& _ 
+                "_purpose = 1 AND [purpose] IS NULL) OR ([purpose] = @Original_purpose)) AND ((@I"& _ 
+                "sNull_phone = 1 AND [phone] IS NULL) OR ([phone] = @Original_phone)) AND ([FullN"& _ 
+                "ame] = @Original_FullName) AND ((@IsNull_contactperson = 1 AND [contactperson] I"& _ 
+                "S NULL) OR ([contactperson] = @Original_contactperson)) AND ((@IsNull_contactper"& _ 
+                "son_phone = 1 AND [contactperson_phone] IS NULL) OR ([contactperson_phone] = @Or"& _ 
+                "iginal_contactperson_phone)) AND ((@IsNull_remarks = 1 AND [remarks] IS NULL) OR"& _ 
+                " ([remarks] = @Original_remarks)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT vip_ID, fname, mname, lname, sex, de"& _ 
+                "stination, purpose, pic, phone, FullName, contactperson, contactperson_phone, re"& _ 
+                "marks FROM VIP WHERE (vip_ID = @vip_ID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@sname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@sex", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sex", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@destination", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "destination", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@purpose", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "purpose", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -5474,8 +5493,8 @@ Namespace db1DSTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_fname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_mname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_mname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mname", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_sname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_sname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sname", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_lname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_lname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_sex", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sex", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_sex", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sex", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_destination", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "destination", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -5507,8 +5526,8 @@ Namespace db1DSTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT vip_ID, fname, mname, sname, sex, destination, purpose, pic, phone, FullNa"& _ 
-                "me, contactperson, contactperson_phone, remarks FROM dbo.VIP"
+            Me._commandCollection(0).CommandText = "SELECT vip_ID, fname, mname, lname, sex, destination, purpose, pic, phone, FullNa"& _ 
+                "me, contactperson, contactperson_phone, remarks FROM VIP"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -5568,7 +5587,7 @@ Namespace db1DSTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_vip_ID As Integer, ByVal Original_fname As String, ByVal Original_mname As String, ByVal Original_sname As String, ByVal Original_sex As String, ByVal Original_destination As String, ByVal Original_purpose As String, ByVal Original_phone As String, ByVal Original_FullName As String, ByVal Original_contactperson As String, ByVal Original_contactperson_phone As String, ByVal Original_remarks As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_vip_ID As Integer, ByVal Original_fname As String, ByVal Original_mname As String, ByVal Original_lname As String, ByVal Original_sex As String, ByVal Original_destination As String, ByVal Original_purpose As String, ByVal Original_phone As String, ByVal Original_FullName As String, ByVal Original_contactperson As String, ByVal Original_contactperson_phone As String, ByVal Original_remarks As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_vip_ID,Integer)
             If (Original_fname Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
@@ -5584,12 +5603,12 @@ Namespace db1DSTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_mname,String)
             End If
-            If (Original_sname Is Nothing) Then
+            If (Original_lname Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_sname,String)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_lname,String)
             End If
             If (Original_sex Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
@@ -5664,7 +5683,7 @@ Namespace db1DSTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal fname As String, ByVal mname As String, ByVal sname As String, ByVal sex As String, ByVal destination As String, ByVal purpose As String, ByVal pic() As Byte, ByVal phone As String, ByVal contactperson As String, ByVal contactperson_phone As String, ByVal remarks As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal fname As String, ByVal mname As String, ByVal lname As String, ByVal sex As String, ByVal destination As String, ByVal purpose As String, ByVal pic() As Byte, ByVal phone As String, ByVal contactperson As String, ByVal contactperson_phone As String, ByVal remarks As String) As Integer
             If (fname Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -5675,10 +5694,10 @@ Namespace db1DSTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(1).Value = CType(mname,String)
             End If
-            If (sname Is Nothing) Then
+            If (lname Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(sname,String)
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(lname,String)
             End If
             If (sex Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
@@ -5742,7 +5761,7 @@ Namespace db1DSTableAdapters
         Public Overloads Overridable Function Update( _
                     ByVal fname As String,  _
                     ByVal mname As String,  _
-                    ByVal sname As String,  _
+                    ByVal lname As String,  _
                     ByVal sex As String,  _
                     ByVal destination As String,  _
                     ByVal purpose As String,  _
@@ -5754,7 +5773,7 @@ Namespace db1DSTableAdapters
                     ByVal Original_vip_ID As Integer,  _
                     ByVal Original_fname As String,  _
                     ByVal Original_mname As String,  _
-                    ByVal Original_sname As String,  _
+                    ByVal Original_lname As String,  _
                     ByVal Original_sex As String,  _
                     ByVal Original_destination As String,  _
                     ByVal Original_purpose As String,  _
@@ -5774,10 +5793,10 @@ Namespace db1DSTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(mname,String)
             End If
-            If (sname Is Nothing) Then
+            If (lname Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(sname,String)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(lname,String)
             End If
             If (sex Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
@@ -5834,12 +5853,12 @@ Namespace db1DSTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
                 Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_mname,String)
             End If
-            If (Original_sname Is Nothing) Then
+            If (Original_lname Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_sname,String)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_lname,String)
             End If
             If (Original_sex Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
@@ -5918,7 +5937,7 @@ Namespace db1DSTableAdapters
         Public Overloads Overridable Function Update( _
                     ByVal fname As String,  _
                     ByVal mname As String,  _
-                    ByVal sname As String,  _
+                    ByVal lname As String,  _
                     ByVal sex As String,  _
                     ByVal destination As String,  _
                     ByVal purpose As String,  _
@@ -5930,7 +5949,7 @@ Namespace db1DSTableAdapters
                     ByVal Original_vip_ID As Integer,  _
                     ByVal Original_fname As String,  _
                     ByVal Original_mname As String,  _
-                    ByVal Original_sname As String,  _
+                    ByVal Original_lname As String,  _
                     ByVal Original_sex As String,  _
                     ByVal Original_destination As String,  _
                     ByVal Original_purpose As String,  _
@@ -5939,7 +5958,7 @@ Namespace db1DSTableAdapters
                     ByVal Original_contactperson As String,  _
                     ByVal Original_contactperson_phone As String,  _
                     ByVal Original_remarks As String) As Integer
-            Return Me.Update(fname, mname, sname, sex, destination, purpose, pic, phone, contactperson, contactperson_phone, remarks, Original_vip_ID, Original_fname, Original_mname, Original_sname, Original_sex, Original_destination, Original_purpose, Original_phone, Original_FullName, Original_contactperson, Original_contactperson_phone, Original_remarks, Original_vip_ID)
+            Return Me.Update(fname, mname, lname, sex, destination, purpose, pic, phone, contactperson, contactperson_phone, remarks, Original_vip_ID, Original_fname, Original_mname, Original_lname, Original_sex, Original_destination, Original_purpose, Original_phone, Original_FullName, Original_contactperson, Original_contactperson_phone, Original_remarks, Original_vip_ID)
         End Function
     End Class
     
@@ -6073,10 +6092,7 @@ Namespace db1DSTableAdapters
             tableMapping.ColumnMappings.Add("visit_ID", "visit_ID")
             tableMapping.ColumnMappings.Add("fname", "fname")
             tableMapping.ColumnMappings.Add("mname", "mname")
-            tableMapping.ColumnMappings.Add("sname", "sname")
-            tableMapping.ColumnMappings.Add("sex", "sex")
-            tableMapping.ColumnMappings.Add("entry", "entry")
-            tableMapping.ColumnMappings.Add("exited", "exited")
+            tableMapping.ColumnMappings.Add("lname", "lname")
             tableMapping.ColumnMappings.Add("destination", "destination")
             tableMapping.ColumnMappings.Add("purpose", "purpose")
             tableMapping.ColumnMappings.Add("time_in", "time_in")
@@ -6090,41 +6106,35 @@ Namespace db1DSTableAdapters
             tableMapping.ColumnMappings.Add("userid", "userid")
             tableMapping.ColumnMappings.Add("FullName", "FullName")
             tableMapping.ColumnMappings.Add("alert", "alert")
+            tableMapping.ColumnMappings.Add("Sex", "Sex")
+            tableMapping.ColumnMappings.Add("Entry", "Entry")
+            tableMapping.ColumnMappings.Add("Exited", "Exited")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Visitors] WHERE (([visit_ID] = @Original_visit_ID) AND ((@IsNu"& _ 
-                "ll_fname = 1 AND [fname] IS NULL) OR ([fname] = @Original_fname)) AND ((@IsNull_"& _ 
-                "mname = 1 AND [mname] IS NULL) OR ([mname] = @Original_mname)) AND ((@IsNull_sna"& _ 
-                "me = 1 AND [sname] IS NULL) OR ([sname] = @Original_sname)) AND ((@IsNull_sex = "& _ 
-                "1 AND [sex] IS NULL) OR ([sex] = @Original_sex)) AND ((@IsNull_entry = 1 AND [en"& _ 
-                "try] IS NULL) OR ([entry] = @Original_entry)) AND ((@IsNull_exited = 1 AND [exit"& _ 
-                "ed] IS NULL) OR ([exited] = @Original_exited)) AND ((@IsNull_destination = 1 AND"& _ 
-                " [destination] IS NULL) OR ([destination] = @Original_destination)) AND ((@IsNul"& _ 
-                "l_purpose = 1 AND [purpose] IS NULL) OR ([purpose] = @Original_purpose)) AND ((@"& _ 
-                "IsNull_time_in = 1 AND [time_in] IS NULL) OR ([time_in] = @Original_time_in)) AN"& _ 
-                "D ((@IsNull_time_out = 1 AND [time_out] IS NULL) OR ([time_out] = @Original_time"& _ 
-                "_out)) AND ((@IsNull_badge_number = 1 AND [badge_number] IS NULL) OR ([badge_num"& _ 
-                "ber] = @Original_badge_number)) AND ((@IsNull_ID_surrendered = 1 AND [ID_surrend"& _ 
-                "ered] IS NULL) OR ([ID_surrendered] = @Original_ID_surrendered)) AND ((@IsNull_p"& _ 
-                "hone = 1 AND [phone] IS NULL) OR ([phone] = @Original_phone)) AND ((@IsNull_user"& _ 
-                "id = 1 AND [userid] IS NULL) OR ([userid] = @Original_userid)) AND ([FullName] ="& _ 
-                " @Original_FullName) AND ((@IsNull_alert = 1 AND [alert] IS NULL) OR ([alert] = "& _ 
-                "@Original_alert)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Visitors] WHERE (([visit_ID] = @Original_visit_ID) AND ((@IsNull_fna"& _ 
+                "me = 1 AND [fname] IS NULL) OR ([fname] = @Original_fname)) AND ((@IsNull_mname "& _ 
+                "= 1 AND [mname] IS NULL) OR ([mname] = @Original_mname)) AND ((@IsNull_lname = 1"& _ 
+                " AND [lname] IS NULL) OR ([lname] = @Original_lname)) AND ((@IsNull_destination "& _ 
+                "= 1 AND [destination] IS NULL) OR ([destination] = @Original_destination)) AND ("& _ 
+                "(@IsNull_purpose = 1 AND [purpose] IS NULL) OR ([purpose] = @Original_purpose)) "& _ 
+                "AND ((@IsNull_time_in = 1 AND [time_in] IS NULL) OR ([time_in] = @Original_time_"& _ 
+                "in)) AND ((@IsNull_time_out = 1 AND [time_out] IS NULL) OR ([time_out] = @Origin"& _ 
+                "al_time_out)) AND ((@IsNull_badge_number = 1 AND [badge_number] IS NULL) OR ([ba"& _ 
+                "dge_number] = @Original_badge_number)) AND ((@IsNull_ID_surrendered = 1 AND [ID_"& _ 
+                "surrendered] IS NULL) OR ([ID_surrendered] = @Original_ID_surrendered)) AND ((@I"& _ 
+                "sNull_phone = 1 AND [phone] IS NULL) OR ([phone] = @Original_phone)) AND ((@IsNu"& _ 
+                "ll_userid = 1 AND [userid] IS NULL) OR ([userid] = @Original_userid)) AND ([Full"& _ 
+                "Name] = @Original_FullName) AND ((@IsNull_alert = 1 AND [alert] IS NULL) OR ([al"& _ 
+                "ert] = @Original_alert)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_visit_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_fname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_fname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_mname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_mname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mname", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_sname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_sname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sname", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_sex", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sex", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_sex", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sex", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_entry", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "entry", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_entry", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "entry", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_exited", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "exited", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_exited", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "exited", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_lname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_lname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_destination", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "destination", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_destination", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "destination", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_purpose", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "purpose", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -6146,22 +6156,21 @@ Namespace db1DSTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_alert", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "alert", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Visitors] ([fname], [mname], [sname], [sex], [entry], [exited]"& _ 
-                ", [destination], [purpose], [time_in], [time_out], [badge_number], [portrait], ["& _ 
-                "id_pic], [id_back], [ID_surrendered], [phone], [userid], [alert]) VALUES (@fname"& _ 
-                ", @mname, @sname, @sex, @entry, @exited, @destination, @purpose, @time_in, @time"& _ 
-                "_out, @badge_number, @portrait, @id_pic, @id_back, @ID_surrendered, @phone, @use"& _ 
-                "rid, @alert);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT visit_ID, fname, mname, sname, sex, entry, exited, destina"& _ 
-                "tion, purpose, time_in, time_out, badge_number, portrait, id_pic, id_back, ID_su"& _ 
-                "rrendered, phone, userid, FullName, alert FROM Visitors WHERE (visit_ID = SCOPE_"& _ 
-                "IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Visitors] ([fname], [mname], [lname], [destination], [purpose], [tim"& _ 
+                "e_in], [time_out], [badge_number], [portrait], [id_pic], [id_back], [ID_surrende"& _ 
+                "red], [phone], [userid], [alert]) VALUES (@fname, @mname, @lname, @destination, "& _ 
+                "@purpose, @time_in, @time_out, @badge_number, @portrait, @id_pic, @id_back, @ID_"& _ 
+                "surrendered, @phone, @userid, @alert);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT visit_ID, fname, mname, lname, CA"& _ 
+                "SE WHEN sex = 'm' THEN 'Male' WHEN sex = 'f' THEN 'Female' ELSE 'Other' END AS S"& _ 
+                "ex, CASE WHEN entry = 'm' THEN 'Main Gate' WHEN entry = 'b' THEN 'Back Gate' END"& _ 
+                " AS Entry, CASE WHEN exited = 'm' THEN 'Main Gate' WHEN exited = 'b' THEN 'Back "& _ 
+                "Gate' ELSE 'Other' END AS Exited, destination, purpose, time_in, time_out, badge"& _ 
+                "_number, portrait, id_pic, id_back, ID_surrendered, phone, userid, FullName, ale"& _ 
+                "rt FROM Visitors WHERE (visit_ID = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@sname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@sex", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sex", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@entry", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "entry", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@exited", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "exited", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@destination", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "destination", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@purpose", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "purpose", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@time_in", Global.System.Data.SqlDbType.DateTime2, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "time_in", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -6176,39 +6185,35 @@ Namespace db1DSTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@alert", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "alert", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Visitors] SET [fname] = @fname, [mname] = @mname, [sname] = @sname,"& _ 
-                " [sex] = @sex, [entry] = @entry, [exited] = @exited, [destination] = @destinatio"& _ 
-                "n, [purpose] = @purpose, [time_in] = @time_in, [time_out] = @time_out, [badge_nu"& _ 
-                "mber] = @badge_number, [portrait] = @portrait, [id_pic] = @id_pic, [id_back] = @"& _ 
-                "id_back, [ID_surrendered] = @ID_surrendered, [phone] = @phone, [userid] = @useri"& _ 
-                "d, [alert] = @alert WHERE (([visit_ID] = @Original_visit_ID) AND ((@IsNull_fname"& _ 
-                " = 1 AND [fname] IS NULL) OR ([fname] = @Original_fname)) AND ((@IsNull_mname = "& _ 
-                "1 AND [mname] IS NULL) OR ([mname] = @Original_mname)) AND ((@IsNull_sname = 1 A"& _ 
-                "ND [sname] IS NULL) OR ([sname] = @Original_sname)) AND ((@IsNull_sex = 1 AND [s"& _ 
-                "ex] IS NULL) OR ([sex] = @Original_sex)) AND ((@IsNull_entry = 1 AND [entry] IS "& _ 
-                "NULL) OR ([entry] = @Original_entry)) AND ((@IsNull_exited = 1 AND [exited] IS N"& _ 
-                "ULL) OR ([exited] = @Original_exited)) AND ((@IsNull_destination = 1 AND [destin"& _ 
-                "ation] IS NULL) OR ([destination] = @Original_destination)) AND ((@IsNull_purpos"& _ 
-                "e = 1 AND [purpose] IS NULL) OR ([purpose] = @Original_purpose)) AND ((@IsNull_t"& _ 
-                "ime_in = 1 AND [time_in] IS NULL) OR ([time_in] = @Original_time_in)) AND ((@IsN"& _ 
-                "ull_time_out = 1 AND [time_out] IS NULL) OR ([time_out] = @Original_time_out)) A"& _ 
-                "ND ((@IsNull_badge_number = 1 AND [badge_number] IS NULL) OR ([badge_number] = @"& _ 
-                "Original_badge_number)) AND ((@IsNull_ID_surrendered = 1 AND [ID_surrendered] IS"& _ 
-                " NULL) OR ([ID_surrendered] = @Original_ID_surrendered)) AND ((@IsNull_phone = 1"& _ 
-                " AND [phone] IS NULL) OR ([phone] = @Original_phone)) AND ((@IsNull_userid = 1 A"& _ 
-                "ND [userid] IS NULL) OR ([userid] = @Original_userid)) AND ([FullName] = @Origin"& _ 
-                "al_FullName) AND ((@IsNull_alert = 1 AND [alert] IS NULL) OR ([alert] = @Origina"& _ 
-                "l_alert)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT visit_ID, fname, mname, sname, sex, entry, exited, destinati"& _ 
-                "on, purpose, time_in, time_out, badge_number, portrait, id_pic, id_back, ID_surr"& _ 
-                "endered, phone, userid, FullName, alert FROM Visitors WHERE (visit_ID = @visit_I"& _ 
-                "D)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [Visitors] SET [fname] = @fname, [mname] = @mname, [lname] = @lname, [dest"& _ 
+                "ination] = @destination, [purpose] = @purpose, [time_in] = @time_in, [time_out] "& _ 
+                "= @time_out, [badge_number] = @badge_number, [portrait] = @portrait, [id_pic] = "& _ 
+                "@id_pic, [id_back] = @id_back, [ID_surrendered] = @ID_surrendered, [phone] = @ph"& _ 
+                "one, [userid] = @userid, [alert] = @alert WHERE (([visit_ID] = @Original_visit_I"& _ 
+                "D) AND ((@IsNull_fname = 1 AND [fname] IS NULL) OR ([fname] = @Original_fname)) "& _ 
+                "AND ((@IsNull_mname = 1 AND [mname] IS NULL) OR ([mname] = @Original_mname)) AND"& _ 
+                " ((@IsNull_lname = 1 AND [lname] IS NULL) OR ([lname] = @Original_lname)) AND (("& _ 
+                "@IsNull_destination = 1 AND [destination] IS NULL) OR ([destination] = @Original"& _ 
+                "_destination)) AND ((@IsNull_purpose = 1 AND [purpose] IS NULL) OR ([purpose] = "& _ 
+                "@Original_purpose)) AND ((@IsNull_time_in = 1 AND [time_in] IS NULL) OR ([time_i"& _ 
+                "n] = @Original_time_in)) AND ((@IsNull_time_out = 1 AND [time_out] IS NULL) OR ("& _ 
+                "[time_out] = @Original_time_out)) AND ((@IsNull_badge_number = 1 AND [badge_numb"& _ 
+                "er] IS NULL) OR ([badge_number] = @Original_badge_number)) AND ((@IsNull_ID_surr"& _ 
+                "endered = 1 AND [ID_surrendered] IS NULL) OR ([ID_surrendered] = @Original_ID_su"& _ 
+                "rrendered)) AND ((@IsNull_phone = 1 AND [phone] IS NULL) OR ([phone] = @Original"& _ 
+                "_phone)) AND ((@IsNull_userid = 1 AND [userid] IS NULL) OR ([userid] = @Original"& _ 
+                "_userid)) AND ([FullName] = @Original_FullName) AND ((@IsNull_alert = 1 AND [ale"& _ 
+                "rt] IS NULL) OR ([alert] = @Original_alert)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT visit_ID, fname, mname, l"& _ 
+                "name, CASE WHEN sex = 'm' THEN 'Male' WHEN sex = 'f' THEN 'Female' ELSE 'Other' "& _ 
+                "END AS Sex, CASE WHEN entry = 'm' THEN 'Main Gate' WHEN entry = 'b' THEN 'Back G"& _ 
+                "ate' END AS Entry, CASE WHEN exited = 'm' THEN 'Main Gate' WHEN exited = 'b' THE"& _ 
+                "N 'Back Gate' ELSE 'Other' END AS Exited, destination, purpose, time_in, time_ou"& _ 
+                "t, badge_number, portrait, id_pic, id_back, ID_surrendered, phone, userid, FullN"& _ 
+                "ame, alert FROM Visitors WHERE (visit_ID = @visit_ID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@sname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@sex", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sex", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@entry", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "entry", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@exited", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "exited", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@destination", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "destination", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@purpose", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "purpose", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@time_in", Global.System.Data.SqlDbType.DateTime2, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "time_in", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -6226,14 +6231,8 @@ Namespace db1DSTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_fname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_mname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_mname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mname", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_sname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_sname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sname", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_sex", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sex", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_sex", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sex", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_entry", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "entry", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_entry", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "entry", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_exited", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "exited", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_exited", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "exited", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_lname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_lname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_destination", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "destination", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_destination", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "destination", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_purpose", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "purpose", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -6266,13 +6265,40 @@ Namespace db1DSTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT visit_ID, fname, mname, sname, sex, entry, exited, destination, purpose, t"& _ 
-                "ime_in, time_out, badge_number, portrait, id_pic, id_back, ID_surrendered, phone"& _ 
-                ", userid, FullName, alert FROM dbo.Visitors"
+            Me._commandCollection(0).CommandText = "SELECT        visit_ID, fname, mname, lname, CASE WHEN sex = 'm' THEN 'Male' WHEN"& _ 
+                " sex = 'f' THEN 'Female' ELSE 'Other' END AS Sex, CASE WHEN entry = 'm' THEN 'Ma"& _ 
+                "in Gate' WHEN entry = 'b' THEN 'Back Gate' END AS Entry, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                     "& _ 
+                "    CASE WHEN exited = 'm' THEN 'Main Gate' WHEN exited = 'b' THEN 'Back Gate' E"& _ 
+                "LSE 'Other' END AS Exited, destination, purpose, time_in, time_out, badge_number"& _ 
+                ", portrait, id_pic, id_back, ID_surrendered, phone, userid, FullName, alert"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FRO"& _ 
+                "M            Visitors"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "INSERT INTO [Visitors] ([fname], [mname], [lname], [sex], [entry], [destination],"& _ 
+                " [purpose], [badge_number], [portrait], [id_pic], [id_back], [ID_surrendered], ["& _ 
+                "phone], [userid], [alert]) "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES (@fname, @mname, @lname, @sex, @entry, @de"& _ 
+                "stination, @purpose, @badge_number, @portrait, @id_pic, @id_back, @ID_surrendere"& _ 
+                "d, @phone, @userid, @alert);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.VarChar, 35, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mname", Global.System.Data.SqlDbType.VarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "mname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lname", Global.System.Data.SqlDbType.VarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@sex", Global.System.Data.SqlDbType.[Char], 1, Global.System.Data.ParameterDirection.Input, 0, 0, "sex", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@entry", Global.System.Data.SqlDbType.[Char], 1, Global.System.Data.ParameterDirection.Input, 0, 0, "entry", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@destination", Global.System.Data.SqlDbType.VarChar, 35, Global.System.Data.ParameterDirection.Input, 0, 0, "destination", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@purpose", Global.System.Data.SqlDbType.VarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "purpose", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@badge_number", Global.System.Data.SqlDbType.VarChar, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "badge_number", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@portrait", Global.System.Data.SqlDbType.VarBinary, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "portrait", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_pic", Global.System.Data.SqlDbType.VarBinary, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "id_pic", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_back", Global.System.Data.SqlDbType.VarBinary, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "id_back", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID_surrendered", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "ID_surrendered", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@phone", Global.System.Data.SqlDbType.VarChar, 25, Global.System.Data.ParameterDirection.Input, 0, 0, "phone", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@userid", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "userid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@alert", Global.System.Data.SqlDbType.TinyInt, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "alert", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6331,24 +6357,7 @@ Namespace db1DSTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete( _
-                    ByVal Original_visit_ID As Integer,  _
-                    ByVal Original_fname As String,  _
-                    ByVal Original_mname As String,  _
-                    ByVal Original_sname As String,  _
-                    ByVal Original_sex As String,  _
-                    ByVal Original_entry As String,  _
-                    ByVal Original_exited As String,  _
-                    ByVal Original_destination As String,  _
-                    ByVal Original_purpose As String,  _
-                    ByVal Original_time_in As Global.System.Nullable(Of Date),  _
-                    ByVal Original_time_out As Global.System.Nullable(Of Date),  _
-                    ByVal Original_badge_number As String,  _
-                    ByVal Original_ID_surrendered As String,  _
-                    ByVal Original_phone As String,  _
-                    ByVal Original_userid As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_FullName As String,  _
-                    ByVal Original_alert As Global.System.Nullable(Of Byte)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_visit_ID As Integer, ByVal Original_fname As String, ByVal Original_mname As String, ByVal Original_lname As String, ByVal Original_destination As String, ByVal Original_purpose As String, ByVal Original_time_in As Global.System.Nullable(Of Date), ByVal Original_time_out As Global.System.Nullable(Of Date), ByVal Original_badge_number As String, ByVal Original_ID_surrendered As String, ByVal Original_phone As String, ByVal Original_userid As Global.System.Nullable(Of Integer), ByVal Original_FullName As String, ByVal Original_alert As Global.System.Nullable(Of Byte)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_visit_ID,Integer)
             If (Original_fname Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
@@ -6364,101 +6373,80 @@ Namespace db1DSTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_mname,String)
             End If
-            If (Original_sname Is Nothing) Then
+            If (Original_lname Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_sname,String)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_lname,String)
             End If
-            If (Original_sex Is Nothing) Then
+            If (Original_destination Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_sex,String)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_destination,String)
             End If
-            If (Original_entry Is Nothing) Then
+            If (Original_purpose Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_entry,String)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_purpose,String)
             End If
-            If (Original_exited Is Nothing) Then
+            If (Original_time_in.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_time_in.Value,Date)
+            Else
                 Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_exited,String)
             End If
-            If (Original_destination Is Nothing) Then
+            If (Original_time_out.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_time_out.Value,Date)
+            Else
                 Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_destination,String)
             End If
-            If (Original_purpose Is Nothing) Then
+            If (Original_badge_number Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_purpose,String)
-            End If
-            If (Original_time_in.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_time_in.Value,Date)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(18).Value = Global.System.DBNull.Value
-            End If
-            If (Original_time_out.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(Original_time_out.Value,Date)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(20).Value = Global.System.DBNull.Value
-            End If
-            If (Original_badge_number Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(22).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(22).Value = CType(Original_badge_number,String)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_badge_number,String)
             End If
             If (Original_ID_surrendered Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(24).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(24).Value = CType(Original_ID_surrendered,String)
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_ID_surrendered,String)
             End If
             If (Original_phone Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(25).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(26).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(25).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(26).Value = CType(Original_phone,String)
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(Original_phone,String)
             End If
             If (Original_userid.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(27).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(28).Value = CType(Original_userid.Value,Integer)
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = CType(Original_userid.Value,Integer)
             Else
-                Me.Adapter.DeleteCommand.Parameters(27).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(28).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = Global.System.DBNull.Value
             End If
             If (Original_FullName Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_FullName")
             Else
-                Me.Adapter.DeleteCommand.Parameters(29).Value = CType(Original_FullName,String)
+                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(Original_FullName,String)
             End If
             If (Original_alert.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(30).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(31).Value = CType(Original_alert.Value,Byte)
+                Me.Adapter.DeleteCommand.Parameters(24).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(25).Value = CType(Original_alert.Value,Byte)
             Else
-                Me.Adapter.DeleteCommand.Parameters(30).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(31).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(24).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(25).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -6479,25 +6467,7 @@ Namespace db1DSTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert( _
-                    ByVal fname As String,  _
-                    ByVal mname As String,  _
-                    ByVal sname As String,  _
-                    ByVal sex As String,  _
-                    ByVal entry As String,  _
-                    ByVal exited As String,  _
-                    ByVal destination As String,  _
-                    ByVal purpose As String,  _
-                    ByVal time_in As Global.System.Nullable(Of Date),  _
-                    ByVal time_out As Global.System.Nullable(Of Date),  _
-                    ByVal badge_number As String,  _
-                    ByVal portrait() As Byte,  _
-                    ByVal id_pic() As Byte,  _
-                    ByVal id_back() As Byte,  _
-                    ByVal ID_surrendered As String,  _
-                    ByVal phone As String,  _
-                    ByVal userid As Global.System.Nullable(Of Integer),  _
-                    ByVal alert As Global.System.Nullable(Of Byte)) As Integer
+        Public Overloads Overridable Function Insert(ByVal fname As String, ByVal mname As String, ByVal lname As String, ByVal destination As String, ByVal purpose As String, ByVal time_in As Global.System.Nullable(Of Date), ByVal time_out As Global.System.Nullable(Of Date), ByVal badge_number As String, ByVal portrait() As Byte, ByVal id_pic() As Byte, ByVal id_back() As Byte, ByVal ID_surrendered As String, ByVal phone As String, ByVal userid As Global.System.Nullable(Of Integer), ByVal alert As Global.System.Nullable(Of Byte)) As Integer
             If (fname Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -6508,85 +6478,70 @@ Namespace db1DSTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(1).Value = CType(mname,String)
             End If
-            If (sname Is Nothing) Then
+            If (lname Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(sname,String)
-            End If
-            If (sex Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(sex,String)
-            End If
-            If (entry Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(entry,String)
-            End If
-            If (exited Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(exited,String)
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(lname,String)
             End If
             If (destination Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(destination,String)
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(destination,String)
             End If
             If (purpose Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(7).Value = CType(purpose,String)
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(purpose,String)
             End If
             If (time_in.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(8).Value = CType(time_in.Value,Date)
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(time_in.Value,Date)
             Else
-                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
             If (time_out.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(9).Value = CType(time_out.Value,Date)
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(time_out.Value,Date)
             Else
-                Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
             If (badge_number Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(10).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(10).Value = CType(badge_number,String)
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(badge_number,String)
             End If
             If (portrait Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(11).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(11).Value = CType(portrait,Byte())
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(portrait,Byte())
             End If
             If (id_pic Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(12).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(12).Value = CType(id_pic,Byte())
+                Me.Adapter.InsertCommand.Parameters(9).Value = CType(id_pic,Byte())
             End If
             If (id_back Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(13).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(13).Value = CType(id_back,Byte())
+                Me.Adapter.InsertCommand.Parameters(10).Value = CType(id_back,Byte())
             End If
             If (ID_surrendered Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(14).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(11).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(14).Value = CType(ID_surrendered,String)
+                Me.Adapter.InsertCommand.Parameters(11).Value = CType(ID_surrendered,String)
             End If
             If (phone Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(15).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(12).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(15).Value = CType(phone,String)
+                Me.Adapter.InsertCommand.Parameters(12).Value = CType(phone,String)
             End If
             If (userid.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(16).Value = CType(userid.Value,Integer)
+                Me.Adapter.InsertCommand.Parameters(13).Value = CType(userid.Value,Integer)
             Else
-                Me.Adapter.InsertCommand.Parameters(16).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(13).Value = Global.System.DBNull.Value
             End If
             If (alert.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(17).Value = CType(alert.Value,Byte)
+                Me.Adapter.InsertCommand.Parameters(14).Value = CType(alert.Value,Byte)
             Else
-                Me.Adapter.InsertCommand.Parameters(17).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(14).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -6610,10 +6565,7 @@ Namespace db1DSTableAdapters
         Public Overloads Overridable Function Update( _
                     ByVal fname As String,  _
                     ByVal mname As String,  _
-                    ByVal sname As String,  _
-                    ByVal sex As String,  _
-                    ByVal entry As String,  _
-                    ByVal exited As String,  _
+                    ByVal lname As String,  _
                     ByVal destination As String,  _
                     ByVal purpose As String,  _
                     ByVal time_in As Global.System.Nullable(Of Date),  _
@@ -6629,10 +6581,7 @@ Namespace db1DSTableAdapters
                     ByVal Original_visit_ID As Integer,  _
                     ByVal Original_fname As String,  _
                     ByVal Original_mname As String,  _
-                    ByVal Original_sname As String,  _
-                    ByVal Original_sex As String,  _
-                    ByVal Original_entry As String,  _
-                    ByVal Original_exited As String,  _
+                    ByVal Original_lname As String,  _
                     ByVal Original_destination As String,  _
                     ByVal Original_purpose As String,  _
                     ByVal Original_time_in As Global.System.Nullable(Of Date),  _
@@ -6654,198 +6603,162 @@ Namespace db1DSTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(mname,String)
             End If
-            If (sname Is Nothing) Then
+            If (lname Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(sname,String)
-            End If
-            If (sex Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(sex,String)
-            End If
-            If (entry Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(entry,String)
-            End If
-            If (exited Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(exited,String)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(lname,String)
             End If
             If (destination Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(destination,String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(destination,String)
             End If
             If (purpose Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(purpose,String)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(purpose,String)
             End If
             If (time_in.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(time_in.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(time_in.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
             If (time_out.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(time_out.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(time_out.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
             If (badge_number Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(badge_number,String)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(badge_number,String)
             End If
             If (portrait Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(portrait,Byte())
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(portrait,Byte())
             End If
             If (id_pic Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(id_pic,Byte())
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(id_pic,Byte())
             End If
             If (id_back Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(id_back,Byte())
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(id_back,Byte())
             End If
             If (ID_surrendered Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(ID_surrendered,String)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(ID_surrendered,String)
             End If
             If (phone Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(phone,String)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(phone,String)
             End If
             If (userid.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(userid.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(userid.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
             End If
             If (alert.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(alert.Value,Byte)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(alert.Value,Byte)
             Else
-                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_visit_ID,Integer)
+            Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_visit_ID,Integer)
             If (Original_fname Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_fname,String)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_fname,String)
             End If
             If (Original_mname Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_mname,String)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_mname,String)
             End If
-            If (Original_sname Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
+            If (Original_lname Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_sname,String)
-            End If
-            If (Original_sex Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Original_sex,String)
-            End If
-            If (Original_entry Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(Original_entry,String)
-            End If
-            If (Original_exited Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(30).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(Original_exited,String)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_lname,String)
             End If
             If (Original_destination Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(32).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(Original_destination,String)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_destination,String)
             End If
             If (Original_purpose Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(34).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(Original_purpose,String)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_purpose,String)
             End If
             If (Original_time_in.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(Original_time_in.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Original_time_in.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(36).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
             End If
             If (Original_time_out.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(Original_time_out.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(Original_time_out.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(38).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
             End If
             If (Original_badge_number Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(40).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(Original_badge_number,String)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(Original_badge_number,String)
             End If
             If (Original_ID_surrendered Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(42).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(Original_ID_surrendered,String)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(Original_ID_surrendered,String)
             End If
             If (Original_phone Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(44).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(35).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(Original_phone,String)
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(Original_phone,String)
             End If
             If (Original_userid.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(Original_userid.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(Original_userid.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(46).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(37).Value = Global.System.DBNull.Value
             End If
             If (Original_FullName Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_FullName")
             Else
-                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(Original_FullName,String)
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(Original_FullName,String)
             End If
             If (Original_alert.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(49).Value = CType(Original_alert.Value,Byte)
+                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(Original_alert.Value,Byte)
             Else
-                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(49).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(40).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(50).Value = CType(visit_ID,Integer)
+            Me.Adapter.UpdateCommand.Parameters(41).Value = CType(visit_ID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -6868,10 +6781,7 @@ Namespace db1DSTableAdapters
         Public Overloads Overridable Function Update( _
                     ByVal fname As String,  _
                     ByVal mname As String,  _
-                    ByVal sname As String,  _
-                    ByVal sex As String,  _
-                    ByVal entry As String,  _
-                    ByVal exited As String,  _
+                    ByVal lname As String,  _
                     ByVal destination As String,  _
                     ByVal purpose As String,  _
                     ByVal time_in As Global.System.Nullable(Of Date),  _
@@ -6887,10 +6797,7 @@ Namespace db1DSTableAdapters
                     ByVal Original_visit_ID As Integer,  _
                     ByVal Original_fname As String,  _
                     ByVal Original_mname As String,  _
-                    ByVal Original_sname As String,  _
-                    ByVal Original_sex As String,  _
-                    ByVal Original_entry As String,  _
-                    ByVal Original_exited As String,  _
+                    ByVal Original_lname As String,  _
                     ByVal Original_destination As String,  _
                     ByVal Original_purpose As String,  _
                     ByVal Original_time_in As Global.System.Nullable(Of Date),  _
@@ -6901,7 +6808,104 @@ Namespace db1DSTableAdapters
                     ByVal Original_userid As Global.System.Nullable(Of Integer),  _
                     ByVal Original_FullName As String,  _
                     ByVal Original_alert As Global.System.Nullable(Of Byte)) As Integer
-            Return Me.Update(fname, mname, sname, sex, entry, exited, destination, purpose, time_in, time_out, badge_number, portrait, id_pic, id_back, ID_surrendered, phone, userid, alert, Original_visit_ID, Original_fname, Original_mname, Original_sname, Original_sex, Original_entry, Original_exited, Original_destination, Original_purpose, Original_time_in, Original_time_out, Original_badge_number, Original_ID_surrendered, Original_phone, Original_userid, Original_FullName, Original_alert, Original_visit_ID)
+            Return Me.Update(fname, mname, lname, destination, purpose, time_in, time_out, badge_number, portrait, id_pic, id_back, ID_surrendered, phone, userid, alert, Original_visit_ID, Original_fname, Original_mname, Original_lname, Original_destination, Original_purpose, Original_time_in, Original_time_out, Original_badge_number, Original_ID_surrendered, Original_phone, Original_userid, Original_FullName, Original_alert, Original_visit_ID)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
+        Public Overloads Overridable Function CheckIn(ByVal fname As String, ByVal mname As String, ByVal lname As String, ByVal sex As String, ByVal entry As String, ByVal destination As String, ByVal purpose As String, ByVal badge_number As String, ByVal portrait() As Byte, ByVal id_pic() As Byte, ByVal id_back() As Byte, ByVal ID_surrendered As String, ByVal phone As String, ByVal userid As Global.System.Nullable(Of Integer), ByVal alert As Global.System.Nullable(Of Byte)) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            If (fname Is Nothing) Then
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(0).Value = CType(fname,String)
+            End If
+            If (mname Is Nothing) Then
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(1).Value = CType(mname,String)
+            End If
+            If (lname Is Nothing) Then
+                command.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(2).Value = CType(lname,String)
+            End If
+            If (sex Is Nothing) Then
+                command.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(3).Value = CType(sex,String)
+            End If
+            If (entry Is Nothing) Then
+                command.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(4).Value = CType(entry,String)
+            End If
+            If (destination Is Nothing) Then
+                command.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(5).Value = CType(destination,String)
+            End If
+            If (purpose Is Nothing) Then
+                command.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(6).Value = CType(purpose,String)
+            End If
+            If (badge_number Is Nothing) Then
+                command.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(7).Value = CType(badge_number,String)
+            End If
+            If (portrait Is Nothing) Then
+                command.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(8).Value = CType(portrait,Byte())
+            End If
+            If (id_pic Is Nothing) Then
+                command.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(9).Value = CType(id_pic,Byte())
+            End If
+            If (id_back Is Nothing) Then
+                command.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(10).Value = CType(id_back,Byte())
+            End If
+            If (ID_surrendered Is Nothing) Then
+                command.Parameters(11).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(11).Value = CType(ID_surrendered,String)
+            End If
+            If (phone Is Nothing) Then
+                command.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(12).Value = CType(phone,String)
+            End If
+            If (userid.HasValue = true) Then
+                command.Parameters(13).Value = CType(userid.Value,Integer)
+            Else
+                command.Parameters(13).Value = Global.System.DBNull.Value
+            End If
+            If (alert.HasValue = true) Then
+                command.Parameters(14).Value = CType(alert.Value,Byte)
+            Else
+                command.Parameters(14).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
         End Function
     End Class
     
