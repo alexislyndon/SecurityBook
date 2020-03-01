@@ -371,14 +371,14 @@ Partial Class AddVisitor
         '
         'Button3
         '
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Button3.BackColor = System.Drawing.Color.GreenYellow
         Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(180, Byte), Integer))
         Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Microsoft JhengHei", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.White
+        Me.Button3.ForeColor = System.Drawing.Color.Black
         Me.Button3.Location = New System.Drawing.Point(905, 683)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(158, 58)
@@ -407,7 +407,7 @@ Partial Class AddVisitor
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft JhengHei", 18.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(62, 10)
+        Me.Label13.Location = New System.Drawing.Point(62, 17)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(138, 30)
         Me.Label13.TabIndex = 7
@@ -422,8 +422,8 @@ Partial Class AddVisitor
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.Panel2.Location = New System.Drawing.Point(0, 43)
+        Me.Panel2.BackColor = System.Drawing.Color.GreenYellow
+        Me.Panel2.Location = New System.Drawing.Point(0, 50)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(200, 5)
         Me.Panel2.TabIndex = 9
