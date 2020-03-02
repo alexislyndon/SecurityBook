@@ -41,12 +41,12 @@ Partial Class adminUsers
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.user = New System.Windows.Forms.TextBox()
         Me.pass = New System.Windows.Forms.TextBox()
-        Me.des = New System.Windows.Forms.TextBox()
         Me.personname = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.des = New System.Windows.Forms.ComboBox()
         UsernameLabel = New System.Windows.Forms.Label()
         PasswordLabel = New System.Windows.Forms.Label()
         DesignationLabel = New System.Windows.Forms.Label()
@@ -202,15 +202,6 @@ Partial Class adminUsers
         Me.pass.Size = New System.Drawing.Size(200, 34)
         Me.pass.TabIndex = 6
         '
-        'des
-        '
-        Me.des.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersBindingSource, "designation", True))
-        Me.des.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.des.Location = New System.Drawing.Point(145, 239)
-        Me.des.Name = "des"
-        Me.des.Size = New System.Drawing.Size(200, 34)
-        Me.des.TabIndex = 8
-        '
         'personname
         '
         Me.personname.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersBindingSource, "name", True))
@@ -256,10 +247,22 @@ Partial Class adminUsers
         Me.Button4.Text = "Activate"
         Me.Button4.UseVisualStyleBackColor = True
         '
+        'des
+        '
+        Me.des.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersBindingSource, "designation", True))
+        Me.des.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!)
+        Me.des.FormattingEnabled = True
+        Me.des.Items.AddRange(New Object() {"admin", "main", "back"})
+        Me.des.Location = New System.Drawing.Point(143, 244)
+        Me.des.Name = "des"
+        Me.des.Size = New System.Drawing.Size(202, 34)
+        Me.des.TabIndex = 16
+        '
         'adminUsers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.des)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
@@ -269,12 +272,11 @@ Partial Class adminUsers
         Me.Controls.Add(PasswordLabel)
         Me.Controls.Add(Me.pass)
         Me.Controls.Add(DesignationLabel)
-        Me.Controls.Add(Me.des)
         Me.Controls.Add(NameLabel)
         Me.Controls.Add(Me.personname)
         Me.Controls.Add(Me.UsersDataGridView)
         Me.Name = "adminUsers"
-        Me.Size = New System.Drawing.Size(822, 500)
+        Me.Size = New System.Drawing.Size(822, 502)
         CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsersDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
@@ -297,10 +299,10 @@ Partial Class adminUsers
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents user As TextBox
     Friend WithEvents pass As TextBox
-    Friend WithEvents des As TextBox
     Friend WithEvents personname As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
+    Friend WithEvents des As ComboBox
 End Class

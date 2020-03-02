@@ -110,7 +110,12 @@
                 End If
                 Me.Hide()
             Catch ex As Exception
-                MsgBox(ex.Message)
+                If ex.Message = "There was no row at position 0." Then
+
+                Else
+
+                    MsgBox(ex.Message)
+                End If
                 'MsgBox("Wrong username or password. Please try again.")
             End Try
         End If

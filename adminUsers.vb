@@ -15,7 +15,7 @@
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Dim i As Integer = Me.UsersDataGridView.SelectedRows.Item(0).Cells.Item(0).ToString
+        Dim i As Integer = Db1DS.users.Rows(0).Item(0)
         Me.UsersTableAdapter.DeactivateUser(i)
         refresher()
     End Sub
@@ -26,7 +26,7 @@
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Dim i As Integer = Me.UsersDataGridView.SelectedRows.Item(0).Cells.Item(0).ToString
+        Dim i As Integer = Db1DS.users.Rows(0).Item(0)
         Me.UsersTableAdapter.ActivateUser(i)
         refresher()
     End Sub
