@@ -170,7 +170,7 @@ SELECT id, username, password, designation, created, name, active FROM users WHE
               <DbSource ConnectionRef="db1ConnectionString (MySettings)" DbObjectName="dbo.users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="DesignationQuery" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDesignationQuery" GeneratorSourceName="DesignationQuery" GetMethodModifier="Public" GetMethodName="GetDesignationQuery" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDesignationQuery" UserSourceName="DesignationQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT id, designation, name 
+                    <CommandText>SELECT id, designation, name , username
 FROM dbo.users
 WHERE (username = @username) AND (password = @password) AND (active = 1)</CommandText>
                     <Parameters>
@@ -651,7 +651,7 @@ WHERE        (visit_ID = @visit_ID) AND (time_out IS NULL)</CommandText>
   <xs:element name="db1DS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="db1DS" msprop:Generator_UserDSName="db1DS">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Badges" msprop:Generator_TableClassName="BadgesDataTable" msprop:Generator_TableVarName="tableBadges" msprop:Generator_TablePropName="Badges" msprop:Generator_RowDeletingName="BadgesRowDeleting" msprop:Generator_RowChangingName="BadgesRowChanging" msprop:Generator_RowEvHandlerName="BadgesRowChangeEventHandler" msprop:Generator_RowDeletedName="BadgesRowDeleted" msprop:Generator_UserTableName="Badges" msprop:Generator_RowChangedName="BadgesRowChanged" msprop:Generator_RowEvArgName="BadgesRowChangeEvent" msprop:Generator_RowClassName="BadgesRow">
+        <xs:element name="Badges" msprop:Generator_TableClassName="BadgesDataTable" msprop:Generator_TableVarName="tableBadges" msprop:Generator_RowChangedName="BadgesRowChanged" msprop:Generator_TablePropName="Badges" msprop:Generator_RowDeletingName="BadgesRowDeleting" msprop:Generator_RowChangingName="BadgesRowChanging" msprop:Generator_RowEvHandlerName="BadgesRowChangeEventHandler" msprop:Generator_RowDeletedName="BadgesRowDeleted" msprop:Generator_RowClassName="BadgesRow" msprop:Generator_UserTableName="Badges" msprop:Generator_RowEvArgName="BadgesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="badge" msprop:Generator_ColumnVarNameInTable="columnbadge" msprop:Generator_ColumnPropNameInRow="badge" msprop:Generator_ColumnPropNameInTable="badgeColumn" msprop:Generator_UserColumnName="badge">
@@ -665,7 +665,7 @@ WHERE        (visit_ID = @visit_ID) AND (time_out IS NULL)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="users" msprop:Generator_TableClassName="usersDataTable" msprop:Generator_TableVarName="tableusers" msprop:Generator_TablePropName="users" msprop:Generator_RowDeletingName="usersRowDeleting" msprop:Generator_RowChangingName="usersRowChanging" msprop:Generator_RowEvHandlerName="usersRowChangeEventHandler" msprop:Generator_RowDeletedName="usersRowDeleted" msprop:Generator_UserTableName="users" msprop:Generator_RowChangedName="usersRowChanged" msprop:Generator_RowEvArgName="usersRowChangeEvent" msprop:Generator_RowClassName="usersRow">
+        <xs:element name="users" msprop:Generator_TableClassName="usersDataTable" msprop:Generator_TableVarName="tableusers" msprop:Generator_RowChangedName="usersRowChanged" msprop:Generator_TablePropName="users" msprop:Generator_RowDeletingName="usersRowDeleting" msprop:Generator_RowChangingName="usersRowChanging" msprop:Generator_RowEvHandlerName="usersRowChangeEventHandler" msprop:Generator_RowDeletedName="usersRowDeleted" msprop:Generator_RowClassName="usersRow" msprop:Generator_UserTableName="users" msprop:Generator_RowEvArgName="usersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -702,7 +702,7 @@ WHERE        (visit_ID = @visit_ID) AND (time_out IS NULL)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Vehicles" msprop:Generator_TableClassName="VehiclesDataTable" msprop:Generator_TableVarName="tableVehicles" msprop:Generator_TablePropName="Vehicles" msprop:Generator_RowDeletingName="VehiclesRowDeleting" msprop:Generator_RowChangingName="VehiclesRowChanging" msprop:Generator_RowEvHandlerName="VehiclesRowChangeEventHandler" msprop:Generator_RowDeletedName="VehiclesRowDeleted" msprop:Generator_UserTableName="Vehicles" msprop:Generator_RowChangedName="VehiclesRowChanged" msprop:Generator_RowEvArgName="VehiclesRowChangeEvent" msprop:Generator_RowClassName="VehiclesRow">
+        <xs:element name="Vehicles" msprop:Generator_TableClassName="VehiclesDataTable" msprop:Generator_TableVarName="tableVehicles" msprop:Generator_RowChangedName="VehiclesRowChanged" msprop:Generator_TablePropName="Vehicles" msprop:Generator_RowDeletingName="VehiclesRowDeleting" msprop:Generator_RowChangingName="VehiclesRowChanging" msprop:Generator_RowEvHandlerName="VehiclesRowChangeEventHandler" msprop:Generator_RowDeletedName="VehiclesRowDeleted" msprop:Generator_RowClassName="VehiclesRow" msprop:Generator_UserTableName="Vehicles" msprop:Generator_RowEvArgName="VehiclesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -754,7 +754,7 @@ WHERE        (visit_ID = @visit_ID) AND (time_out IS NULL)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VIP" msprop:Generator_TableClassName="VIPDataTable" msprop:Generator_TableVarName="tableVIP" msprop:Generator_TablePropName="VIP" msprop:Generator_RowDeletingName="VIPRowDeleting" msprop:Generator_RowChangingName="VIPRowChanging" msprop:Generator_RowEvHandlerName="VIPRowChangeEventHandler" msprop:Generator_RowDeletedName="VIPRowDeleted" msprop:Generator_UserTableName="VIP" msprop:Generator_RowChangedName="VIPRowChanged" msprop:Generator_RowEvArgName="VIPRowChangeEvent" msprop:Generator_RowClassName="VIPRow">
+        <xs:element name="VIP" msprop:Generator_TableClassName="VIPDataTable" msprop:Generator_TableVarName="tableVIP" msprop:Generator_RowChangedName="VIPRowChanged" msprop:Generator_TablePropName="VIP" msprop:Generator_RowDeletingName="VIPRowDeleting" msprop:Generator_RowChangingName="VIPRowChanging" msprop:Generator_RowEvHandlerName="VIPRowChangeEventHandler" msprop:Generator_RowDeletedName="VIPRowDeleted" msprop:Generator_RowClassName="VIPRow" msprop:Generator_UserTableName="VIP" msprop:Generator_RowEvArgName="VIPRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="vip_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnvip_ID" msprop:Generator_ColumnPropNameInRow="vip_ID" msprop:Generator_ColumnPropNameInTable="vip_IDColumn" msprop:Generator_UserColumnName="vip_ID" type="xs:int" />
@@ -839,7 +839,7 @@ WHERE        (visit_ID = @visit_ID) AND (time_out IS NULL)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Visitors" msprop:Generator_TableClassName="VisitorsDataTable" msprop:Generator_TableVarName="tableVisitors" msprop:Generator_TablePropName="Visitors" msprop:Generator_RowDeletingName="VisitorsRowDeleting" msprop:Generator_RowChangingName="VisitorsRowChanging" msprop:Generator_RowEvHandlerName="VisitorsRowChangeEventHandler" msprop:Generator_RowDeletedName="VisitorsRowDeleted" msprop:Generator_UserTableName="Visitors" msprop:Generator_RowChangedName="VisitorsRowChanged" msprop:Generator_RowEvArgName="VisitorsRowChangeEvent" msprop:Generator_RowClassName="VisitorsRow">
+        <xs:element name="Visitors" msprop:Generator_TableClassName="VisitorsDataTable" msprop:Generator_TableVarName="tableVisitors" msprop:Generator_RowChangedName="VisitorsRowChanged" msprop:Generator_TablePropName="Visitors" msprop:Generator_RowDeletingName="VisitorsRowDeleting" msprop:Generator_RowChangingName="VisitorsRowChanging" msprop:Generator_RowEvHandlerName="VisitorsRowChangeEventHandler" msprop:Generator_RowDeletedName="VisitorsRowDeleted" msprop:Generator_RowClassName="VisitorsRow" msprop:Generator_UserTableName="Visitors" msprop:Generator_RowEvArgName="VisitorsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="visit_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnvisit_ID" msprop:Generator_ColumnPropNameInRow="visit_ID" msprop:Generator_ColumnPropNameInTable="visit_IDColumn" msprop:Generator_UserColumnName="visit_ID" type="xs:int" />
@@ -962,9 +962,9 @@ WHERE        (visit_ID = @visit_ID) AND (time_out IS NULL)</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Vehicles_users" msdata:parent="users" msdata:child="Vehicles" msdata:parentkey="id" msdata:childkey="userid" msprop:Generator_UserChildTable="Vehicles" msprop:Generator_ChildPropName="GetVehiclesRows" msprop:Generator_UserRelationName="FK_Vehicles_users" msprop:Generator_ParentPropName="usersRow" msprop:Generator_RelationVarName="relationFK_Vehicles_users" msprop:Generator_UserParentTable="users" />
-      <msdata:Relationship name="FK_Vehicles_Badges" msdata:parent="Badges" msdata:child="Visitors" msdata:parentkey="badge" msdata:childkey="badge_number" msprop:Generator_UserChildTable="Visitors" msprop:Generator_ChildPropName="GetVisitorsRows" msprop:Generator_UserRelationName="FK_Vehicles_Badges" msprop:Generator_ParentPropName="BadgesRow" msprop:Generator_RelationVarName="relationFK_Vehicles_Badges" msprop:Generator_UserParentTable="Badges" />
-      <msdata:Relationship name="FK_Visitors_users" msdata:parent="users" msdata:child="Visitors" msdata:parentkey="id" msdata:childkey="userid" msprop:Generator_UserChildTable="Visitors" msprop:Generator_ChildPropName="GetVisitorsRows" msprop:Generator_UserRelationName="FK_Visitors_users" msprop:Generator_ParentPropName="usersRow" msprop:Generator_RelationVarName="relationFK_Visitors_users" msprop:Generator_UserParentTable="users" />
+      <msdata:Relationship name="FK_Vehicles_users" msdata:parent="users" msdata:child="Vehicles" msdata:parentkey="id" msdata:childkey="userid" msprop:Generator_UserChildTable="Vehicles" msprop:Generator_ChildPropName="GetVehiclesRows" msprop:Generator_UserRelationName="FK_Vehicles_users" msprop:Generator_RelationVarName="relationFK_Vehicles_users" msprop:Generator_UserParentTable="users" msprop:Generator_ParentPropName="usersRow" />
+      <msdata:Relationship name="FK_Vehicles_Badges" msdata:parent="Badges" msdata:child="Visitors" msdata:parentkey="badge" msdata:childkey="badge_number" msprop:Generator_UserChildTable="Visitors" msprop:Generator_ChildPropName="GetVisitorsRows" msprop:Generator_UserRelationName="FK_Vehicles_Badges" msprop:Generator_RelationVarName="relationFK_Vehicles_Badges" msprop:Generator_UserParentTable="Badges" msprop:Generator_ParentPropName="BadgesRow" />
+      <msdata:Relationship name="FK_Visitors_users" msdata:parent="users" msdata:child="Visitors" msdata:parentkey="id" msdata:childkey="userid" msprop:Generator_UserChildTable="Visitors" msprop:Generator_ChildPropName="GetVisitorsRows" msprop:Generator_UserRelationName="FK_Visitors_users" msprop:Generator_RelationVarName="relationFK_Visitors_users" msprop:Generator_UserParentTable="users" msprop:Generator_ParentPropName="usersRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

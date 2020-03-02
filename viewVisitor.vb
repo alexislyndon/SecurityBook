@@ -44,5 +44,9 @@
         End If
     End Sub
 
-
+    Private Sub VisitorsDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles VisitorsDataGridView.CellDoubleClick
+        'Dim id As Integer = VisitorsDataGridView.SelectedCells.Item(0).Value
+        'Dim pv As New PopView(id)
+        'PV.Show()
+    End Sub
 End Class
