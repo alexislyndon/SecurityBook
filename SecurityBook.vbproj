@@ -108,6 +108,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddVehicle.Designer.vb">
+      <DependentUpon>AddVehicle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddVehicle.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="AddVisitor.Designer.vb">
       <DependentUpon>AddVisitor.vb</DependentUpon>
     </Compile>
@@ -202,6 +208,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddVehicle.resx">
+      <DependentUpon>AddVehicle.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddVisitor.resx">
       <DependentUpon>AddVisitor.vb</DependentUpon>
     </EmbeddedResource>

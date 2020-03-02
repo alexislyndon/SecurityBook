@@ -48,6 +48,7 @@ Partial Class MAINGATE
         Me.closebtn = New System.Windows.Forms.PictureBox()
         Me.AddVisitor1 = New SecurityBook.AddVisitor()
         Me.ViewVisitor1 = New SecurityBook.viewVisitor()
+        Me.AddVehicle1 = New SecurityBook.AddVehicle()
         Me.sidepanel.SuspendLayout()
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.closebtn, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -319,6 +320,14 @@ Partial Class MAINGATE
         Me.ViewVisitor1.TabIndex = 9
         Me.ViewVisitor1.Visible = False
         '
+        'AddVehicle1
+        '
+        Me.AddVehicle1.Location = New System.Drawing.Point(250, 0)
+        Me.AddVehicle1.Name = "AddVehicle1"
+        Me.AddVehicle1.Size = New System.Drawing.Size(1116, 768)
+        Me.AddVehicle1.TabIndex = 10
+        Me.AddVehicle1.Visible = False
+        '
         'MAINGATE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -333,6 +342,7 @@ Partial Class MAINGATE
         Me.Controls.Add(Me.closelbl)
         Me.Controls.Add(Me.AddVisitor1)
         Me.Controls.Add(Me.ViewVisitor1)
+        Me.Controls.Add(Me.AddVehicle1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "MAINGATE"
         Me.sidepanel.ResumeLayout(False)
@@ -368,4 +378,5 @@ Partial Class MAINGATE
     Friend WithEvents Button6 As Button
     Friend WithEvents closebtn As PictureBox
     Friend WithEvents ViewVisitor1 As viewVisitor
+    Friend WithEvents AddVehicle1 As AddVehicle
 End Class

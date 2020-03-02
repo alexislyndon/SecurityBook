@@ -77,7 +77,6 @@ Partial Class viewVisitor
         Me.TableAdapterManager.usersTableAdapter = Nothing
         Me.TableAdapterManager.VehiclesTableAdapter = Nothing
         Me.TableAdapterManager.VIPTableAdapter = Nothing
-        Me.TableAdapterManager.Visitors1TableAdapter = Nothing
         Me.TableAdapterManager.VisitorsTableAdapter = Me.VisitorsTableAdapter
         '
         'VisitorsDataGridView

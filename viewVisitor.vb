@@ -1,9 +1,9 @@
 ﻿Public Class viewVisitor
     Private Sub viewVisitor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Visitors1TableAdapter1.Fill(Db1DS.Visitors1, Nothing) 'CheckedInToday
+        Me.VisitorsTableAdapter.InsideVisitors(Me.Db1DS.Visitors) 'CheckedInToday
     End Sub
     Public Sub refresher()
-        Me.VisitorsTableAdapter.CheckedInToday(Me.Db1DS.Visitors, Nothing)
+        Me.VisitorsTableAdapter.InsideVisitors(Me.Db1DS.Visitors)
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -40,16 +40,9 @@
         If CheckBox1.CheckState = CheckState.Checked Then
             Me.VisitorsTableAdapter.CheckedInToday(Me.Db1DS.Visitors, "m") 'm meaning exited already @ Main Gate
         Else
-            Me.VisitorsTableAdapter.CheckedInToday(Me.Db1DS.Visitors, Nothing)
+            Me.VisitorsTableAdapter.InsideVisitors(Me.Db1DS.Visitors)
         End If
     End Sub
 
-    Private Sub FillToolStripButton_Click(sender As Object, e As EventArgs)
-        Try
-            Me.Visitors1TableAdapter1.Fill(Me.Db1DS.Visitors1, ExitedToolStripTextBox.Text)
-        Catch ex As System.Exception
-            System.Windows.Forms.MessageBox.Show(ex.Message)
-        End Try
 
-    End Sub
 End Class

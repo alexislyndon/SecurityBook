@@ -128,10 +128,12 @@
         ViewVisitor1.Visible = True
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click 'Vehicles
         tem.Y = Panel1.Location.Y
         Timer4.Start()
         falsifier()
+        AddVehicle1.Visible = True
+
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -176,5 +178,11 @@
         AddVisitor1.Visible = False
         Me.AddVisitor1.setuc()
         ViewVisitor1.Visible = False
+        AddVehicle1.Visible = False
+
+    End Sub
+
+    Private Sub AddVehicle1_Load(sender As Object, e As EventArgs) Handles AddVehicle1.Load
+
     End Sub
 End Class
