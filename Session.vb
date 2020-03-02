@@ -3,11 +3,14 @@ Module Session
     Public s_uid As Integer
     Public s_name As String
     Public s_uname As String
+    Public s_gate As String
 
-    Public Sub startsession(id As Integer, name As String, uname As String)
+
+    Public Sub startsession(id As Integer, name As String, uname As String, gate As String)
         s_uid = id
         s_name = name
         s_uname = uname
+        s_gate = gate
     End Sub
 
 
@@ -16,6 +19,7 @@ Module Session
         s_uid = Nothing
         s_name = Nothing
         s_uname = Nothing
+        s_gate = Nothing
     End Sub
 
     Public Function getsessionid()
@@ -35,6 +39,7 @@ Module Session
             sw.Write(Date.Now)
             sw.Write(" | User: " & s_uname)
             sw.Write(" | Action: " & action)
+            sw.Write(" | at Gate: " & s_gate)
             sw.WriteLine("--/")
         End Using
     End Sub

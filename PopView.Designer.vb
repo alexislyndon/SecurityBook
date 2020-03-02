@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class PopView
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class PopView
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -28,47 +28,50 @@ Partial Class PopView
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Db1DS = New SecurityBook.db1DS()
-        Me.VisitorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.VisitorsTableAdapter = New SecurityBook.db1DSTableAdapters.VisitorsTableAdapter()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.TextBox10 = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.TextBox11 = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.TextBox12 = New System.Windows.Forms.TextBox()
         Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.TextBox14 = New System.Windows.Forms.TextBox()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.VisitorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Db1DS = New SecurityBook.db1DS()
+        Me.Db1DS1 = New SecurityBook.db1DS()
+        Me.VisitorsTableAdapter = New SecurityBook.db1DSTableAdapters.VisitorsTableAdapter()
+        Me.TableAdapterManager = New SecurityBook.db1DSTableAdapters.TableAdapterManager()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Db1DS1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -117,22 +120,9 @@ Partial Class PopView
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.Location = New System.Drawing.Point(23, 53)
         Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
         Me.TextBox1.Size = New System.Drawing.Size(178, 32)
         Me.TextBox1.TabIndex = 2
-        '
-        'Db1DS
-        '
-        Me.Db1DS.DataSetName = "db1DS"
-        Me.Db1DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'VisitorsBindingSource
-        '
-        Me.VisitorsBindingSource.DataMember = "Visitors"
-        Me.VisitorsBindingSource.DataSource = Me.Db1DS
-        '
-        'VisitorsTableAdapter
-        '
-        Me.VisitorsTableAdapter.ClearBeforeFill = True
         '
         'TextBox2
         '
@@ -140,6 +130,7 @@ Partial Class PopView
         Me.TextBox2.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox2.Location = New System.Drawing.Point(239, 53)
         Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
         Me.TextBox2.Size = New System.Drawing.Size(178, 32)
         Me.TextBox2.TabIndex = 2
         '
@@ -159,6 +150,7 @@ Partial Class PopView
         Me.TextBox3.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox3.Location = New System.Drawing.Point(458, 53)
         Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.ReadOnly = True
         Me.TextBox3.Size = New System.Drawing.Size(178, 32)
         Me.TextBox3.TabIndex = 2
         '
@@ -178,6 +170,7 @@ Partial Class PopView
         Me.TextBox4.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox4.Location = New System.Drawing.Point(23, 124)
         Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.ReadOnly = True
         Me.TextBox4.Size = New System.Drawing.Size(178, 32)
         Me.TextBox4.TabIndex = 2
         '
@@ -187,17 +180,9 @@ Partial Class PopView
         Me.TextBox5.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox5.Location = New System.Drawing.Point(239, 124)
         Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.ReadOnly = True
         Me.TextBox5.Size = New System.Drawing.Size(178, 32)
         Me.TextBox5.TabIndex = 2
-        '
-        'TextBox6
-        '
-        Me.TextBox6.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VisitorsBindingSource, "Entry", True))
-        Me.TextBox6.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(238, 49)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(140, 32)
-        Me.TextBox6.TabIndex = 2
         '
         'Label4
         '
@@ -219,73 +204,6 @@ Partial Class PopView
         Me.Label5.TabIndex = 1
         Me.Label5.Text = "Phone"
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(234, 25)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(109, 21)
-        Me.Label6.TabIndex = 1
-        Me.Label6.Text = "Point of Entry"
-        '
-        'TextBox7
-        '
-        Me.TextBox7.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VisitorsBindingSource, "destination", True))
-        Me.TextBox7.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.Location = New System.Drawing.Point(22, 49)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(178, 32)
-        Me.TextBox7.TabIndex = 2
-        '
-        'TextBox8
-        '
-        Me.TextBox8.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VisitorsBindingSource, "purpose", True))
-        Me.TextBox8.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox8.Location = New System.Drawing.Point(22, 118)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(178, 32)
-        Me.TextBox8.TabIndex = 2
-        '
-        'TextBox9
-        '
-        Me.TextBox9.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VisitorsBindingSource, "Exited", True))
-        Me.TextBox9.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox9.Location = New System.Drawing.Point(238, 118)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(140, 32)
-        Me.TextBox9.TabIndex = 2
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(18, 25)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(93, 21)
-        Me.Label7.TabIndex = 1
-        Me.Label7.Text = "Destination"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(18, 94)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(70, 21)
-        Me.Label8.TabIndex = 1
-        Me.Label8.Text = "Purpose"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(234, 94)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(54, 21)
-        Me.Label9.TabIndex = 1
-        Me.Label9.Text = "Exited"
-        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.TextBox5)
@@ -305,129 +223,6 @@ Partial Class PopView
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Personal Information"
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.TextBox7)
-        Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Controls.Add(Me.Label9)
-        Me.GroupBox2.Controls.Add(Me.TextBox14)
-        Me.GroupBox2.Controls.Add(Me.TextBox13)
-        Me.GroupBox2.Controls.Add(Me.TextBox12)
-        Me.GroupBox2.Controls.Add(Me.Label14)
-        Me.GroupBox2.Controls.Add(Me.Label13)
-        Me.GroupBox2.Controls.Add(Me.Label12)
-        Me.GroupBox2.Controls.Add(Me.TextBox11)
-        Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Controls.Add(Me.TextBox10)
-        Me.GroupBox2.Controls.Add(Me.Label10)
-        Me.GroupBox2.Controls.Add(Me.TextBox6)
-        Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Controls.Add(Me.TextBox8)
-        Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Controls.Add(Me.TextBox9)
-        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(338, 242)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(649, 240)
-        Me.GroupBox2.TabIndex = 4
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Security Information"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(412, 25)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(64, 21)
-        Me.Label10.TabIndex = 1
-        Me.Label10.Text = "Time in"
-        '
-        'TextBox10
-        '
-        Me.TextBox10.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VisitorsBindingSource, "time_in", True))
-        Me.TextBox10.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox10.Location = New System.Drawing.Point(416, 49)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(219, 32)
-        Me.TextBox10.TabIndex = 2
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(412, 94)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(75, 21)
-        Me.Label11.TabIndex = 1
-        Me.Label11.Text = "Time out"
-        '
-        'TextBox11
-        '
-        Me.TextBox11.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VisitorsBindingSource, "time_out", True))
-        Me.TextBox11.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox11.Location = New System.Drawing.Point(416, 118)
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(219, 32)
-        Me.TextBox11.TabIndex = 2
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(19, 168)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(123, 21)
-        Me.Label12.TabIndex = 1
-        Me.Label12.Text = "ID Surrendered"
-        '
-        'TextBox12
-        '
-        Me.TextBox12.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VisitorsBindingSource, "ID_surrendered", True))
-        Me.TextBox12.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox12.Location = New System.Drawing.Point(23, 192)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(219, 32)
-        Me.TextBox12.TabIndex = 2
-        '
-        'TextBox13
-        '
-        Me.TextBox13.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VisitorsBindingSource, "userid", True))
-        Me.TextBox13.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox13.Location = New System.Drawing.Point(282, 192)
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(205, 32)
-        Me.TextBox13.TabIndex = 2
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(281, 168)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(94, 21)
-        Me.Label13.TabIndex = 1
-        Me.Label13.Text = "SG on Duty"
-        '
-        'TextBox14
-        '
-        Me.TextBox14.DataBindings.Add(New System.Windows.Forms.Binding("Tag", Me.VisitorsBindingSource, "badge_number", True))
-        Me.TextBox14.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox14.Location = New System.Drawing.Point(529, 192)
-        Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(106, 32)
-        Me.TextBox14.TabIndex = 2
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(525, 168)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(42, 21)
-        Me.Label14.TabIndex = 1
-        Me.Label14.Text = "Pass"
         '
         'Button1
         '
@@ -465,11 +260,248 @@ Partial Class PopView
         Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button3.UseVisualStyleBackColor = False
         '
+        'TextBox9
+        '
+        Me.TextBox9.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VisitorsBindingSource, "Exited", True))
+        Me.TextBox9.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox9.Location = New System.Drawing.Point(238, 118)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.ReadOnly = True
+        Me.TextBox9.Size = New System.Drawing.Size(140, 32)
+        Me.TextBox9.TabIndex = 2
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(18, 94)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(70, 21)
+        Me.Label8.TabIndex = 1
+        Me.Label8.Text = "Purpose"
+        '
+        'TextBox8
+        '
+        Me.TextBox8.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VisitorsBindingSource, "purpose", True))
+        Me.TextBox8.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox8.Location = New System.Drawing.Point(22, 118)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.ReadOnly = True
+        Me.TextBox8.Size = New System.Drawing.Size(178, 32)
+        Me.TextBox8.TabIndex = 2
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(234, 25)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(109, 21)
+        Me.Label6.TabIndex = 1
+        Me.Label6.Text = "Point of Entry"
+        '
+        'TextBox6
+        '
+        Me.TextBox6.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VisitorsBindingSource, "Entry", True))
+        Me.TextBox6.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox6.Location = New System.Drawing.Point(238, 49)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.ReadOnly = True
+        Me.TextBox6.Size = New System.Drawing.Size(140, 32)
+        Me.TextBox6.TabIndex = 2
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(412, 25)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(64, 21)
+        Me.Label10.TabIndex = 1
+        Me.Label10.Text = "Time in"
+        '
+        'TextBox10
+        '
+        Me.TextBox10.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VisitorsBindingSource, "time_in", True))
+        Me.TextBox10.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox10.Location = New System.Drawing.Point(416, 49)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.ReadOnly = True
+        Me.TextBox10.Size = New System.Drawing.Size(219, 32)
+        Me.TextBox10.TabIndex = 2
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(412, 94)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(75, 21)
+        Me.Label11.TabIndex = 1
+        Me.Label11.Text = "Time out"
+        '
+        'TextBox11
+        '
+        Me.TextBox11.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VisitorsBindingSource, "time_out", True))
+        Me.TextBox11.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox11.Location = New System.Drawing.Point(416, 118)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.ReadOnly = True
+        Me.TextBox11.Size = New System.Drawing.Size(219, 32)
+        Me.TextBox11.TabIndex = 2
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(19, 168)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(123, 21)
+        Me.Label12.TabIndex = 1
+        Me.Label12.Text = "ID Surrendered"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(281, 168)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(94, 21)
+        Me.Label13.TabIndex = 1
+        Me.Label13.Text = "SG on Duty"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(525, 168)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(42, 21)
+        Me.Label14.TabIndex = 1
+        Me.Label14.Text = "Pass"
+        '
+        'TextBox12
+        '
+        Me.TextBox12.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VisitorsBindingSource, "ID_surrendered", True))
+        Me.TextBox12.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox12.Location = New System.Drawing.Point(23, 192)
+        Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.ReadOnly = True
+        Me.TextBox12.Size = New System.Drawing.Size(219, 32)
+        Me.TextBox12.TabIndex = 2
+        '
+        'TextBox13
+        '
+        Me.TextBox13.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox13.Location = New System.Drawing.Point(282, 192)
+        Me.TextBox13.Name = "TextBox13"
+        Me.TextBox13.ReadOnly = True
+        Me.TextBox13.Size = New System.Drawing.Size(205, 32)
+        Me.TextBox13.TabIndex = 2
+        '
+        'TextBox14
+        '
+        Me.TextBox14.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VisitorsBindingSource, "badge_number", True))
+        Me.TextBox14.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox14.Location = New System.Drawing.Point(529, 192)
+        Me.TextBox14.Name = "TextBox14"
+        Me.TextBox14.ReadOnly = True
+        Me.TextBox14.Size = New System.Drawing.Size(106, 32)
+        Me.TextBox14.TabIndex = 2
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(234, 94)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(54, 21)
+        Me.Label9.TabIndex = 1
+        Me.Label9.Text = "Exited"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(18, 25)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(93, 21)
+        Me.Label7.TabIndex = 1
+        Me.Label7.Text = "Destination"
+        '
+        'TextBox7
+        '
+        Me.TextBox7.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VisitorsBindingSource, "destination", True))
+        Me.TextBox7.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox7.Location = New System.Drawing.Point(22, 49)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.ReadOnly = True
+        Me.TextBox7.Size = New System.Drawing.Size(178, 32)
+        Me.TextBox7.TabIndex = 2
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.TextBox7)
+        Me.GroupBox2.Controls.Add(Me.Label7)
+        Me.GroupBox2.Controls.Add(Me.Label9)
+        Me.GroupBox2.Controls.Add(Me.TextBox14)
+        Me.GroupBox2.Controls.Add(Me.TextBox13)
+        Me.GroupBox2.Controls.Add(Me.TextBox12)
+        Me.GroupBox2.Controls.Add(Me.Label14)
+        Me.GroupBox2.Controls.Add(Me.Label13)
+        Me.GroupBox2.Controls.Add(Me.Label12)
+        Me.GroupBox2.Controls.Add(Me.TextBox11)
+        Me.GroupBox2.Controls.Add(Me.Label11)
+        Me.GroupBox2.Controls.Add(Me.TextBox10)
+        Me.GroupBox2.Controls.Add(Me.Label10)
+        Me.GroupBox2.Controls.Add(Me.TextBox6)
+        Me.GroupBox2.Controls.Add(Me.Label6)
+        Me.GroupBox2.Controls.Add(Me.TextBox8)
+        Me.GroupBox2.Controls.Add(Me.Label8)
+        Me.GroupBox2.Controls.Add(Me.TextBox9)
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Location = New System.Drawing.Point(338, 242)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(649, 240)
+        Me.GroupBox2.TabIndex = 4
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Security Information"
+        '
+        'VisitorsBindingSource
+        '
+        Me.VisitorsBindingSource.DataMember = "Visitors"
+        Me.VisitorsBindingSource.DataSource = Me.Db1DS
+        '
+        'Db1DS
+        '
+        Me.Db1DS.DataSetName = "db1DS"
+        Me.Db1DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Db1DS1
+        '
+        Me.Db1DS1.DataSetName = "db1DS"
+        Me.Db1DS1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'VisitorsTableAdapter
+        '
+        Me.VisitorsTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BadgesTableAdapter = Nothing
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.UpdateOrder = SecurityBook.db1DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.usersTableAdapter = Nothing
+        Me.TableAdapterManager.VehiclesTableAdapter = Nothing
+        Me.TableAdapterManager.VIPTableAdapter = Nothing
+        Me.TableAdapterManager.VisitorsTableAdapter = Nothing
+        '
         'PopView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1000, 600)
+        Me.ClientSize = New System.Drawing.Size(1021, 600)
         Me.ControlBox = False
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button3)
@@ -479,17 +511,19 @@ Partial Class PopView
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.PictureBox3)
+        Me.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VisitorsBindingSource, "FullName", True))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "PopView"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Db1DS1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -508,29 +542,31 @@ Partial Class PopView
     Friend WithEvents Label3 As Label
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents TextBox9 As TextBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents TextBox13 As TextBox
-    Friend WithEvents TextBox12 As TextBox
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents TextBox11 As TextBox
-    Friend WithEvents Label11 As Label
-    Friend WithEvents TextBox10 As TextBox
-    Friend WithEvents Label10 As Label
-    Friend WithEvents TextBox14 As TextBox
-    Friend WithEvents Label14 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents TableAdapterManager As db1DSTableAdapters.TableAdapterManager
+    Friend WithEvents Db1DS1 As db1DS
+    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents TextBox10 As TextBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents TextBox11 As TextBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents TextBox12 As TextBox
+    Friend WithEvents TextBox13 As TextBox
+    Friend WithEvents TextBox14 As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents GroupBox2 As GroupBox
 End Class

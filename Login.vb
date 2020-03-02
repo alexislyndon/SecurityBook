@@ -78,29 +78,31 @@
                 'Dim udt As db1DS.usersDataTable = UsersTableAdapter1.GetDesignationQuery(u, p)
                 UsersTableAdapter1.DesignationQuery(Me.Db1DS1.users, u, p)
                 Dim id As Integer
-                Dim designation, name, uname As String
+                Dim designation, name, uname, gate As String
                 id = Me.Db1DS1.users.Rows(0).Item(0)
                 designation = Me.Db1DS1.users.Rows(0).Item("designation")
                 name = Me.Db1DS1.users.Rows(0).Item("name")
                 uname = Me.Db1DS1.users.Rows(0).Item("username")
+                gate = Me.Db1DS1.users.Rows(0).Item("designation").Substring(0, 1)
+
 
 
                 If designation = "admin" Then
                     'append userid to session and logs
                     'show the admin panel
-                    startsession(id, name, uname)
+                    startsession(id, name, uname, gate)
                     ADMIN.Show()
                     Me.Close()
                     logger("Logged in to ADMIN PANEL")
 
                 ElseIf designation = "main" Then
-                    startsession(id, name, uname)
+                    startsession(id, name, uname, gate)
                     MAINGATE.Show()
                     Me.Close()
                     logger("Logged in to MAIN GATE PANEL")
 
                 ElseIf designation = "back" Then
-                    startsession(id, name, uname)
+                    startsession(id, name, uname, gate)
                     BACKGATE.Show()
                     Me.Close()
                     logger("Logged in to BACK GATE PANEL")

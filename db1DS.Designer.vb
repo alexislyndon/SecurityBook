@@ -6498,7 +6498,7 @@ Namespace db1DSTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(4) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(5) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        visit_ID, fname, mname, lname, CASE WHEN sex = 'm' THEN 'Male' WHEN"& _ 
@@ -6554,14 +6554,33 @@ Namespace db1DSTableAdapters
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visit_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(4).Connection = Me.Connection
-            Me._commandCollection(4).CommandText = "SELECT CASE WHEN entry = 'm' THEN 'Main Gate' WHEN entry = 'b' THEN 'Back Gate' E"& _ 
-                "ND AS Entry, CASE WHEN exited = 'm' THEN 'Main Gate' WHEN exited = 'b' THEN 'Bac"& _ 
-                "k Gate' ELSE 'Other' END AS Exited, FullName, ID_surrendered, CASE WHEN sex = 'm"& _ 
-                "' THEN 'Male' WHEN sex = 'f' THEN 'Female' ELSE 'Other' END AS Sex, alert, badge"& _ 
-                "_number, destination, fname, id_back, id_pic, lname, mname, phone, portrait, pur"& _ 
-                "pose, time_in, time_out, userid, visit_ID FROM Visitors WHERE (exited IS NULL) O"& _ 
-                "R (time_out IS NULL)"
+            Me._commandCollection(4).CommandText = "SELECT        CASE WHEN entry = 'm' THEN 'Main Gate' WHEN entry = 'b' THEN 'Back "& _ 
+                "Gate' END AS Entry, CASE WHEN exited = 'm' THEN 'Main Gate' WHEN exited = 'b' TH"& _ 
+                "EN 'Back Gate' ELSE 'Other' END AS Exited, Visitors.FullName, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                "& _ 
+                "         Visitors.ID_surrendered, CASE WHEN sex = 'm' THEN 'Male' WHEN sex = 'f'"& _ 
+                " THEN 'Female' ELSE 'Other' END AS Sex, Visitors.alert, Visitors.badge_number, V"& _ 
+                "isitors.destination, Visitors.fname, Visitors.id_back, Visitors.id_pic, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"      "& _ 
+                "                   Visitors.lname, Visitors.mname, Visitors.phone, Visitors.port"& _ 
+                "rait, Visitors.purpose, Visitors.time_in, Visitors.time_out, Visitors.visit_ID, "& _ 
+                "users.name AS Guard"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Visitors INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      "& _ 
+                "   users ON Visitors.userid = users.id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Visitors.exited IS NULL) O"& _ 
+                "R"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (Visitors.time_out IS NULL)"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(5).Connection = Me.Connection
+            Me._commandCollection(5).CommandText = "SELECT        Visitors.visit_ID, Visitors.fname, Visitors.mname, Visitors.lname, "& _ 
+                "CASE WHEN sex = 'm' THEN 'Male' WHEN sex = 'f' THEN 'Female' ELSE 'Other' END AS"& _ 
+                " Sex, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         CASE WHEN entry = 'm' THEN 'Main Gate' WHEN ent"& _ 
+                "ry = 'b' THEN 'Back Gate' END AS Entry, CASE WHEN exited = 'm' THEN 'Main Gate' "& _ 
+                "WHEN exited = 'b' THEN 'Back Gate' ELSE 'Other' END AS Exited, Visitors.destinat"& _ 
+                "ion, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Visitors.purpose, Visitors.time_in, Visitors.tim"& _ 
+                "e_out, Visitors.badge_number, Visitors.portrait, Visitors.id_pic, Visitors.id_ba"& _ 
+                "ck, Visitors.ID_surrendered, Visitors.phone, Visitors.userid, Visitors.FullName,"& _ 
+                " Visitors.alert, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         users.name, users.designation"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM "& _ 
+                "           Visitors INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         users ON Visitors.useri"& _ 
+                "d = users.id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Visitors.visit_ID = @visit_ID)"
+            Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visit_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6651,6 +6670,32 @@ Namespace db1DSTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
         Public Overloads Overridable Function GetInsideVisitors() As db1DS.VisitorsDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(4)
+            Dim dataTable As db1DS.VisitorsDataTable = New db1DS.VisitorsDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function View(ByVal dataTable As db1DS.VisitorsDataTable, ByVal visit_ID As Integer) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(5)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(visit_ID,Integer)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function getview(ByVal visit_ID As Integer) As db1DS.VisitorsDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(5)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(visit_ID,Integer)
             Dim dataTable As db1DS.VisitorsDataTable = New db1DS.VisitorsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
