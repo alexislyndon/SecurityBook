@@ -24,7 +24,6 @@ Partial Class Login
     Private Sub InitializeComponent()
         Me.loginbtn = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.UsersTableAdapter1 = New SecurityBook.db1DSTableAdapters.usersTableAdapter()
         Me.Db1DS1 = New SecurityBook.db1DS()
@@ -52,15 +51,6 @@ Partial Class Login
         Me.TextBox1.TabIndex = 1
         Me.TextBox1.Text = "Username"
         '
-        'MaskedTextBox1
-        '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(110, 193)
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.MaskedTextBox1.TabIndex = 2
-        Me.MaskedTextBox1.Text = "Password"
-        Me.MaskedTextBox1.Visible = False
-        '
         'TextBox2
         '
         Me.TextBox2.Location = New System.Drawing.Point(110, 151)
@@ -85,7 +75,6 @@ Partial Class Login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(320, 352)
         Me.ControlBox = False
-        Me.Controls.Add(Me.MaskedTextBox1)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.loginbtn)
@@ -99,7 +88,6 @@ Partial Class Login
 
     Friend WithEvents loginbtn As Button
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents MaskedTextBox1 As MaskedTextBox
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents UsersTableAdapter1 As db1DSTableAdapters.usersTableAdapter
     Friend WithEvents Db1DS1 As db1DS
