@@ -22,19 +22,27 @@ Partial Class Login
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.loginbtn = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.UsersTableAdapter1 = New SecurityBook.db1DSTableAdapters.usersTableAdapter()
+        Me.Db1DS1 = New SecurityBook.db1DS()
+        CType(Me.Db1DS1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Button1
+        'loginbtn
         '
-        Me.Button1.Location = New System.Drawing.Point(123, 225)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Login"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.loginbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.loginbtn.FlatAppearance.BorderSize = 0
+        Me.loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.loginbtn.ForeColor = System.Drawing.Color.White
+        Me.loginbtn.Location = New System.Drawing.Point(110, 248)
+        Me.loginbtn.Name = "loginbtn"
+        Me.loginbtn.Size = New System.Drawing.Size(100, 39)
+        Me.loginbtn.TabIndex = 3
+        Me.loginbtn.Text = "Login"
+        Me.loginbtn.UseVisualStyleBackColor = False
         '
         'TextBox1
         '
@@ -46,29 +54,53 @@ Partial Class Login
         '
         'MaskedTextBox1
         '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(110, 168)
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(110, 193)
         Me.MaskedTextBox1.Name = "MaskedTextBox1"
         Me.MaskedTextBox1.Size = New System.Drawing.Size(100, 20)
         Me.MaskedTextBox1.TabIndex = 2
         Me.MaskedTextBox1.Text = "Password"
+        Me.MaskedTextBox1.Visible = False
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(110, 151)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox2.TabIndex = 2
+        Me.TextBox2.Text = "Password"
+        '
+        'UsersTableAdapter1
+        '
+        Me.UsersTableAdapter1.ClearBeforeFill = True
+        '
+        'Db1DS1
+        '
+        Me.Db1DS1.DataSetName = "db1DS"
+        Me.Db1DS1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Login
         '
+        Me.AcceptButton = Me.loginbtn
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(320, 352)
         Me.ControlBox = False
         Me.Controls.Add(Me.MaskedTextBox1)
+        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.loginbtn)
         Me.Name = "Login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        CType(Me.Db1DS1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents Button1 As Button
+    Friend WithEvents loginbtn As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents MaskedTextBox1 As MaskedTextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents UsersTableAdapter1 As db1DSTableAdapters.usersTableAdapter
+    Friend WithEvents Db1DS1 As db1DS
 End Class

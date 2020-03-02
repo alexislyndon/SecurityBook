@@ -38,7 +38,12 @@
     End Sub
 
     Private Sub closelbl_Click(sender As Object, e As EventArgs) Handles closelbl.Click
-        Me.Close()
+        Dim logout = MessageBox.Show("Log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+        If logout = DialogResult.Yes Then
+            endsession()
+            Login.Show()
+            Me.Close()
+        End If
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick

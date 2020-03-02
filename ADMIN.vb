@@ -135,7 +135,12 @@
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.Close()
+        Dim logout = MessageBox.Show("Log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+        If logout = DialogResult.Yes Then
+            endsession()
+            Login.Show()
+            Me.Close()
+        End If
     End Sub
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
         Me.WindowState = FormWindowState.Minimized

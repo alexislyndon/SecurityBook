@@ -3,10 +3,10 @@ Public Class AddVehicle
     Dim platergx As New Regex("^[a-zA-Z0-9-]+$")
     Dim gtg As Boolean = True
     Private Sub AddVehicle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.VehiclesTableAdapter.Fill(Db1DS.Vehicles)
+        Me.VehiclesTableAdapter.CheckedInVehicles(Db1DS.Vehicles)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles INvehicle.Click
         For Each ctrl In Me.Controls
             ctrl.Text = byeSpace(ctrl.Text)
         Next
@@ -60,11 +60,24 @@ Public Class AddVehicle
     End Sub
 
     Public Sub refresher()
-        Me.VehiclesTableAdapter.Fill(Db1DS.Vehicles)
+        Me.VehiclesTableAdapter.CheckedInVehicles(Db1DS.Vehicles)
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles OUTvehicle.Click
+        Dim selectedrows As DataGridViewSelectedRowCollection = VehiclesDataGridView.SelectedRows
+        Dim id = selectedrows.Item(0).Cells.Item(0).Value
+        Dim plate = selectedrows.Item(0).Cells.Item(1).Value
 
+
+
+        Dim Checkout = MessageBox.Show("Check out vehicle with plate: " & plate,
+                    "Confirm Checkout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+
+        If Checkout Then
+            Me.VehiclesTableAdapter.CheckOutVehicle(id)
+            MsgBox("Successfully Checked out vehicle.")
+            refresher()
+        End If
     End Sub
 End Class
