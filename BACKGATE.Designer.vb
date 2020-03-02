@@ -44,6 +44,8 @@ Partial Class BACKGATE
         Me.Timer6 = New System.Windows.Forms.Timer(Me.components)
         Me.minimizebtn = New System.Windows.Forms.Button()
         Me.maximizebtn = New System.Windows.Forms.Button()
+        Me.ViewVisitor1 = New SecurityBook.viewVisitor()
+        Me.AddVisitor1 = New SecurityBook.AddVisitor()
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.sidepanel.SuspendLayout()
         Me.SuspendLayout()
@@ -269,16 +271,34 @@ Partial Class BACKGATE
         Me.maximizebtn.Text = "o"
         Me.maximizebtn.UseVisualStyleBackColor = False
         '
+        'ViewVisitor1
+        '
+        Me.ViewVisitor1.Location = New System.Drawing.Point(250, 0)
+        Me.ViewVisitor1.Name = "ViewVisitor1"
+        Me.ViewVisitor1.Size = New System.Drawing.Size(1136, 768)
+        Me.ViewVisitor1.TabIndex = 6
+        Me.ViewVisitor1.Visible = False
+        '
+        'AddVisitor1
+        '
+        Me.AddVisitor1.Location = New System.Drawing.Point(250, 0)
+        Me.AddVisitor1.Name = "AddVisitor1"
+        Me.AddVisitor1.Size = New System.Drawing.Size(1116, 768)
+        Me.AddVisitor1.TabIndex = 5
+        Me.AddVisitor1.Visible = False
+        '
         'BACKGATE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1366, 768)
         Me.ControlBox = False
+        Me.Controls.Add(Me.AddVisitor1)
         Me.Controls.Add(Me.maximizebtn)
         Me.Controls.Add(Me.minimizebtn)
         Me.Controls.Add(Me.sidepanel)
         Me.Controls.Add(Me.closelbl)
+        Me.Controls.Add(Me.ViewVisitor1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "BACKGATE"
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).EndInit()
@@ -309,4 +329,6 @@ Partial Class BACKGATE
     Friend WithEvents Button5 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents maximizebtn As Button
+    Friend WithEvents AddVisitor1 As AddVisitor
+    Friend WithEvents ViewVisitor1 As viewVisitor
 End Class

@@ -132,6 +132,12 @@
     <Compile Include="adminDASH.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="adminUsers.Designer.vb">
+      <DependentUpon>adminUsers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="adminUsers.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="adminVisitors.Designer.vb">
       <DependentUpon>adminVisitors.vb</DependentUpon>
     </Compile>
@@ -200,10 +206,10 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Session.vb" />
-    <Compile Include="ucHOME.Designer.vb">
-      <DependentUpon>ucHOME.vb</DependentUpon>
+    <Compile Include="adminBadges.Designer.vb">
+      <DependentUpon>adminBadges.vb</DependentUpon>
     </Compile>
-    <Compile Include="ucHOME.vb">
+    <Compile Include="adminBadges.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="viewVisitor.Designer.vb">
@@ -225,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="adminDASH.resx">
       <DependentUpon>adminDASH.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminUsers.resx">
+      <DependentUpon>adminUsers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="adminVisitors.resx">
       <DependentUpon>adminVisitors.vb</DependentUpon>
@@ -253,8 +262,8 @@
     <EmbeddedResource Include="PopView.resx">
       <DependentUpon>PopView.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucHOME.resx">
-      <DependentUpon>ucHOME.vb</DependentUpon>
+    <EmbeddedResource Include="adminBadges.resx">
+      <DependentUpon>adminBadges.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewVisitor.resx">
       <DependentUpon>viewVisitor.vb</DependentUpon>

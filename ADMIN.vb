@@ -7,6 +7,9 @@
     Dim y2 As Integer = 180
     Dim y3 As Integer = 220
     Dim y4 As Integer = 260
+    Dim y5 As Integer = 300
+    Dim y6 As Integer = 340
+
 
     Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseDown, sidepanel.MouseDown
 
@@ -70,6 +73,7 @@
         tem.Y = Panel1.Location.Y
         Timer4.Start()
         usersbtn.BackColor = Color.FromArgb(45, 45, 45)
+        AdminUsers1.Visible = True
 
     End Sub
 
@@ -131,6 +135,9 @@
         visitorsbtn.BackColor = Color.FromArgb(35, 35, 35)
         vehiclesbtn.BackColor = Color.FromArgb(35, 35, 35)
         usersbtn.BackColor = Color.FromArgb(35, 35, 35)
+        AdminBadges1.Visible = False
+        AdminUsers1.Visible = False
+
 
     End Sub
 
@@ -144,5 +151,47 @@
     End Sub
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
         Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
+        falsifier()
+        tem.Y = Panel1.Location.Y
+        Timer5.Start()
+        Button3.BackColor = Color.FromArgb(45, 45, 45)
+        AdminBadges1.Visible = True
+
+    End Sub
+    Private Sub Button4_Click_1(sender As Object, e As EventArgs) Handles Button4.Click
+        falsifier()
+        tem.Y = Panel1.Location.Y
+        Timer5.Start()
+        Button4.BackColor = Color.FromArgb(45, 45, 45)
+
+    End Sub
+
+    Private Sub Timer5_Tick(sender As Object, e As EventArgs) Handles Timer5.Tick
+        If tem.Y > y5 Then
+            tem.Y -= 5
+        End If
+        If tem.Y < y5 Then
+            tem.Y += 5
+        End If
+        If tem.Y = y5 Then
+            Timer5.Stop()
+        End If
+        Panel1.Location = tem
+    End Sub
+
+    Private Sub Timer6_Tick(sender As Object, e As EventArgs) Handles Timer6.Tick
+        If tem.Y > y6 Then
+            tem.Y -= 5
+        End If
+        If tem.Y < y6 Then
+            tem.Y += 5
+        End If
+        If tem.Y = y6 Then
+            Timer6.Stop()
+        End If
+        Panel1.Location = tem
     End Sub
 End Class

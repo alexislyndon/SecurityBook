@@ -25,7 +25,7 @@
 
         If checkout = vbYes Then
             For i = 0 To selectedrows.Count() - 1
-                Me.VisitorsTableAdapter.CheckOut("m", selectedrows.Item(i).Cells.Item(0).Value) ' m means exited at main gate
+                Me.VisitorsTableAdapter.CheckOut(Session.s_gate, selectedrows.Item(i).Cells.Item(0).Value) ' m means exited at main gate
                 BadgesTableAdapter.ReturnBadge(selectedrows.Item(i).Cells.Item(1).Value)
             Next
 

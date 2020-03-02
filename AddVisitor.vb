@@ -61,17 +61,16 @@ Public Class AddVisitor
 
         If gtg Then
             Try
-                Me.VisitorsTableAdapter.CheckIn(fname.Text, mname.Text, lname.Text, sex.Text, "m", dest.Text, purp.Text, badge.SelectedValue, imgtobyte(PictureBox1.Image, hadcappor), imgtobyte(PictureBox2.Image, hadcapid), imgtobyte(PictureBox3.Image, hadcapback), idsurr.Text, phone.Text, 1, 0)
+                Me.VisitorsTableAdapter.CheckIn(fname.Text, mname.Text, lname.Text, sex.Text, Session.s_gate, dest.Text, purp.Text, badge.SelectedValue, imgtobyte(PictureBox1.Image, hadcappor), imgtobyte(PictureBox2.Image, hadcapid), imgtobyte(PictureBox3.Image, hadcapback), idsurr.Text, phone.Text, Session.s_uid, 0)
                 Me.BadgesTableAdapter.TakeBadge(badge.SelectedValue)
                 MsgBox("Successfully Checked in visitor!")
                 ErrorProvider1.Clear()
-                'hadcapid = False
-                'hadcappor = False
-                ''hadcapback = False
-                'PictureBox1.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\portrait.jpg")
-                'PictureBox2.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\blankid.jpg")
-                'PictureBox3.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\backside.jpg")
-
+                hadcapid = False
+                hadcappor = False
+                hadcapback = False
+                PictureBox1.Image = Nothing
+                PictureBox2.Image = Nothing
+                PictureBox3.Image = Nothing
                 'maxid = VisitorsTableAdapter.MaxID() + 1
                 'v_id.Text = maxid
                 refreshAll()

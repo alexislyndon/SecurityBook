@@ -4095,7 +4095,7 @@ Namespace db1DSTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(4) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT badge, available FROM dbo.Badges"
@@ -4106,14 +4106,20 @@ Namespace db1DSTableAdapters
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "UPDATE Badges"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET available = 1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE badge = @badge"
+            Me._commandCollection(2).CommandText = "INSERT INTO [dbo].[Badges] ([badge], [available]) VALUES (@badge);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@badge", Global.System.Data.SqlDbType.VarChar, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "badge", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@badge", Global.System.Data.SqlDbType.VarChar, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "badge", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "UPDATE Badges"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET available = 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (badge = @badge)"
+            Me._commandCollection(3).CommandText = "UPDATE       Badges"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                available = 1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (badge = @bad"& _ 
+                "ge)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@badge", Global.System.Data.SqlDbType.VarChar, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "badge", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(4).Connection = Me.Connection
+            Me._commandCollection(4).CommandText = "UPDATE Badges"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET available = 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (badge = @badge)"
+            Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@badge", Global.System.Data.SqlDbType.VarChar, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "badge", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4287,8 +4293,8 @@ Namespace db1DSTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
-        Public Overloads Overridable Function ReturnBadge(ByVal badge As String) As Integer
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
+        Public Overloads Overridable Function NewBadge(ByVal badge As String) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
             If (badge Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("badge")
@@ -4315,8 +4321,35 @@ Namespace db1DSTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
-        Public Overloads Overridable Function TakeBadge(ByVal badge As String) As Integer
+        Public Overloads Overridable Function ReturnBadge(ByVal badge As String) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
+            If (badge Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("badge")
+            Else
+                command.Parameters(0).Value = CType(badge,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
+        Public Overloads Overridable Function TakeBadge(ByVal badge As String) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(4)
             If (badge Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("badge")
             Else
@@ -4549,18 +4582,44 @@ Namespace db1DSTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(5) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT id, username, password, designation, created, name, active FROM dbo.users"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT id, designation, name , username"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM dbo.users"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (username = @usern"& _ 
-                "ame) AND (password = @password) AND (active = 1)"
+            Me._commandCollection(1).CommandText = "UPDATE [dbo].[users] "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET active = 1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"where id = @id"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@username", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "username", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@password", Global.System.Data.SqlDbType.VarChar, 24, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "INSERT INTO [dbo].[users] ([username], [password], [designation], [name], [active"& _ 
+                "]) "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES (@username, @password, @designation, @name, @active);"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@username", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "username", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@password", Global.System.Data.SqlDbType.VarChar, 24, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@designation", Global.System.Data.SqlDbType.VarChar, 15, Global.System.Data.ParameterDirection.Input, 0, 0, "designation", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@name", Global.System.Data.SqlDbType.VarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@active", Global.System.Data.SqlDbType.TinyInt, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "active", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "UPDATE [dbo].[users] "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET active = 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"where id = @id"
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(4).Connection = Me.Connection
+            Me._commandCollection(4).CommandText = "SELECT id, designation, name , username"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM dbo.users"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (username = @usern"& _ 
+                "ame) AND (password = @password) AND (active = 1)"
+            Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@username", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "username", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@password", Global.System.Data.SqlDbType.VarChar, 24, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(5).Connection = Me.Connection
+            Me._commandCollection(5).CommandText = "SELECT id, username, password, designation, created, name, active FROM dbo.users "& _ 
+                "where id = @id"
+            Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4592,7 +4651,7 @@ Namespace db1DSTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
         Public Overloads Overridable Function DesignationQuery(ByVal dataTable As db1DS.usersDataTable, ByVal username As String, ByVal password As String) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand = Me.CommandCollection(4)
             If (username Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -4615,7 +4674,7 @@ Namespace db1DSTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
         Public Overloads Overridable Function GetDesignationQuery(ByVal username As String, ByVal password As String) As db1DS.usersDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand = Me.CommandCollection(4)
             If (username Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -4626,6 +4685,32 @@ Namespace db1DSTableAdapters
             Else
                 Me.Adapter.SelectCommand.Parameters(1).Value = CType(password,String)
             End If
+            Dim dataTable As db1DS.usersDataTable = New db1DS.usersDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy(ByVal dataTable As db1DS.usersDataTable, ByVal id As Integer) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(5)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(id,Integer)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataBy(ByVal id As Integer) As db1DS.usersDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(5)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(id,Integer)
             Dim dataTable As db1DS.usersDataTable = New db1DS.usersDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -4832,6 +4917,99 @@ Namespace db1DSTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update(ByVal username As String, ByVal password As String, ByVal designation As String, ByVal created As Date, ByVal name As String, ByVal active As Byte, ByVal Original_id As Integer, ByVal Original_username As String, ByVal Original_password As String, ByVal Original_designation As String, ByVal Original_created As Date, ByVal Original_name As String, ByVal Original_active As Byte) As Integer
             Return Me.Update(username, password, designation, created, name, active, Original_id, Original_username, Original_password, Original_designation, Original_created, Original_name, Original_active, Original_id)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
+        Public Overloads Overridable Function ActivateUser(ByVal id As Integer) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            command.Parameters(0).Value = CType(id,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
+        Public Overloads Overridable Function CreateUser(ByVal username As String, ByVal password As String, ByVal designation As String, ByVal name As String, ByVal active As Global.System.Nullable(Of Byte)) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
+            If (username Is Nothing) Then
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(0).Value = CType(username,String)
+            End If
+            If (password Is Nothing) Then
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(1).Value = CType(password,String)
+            End If
+            If (designation Is Nothing) Then
+                command.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(2).Value = CType(designation,String)
+            End If
+            If (name Is Nothing) Then
+                command.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(3).Value = CType(name,String)
+            End If
+            If (active.HasValue = true) Then
+                command.Parameters(4).Value = CType(active.Value,Byte)
+            Else
+                command.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
+        Public Overloads Overridable Function DeactivateUser(ByVal id As Integer) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
+            command.Parameters(0).Value = CType(id,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
         End Function
     End Class
     
@@ -6525,11 +6703,11 @@ Namespace db1DSTableAdapters
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@exit", Global.System.Data.SqlDbType.[Char], 1, Global.System.Data.ParameterDirection.Input, 0, 0, "exited", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "INSERT INTO [Visitors] ([fname], [mname], [lname], [sex], [entry], [destination],"& _ 
-                " [purpose], [badge_number], [portrait], [id_pic], [id_back], [ID_surrendered], ["& _ 
-                "phone], [userid], [alert]) "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES (@fname, @mname, @lname, @sex, @entry, @de"& _ 
-                "stination, @purpose, @badge_number, @portrait, @id_pic, @id_back, @ID_surrendere"& _ 
-                "d, @phone, @userid, @alert);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+            Me._commandCollection(2).CommandText = "INSERT INTO Visitors"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (fname, mname, lname, sex, entry, "& _ 
+                "destination, purpose, badge_number, portrait, id_pic, id_back, ID_surrendered, p"& _ 
+                "hone, userid, alert)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (@fname,@mname,@lname,@sex,@entry,@destinati"& _ 
+                "on,@purpose,@badge_number,@portrait,@id_pic,@id_back,@ID_surrendered,@phone,@use"& _ 
+                "rid,@alert); "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UPDATE Badges "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET available = 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE badge = @badge_number"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fname", Global.System.Data.SqlDbType.VarChar, 35, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mname", Global.System.Data.SqlDbType.VarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "mname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -6562,9 +6740,9 @@ Namespace db1DSTableAdapters
                 "isitors.destination, Visitors.fname, Visitors.id_back, Visitors.id_pic, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"      "& _ 
                 "                   Visitors.lname, Visitors.mname, Visitors.phone, Visitors.port"& _ 
                 "rait, Visitors.purpose, Visitors.time_in, Visitors.time_out, Visitors.visit_ID, "& _ 
-                "users.name AS Guard"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Visitors INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      "& _ 
-                "   users ON Visitors.userid = users.id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Visitors.exited IS NULL) O"& _ 
-                "R"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (Visitors.time_out IS NULL)"
+                "users.name"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Visitors INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         users "& _ 
+                "ON Visitors.userid = users.id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Visitors.exited IS NULL) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"      "& _ 
+                "                   (Visitors.time_out IS NULL)"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(5).Connection = Me.Connection

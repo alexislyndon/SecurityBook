@@ -117,12 +117,16 @@
         Timer1.Start()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click 'add
+        falsifier()
+        AddVisitor1.Visible = True
         tem.Y = Panel1.Location.Y
         Timer2.Start()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click 'view
+        falsifier()
+        ViewVisitor1.Visible = True
         tem.Y = Panel1.Location.Y
         Timer3.Start()
     End Sub
@@ -159,5 +163,11 @@
         zero.X = 0
         zero.Y = 0
         Me.Location = zero
+    End Sub
+
+    Public Sub falsifier()
+        AddVisitor1.Visible = False
+        ViewVisitor1.Visible = False
+
     End Sub
 End Class

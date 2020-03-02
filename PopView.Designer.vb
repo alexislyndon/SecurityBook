@@ -24,6 +24,8 @@ Partial Class PopView
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.VisitorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Db1DS = New SecurityBook.db1DS()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -59,19 +61,17 @@ Partial Class PopView
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.VisitorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Db1DS = New SecurityBook.db1DS()
-        Me.Db1DS1 = New SecurityBook.db1DS()
         Me.VisitorsTableAdapter = New SecurityBook.db1DSTableAdapters.VisitorsTableAdapter()
         Me.TableAdapterManager = New SecurityBook.db1DSTableAdapters.TableAdapterManager()
+        Me.BadgesTableAdapter1 = New SecurityBook.db1DSTableAdapters.BadgesTableAdapter()
+        Me.Label15 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Db1DS1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -83,6 +83,16 @@ Partial Class PopView
         Me.PictureBox1.Size = New System.Drawing.Size(320, 240)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
+        '
+        'VisitorsBindingSource
+        '
+        Me.VisitorsBindingSource.DataMember = "Visitors"
+        Me.VisitorsBindingSource.DataSource = Me.Db1DS
+        '
+        'Db1DS
+        '
+        Me.Db1DS.DataSetName = "db1DS"
+        Me.Db1DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'PictureBox2
         '
@@ -467,21 +477,6 @@ Partial Class PopView
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Security Information"
         '
-        'VisitorsBindingSource
-        '
-        Me.VisitorsBindingSource.DataMember = "Visitors"
-        Me.VisitorsBindingSource.DataSource = Me.Db1DS
-        '
-        'Db1DS
-        '
-        Me.Db1DS.DataSetName = "db1DS"
-        Me.Db1DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Db1DS1
-        '
-        Me.Db1DS1.DataSetName = "db1DS"
-        Me.Db1DS1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'VisitorsTableAdapter
         '
         Me.VisitorsTableAdapter.ClearBeforeFill = True
@@ -497,12 +492,26 @@ Partial Class PopView
         Me.TableAdapterManager.VIPTableAdapter = Nothing
         Me.TableAdapterManager.VisitorsTableAdapter = Nothing
         '
+        'BadgesTableAdapter1
+        '
+        Me.BadgesTableAdapter1.ClearBeforeFill = True
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(12, 556)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(181, 13)
+        Me.Label15.TabIndex = 8
+        Me.Label15.Text = "Click on image to Toggle Front/Back"
+        '
         'PopView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1021, 600)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button1)
@@ -515,16 +524,16 @@ Partial Class PopView
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "PopView"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Db1DS1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -549,7 +558,6 @@ Partial Class PopView
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents TableAdapterManager As db1DSTableAdapters.TableAdapterManager
-    Friend WithEvents Db1DS1 As db1DS
     Friend WithEvents TextBox9 As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents TextBox8 As TextBox
@@ -569,4 +577,6 @@ Partial Class PopView
     Friend WithEvents Label7 As Label
     Friend WithEvents TextBox7 As TextBox
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents BadgesTableAdapter1 As db1DSTableAdapters.BadgesTableAdapter
+    Friend WithEvents Label15 As Label
 End Class
