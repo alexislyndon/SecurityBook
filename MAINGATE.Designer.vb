@@ -93,7 +93,7 @@ Partial Class MAINGATE
         Me.Button5.Location = New System.Drawing.Point(12, 490)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(238, 50)
-        Me.Button5.TabIndex = 2
+        Me.Button5.TabIndex = 5
         Me.Button5.Text = "View Vehicles"
         Me.Button5.UseVisualStyleBackColor = True
         '
@@ -109,7 +109,7 @@ Partial Class MAINGATE
         Me.Button4.Location = New System.Drawing.Point(12, 430)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(238, 50)
-        Me.Button4.TabIndex = 2
+        Me.Button4.TabIndex = 4
         Me.Button4.Text = "Vehicles"
         Me.Button4.UseVisualStyleBackColor = True
         '
@@ -125,7 +125,7 @@ Partial Class MAINGATE
         Me.Button3.Location = New System.Drawing.Point(12, 370)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(238, 50)
-        Me.Button3.TabIndex = 2
+        Me.Button3.TabIndex = 3
         Me.Button3.Text = "View Visitors"
         Me.Button3.UseVisualStyleBackColor = True
         '
@@ -157,7 +157,7 @@ Partial Class MAINGATE
         Me.Button1.Location = New System.Drawing.Point(12, 250)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(238, 50)
-        Me.Button1.TabIndex = 2
+        Me.Button1.TabIndex = 1
         Me.Button1.Text = "Home"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -309,7 +309,7 @@ Partial Class MAINGATE
         Me.AddVisitor1.Location = New System.Drawing.Point(250, 0)
         Me.AddVisitor1.Name = "AddVisitor1"
         Me.AddVisitor1.Size = New System.Drawing.Size(1116, 768)
-        Me.AddVisitor1.TabIndex = 5
+        Me.AddVisitor1.TabIndex = 0
         Me.AddVisitor1.Visible = False
         '
         'ViewVisitor1
@@ -317,7 +317,7 @@ Partial Class MAINGATE
         Me.ViewVisitor1.Location = New System.Drawing.Point(250, 0)
         Me.ViewVisitor1.Name = "ViewVisitor1"
         Me.ViewVisitor1.Size = New System.Drawing.Size(1116, 768)
-        Me.ViewVisitor1.TabIndex = 9
+        Me.ViewVisitor1.TabIndex = 0
         Me.ViewVisitor1.Visible = False
         '
         'AddVehicle1
@@ -325,7 +325,7 @@ Partial Class MAINGATE
         Me.AddVehicle1.Location = New System.Drawing.Point(250, 0)
         Me.AddVehicle1.Name = "AddVehicle1"
         Me.AddVehicle1.Size = New System.Drawing.Size(1116, 768)
-        Me.AddVehicle1.TabIndex = 10
+        Me.AddVehicle1.TabIndex = 0
         Me.AddVehicle1.Visible = False
         '
         'MAINGATE

@@ -143,7 +143,7 @@
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Dim logout = MessageBox.Show("Log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-        If logout = DialogResult.Yes Then
+        If logout = vbYes Then
             endsession()
             Login.Show()
             Me.Close()

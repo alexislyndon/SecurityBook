@@ -27,7 +27,9 @@ Partial Class Login
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.UsersTableAdapter1 = New SecurityBook.db1DSTableAdapters.usersTableAdapter()
         Me.Db1DS1 = New SecurityBook.db1DS()
+        Me.closelbl = New System.Windows.Forms.PictureBox()
         CType(Me.Db1DS1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.closelbl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'loginbtn
@@ -68,6 +70,16 @@ Partial Class Login
         Me.Db1DS1.DataSetName = "db1DS"
         Me.Db1DS1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'closelbl
+        '
+        Me.closelbl.Image = Global.SecurityBook.My.Resources.Resources.Contols___Add_On_36_512
+        Me.closelbl.Location = New System.Drawing.Point(287, -3)
+        Me.closelbl.Name = "closelbl"
+        Me.closelbl.Size = New System.Drawing.Size(36, 36)
+        Me.closelbl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.closelbl.TabIndex = 4
+        Me.closelbl.TabStop = False
+        '
         'Login
         '
         Me.AcceptButton = Me.loginbtn
@@ -75,12 +87,15 @@ Partial Class Login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(320, 352)
         Me.ControlBox = False
+        Me.Controls.Add(Me.closelbl)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.loginbtn)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.Db1DS1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.closelbl, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -91,4 +106,5 @@ Partial Class Login
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents UsersTableAdapter1 As db1DSTableAdapters.usersTableAdapter
     Friend WithEvents Db1DS1 As db1DS
+    Friend WithEvents closelbl As PictureBox
 End Class

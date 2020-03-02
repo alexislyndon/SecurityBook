@@ -1,5 +1,6 @@
 ﻿Imports System.Text.RegularExpressions
 Public Class AddVehicle
+    Dim names As New Regex("^[a-zA-z\s]+$")
     Dim platergx As New Regex("^[a-zA-Z0-9-]+$")
     Dim gtg As Boolean = True
     Private Sub AddVehicle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -37,13 +38,15 @@ Public Class AddVehicle
             ErrorProvider1.SetError(type, "Please fill out this field")
         End If
 
-        'If Driver.Text = "" Then 'type
-        '    Driver.Text = Nothing
-        'End If
+        If Not names.IsMatch(Driver.Text) Then 'driver
+            gtg = False
+            ErrorProvider1.SetError(Driver, "Only Letters and Spaces allowed")
+        End If
+
 
         If gtg Then
             Try
-                Me.VehiclesTableAdapter.CheckInVehicle(make.Text, model.Text, color.Text, type.Text, plate.Text, 1)
+                Me.VehiclesTableAdapter.CheckInVehicle(make.Text, model.Text, color.Text, type.Text, plate.Text, Driver.Text, Session.s_uid)
                 MsgBox("Successfully Checked in Vehicle!")
 
                 ErrorProvider1.Clear()
@@ -74,10 +77,11 @@ Public Class AddVehicle
         Dim Checkout = MessageBox.Show("Check out vehicle with plate: " & plate,
                     "Confirm Checkout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
-        If Checkout Then
+        If Checkout = vbYes Then
             Me.VehiclesTableAdapter.CheckOutVehicle(id)
             MsgBox("Successfully Checked out vehicle.")
             refresher()
         End If
     End Sub
+
 End Class

@@ -124,4 +124,8 @@
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub closelbl_Click(sender As Object, e As EventArgs) Handles closelbl.Click
+        Me.Close()
+    End Sub
 End Class
