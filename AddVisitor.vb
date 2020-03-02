@@ -88,8 +88,8 @@ Public Class AddVisitor
 
     Private Sub AddVisitor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         tem.Y = 17
-        'uc.X = -93
-        'uc.Y = 17
+        uc.X = -93
+        uc.Y = 17
         Me.BadgesTableAdapter.AvailableBadge(Me.Db1DS.Badges)
     End Sub
 
@@ -121,7 +121,7 @@ Public Class AddVisitor
     End Sub
 
     Public Sub setuc()
-        'uclabel.Location = uc
+        uclabel.Location = uc
     End Sub
 
     Private Sub captureID_Click(sender As Object, e As EventArgs) Handles capid.Click

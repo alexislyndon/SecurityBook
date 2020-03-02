@@ -35,15 +35,6 @@ Partial Class AddVehicle
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.VehiclesDataGridView = New System.Windows.Forms.DataGridView()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.type = New System.Windows.Forms.ComboBox()
-        Me.make = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Driver = New System.Windows.Forms.TextBox()
-        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.uclabel = New System.Windows.Forms.Label()
-        Me.OUTvehicle = New System.Windows.Forms.Button()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -55,13 +46,22 @@ Partial Class AddVehicle
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VehiclesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Db1DS = New SecurityBook.db1DS()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.type = New System.Windows.Forms.ComboBox()
+        Me.make = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Driver = New System.Windows.Forms.TextBox()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.uclabel = New System.Windows.Forms.Label()
+        Me.OUTvehicle = New System.Windows.Forms.Button()
         Me.VehiclesTableAdapter = New SecurityBook.db1DSTableAdapters.VehiclesTableAdapter()
         Me.TableAdapterManager = New SecurityBook.db1DSTableAdapters.TableAdapterManager()
         CType(Me.VehiclesDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
-        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VehiclesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'INvehicle
@@ -172,6 +172,72 @@ Partial Class AddVehicle
         Me.VehiclesDataGridView.Size = New System.Drawing.Size(767, 335)
         Me.VehiclesDataGridView.TabIndex = 12
         '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Id"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "id"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 40
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "plate"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Plate #"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "make"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Make"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "model"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Model"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "color"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Color"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "type"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Type"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "time_in"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Time in"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.DataPropertyName = "time_out"
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Time out"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "driver"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Driver"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        '
+        'VehiclesBindingSource
+        '
+        Me.VehiclesBindingSource.DataMember = "Vehicles"
+        Me.VehiclesBindingSource.DataSource = Me.Db1DS
+        '
+        'Db1DS
+        '
+        Me.Db1DS.DataSetName = "db1DS"
+        Me.Db1DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -199,7 +265,7 @@ Partial Class AddVehicle
         '
         Me.type.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.type.FormattingEnabled = True
-        Me.type.Items.AddRange(New Object() {"4-Wheeler Private", "3-Wheeler Private", "Single MC Private", "Emergency Vehicle", "Truck Private"})
+        Me.type.Items.AddRange(New Object() {"4-Wheeler Private", "3-Wheeler Private", "Single MC Private", "Emergency Vehicle", "Truck Private", "PUJ", "PUV", "Delivery"})
         Me.type.Location = New System.Drawing.Point(46, 349)
         Me.type.Name = "type"
         Me.type.Size = New System.Drawing.Size(182, 34)
@@ -273,72 +339,6 @@ Partial Class AddVehicle
         Me.OUTvehicle.Text = "Check Out Vehicle"
         Me.OUTvehicle.UseVisualStyleBackColor = False
         '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Id"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "id"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 40
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "plate"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Plate #"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "make"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Make"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "model"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Model"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "color"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Color"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "type"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Type"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "time_in"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Time in"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "time_out"
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Time out"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "driver"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Driver"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        '
-        'VehiclesBindingSource
-        '
-        Me.VehiclesBindingSource.DataMember = "Vehicles"
-        Me.VehiclesBindingSource.DataSource = Me.Db1DS
-        '
-        'Db1DS
-        '
-        Me.Db1DS.DataSetName = "db1DS"
-        Me.Db1DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'VehiclesTableAdapter
         '
         Me.VehiclesTableAdapter.ClearBeforeFill = True
@@ -365,11 +365,11 @@ Partial Class AddVehicle
         Me.Name = "AddVehicle"
         Me.Size = New System.Drawing.Size(1116, 768)
         CType(Me.VehiclesDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VehiclesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.VehiclesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

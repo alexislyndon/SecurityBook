@@ -122,6 +122,8 @@
         tem.Y = Panel1.Location.Y
         Timer2.Start()
         falsifier()
+        Threading.Thread.Sleep(100)
+        Application.DoEvents()
         AddVisitor1.Visible = True
         AddVisitor1.Timer1.Start()
     End Sub

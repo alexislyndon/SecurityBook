@@ -7,8 +7,17 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        'BIG CHECKOUT BUTTON
         Dim selectedrows As DataGridViewSelectedRowCollection = VisitorsDataGridView.SelectedRows
+
+        For i = 0 To selectedrows.Count() - 1
+            If IsDBNull(selectedrows.Item(i).Cells.Item("DataGridViewTextBoxColumn11").Value) Then
+            Else
+                MsgBox("Selection is already checked out.")
+                Return
+            End If
+        Next
+
+        'BIG CHECKOUT BUTTON
         'For i = 0 To VisitorsDataGridView.SelectedRows.Count()
         '    Dim checkout As String
         '    checkout = CheckOutMsg(selectedrows, DB1DataSet1)
@@ -30,6 +39,7 @@
             Next
 
             SuccessMsg()
+            CheckBox1.CheckState = CheckState.Unchecked
             refreshAll()
             'Else
             '    MsgBox("No one was checked out.")
@@ -38,7 +48,7 @@
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         If CheckBox1.CheckState = CheckState.Checked Then
-            Me.VisitorsTableAdapter.CheckedInToday(Me.Db1DS.Visitors, "m") 'm meaning exited already @ Main Gate
+            Me.VisitorsTableAdapter.CheckedInToday(Me.Db1DS.Visitors)
         Else
             Me.VisitorsTableAdapter.InsideVisitors(Me.Db1DS.Visitors)
         End If

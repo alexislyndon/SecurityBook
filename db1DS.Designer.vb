@@ -4708,7 +4708,7 @@ Namespace db1DSTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetDataBy(ByVal id As Integer) As db1DS.usersDataTable
+        Public Overloads Overridable Function GetDataBy3(ByVal id As Integer) As db1DS.usersDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(5)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(id,Integer)
             Dim dataTable As db1DS.usersDataTable = New db1DS.usersDataTable()
@@ -6692,15 +6692,16 @@ Namespace db1DSTableAdapters
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT        CASE WHEN entry = 'm' THEN 'Main Gate' WHEN entry = 'b' THEN 'Back "& _ 
-                "Gate' END AS Entry, FullName, ID_surrendered, CASE WHEN sex = 'm' THEN 'Male' WH"& _ 
-                "EN sex = 'f' THEN 'Female' ELSE 'Other' END AS Sex, alert, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                   "& _ 
-                "      badge_number, destination, fname, id_back, id_pic, lname, mname, phone, po"& _ 
-                "rtrait, purpose, time_in, time_out, userid, visit_ID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Visitors"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
-                "WHERE        (exited = @exit) AND (time_in >= CAST(CONVERT(date, GETDATE()) AS d"& _ 
-                "atetime)) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (time_in >= CAST(CONVERT(date, GETDATE())"& _ 
-                " AS datetime)) AND (ISNULL(@exit, '') = NULL)"
+                "Gate' END AS Entry, Visitors.FullName, Visitors.ID_surrendered, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"              "& _ 
+                "           CASE WHEN sex = 'm' THEN 'Male' WHEN sex = 'f' THEN 'Female' ELSE 'Ot"& _ 
+                "her' END AS Sex, Visitors.alert, Visitors.badge_number, Visitors.destination, Vi"& _ 
+                "sitors.fname, Visitors.id_back, Visitors.id_pic, Visitors.lname, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"             "& _ 
+                "            Visitors.mname, Visitors.phone, Visitors.portrait, Visitors.purpose,"& _ 
+                " Visitors.time_in, Visitors.time_out, Visitors.userid, Visitors.visit_ID, users."& _ 
+                "name"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Visitors INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         users ON Vis"& _ 
+                "itors.userid = users.id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Visitors.time_in >= CAST(CONVERT(date, GE"& _ 
+                "TDATE()) AS datetime))"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@exit", Global.System.Data.SqlDbType.[Char], 1, Global.System.Data.ParameterDirection.Input, 0, 0, "exited", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "INSERT INTO Visitors"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (fname, mname, lname, sex, entry, "& _ 
@@ -6799,13 +6800,8 @@ Namespace db1DSTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function CheckedInToday(ByVal dataTable As db1DS.VisitorsDataTable, ByVal _exit As String) As Integer
+        Public Overloads Overridable Function CheckedInToday(ByVal dataTable As db1DS.VisitorsDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (_exit Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(_exit,String)
-            End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -6817,13 +6813,8 @@ Namespace db1DSTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetCheckedInToday(ByVal _exit As String) As db1DS.VisitorsDataTable
+        Public Overloads Overridable Function GetCheckedInToday() As db1DS.VisitorsDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (_exit Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(_exit,String)
-            End If
             Dim dataTable As db1DS.VisitorsDataTable = New db1DS.VisitorsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable

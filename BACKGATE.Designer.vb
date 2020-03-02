@@ -293,11 +293,11 @@ Partial Class BACKGATE
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1366, 768)
         Me.ControlBox = False
-        Me.Controls.Add(Me.AddVisitor1)
         Me.Controls.Add(Me.maximizebtn)
         Me.Controls.Add(Me.minimizebtn)
-        Me.Controls.Add(Me.sidepanel)
         Me.Controls.Add(Me.closelbl)
+        Me.Controls.Add(Me.sidepanel)
+        Me.Controls.Add(Me.AddVisitor1)
         Me.Controls.Add(Me.ViewVisitor1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "BACKGATE"

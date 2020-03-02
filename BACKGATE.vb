@@ -122,6 +122,8 @@
         AddVisitor1.Visible = True
         tem.Y = Panel1.Location.Y
         Timer2.Start()
+        AddVisitor1.Timer1.Start()
+
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click 'view

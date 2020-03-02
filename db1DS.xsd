@@ -178,7 +178,7 @@ SELECT id, username, password, designation, created, name, active FROM users WHE
               <Mapping SourceColumn="active" DataSetColumn="active" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="db1ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ActivateUser" Modifier="Public" Name="ActivateUser" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="ActivateUser">
+              <DbSource ConnectionRef="db1ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ActivateUser" Modifier="Public" Name="ActivateUser" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ActivateUser">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE [dbo].[users] 
@@ -231,7 +231,7 @@ WHERE (username = @username) AND (password = @password) AND (active = 1)</Comman
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="db1ConnectionString (MySettings)" DbObjectName="dbo.users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+              <DbSource ConnectionRef="db1ConnectionString (MySettings)" DbObjectName="dbo.users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy3" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy3" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT id, username, password, designation, created, name, active FROM dbo.users where id = @id</CommandText>
@@ -640,17 +640,16 @@ SELECT visit_ID, fname, mname, lname, CASE WHEN sex = 'm' THEN 'Male' WHEN sex =
               <Mapping SourceColumn="Exited" DataSetColumn="Exited" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="db1ConnectionString (MySettings)" DbObjectName="dbo.Visitors" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="CheckedInToday" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetCheckedInToday" GeneratorSourceName="CheckedInToday" GetMethodModifier="Public" GetMethodName="GetCheckedInToday" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetCheckedInToday" UserSourceName="CheckedInToday">
+              <DbSource ConnectionRef="db1ConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="CheckedInToday" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetCheckedInToday" GeneratorSourceName="CheckedInToday" GetMethodModifier="Public" GetMethodName="GetCheckedInToday" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetCheckedInToday" UserSourceName="CheckedInToday">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        CASE WHEN entry = 'm' THEN 'Main Gate' WHEN entry = 'b' THEN 'Back Gate' END AS Entry, FullName, ID_surrendered, CASE WHEN sex = 'm' THEN 'Male' WHEN sex = 'f' THEN 'Female' ELSE 'Other' END AS Sex, alert, 
-                         badge_number, destination, fname, id_back, id_pic, lname, mname, phone, portrait, purpose, time_in, time_out, userid, visit_ID
-FROM            Visitors
-WHERE        (exited = @exit) AND (time_in &gt;= CAST(CONVERT(date, GETDATE()) AS datetime)) OR
-                         (time_in &gt;= CAST(CONVERT(date, GETDATE()) AS datetime)) AND (ISNULL(@exit, '') = NULL)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="exit" ColumnName="exited" DataSourceName="[X:\1902\VB.NET\SECURITYBOOK\DB1.MDF].dbo.Visitors" DataTypeServer="char(1)" DbType="AnsiString" Direction="Input" ParameterName="@exit" Precision="0" ProviderType="Char" Scale="0" Size="1" SourceColumn="exited" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
+                    <CommandText>SELECT        CASE WHEN entry = 'm' THEN 'Main Gate' WHEN entry = 'b' THEN 'Back Gate' END AS Entry, Visitors.FullName, Visitors.ID_surrendered, 
+                         CASE WHEN sex = 'm' THEN 'Male' WHEN sex = 'f' THEN 'Female' ELSE 'Other' END AS Sex, Visitors.alert, Visitors.badge_number, Visitors.destination, Visitors.fname, Visitors.id_back, Visitors.id_pic, Visitors.lname, 
+                         Visitors.mname, Visitors.phone, Visitors.portrait, Visitors.purpose, Visitors.time_in, Visitors.time_out, Visitors.userid, Visitors.visit_ID, users.name
+FROM            Visitors INNER JOIN
+                         users ON Visitors.userid = users.id
+WHERE        (Visitors.time_in &gt;= CAST(CONVERT(date, GETDATE()) AS datetime))</CommandText>
+                    <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
@@ -738,7 +737,7 @@ WHERE        (Visitors.visit_ID = @visit_ID)</CommandText>
   <xs:element name="db1DS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="db1DS" msprop:Generator_UserDSName="db1DS">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Badges" msprop:Generator_TableClassName="BadgesDataTable" msprop:Generator_TableVarName="tableBadges" msprop:Generator_TablePropName="Badges" msprop:Generator_RowDeletingName="BadgesRowDeleting" msprop:Generator_RowChangingName="BadgesRowChanging" msprop:Generator_RowEvHandlerName="BadgesRowChangeEventHandler" msprop:Generator_RowDeletedName="BadgesRowDeleted" msprop:Generator_UserTableName="Badges" msprop:Generator_RowChangedName="BadgesRowChanged" msprop:Generator_RowEvArgName="BadgesRowChangeEvent" msprop:Generator_RowClassName="BadgesRow">
+        <xs:element name="Badges" msprop:Generator_TableClassName="BadgesDataTable" msprop:Generator_TableVarName="tableBadges" msprop:Generator_RowChangedName="BadgesRowChanged" msprop:Generator_TablePropName="Badges" msprop:Generator_RowDeletingName="BadgesRowDeleting" msprop:Generator_RowChangingName="BadgesRowChanging" msprop:Generator_RowEvHandlerName="BadgesRowChangeEventHandler" msprop:Generator_RowDeletedName="BadgesRowDeleted" msprop:Generator_RowClassName="BadgesRow" msprop:Generator_UserTableName="Badges" msprop:Generator_RowEvArgName="BadgesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="badge" msprop:Generator_ColumnVarNameInTable="columnbadge" msprop:Generator_ColumnPropNameInRow="badge" msprop:Generator_ColumnPropNameInTable="badgeColumn" msprop:Generator_UserColumnName="badge">
@@ -752,7 +751,7 @@ WHERE        (Visitors.visit_ID = @visit_ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="users" msprop:Generator_TableClassName="usersDataTable" msprop:Generator_TableVarName="tableusers" msprop:Generator_TablePropName="users" msprop:Generator_RowDeletingName="usersRowDeleting" msprop:Generator_RowChangingName="usersRowChanging" msprop:Generator_RowEvHandlerName="usersRowChangeEventHandler" msprop:Generator_RowDeletedName="usersRowDeleted" msprop:Generator_UserTableName="users" msprop:Generator_RowChangedName="usersRowChanged" msprop:Generator_RowEvArgName="usersRowChangeEvent" msprop:Generator_RowClassName="usersRow">
+        <xs:element name="users" msprop:Generator_TableClassName="usersDataTable" msprop:Generator_TableVarName="tableusers" msprop:Generator_RowChangedName="usersRowChanged" msprop:Generator_TablePropName="users" msprop:Generator_RowDeletingName="usersRowDeleting" msprop:Generator_RowChangingName="usersRowChanging" msprop:Generator_RowEvHandlerName="usersRowChangeEventHandler" msprop:Generator_RowDeletedName="usersRowDeleted" msprop:Generator_RowClassName="usersRow" msprop:Generator_UserTableName="users" msprop:Generator_RowEvArgName="usersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -789,7 +788,7 @@ WHERE        (Visitors.visit_ID = @visit_ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Vehicles" msprop:Generator_TableClassName="VehiclesDataTable" msprop:Generator_TableVarName="tableVehicles" msprop:Generator_TablePropName="Vehicles" msprop:Generator_RowDeletingName="VehiclesRowDeleting" msprop:Generator_RowChangingName="VehiclesRowChanging" msprop:Generator_RowEvHandlerName="VehiclesRowChangeEventHandler" msprop:Generator_RowDeletedName="VehiclesRowDeleted" msprop:Generator_UserTableName="Vehicles" msprop:Generator_RowChangedName="VehiclesRowChanged" msprop:Generator_RowEvArgName="VehiclesRowChangeEvent" msprop:Generator_RowClassName="VehiclesRow">
+        <xs:element name="Vehicles" msprop:Generator_TableClassName="VehiclesDataTable" msprop:Generator_TableVarName="tableVehicles" msprop:Generator_RowChangedName="VehiclesRowChanged" msprop:Generator_TablePropName="Vehicles" msprop:Generator_RowDeletingName="VehiclesRowDeleting" msprop:Generator_RowChangingName="VehiclesRowChanging" msprop:Generator_RowEvHandlerName="VehiclesRowChangeEventHandler" msprop:Generator_RowDeletedName="VehiclesRowDeleted" msprop:Generator_RowClassName="VehiclesRow" msprop:Generator_UserTableName="Vehicles" msprop:Generator_RowEvArgName="VehiclesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -841,7 +840,7 @@ WHERE        (Visitors.visit_ID = @visit_ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VIP" msprop:Generator_TableClassName="VIPDataTable" msprop:Generator_TableVarName="tableVIP" msprop:Generator_TablePropName="VIP" msprop:Generator_RowDeletingName="VIPRowDeleting" msprop:Generator_RowChangingName="VIPRowChanging" msprop:Generator_RowEvHandlerName="VIPRowChangeEventHandler" msprop:Generator_RowDeletedName="VIPRowDeleted" msprop:Generator_UserTableName="VIP" msprop:Generator_RowChangedName="VIPRowChanged" msprop:Generator_RowEvArgName="VIPRowChangeEvent" msprop:Generator_RowClassName="VIPRow">
+        <xs:element name="VIP" msprop:Generator_TableClassName="VIPDataTable" msprop:Generator_TableVarName="tableVIP" msprop:Generator_RowChangedName="VIPRowChanged" msprop:Generator_TablePropName="VIP" msprop:Generator_RowDeletingName="VIPRowDeleting" msprop:Generator_RowChangingName="VIPRowChanging" msprop:Generator_RowEvHandlerName="VIPRowChangeEventHandler" msprop:Generator_RowDeletedName="VIPRowDeleted" msprop:Generator_RowClassName="VIPRow" msprop:Generator_UserTableName="VIP" msprop:Generator_RowEvArgName="VIPRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="vip_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnvip_ID" msprop:Generator_ColumnPropNameInRow="vip_ID" msprop:Generator_ColumnPropNameInTable="vip_IDColumn" msprop:Generator_UserColumnName="vip_ID" type="xs:int" />
@@ -926,7 +925,7 @@ WHERE        (Visitors.visit_ID = @visit_ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Visitors" msprop:Generator_TableClassName="VisitorsDataTable" msprop:Generator_TableVarName="tableVisitors" msprop:Generator_TablePropName="Visitors" msprop:Generator_RowDeletingName="VisitorsRowDeleting" msprop:Generator_RowChangingName="VisitorsRowChanging" msprop:Generator_RowEvHandlerName="VisitorsRowChangeEventHandler" msprop:Generator_RowDeletedName="VisitorsRowDeleted" msprop:Generator_UserTableName="Visitors" msprop:Generator_RowChangedName="VisitorsRowChanged" msprop:Generator_RowEvArgName="VisitorsRowChangeEvent" msprop:Generator_RowClassName="VisitorsRow">
+        <xs:element name="Visitors" msprop:Generator_TableClassName="VisitorsDataTable" msprop:Generator_TableVarName="tableVisitors" msprop:Generator_RowChangedName="VisitorsRowChanged" msprop:Generator_TablePropName="Visitors" msprop:Generator_RowDeletingName="VisitorsRowDeleting" msprop:Generator_RowChangingName="VisitorsRowChanging" msprop:Generator_RowEvHandlerName="VisitorsRowChangeEventHandler" msprop:Generator_RowDeletedName="VisitorsRowDeleted" msprop:Generator_RowClassName="VisitorsRow" msprop:Generator_UserTableName="Visitors" msprop:Generator_RowEvArgName="VisitorsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="visit_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnvisit_ID" msprop:Generator_ColumnPropNameInRow="visit_ID" msprop:Generator_ColumnPropNameInTable="visit_IDColumn" msprop:Generator_UserColumnName="visit_ID" type="xs:int" />
@@ -1049,9 +1048,9 @@ WHERE        (Visitors.visit_ID = @visit_ID)</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Vehicles_users" msdata:parent="users" msdata:child="Vehicles" msdata:parentkey="id" msdata:childkey="userid" msprop:Generator_UserChildTable="Vehicles" msprop:Generator_ChildPropName="GetVehiclesRows" msprop:Generator_UserRelationName="FK_Vehicles_users" msprop:Generator_ParentPropName="usersRow" msprop:Generator_RelationVarName="relationFK_Vehicles_users" msprop:Generator_UserParentTable="users" />
-      <msdata:Relationship name="FK_Vehicles_Badges" msdata:parent="Badges" msdata:child="Visitors" msdata:parentkey="badge" msdata:childkey="badge_number" msprop:Generator_UserChildTable="Visitors" msprop:Generator_ChildPropName="GetVisitorsRows" msprop:Generator_UserRelationName="FK_Vehicles_Badges" msprop:Generator_ParentPropName="BadgesRow" msprop:Generator_RelationVarName="relationFK_Vehicles_Badges" msprop:Generator_UserParentTable="Badges" />
-      <msdata:Relationship name="FK_Visitors_users" msdata:parent="users" msdata:child="Visitors" msdata:parentkey="id" msdata:childkey="userid" msprop:Generator_UserChildTable="Visitors" msprop:Generator_ChildPropName="GetVisitorsRows" msprop:Generator_UserRelationName="FK_Visitors_users" msprop:Generator_ParentPropName="usersRow" msprop:Generator_RelationVarName="relationFK_Visitors_users" msprop:Generator_UserParentTable="users" />
+      <msdata:Relationship name="FK_Vehicles_users" msdata:parent="users" msdata:child="Vehicles" msdata:parentkey="id" msdata:childkey="userid" msprop:Generator_UserChildTable="Vehicles" msprop:Generator_ChildPropName="GetVehiclesRows" msprop:Generator_UserRelationName="FK_Vehicles_users" msprop:Generator_RelationVarName="relationFK_Vehicles_users" msprop:Generator_UserParentTable="users" msprop:Generator_ParentPropName="usersRow" />
+      <msdata:Relationship name="FK_Vehicles_Badges" msdata:parent="Badges" msdata:child="Visitors" msdata:parentkey="badge" msdata:childkey="badge_number" msprop:Generator_UserChildTable="Visitors" msprop:Generator_ChildPropName="GetVisitorsRows" msprop:Generator_UserRelationName="FK_Vehicles_Badges" msprop:Generator_RelationVarName="relationFK_Vehicles_Badges" msprop:Generator_UserParentTable="Badges" msprop:Generator_ParentPropName="BadgesRow" />
+      <msdata:Relationship name="FK_Visitors_users" msdata:parent="users" msdata:child="Visitors" msdata:parentkey="id" msdata:childkey="userid" msprop:Generator_UserChildTable="Visitors" msprop:Generator_ChildPropName="GetVisitorsRows" msprop:Generator_UserRelationName="FK_Visitors_users" msprop:Generator_RelationVarName="relationFK_Visitors_users" msprop:Generator_UserParentTable="users" msprop:Generator_ParentPropName="usersRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
