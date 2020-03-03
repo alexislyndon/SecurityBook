@@ -59,4 +59,25 @@
         Dim pv As New PopView(id, Session.s_gate)
         pv.Show()
     End Sub
+
+    Private Sub filter_TextChanged(sender As Object, e As EventArgs) Handles filter.GotFocus
+        If filter.Text = "" Then
+
+        Else
+            filter.Clear()
+        End If
+    End Sub
+    Private Sub filter_LostFocus(sender As Object, e As EventArgs) Handles filter.LostFocus
+        filter.Text = "Filter by Visitor's Pass"
+        Me.VisitorsTableAdapter.InsideVisitors(Me.Db1DS.Visitors)
+    End Sub
+
+    Private Sub filter_TextChanged_1(sender As Object, e As EventArgs) Handles filter.TextChanged
+        If filter.Text = "" Then
+            Me.VisitorsTableAdapter.InsideVisitors(Me.Db1DS.Visitors)
+        Else
+
+            Me.VisitorsTableAdapter.filterbybadge(Db1DS.Visitors, filter.Text.Trim)
+        End If
+    End Sub
 End Class

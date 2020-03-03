@@ -9,6 +9,8 @@
     Dim y4 As Integer = 260
     Dim y5 As Integer = 300
     Dim y6 As Integer = 340
+    Dim y7 As Integer = 380
+
 
 
     Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseDown, sidepanel.MouseDown
@@ -50,6 +52,7 @@
         tem.Y = Panel1.Location.Y
         Timer1.Start()
         dashbtn.BackColor = Color.FromArgb(45, 45, 45)
+        AdminDASH1.Visible = True
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles visitorsbtn.Click
@@ -57,7 +60,7 @@
         tem.Y = Panel1.Location.Y
         Timer2.Start()
         visitorsbtn.BackColor = Color.FromArgb(45, 45, 45)
-
+        AdminVisitors1.Visible = True
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles vehiclesbtn.Click
@@ -65,6 +68,7 @@
         tem.Y = Panel1.Location.Y
         Timer3.Start()
         vehiclesbtn.BackColor = Color.FromArgb(45, 45, 45)
+        AdminVehicles1.Visible = True
 
     End Sub
 
@@ -135,11 +139,15 @@
         visitorsbtn.BackColor = Color.FromArgb(35, 35, 35)
         vehiclesbtn.BackColor = Color.FromArgb(35, 35, 35)
         usersbtn.BackColor = Color.FromArgb(35, 35, 35)
+        Button3.BackColor = Color.FromArgb(35, 35, 35)
+        Button4.BackColor = Color.FromArgb(35, 35, 35)
+
         AdminBadges1.Visible = False
         AdminUsers1.Visible = False
         AdminVIP1.Visible = False
-
-
+        AdminDASH1.Visible = False
+        AdminVisitors1.Visible = False
+        AdminVehicles1.Visible = False
 
     End Sub
 

@@ -49,6 +49,7 @@ Partial Class MAINGATE
         Me.AddVisitor1 = New SecurityBook.AddVisitor()
         Me.ViewVisitor1 = New SecurityBook.viewVisitor()
         Me.AddVehicle1 = New SecurityBook.AddVehicle()
+        Me.ServiceproviderUC1 = New SecurityBook.serviceproviderUC()
         Me.sidepanel.SuspendLayout()
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.closebtn, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,7 +77,7 @@ Partial Class MAINGATE
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.GreenYellow
-        Me.Panel1.Location = New System.Drawing.Point(3, 250)
+        Me.Panel1.Location = New System.Drawing.Point(3, 310)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(6, 50)
         Me.Panel1.TabIndex = 3
@@ -160,6 +161,7 @@ Partial Class MAINGATE
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Home"
         Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
         '
         'Panel2
         '
@@ -211,11 +213,11 @@ Partial Class MAINGATE
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Seven Segment", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("DSEG14 Classic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.GreenYellow
-        Me.Label1.Location = New System.Drawing.Point(25, 156)
+        Me.Label1.Location = New System.Drawing.Point(35, 173)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(192, 49)
+        Me.Label1.Size = New System.Drawing.Size(183, 32)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "00:00:00"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -328,6 +330,14 @@ Partial Class MAINGATE
         Me.AddVehicle1.TabIndex = 0
         Me.AddVehicle1.Visible = False
         '
+        'ServiceproviderUC1
+        '
+        Me.ServiceproviderUC1.Location = New System.Drawing.Point(250, 0)
+        Me.ServiceproviderUC1.Name = "ServiceproviderUC1"
+        Me.ServiceproviderUC1.Size = New System.Drawing.Size(1116, 768)
+        Me.ServiceproviderUC1.TabIndex = 9
+        Me.ServiceproviderUC1.Visible = False
+        '
         'MAINGATE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -343,6 +353,7 @@ Partial Class MAINGATE
         Me.Controls.Add(Me.AddVisitor1)
         Me.Controls.Add(Me.ViewVisitor1)
         Me.Controls.Add(Me.AddVehicle1)
+        Me.Controls.Add(Me.ServiceproviderUC1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "MAINGATE"
         Me.sidepanel.ResumeLayout(False)
@@ -379,4 +390,5 @@ Partial Class MAINGATE
     Friend WithEvents closebtn As PictureBox
     Friend WithEvents ViewVisitor1 As viewVisitor
     Friend WithEvents AddVehicle1 As AddVehicle
+    Friend WithEvents ServiceproviderUC1 As serviceproviderUC
 End Class

@@ -38,6 +38,7 @@ Partial Class adminBadges
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BadgesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BadgesDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,7 +63,7 @@ Partial Class adminBadges
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(84, 118)
+        Me.TextBox1.Location = New System.Drawing.Point(91, 104)
         Me.TextBox1.MaxLength = 4
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 20)
@@ -139,7 +140,7 @@ Partial Class adminBadges
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(84, 106)
+        Me.Label2.Location = New System.Drawing.Point(91, 92)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(71, 13)
         Me.Label2.TabIndex = 21
@@ -148,7 +149,7 @@ Partial Class adminBadges
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(81, 141)
+        Me.Label3.Location = New System.Drawing.Point(88, 127)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(199, 13)
         Me.Label3.TabIndex = 21
@@ -157,17 +158,29 @@ Partial Class adminBadges
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(301, 88)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(300, 81)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(78, 13)
+        Me.Label4.Size = New System.Drawing.Size(117, 20)
         Me.Label4.TabIndex = 21
         Me.Label4.Text = "Staged Passes"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(496, 81)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(141, 20)
+        Me.Label5.TabIndex = 21
+        Me.Label5.Text = "All Visitor's Passes"
         '
         'adminBadges
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Panel1)
@@ -201,4 +214,5 @@ Partial Class adminBadges
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
 End Class

@@ -31,4 +31,5 @@
     Private Sub adminBadges_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.BadgesTableAdapter1.Fill(Db1DS.Badges)
     End Sub
+
 End Class

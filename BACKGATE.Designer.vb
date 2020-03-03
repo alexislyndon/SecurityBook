@@ -82,13 +82,14 @@ Partial Class BACKGATE
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.GreenYellow
-        Me.Panel1.Location = New System.Drawing.Point(3, 250)
+        Me.Panel1.Location = New System.Drawing.Point(3, 310)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(6, 50)
         Me.Panel1.TabIndex = 3
         '
         'Button5
         '
+        Me.Button5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button5.FlatAppearance.BorderSize = 0
         Me.Button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.Button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(60, Byte), Integer))
@@ -101,9 +102,11 @@ Partial Class BACKGATE
         Me.Button5.TabIndex = 2
         Me.Button5.Text = "Placeholder"
         Me.Button5.UseVisualStyleBackColor = True
+        Me.Button5.Visible = False
         '
         'Button4
         '
+        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button4.FlatAppearance.BorderSize = 0
         Me.Button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.Button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(60, Byte), Integer))
@@ -116,9 +119,11 @@ Partial Class BACKGATE
         Me.Button4.TabIndex = 2
         Me.Button4.Text = "Placeholder"
         Me.Button4.UseVisualStyleBackColor = True
+        Me.Button4.Visible = False
         '
         'Button3
         '
+        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(60, Byte), Integer))
@@ -134,6 +139,7 @@ Partial Class BACKGATE
         '
         'Button2
         '
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(60, Byte), Integer))
@@ -149,6 +155,7 @@ Partial Class BACKGATE
         '
         'Button1
         '
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(60, Byte), Integer))
@@ -161,6 +168,7 @@ Partial Class BACKGATE
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "Home"
         Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
         '
         'Panel2
         '

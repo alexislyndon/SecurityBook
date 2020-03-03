@@ -44,6 +44,9 @@ Partial Class ADMIN
         Me.AdminUsers1 = New SecurityBook.adminUsers()
         Me.AdminBadges1 = New SecurityBook.adminBadges()
         Me.AdminVIP1 = New SecurityBook.adminVIP()
+        Me.AdminDASH1 = New SecurityBook.adminDASH()
+        Me.AdminVisitors1 = New SecurityBook.adminVisitors()
+        Me.AdminVehicles1 = New SecurityBook.adminVehicles()
         Me.sidepanel.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -261,6 +264,29 @@ Partial Class ADMIN
         Me.AdminVIP1.TabIndex = 4
         Me.AdminVIP1.Visible = False
         '
+        'AdminDASH1
+        '
+        Me.AdminDASH1.Location = New System.Drawing.Point(200, 0)
+        Me.AdminDASH1.Name = "AdminDASH1"
+        Me.AdminDASH1.Size = New System.Drawing.Size(800, 500)
+        Me.AdminDASH1.TabIndex = 5
+        '
+        'AdminVisitors1
+        '
+        Me.AdminVisitors1.Location = New System.Drawing.Point(200, 0)
+        Me.AdminVisitors1.Name = "AdminVisitors1"
+        Me.AdminVisitors1.Size = New System.Drawing.Size(800, 500)
+        Me.AdminVisitors1.TabIndex = 6
+        Me.AdminVisitors1.Visible = False
+        '
+        'AdminVehicles1
+        '
+        Me.AdminVehicles1.Location = New System.Drawing.Point(200, 0)
+        Me.AdminVehicles1.Name = "AdminVehicles1"
+        Me.AdminVehicles1.Size = New System.Drawing.Size(800, 500)
+        Me.AdminVehicles1.TabIndex = 7
+        Me.AdminVehicles1.Visible = False
+        '
         'ADMIN
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -268,9 +294,12 @@ Partial Class ADMIN
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1000, 500)
         Me.ControlBox = False
+        Me.Controls.Add(Me.AdminVehicles1)
+        Me.Controls.Add(Me.AdminVisitors1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.sidepanel)
+        Me.Controls.Add(Me.AdminDASH1)
         Me.Controls.Add(Me.AdminVIP1)
         Me.Controls.Add(Me.AdminUsers1)
         Me.Controls.Add(Me.AdminBadges1)
@@ -305,4 +334,7 @@ Partial Class ADMIN
     Friend WithEvents AdminUsers1 As adminUsers
     Friend WithEvents AdminBadges1 As adminBadges
     Friend WithEvents AdminVIP1 As adminVIP
+    Friend WithEvents AdminDASH1 As adminDASH
+    Friend WithEvents AdminVisitors1 As adminVisitors
+    Friend WithEvents AdminVehicles1 As adminVehicles
 End Class

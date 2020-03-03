@@ -144,6 +144,7 @@
     End Sub
 
     Private Sub MAINGATE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        AddVisitor1.Visible = True
         Panel1.Visible = True
         tem.X = 3
     End Sub
@@ -172,4 +173,5 @@
         ViewVisitor1.Visible = False
 
     End Sub
+
 End Class

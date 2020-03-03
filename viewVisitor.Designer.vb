@@ -25,19 +25,6 @@ Partial Class viewVisitor
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.VisitorsDataGridView = New System.Windows.Forms.DataGridView()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.VisitorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Db1DS = New SecurityBook.db1DS()
-        Me.VisitorsTableAdapter = New SecurityBook.db1DSTableAdapters.VisitorsTableAdapter()
-        Me.TableAdapterManager = New SecurityBook.db1DSTableAdapters.TableAdapterManager()
-        Me.BadgesTableAdapter = New SecurityBook.db1DSTableAdapters.BadgesTableAdapter()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -47,10 +34,18 @@ Partial Class viewVisitor
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.VisitorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Db1DS = New SecurityBook.db1DS()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.VisitorsTableAdapter = New SecurityBook.db1DSTableAdapters.VisitorsTableAdapter()
+        Me.TableAdapterManager = New SecurityBook.db1DSTableAdapters.TableAdapterManager()
+        Me.BadgesTableAdapter = New SecurityBook.db1DSTableAdapters.BadgesTableAdapter()
+        Me.filter = New System.Windows.Forms.TextBox()
         CType(Me.VisitorsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -69,102 +64,13 @@ Partial Class viewVisitor
         Me.VisitorsDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.VisitorsDataGridView.ColumnHeadersHeight = 50
         Me.VisitorsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.VisitorsDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn17})
-        Me.VisitorsDataGridView.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.VisitorsDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn17})
         Me.VisitorsDataGridView.DataSource = Me.VisitorsBindingSource
         Me.VisitorsDataGridView.Location = New System.Drawing.Point(0, 105)
         Me.VisitorsDataGridView.Name = "VisitorsDataGridView"
         Me.VisitorsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.VisitorsDataGridView.Size = New System.Drawing.Size(1116, 500)
         Me.VisitorsDataGridView.TabIndex = 1
-        '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewToolStripMenuItem, Me.ToolStripSeparator1, Me.ToolStripMenuItem1})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(126, 54)
-        '
-        'ViewToolStripMenuItem
-        '
-        Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
-        Me.ViewToolStripMenuItem.Text = "View"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(122, 6)
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(125, 22)
-        Me.ToolStripMenuItem1.Text = "Checkout"
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.GreenYellow
-        Me.Panel2.Location = New System.Drawing.Point(0, 50)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(200, 5)
-        Me.Panel2.TabIndex = 11
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft JhengHei", 18.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(43, 17)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(157, 30)
-        Me.Label13.TabIndex = 10
-        Me.Label13.Text = "View Visitors"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(1000, 697)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 12
-        Me.Button1.Text = "Check Out"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(976, 82)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(127, 17)
-        Me.CheckBox1.TabIndex = 13
-        Me.CheckBox1.Text = "Include Checked Out"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'VisitorsBindingSource
-        '
-        Me.VisitorsBindingSource.DataMember = "Visitors"
-        Me.VisitorsBindingSource.DataSource = Me.Db1DS
-        '
-        'Db1DS
-        '
-        Me.Db1DS.DataSetName = "db1DS"
-        Me.Db1DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'VisitorsTableAdapter
-        '
-        Me.VisitorsTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.BadgesTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = SecurityBook.db1DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.usersTableAdapter = Nothing
-        Me.TableAdapterManager.VehiclesTableAdapter = Nothing
-        Me.TableAdapterManager.VIPTableAdapter = Nothing
-        Me.TableAdapterManager.VisitorsTableAdapter = Me.VisitorsTableAdapter
-        '
-        'BadgesTableAdapter
-        '
-        Me.BadgesTableAdapter.ClearBeforeFill = True
         '
         'DataGridViewTextBoxColumn1
         '
@@ -228,13 +134,6 @@ Partial Class viewVisitor
         Me.DataGridViewTextBoxColumn13.HeaderText = "ID Surrendered"
         Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
         '
-        'DataGridViewTextBoxColumn15
-        '
-        Me.DataGridViewTextBoxColumn15.DataPropertyName = "name"
-        Me.DataGridViewTextBoxColumn15.HeaderText = "Guard"
-        Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
-        Me.DataGridViewTextBoxColumn15.Width = 150
-        '
         'DataGridViewTextBoxColumn17
         '
         Me.DataGridViewTextBoxColumn17.DataPropertyName = "alert"
@@ -242,10 +141,93 @@ Partial Class viewVisitor
         Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
         Me.DataGridViewTextBoxColumn17.Width = 50
         '
+        'VisitorsBindingSource
+        '
+        Me.VisitorsBindingSource.DataMember = "Visitors"
+        Me.VisitorsBindingSource.DataSource = Me.Db1DS
+        '
+        'Db1DS
+        '
+        Me.Db1DS.DataSetName = "db1DS"
+        Me.Db1DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.GreenYellow
+        Me.Panel2.Location = New System.Drawing.Point(0, 50)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(200, 5)
+        Me.Panel2.TabIndex = 11
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft JhengHei", 18.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(43, 17)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(157, 30)
+        Me.Label13.TabIndex = 10
+        Me.Label13.Text = "View Visitors"
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.GreenYellow
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft JhengHei", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Button1.Location = New System.Drawing.Point(905, 683)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(160, 60)
+        Me.Button1.TabIndex = 12
+        Me.Button1.Text = "Check Out"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(976, 82)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(127, 17)
+        Me.CheckBox1.TabIndex = 13
+        Me.CheckBox1.Text = "Include Checked Out"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'VisitorsTableAdapter
+        '
+        Me.VisitorsTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BadgesTableAdapter = Nothing
+        Me.TableAdapterManager.Company_MembersTableAdapter = Nothing
+        Me.TableAdapterManager.companyloginsTableAdapter = Nothing
+        Me.TableAdapterManager.CompanyTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = SecurityBook.db1DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.usersTableAdapter = Nothing
+        Me.TableAdapterManager.VehiclesTableAdapter = Nothing
+        Me.TableAdapterManager.VIPTableAdapter = Nothing
+        Me.TableAdapterManager.VisitorsTableAdapter = Me.VisitorsTableAdapter
+        '
+        'BadgesTableAdapter
+        '
+        Me.BadgesTableAdapter.ClearBeforeFill = True
+        '
+        'filter
+        '
+        Me.filter.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.filter.ForeColor = System.Drawing.Color.DarkGray
+        Me.filter.Location = New System.Drawing.Point(48, 73)
+        Me.filter.Name = "filter"
+        Me.filter.Size = New System.Drawing.Size(207, 26)
+        Me.filter.TabIndex = 14
+        Me.filter.Text = "Filter by Visitor's Pass"
+        '
         'viewVisitor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.filter)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel2)
@@ -254,7 +236,6 @@ Partial Class viewVisitor
         Me.Name = "viewVisitor"
         Me.Size = New System.Drawing.Size(1136, 768)
         CType(Me.VisitorsDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -267,10 +248,6 @@ Partial Class viewVisitor
     Friend WithEvents VisitorsTableAdapter As db1DSTableAdapters.VisitorsTableAdapter
     Friend WithEvents TableAdapterManager As db1DSTableAdapters.TableAdapterManager
     Friend WithEvents VisitorsDataGridView As DataGridView
-    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
-    Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
-    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
@@ -290,4 +267,5 @@ Partial Class viewVisitor
     Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn17 As DataGridViewTextBoxColumn
+    Friend WithEvents filter As TextBox
 End Class

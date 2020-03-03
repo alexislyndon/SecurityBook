@@ -147,9 +147,11 @@
         tem.Y = Panel1.Location.Y
         Timer5.Start()
         falsifier()
+        ServiceproviderUC1.Visible = True
     End Sub
 
     Private Sub MAINGATE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        AddVisitor1.Visible = True
         Panel1.Visible = True
         tem.X = 3
     End Sub
@@ -186,6 +188,7 @@
         Me.AddVisitor1.setuc()
         ViewVisitor1.Visible = False
         AddVehicle1.Visible = False
+        ServiceproviderUC1.Visible = False
 
     End Sub
 
