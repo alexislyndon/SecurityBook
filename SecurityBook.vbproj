@@ -108,6 +108,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addCompany.Designer.vb">
+      <DependentUpon>addCompany.vb</DependentUpon>
+    </Compile>
+    <Compile Include="addCompany.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCompanyMembers.Designer.vb">
+      <DependentUpon>AddCompanyMembers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddCompanyMembers.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AddVehicle.Designer.vb">
       <DependentUpon>AddVehicle.vb</DependentUpon>
     </Compile>
@@ -170,6 +182,12 @@
     <Compile Include="db1DS.vb">
       <DependentUpon>db1DS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="gateVIP.Designer.vb">
+      <DependentUpon>gateVIP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="gateVIP.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +244,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="addCompany.resx">
+      <DependentUpon>addCompany.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCompanyMembers.resx">
+      <DependentUpon>AddCompanyMembers.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddVehicle.resx">
       <DependentUpon>AddVehicle.vb</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="capturePortrait.resx">
       <DependentUpon>capturePortrait.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gateVIP.resx">
+      <DependentUpon>gateVIP.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>

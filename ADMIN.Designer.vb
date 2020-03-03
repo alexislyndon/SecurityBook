@@ -43,6 +43,7 @@ Partial Class ADMIN
         Me.Timer6 = New System.Windows.Forms.Timer(Me.components)
         Me.AdminUsers1 = New SecurityBook.adminUsers()
         Me.AdminBadges1 = New SecurityBook.adminBadges()
+        Me.AdminVIP1 = New SecurityBook.adminVIP()
         Me.sidepanel.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -239,7 +240,7 @@ Partial Class ADMIN
         'AdminUsers1
         '
         Me.AdminUsers1.Location = New System.Drawing.Point(200, 0)
-        'Me.AdminUsers1.personname = "AdminUsers1"
+        Me.AdminUsers1.Name = "AdminUsers1"
         Me.AdminUsers1.Size = New System.Drawing.Size(800, 500)
         Me.AdminUsers1.TabIndex = 2
         Me.AdminUsers1.Visible = False
@@ -250,6 +251,15 @@ Partial Class ADMIN
         Me.AdminBadges1.Name = "AdminBadges1"
         Me.AdminBadges1.Size = New System.Drawing.Size(800, 500)
         Me.AdminBadges1.TabIndex = 3
+        Me.AdminBadges1.Visible = False
+        '
+        'AdminVIP1
+        '
+        Me.AdminVIP1.Location = New System.Drawing.Point(200, 0)
+        Me.AdminVIP1.Name = "AdminVIP1"
+        Me.AdminVIP1.Size = New System.Drawing.Size(1000, 500)
+        Me.AdminVIP1.TabIndex = 4
+        Me.AdminVIP1.Visible = False
         '
         'ADMIN
         '
@@ -261,6 +271,7 @@ Partial Class ADMIN
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.sidepanel)
+        Me.Controls.Add(Me.AdminVIP1)
         Me.Controls.Add(Me.AdminUsers1)
         Me.Controls.Add(Me.AdminBadges1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -293,4 +304,5 @@ Partial Class ADMIN
     Friend WithEvents Timer6 As Timer
     Friend WithEvents AdminUsers1 As adminUsers
     Friend WithEvents AdminBadges1 As adminBadges
+    Friend WithEvents AdminVIP1 As adminVIP
 End Class

@@ -189,7 +189,4 @@
 
     End Sub
 
-    Private Sub AddVehicle1_Load(sender As Object, e As EventArgs) Handles AddVehicle1.Load
-
-    End Sub
 End Class

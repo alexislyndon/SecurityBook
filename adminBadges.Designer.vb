@@ -33,6 +33,11 @@ Partial Class adminBadges
         Me.BadgesDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BadgesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BadgesDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -41,23 +46,23 @@ Partial Class adminBadges
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(379, 36)
+        Me.ListBox1.Location = New System.Drawing.Point(304, 104)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.Size = New System.Drawing.Size(154, 264)
         Me.ListBox1.TabIndex = 0
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(458, 306)
+        Me.Button1.Location = New System.Drawing.Point(383, 374)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Button1"
+        Me.Button1.Text = "Add Pass"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(244, 36)
+        Me.TextBox1.Location = New System.Drawing.Point(84, 118)
         Me.TextBox1.MaxLength = 4
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 20)
@@ -81,6 +86,9 @@ Partial Class adminBadges
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.BadgesTableAdapter = Me.BadgesTableAdapter1
+        Me.TableAdapterManager.Company_MembersTableAdapter = Nothing
+        Me.TableAdapterManager.companyloginsTableAdapter = Nothing
+        Me.TableAdapterManager.CompanyTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = SecurityBook.db1DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.usersTableAdapter = Nothing
         Me.TableAdapterManager.VehiclesTableAdapter = Nothing
@@ -93,9 +101,9 @@ Partial Class adminBadges
         Me.BadgesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.BadgesDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2})
         Me.BadgesDataGridView.DataSource = Me.BadgesBindingSource
-        Me.BadgesDataGridView.Location = New System.Drawing.Point(564, 36)
+        Me.BadgesDataGridView.Location = New System.Drawing.Point(500, 104)
         Me.BadgesDataGridView.Name = "BadgesDataGridView"
-        Me.BadgesDataGridView.Size = New System.Drawing.Size(245, 461)
+        Me.BadgesDataGridView.Size = New System.Drawing.Size(245, 369)
         Me.BadgesDataGridView.TabIndex = 3
         '
         'DataGridViewTextBoxColumn1
@@ -110,16 +118,66 @@ Partial Class adminBadges
         Me.DataGridViewTextBoxColumn2.HeaderText = "available"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Panel1.Location = New System.Drawing.Point(0, 50)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(200, 5)
+        Me.Panel1.TabIndex = 20
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft PhagsPa", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(54, 20)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(137, 27)
+        Me.Label1.TabIndex = 19
+        Me.Label1.Text = "Visitor Passes"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(84, 106)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(71, 13)
+        Me.Label2.TabIndex = 21
+        Me.Label2.Text = "Visitor Pass #"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(81, 141)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(199, 13)
+        Me.Label3.TabIndex = 21
+        Me.Label3.Text = "Press enter to stage a badge for creation"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(301, 88)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(78, 13)
+        Me.Label4.TabIndex = 21
+        Me.Label4.Text = "Staged Passes"
+        '
         'adminBadges
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BadgesDataGridView)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ListBox1)
         Me.Name = "adminBadges"
-        Me.Size = New System.Drawing.Size(812, 500)
+        Me.Size = New System.Drawing.Size(800, 500)
         CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BadgesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BadgesDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
@@ -138,4 +196,9 @@ Partial Class adminBadges
     Friend WithEvents BadgesDataGridView As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
 End Class

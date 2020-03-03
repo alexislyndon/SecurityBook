@@ -94,7 +94,7 @@ Partial Class MAINGATE
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(238, 50)
         Me.Button5.TabIndex = 5
-        Me.Button5.Text = "View Vehicles"
+        Me.Button5.Text = "VIP"
         Me.Button5.UseVisualStyleBackColor = True
         '
         'Button4

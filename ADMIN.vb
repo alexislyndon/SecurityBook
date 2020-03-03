@@ -137,6 +137,8 @@
         usersbtn.BackColor = Color.FromArgb(35, 35, 35)
         AdminBadges1.Visible = False
         AdminUsers1.Visible = False
+        AdminVIP1.Visible = False
+
 
 
     End Sub
@@ -166,6 +168,7 @@
         tem.Y = Panel1.Location.Y
         Timer5.Start()
         Button4.BackColor = Color.FromArgb(45, 45, 45)
+        AdminVIP1.Visible = True
 
     End Sub
 

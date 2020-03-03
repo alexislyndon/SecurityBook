@@ -47,6 +47,8 @@ Partial Class adminUsers
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.des = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         UsernameLabel = New System.Windows.Forms.Label()
         PasswordLabel = New System.Windows.Forms.Label()
         DesignationLabel = New System.Windows.Forms.Label()
@@ -60,7 +62,7 @@ Partial Class adminUsers
         '
         UsernameLabel.AutoSize = True
         UsernameLabel.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        UsernameLabel.Location = New System.Drawing.Point(53, 132)
+        UsernameLabel.Location = New System.Drawing.Point(33, 122)
         UsernameLabel.Name = "UsernameLabel"
         UsernameLabel.Size = New System.Drawing.Size(84, 21)
         UsernameLabel.TabIndex = 3
@@ -70,7 +72,7 @@ Partial Class adminUsers
         '
         PasswordLabel.AutoSize = True
         PasswordLabel.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        PasswordLabel.Location = New System.Drawing.Point(54, 188)
+        PasswordLabel.Location = New System.Drawing.Point(34, 178)
         PasswordLabel.Name = "PasswordLabel"
         PasswordLabel.Size = New System.Drawing.Size(80, 21)
         PasswordLabel.TabIndex = 5
@@ -80,7 +82,7 @@ Partial Class adminUsers
         '
         DesignationLabel.AutoSize = True
         DesignationLabel.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DesignationLabel.Location = New System.Drawing.Point(39, 244)
+        DesignationLabel.Location = New System.Drawing.Point(19, 234)
         DesignationLabel.Name = "DesignationLabel"
         DesignationLabel.Size = New System.Drawing.Size(98, 21)
         DesignationLabel.TabIndex = 7
@@ -90,7 +92,7 @@ Partial Class adminUsers
         '
         NameLabel.AutoSize = True
         NameLabel.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        NameLabel.Location = New System.Drawing.Point(84, 300)
+        NameLabel.Location = New System.Drawing.Point(64, 290)
         NameLabel.Name = "NameLabel"
         NameLabel.Size = New System.Drawing.Size(54, 21)
         NameLabel.TabIndex = 11
@@ -114,6 +116,9 @@ Partial Class adminUsers
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.BadgesTableAdapter = Nothing
+        Me.TableAdapterManager.Company_MembersTableAdapter = Nothing
+        Me.TableAdapterManager.companyloginsTableAdapter = Nothing
+        Me.TableAdapterManager.CompanyTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = SecurityBook.db1DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.usersTableAdapter = Me.UsersTableAdapter
         Me.TableAdapterManager.VehiclesTableAdapter = Nothing
@@ -126,7 +131,7 @@ Partial Class adminUsers
         Me.UsersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.UsersDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7})
         Me.UsersDataGridView.DataSource = Me.UsersBindingSource
-        Me.UsersDataGridView.Location = New System.Drawing.Point(390, 71)
+        Me.UsersDataGridView.Location = New System.Drawing.Point(350, 117)
         Me.UsersDataGridView.Name = "UsersDataGridView"
         Me.UsersDataGridView.ReadOnly = True
         Me.UsersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -188,7 +193,7 @@ Partial Class adminUsers
         '
         Me.user.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersBindingSource, "username", True))
         Me.user.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.user.Location = New System.Drawing.Point(145, 127)
+        Me.user.Location = New System.Drawing.Point(125, 117)
         Me.user.Name = "user"
         Me.user.Size = New System.Drawing.Size(200, 34)
         Me.user.TabIndex = 4
@@ -197,7 +202,7 @@ Partial Class adminUsers
         '
         Me.pass.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersBindingSource, "password", True))
         Me.pass.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pass.Location = New System.Drawing.Point(145, 183)
+        Me.pass.Location = New System.Drawing.Point(125, 173)
         Me.pass.Name = "pass"
         Me.pass.Size = New System.Drawing.Size(200, 34)
         Me.pass.TabIndex = 6
@@ -206,7 +211,7 @@ Partial Class adminUsers
         '
         Me.personname.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersBindingSource, "name", True))
         Me.personname.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.personname.Location = New System.Drawing.Point(145, 295)
+        Me.personname.Location = New System.Drawing.Point(125, 285)
         Me.personname.Name = "personname"
         Me.personname.Size = New System.Drawing.Size(200, 34)
         Me.personname.TabIndex = 12
@@ -253,15 +258,35 @@ Partial Class adminUsers
         Me.des.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!)
         Me.des.FormattingEnabled = True
         Me.des.Items.AddRange(New Object() {"admin", "main", "back"})
-        Me.des.Location = New System.Drawing.Point(143, 244)
+        Me.des.Location = New System.Drawing.Point(123, 234)
         Me.des.Name = "des"
         Me.des.Size = New System.Drawing.Size(202, 34)
         Me.des.TabIndex = 16
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft PhagsPa", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(138, 20)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(62, 27)
+        Me.Label1.TabIndex = 17
+        Me.Label1.Text = "Users"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Panel1.Location = New System.Drawing.Point(0, 50)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(200, 5)
+        Me.Panel1.TabIndex = 18
         '
         'adminUsers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.des)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
@@ -276,7 +301,7 @@ Partial Class adminUsers
         Me.Controls.Add(Me.personname)
         Me.Controls.Add(Me.UsersDataGridView)
         Me.Name = "adminUsers"
-        Me.Size = New System.Drawing.Size(822, 502)
+        Me.Size = New System.Drawing.Size(800, 500)
         CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsersDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
@@ -305,4 +330,6 @@ Partial Class adminUsers
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents des As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Panel1 As Panel
 End Class
