@@ -95,6 +95,7 @@ Module Module1
 
     Public Sub refreshAll()
         MAINGATE.ViewVisitor1.refresher()
+        BACKGATE.ViewVisitor1.refresher()
         MAINGATE.AddVehicle1.refresher()
     End Sub
 

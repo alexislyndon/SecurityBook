@@ -25,6 +25,7 @@ Partial Class BACKGATE
         Me.components = New System.ComponentModel.Container()
         Me.closelbl = New System.Windows.Forms.PictureBox()
         Me.sidepanel = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -63,6 +64,7 @@ Partial Class BACKGATE
         'sidepanel
         '
         Me.sidepanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.sidepanel.Controls.Add(Me.Label5)
         Me.sidepanel.Controls.Add(Me.Panel1)
         Me.sidepanel.Controls.Add(Me.Button5)
         Me.sidepanel.Controls.Add(Me.Button4)
@@ -78,6 +80,17 @@ Partial Class BACKGATE
         Me.sidepanel.Name = "sidepanel"
         Me.sidepanel.Size = New System.Drawing.Size(250, 768)
         Me.sidepanel.TabIndex = 1
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(3, 700)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(134, 28)
+        Me.Label5.TabIndex = 4
+        Me.Label5.Text = "Logged in as"
         '
         'Panel1
         '
@@ -339,4 +352,5 @@ Partial Class BACKGATE
     Friend WithEvents maximizebtn As Button
     Friend WithEvents AddVisitor1 As AddVisitor
     Friend WithEvents ViewVisitor1 As viewVisitor
+    Friend WithEvents Label5 As Label
 End Class

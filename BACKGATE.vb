@@ -144,6 +144,7 @@
     End Sub
 
     Private Sub MAINGATE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Label5.Text = "Logged in as: " & vbCrLf & Session.s_uname
         AddVisitor1.Visible = True
         Panel1.Visible = True
         tem.X = 3
@@ -174,4 +175,7 @@
 
     End Sub
 
+    Private Sub sidepanel_Paint(sender As Object, e As PaintEventArgs) Handles sidepanel.Paint
+
+    End Sub
 End Class

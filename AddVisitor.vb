@@ -128,14 +128,14 @@ Public Class AddVisitor
         'take picture of ID
         PictureBox2.Image = Nothing
         Dim cid As New captureID(Me)
-        cid.Show()
+        cid.ShowDialog()
     End Sub
 
     Private Sub portrait_Click(sender As Object, e As EventArgs) Handles capportrait.Click
         'take picture of person
         PictureBox1.Image = Nothing
         Dim cp As New capturePortrait(Me)
-        cp.Show()
+        cp.ShowDialog()
     End Sub
 
     Public Sub setportraitpic(img As Image)

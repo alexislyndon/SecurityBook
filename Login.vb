@@ -36,7 +36,7 @@
         TextBox2.Clear()
         TextBox2.PasswordChar = "*"
         TextBox2.ForeColor = Color.FromArgb(78, 184, 206)
-        'Panel2.BackColor = Color.FromArgb(78, 184, 206)
+        Panel2.BackColor = Color.FromArgb(78, 184, 206)
         'Label3.Visible = False
     End Sub
 
@@ -44,7 +44,7 @@
         'username box
         TextBox1.Clear()
         TextBox1.ForeColor = Color.FromArgb(78, 184, 206)
-        'Panel1.BackColor = Color.FromArgb(78, 184, 206)
+        Panel1.BackColor = Color.FromArgb(78, 184, 206)
         'Label3.Visible = False
     End Sub
 
@@ -53,7 +53,7 @@
         If TextBox1.Text = "" Then
             TextBox1.Text = "Username"
             TextBox1.ForeColor = Color.Gray
-            'Panel1.BackColor = Color.Gray
+            Panel1.BackColor = Color.Gray
         End If
     End Sub
 
@@ -63,7 +63,7 @@
             TextBox2.PasswordChar = ""
             TextBox2.Text = "Password"
             TextBox2.ForeColor = Color.Gray
-            'Panel2.BackColor = Color.Gray
+            Panel2.BackColor = Color.Gray
         End If
     End Sub
 
