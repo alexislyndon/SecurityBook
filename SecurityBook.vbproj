@@ -138,6 +138,12 @@
     <Compile Include="adminUsers.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="adminVIP.Designer.vb">
+      <DependentUpon>adminVIP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="adminVIP.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="adminVisitors.Designer.vb">
       <DependentUpon>adminVisitors.vb</DependentUpon>
     </Compile>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="adminUsers.resx">
       <DependentUpon>adminUsers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminVIP.resx">
+      <DependentUpon>adminVIP.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="adminVisitors.resx">
       <DependentUpon>adminVisitors.vb</DependentUpon>
