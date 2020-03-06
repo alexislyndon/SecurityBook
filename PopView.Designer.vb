@@ -236,12 +236,14 @@ Partial Class PopView
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(913, 556)
+        Me.Button1.BackColor = System.Drawing.Color.GreenYellow
+        Me.Button1.Font = New System.Drawing.Font("Microsoft JhengHei", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(847, 531)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(141, 48)
         Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Text = "Checkout"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Button2
         '
@@ -485,6 +487,9 @@ Partial Class PopView
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.BadgesTableAdapter = Nothing
+        Me.TableAdapterManager.Company_MembersTableAdapter = Nothing
+        Me.TableAdapterManager.companyloginsTableAdapter = Nothing
+        Me.TableAdapterManager.CompanyTableAdapter = Nothing
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.UpdateOrder = SecurityBook.db1DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.usersTableAdapter = Nothing
