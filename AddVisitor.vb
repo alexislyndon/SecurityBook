@@ -29,9 +29,9 @@ Public Class AddVisitor
             gtg = False
             ErrorProvider1.SetError(fname, "Only Letters and Spaces allowed")
         End If
-        If Not names.IsMatch(mname.Text) Then 'middlename
-            gtg = False
-            ErrorProvider1.SetError(mname, "Only Letters and Spaces allowed")
+        If Not names.IsMatch(mname.Text) Then 'middlename not required
+            'gtg = False
+            'ErrorProvider1.SetError(mname, "Only Letters and Spaces allowed")
         End If
         If sex.SelectedIndex = -1 Then 'sex
             gtg = False
@@ -87,6 +87,7 @@ Public Class AddVisitor
     End Sub
 
     Private Sub AddVisitor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        '-88, 17 location of label
         tem.Y = 17
         uc.X = -93
         uc.Y = 17

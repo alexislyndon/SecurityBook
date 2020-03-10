@@ -2044,6 +2044,8 @@ Partial Public Class db1DS
         
         Private columnExited As Global.System.Data.DataColumn
         
+        Private columncontactperson As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -2240,6 +2242,14 @@ Partial Public Class db1DS
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property contactpersonColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncontactperson
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -2295,9 +2305,10 @@ Partial Public Class db1DS
                     ByVal alert As Byte,  _
                     ByVal Sex As String,  _
                     ByVal Entry As String,  _
-                    ByVal Exited As String) As VisitorsRow
+                    ByVal Exited As String,  _
+                    ByVal contactperson As String) As VisitorsRow
             Dim rowVisitorsRow As VisitorsRow = CType(Me.NewRow,VisitorsRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, fname, mname, lname, destination, purpose, time_in, time_out, Nothing, portrait, id_pic, id_back, ID_surrendered, phone, Nothing, FullName, alert, Sex, Entry, Exited}
+            Dim columnValuesArray() As Object = New Object() {Nothing, fname, mname, lname, destination, purpose, time_in, time_out, Nothing, portrait, id_pic, id_back, ID_surrendered, phone, Nothing, FullName, alert, Sex, Entry, Exited, contactperson}
             If (Not (parentBadgesRowByFK_Vehicles_Badges) Is Nothing) Then
                 columnValuesArray(8) = parentBadgesRowByFK_Vehicles_Badges(0)
             End If
@@ -2352,6 +2363,7 @@ Partial Public Class db1DS
             Me.columnSex = MyBase.Columns("Sex")
             Me.columnEntry = MyBase.Columns("Entry")
             Me.columnExited = MyBase.Columns("Exited")
+            Me.columncontactperson = MyBase.Columns("contactperson")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2397,6 +2409,8 @@ Partial Public Class db1DS
             MyBase.Columns.Add(Me.columnEntry)
             Me.columnExited = New Global.System.Data.DataColumn("Exited", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnExited)
+            Me.columncontactperson = New Global.System.Data.DataColumn("contactperson", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncontactperson)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnvisit_ID}, true))
             Me.columnvisit_ID.AutoIncrement = true
             Me.columnvisit_ID.AutoIncrementSeed = -1
@@ -4572,6 +4586,21 @@ Partial Public Class db1DS
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property contactperson() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableVisitors.contactpersonColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'contactperson' in table 'Visitors' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableVisitors.contactpersonColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property BadgesRow() As BadgesRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_Vehicles_Badges")),BadgesRow)
@@ -4818,6 +4847,18 @@ Partial Public Class db1DS
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetExitedNull()
             Me(Me.tableVisitors.ExitedColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IscontactpersonNull() As Boolean
+            Return Me.IsNull(Me.tableVisitors.contactpersonColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetcontactpersonNull()
+            Me(Me.tableVisitors.contactpersonColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -8428,13 +8469,12 @@ Namespace db1DSTableAdapters
                 "CASE WHEN sex = 'm' THEN 'Male' WHEN sex = 'f' THEN 'Female' ELSE 'Other' END AS"& _ 
                 " Sex, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         CASE WHEN entry = 'm' THEN 'Main Gate' WHEN ent"& _ 
                 "ry = 'b' THEN 'Back Gate' END AS Entry, CASE WHEN exited = 'm' THEN 'Main Gate' "& _ 
-                "WHEN exited = 'b' THEN 'Back Gate' ELSE 'Other' END AS Exited, Visitors.destinat"& _ 
-                "ion, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Visitors.purpose, Visitors.time_in, Visitors.tim"& _ 
-                "e_out, Visitors.badge_number, Visitors.portrait, Visitors.id_pic, Visitors.id_ba"& _ 
-                "ck, Visitors.ID_surrendered, Visitors.phone, Visitors.userid, Visitors.FullName,"& _ 
-                " Visitors.alert, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         users.name, users.designation"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM "& _ 
-                "           Visitors INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         users ON Visitors.useri"& _ 
-                "d = users.id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Visitors.visit_ID = @visit_ID)"
+                "WHEN exited = 'b' THEN 'Back Gate' END AS Exited, Visitors.destination, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"      "& _ 
+                "                   Visitors.purpose, Visitors.time_in, Visitors.time_out, Visito"& _ 
+                "rs.badge_number, Visitors.portrait, Visitors.id_pic, Visitors.id_back, Visitors."& _ 
+                "ID_surrendered, Visitors.phone, Visitors.userid, Visitors.FullName, Visitors.ale"& _ 
+                "rt, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         users.name, users.designation"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Vi"& _ 
+                "sitors INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         users ON Visitors.userid = users.id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Visitors.visit_ID = @visit_ID)"
             Me._commandCollection(8).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(8).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visit_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub

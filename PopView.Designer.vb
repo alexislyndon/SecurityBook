@@ -238,7 +238,7 @@ Partial Class PopView
         '
         Me.Button1.BackColor = System.Drawing.Color.GreenYellow
         Me.Button1.Font = New System.Drawing.Font("Microsoft JhengHei", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(847, 531)
+        Me.Button1.Location = New System.Drawing.Point(847, 540)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(141, 48)
         Me.Button1.TabIndex = 5
@@ -474,7 +474,7 @@ Partial Class PopView
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(338, 242)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(649, 240)
+        Me.GroupBox2.Size = New System.Drawing.Size(649, 292)
         Me.GroupBox2.TabIndex = 4
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Security Information"

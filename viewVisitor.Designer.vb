@@ -68,6 +68,7 @@ Partial Class viewVisitor
         Me.VisitorsDataGridView.DataSource = Me.VisitorsBindingSource
         Me.VisitorsDataGridView.Location = New System.Drawing.Point(0, 105)
         Me.VisitorsDataGridView.Name = "VisitorsDataGridView"
+        Me.VisitorsDataGridView.ReadOnly = True
         Me.VisitorsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.VisitorsDataGridView.Size = New System.Drawing.Size(1116, 500)
         Me.VisitorsDataGridView.TabIndex = 1
@@ -85,6 +86,7 @@ Partial Class viewVisitor
         Me.DataGridViewTextBoxColumn12.DataPropertyName = "badge_number"
         Me.DataGridViewTextBoxColumn12.HeaderText = "Visitor's Pass #"
         Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        Me.DataGridViewTextBoxColumn12.ReadOnly = True
         Me.DataGridViewTextBoxColumn12.Width = 50
         '
         'DataGridViewTextBoxColumn16
@@ -100,18 +102,21 @@ Partial Class viewVisitor
         Me.DataGridViewTextBoxColumn14.DataPropertyName = "phone"
         Me.DataGridViewTextBoxColumn14.HeaderText = "Phone"
         Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
+        Me.DataGridViewTextBoxColumn14.ReadOnly = True
         '
         'DataGridViewTextBoxColumn8
         '
         Me.DataGridViewTextBoxColumn8.DataPropertyName = "destination"
         Me.DataGridViewTextBoxColumn8.HeaderText = "Destination"
         Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.ReadOnly = True
         '
         'DataGridViewTextBoxColumn9
         '
         Me.DataGridViewTextBoxColumn9.DataPropertyName = "purpose"
         Me.DataGridViewTextBoxColumn9.HeaderText = "Purpose"
         Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.ReadOnly = True
         Me.DataGridViewTextBoxColumn9.Width = 120
         '
         'DataGridViewTextBoxColumn10
@@ -119,6 +124,7 @@ Partial Class viewVisitor
         Me.DataGridViewTextBoxColumn10.DataPropertyName = "time_in"
         Me.DataGridViewTextBoxColumn10.HeaderText = "Time In"
         Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.ReadOnly = True
         Me.DataGridViewTextBoxColumn10.Width = 120
         '
         'DataGridViewTextBoxColumn11
@@ -126,6 +132,7 @@ Partial Class viewVisitor
         Me.DataGridViewTextBoxColumn11.DataPropertyName = "time_out"
         Me.DataGridViewTextBoxColumn11.HeaderText = "Time Out"
         Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        Me.DataGridViewTextBoxColumn11.ReadOnly = True
         Me.DataGridViewTextBoxColumn11.Width = 120
         '
         'DataGridViewTextBoxColumn13
@@ -133,12 +140,14 @@ Partial Class viewVisitor
         Me.DataGridViewTextBoxColumn13.DataPropertyName = "ID_surrendered"
         Me.DataGridViewTextBoxColumn13.HeaderText = "ID Surrendered"
         Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
+        Me.DataGridViewTextBoxColumn13.ReadOnly = True
         '
         'DataGridViewTextBoxColumn17
         '
         Me.DataGridViewTextBoxColumn17.DataPropertyName = "alert"
         Me.DataGridViewTextBoxColumn17.HeaderText = "Alert Level"
         Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
+        Me.DataGridViewTextBoxColumn17.ReadOnly = True
         Me.DataGridViewTextBoxColumn17.Width = 50
         '
         'VisitorsBindingSource

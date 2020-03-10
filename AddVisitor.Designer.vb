@@ -38,9 +38,7 @@ Partial Class AddVisitor
         Me.fname = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.capid = New System.Windows.Forms.Button()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.contactperson = New System.Windows.Forms.TextBox()
         Me.purp = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -218,9 +216,7 @@ Partial Class AddVisitor
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.capid)
-        Me.GroupBox2.Controls.Add(Me.Label13)
         Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Controls.Add(Me.contactperson)
         Me.GroupBox2.Controls.Add(Me.purp)
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.Label10)
@@ -248,17 +244,6 @@ Partial Class AddVisitor
         Me.capid.Text = "Capture ID"
         Me.capid.UseVisualStyleBackColor = True
         '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.BackColor = System.Drawing.SystemColors.Control
-        Me.Label13.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(26, 185)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(144, 25)
-        Me.Label13.TabIndex = 3
-        Me.Label13.Text = "Contact Person"
-        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -269,16 +254,6 @@ Partial Class AddVisitor
         Me.Label7.Size = New System.Drawing.Size(83, 25)
         Me.Label7.TabIndex = 3
         Me.Label7.Text = "Purpose"
-        '
-        'contactperson
-        '
-        Me.contactperson.BackColor = System.Drawing.Color.White
-        Me.contactperson.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.contactperson.Location = New System.Drawing.Point(21, 208)
-        Me.contactperson.MaxLength = 35
-        Me.contactperson.Name = "contactperson"
-        Me.contactperson.Size = New System.Drawing.Size(196, 34)
-        Me.contactperson.TabIndex = 10
         '
         'purp
         '
@@ -460,7 +435,7 @@ Partial Class AddVisitor
         '
         Me.uclabel.AutoSize = True
         Me.uclabel.Font = New System.Drawing.Font("Microsoft JhengHei", 18.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.uclabel.Location = New System.Drawing.Point(-88, 17)
+        Me.uclabel.Location = New System.Drawing.Point(62, 17)
         Me.uclabel.Name = "uclabel"
         Me.uclabel.Size = New System.Drawing.Size(138, 30)
         Me.uclabel.TabIndex = 7
@@ -572,6 +547,4 @@ Partial Class AddVisitor
     Friend WithEvents Db1DS As db1DS
     Friend WithEvents BadgesBindingSource As BindingSource
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents Label13 As Label
-    Friend WithEvents contactperson As TextBox
 End Class

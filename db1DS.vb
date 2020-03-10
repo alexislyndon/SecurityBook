@@ -1,4 +1,6 @@
 ﻿Partial Class db1DS
+    Partial Public Class VisitorsDataTable
+    End Class
 End Class
 
 Namespace db1DSTableAdapters
