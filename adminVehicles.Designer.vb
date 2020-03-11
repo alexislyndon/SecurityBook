@@ -87,6 +87,7 @@ Partial Class adminVehicles
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.UpdateOrder = SecurityBook.db1DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.usersTableAdapter = Nothing
+        Me.TableAdapterManager.VehiclesTableAdapter = Nothing
         Me.TableAdapterManager.VIPTableAdapter = Nothing
         Me.TableAdapterManager.VisitorsTableAdapter = Nothing
         '
@@ -164,7 +165,7 @@ Partial Class adminVehicles
         '
         'DataGridViewTextBoxColumn9
         '
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "userid"
+        Me.DataGridViewTextBoxColumn9.DataPropertyName = "name"
         Me.DataGridViewTextBoxColumn9.HeaderText = "Guard on Duty"
         Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
         Me.DataGridViewTextBoxColumn9.Width = 110
