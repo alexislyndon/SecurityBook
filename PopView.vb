@@ -16,16 +16,23 @@
         Me.gate = gate
         ' This call is required by the designer.
         InitializeComponent()
+        Me.Db1DS.EnforceConstraints = False
         Me.VisitorsTableAdapter.View(Me.Db1DS.Visitors, visitID)
+        'Me.Db1DS.EnforceConstraints = True
+
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.VisitorsTableAdapter.View(Me.Db1DS.Visitors, visitID)
         Dim god = Db1DS.Visitors.Rows(0).Item("name")
+
         TextBox13.Text = god
         If gate = "a" Then
             Button1.Visible = False
+            If (Db1DS.Visitors.Rows(0).Item("time_out") Is Nothing) Then
+                Button4.Visible = True
+            End If
         Else
 
         End If
@@ -58,5 +65,18 @@
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         PictureBox3.Visible = False
         PictureBox2.Visible = True
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim force = MessageBox.Show("Force Checkout this Visitor?", "Confirm Checkout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+        If force = vbYes Then
+            Me.VisitorsTableAdapter.ForceCheckout("a", visitID)
+            Me.BadgesTableAdapter1.ReturnBadge(Db1DS.Visitors.Rows(0).Item("badge_number"))
+            MessageBox.Show("Force Checkout Success." & vbCrLf,
+               "Force Checkout", MessageBoxButtons.OK, MessageBoxIcon.Information
+               )
+            refreshAll()
+            Me.Dispose()
+        End If
     End Sub
 End Class

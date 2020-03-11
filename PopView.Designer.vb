@@ -65,6 +65,7 @@ Partial Class PopView
         Me.TableAdapterManager = New SecurityBook.db1DSTableAdapters.TableAdapterManager()
         Me.BadgesTableAdapter1 = New SecurityBook.db1DSTableAdapters.BadgesTableAdapter()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -251,7 +252,7 @@ Partial Class PopView
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("8_bit_1_6", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(936, -1)
+        Me.Button2.Location = New System.Drawing.Point(950, -1)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(32, 32)
         Me.Button2.TabIndex = 6
@@ -264,7 +265,7 @@ Partial Class PopView
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("8_bit_1_6", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(969, -1)
+        Me.Button3.Location = New System.Drawing.Point(988, -1)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(32, 32)
         Me.Button3.TabIndex = 7
@@ -474,7 +475,7 @@ Partial Class PopView
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(338, 242)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(649, 292)
+        Me.GroupBox2.Size = New System.Drawing.Size(649, 258)
         Me.GroupBox2.TabIndex = 4
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Security Information"
@@ -510,6 +511,18 @@ Partial Class PopView
         Me.Label15.TabIndex = 8
         Me.Label15.Text = "Click on image to Toggle Front/Back"
         '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.GreenYellow
+        Me.Button4.Font = New System.Drawing.Font("Microsoft JhengHei", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(339, 540)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(141, 48)
+        Me.Button4.TabIndex = 5
+        Me.Button4.Text = "Force Checkout"
+        Me.Button4.UseVisualStyleBackColor = False
+        Me.Button4.Visible = False
+        '
         'PopView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -519,6 +532,7 @@ Partial Class PopView
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -584,4 +598,5 @@ Partial Class PopView
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents BadgesTableAdapter1 As db1DSTableAdapters.BadgesTableAdapter
     Friend WithEvents Label15 As Label
+    Friend WithEvents Button4 As Button
 End Class

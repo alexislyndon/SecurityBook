@@ -23,11 +23,16 @@ Partial Class adminVisitors
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.Db1DS = New SecurityBook.db1DS()
-        Me.VisitorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.VisitorsTableAdapter = New SecurityBook.db1DSTableAdapters.VisitorsTableAdapter()
-        Me.TableAdapterManager = New SecurityBook.db1DSTableAdapters.TableAdapterManager()
         Me.VisitorsDataGridView = New System.Windows.Forms.DataGridView()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -41,46 +46,14 @@ Partial Class adminVisitors
         Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.VisitorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Db1DS = New SecurityBook.db1DS()
+        Me.VisitorsTableAdapter = New SecurityBook.db1DSTableAdapters.VisitorsTableAdapter()
+        Me.TableAdapterManager = New SecurityBook.db1DSTableAdapters.TableAdapterManager()
         CType(Me.VisitorsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Db1DS
-        '
-        Me.Db1DS.DataSetName = "db1DS"
-        Me.Db1DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'VisitorsBindingSource
-        '
-        Me.VisitorsBindingSource.DataMember = "Visitors"
-        Me.VisitorsBindingSource.DataSource = Me.Db1DS
-        '
-        'VisitorsTableAdapter
-        '
-        Me.VisitorsTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.BadgesTableAdapter = Nothing
-        Me.TableAdapterManager.Company_MembersTableAdapter = Nothing
-        Me.TableAdapterManager.companyloginsTableAdapter = Nothing
-        Me.TableAdapterManager.CompanyTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = SecurityBook.db1DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.usersTableAdapter = Nothing
-        Me.TableAdapterManager.VehiclesTableAdapter = Nothing
-        Me.TableAdapterManager.VIPTableAdapter = Nothing
-        Me.TableAdapterManager.VisitorsTableAdapter = Me.VisitorsTableAdapter
         '
         'VisitorsDataGridView
         '
@@ -90,99 +63,10 @@ Partial Class adminVisitors
         Me.VisitorsDataGridView.DataSource = Me.VisitorsBindingSource
         Me.VisitorsDataGridView.Location = New System.Drawing.Point(3, 243)
         Me.VisitorsDataGridView.Name = "VisitorsDataGridView"
+        Me.VisitorsDataGridView.ReadOnly = True
+        Me.VisitorsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.VisitorsDataGridView.Size = New System.Drawing.Size(794, 254)
         Me.VisitorsDataGridView.TabIndex = 2
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "visit_ID"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Visit ID"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 40
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "badge_number"
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Visitor's Pass"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.Width = 50
-        '
-        'DataGridViewTextBoxColumn13
-        '
-        Me.DataGridViewTextBoxColumn13.DataPropertyName = "FullName"
-        Me.DataGridViewTextBoxColumn13.HeaderText = "Full Name"
-        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
-        Me.DataGridViewTextBoxColumn13.ReadOnly = True
-        Me.DataGridViewTextBoxColumn13.Width = 150
-        '
-        'DataGridViewTextBoxColumn11
-        '
-        Me.DataGridViewTextBoxColumn11.DataPropertyName = "phone"
-        Me.DataGridViewTextBoxColumn11.HeaderText = "Phone"
-        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
-        Me.DataGridViewTextBoxColumn11.Width = 80
-        '
-        'DataGridViewTextBoxColumn15
-        '
-        Me.DataGridViewTextBoxColumn15.DataPropertyName = "Sex"
-        Me.DataGridViewTextBoxColumn15.HeaderText = "Sex"
-        Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
-        Me.DataGridViewTextBoxColumn15.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "destination"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Destination"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "purpose"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Purpose"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "time_in"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Time in"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.Width = 120
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "time_out"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Time out"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.Width = 120
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.DataPropertyName = "ID_surrendered"
-        Me.DataGridViewTextBoxColumn10.HeaderText = "ID Surrendered"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        '
-        'DataGridViewTextBoxColumn14
-        '
-        Me.DataGridViewTextBoxColumn14.DataPropertyName = "alert"
-        Me.DataGridViewTextBoxColumn14.HeaderText = "Alert"
-        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
-        '
-        'DataGridViewTextBoxColumn16
-        '
-        Me.DataGridViewTextBoxColumn16.DataPropertyName = "Entry"
-        Me.DataGridViewTextBoxColumn16.HeaderText = "Entry"
-        Me.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16"
-        Me.DataGridViewTextBoxColumn16.ReadOnly = True
-        Me.DataGridViewTextBoxColumn16.Width = 60
-        '
-        'DataGridViewTextBoxColumn17
-        '
-        Me.DataGridViewTextBoxColumn17.DataPropertyName = "Exited"
-        Me.DataGridViewTextBoxColumn17.HeaderText = "Exited"
-        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
-        Me.DataGridViewTextBoxColumn17.ReadOnly = True
-        Me.DataGridViewTextBoxColumn17.Width = 60
         '
         'CheckBox1
         '
@@ -268,6 +152,132 @@ Partial Class adminVisitors
         Me.Label4.Text = "Time in"
         Me.Label4.Visible = False
         '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "visit_ID"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Visit ID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 40
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.DataPropertyName = "badge_number"
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Visitor's Pass"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.ReadOnly = True
+        Me.DataGridViewTextBoxColumn9.Width = 50
+        '
+        'DataGridViewTextBoxColumn13
+        '
+        Me.DataGridViewTextBoxColumn13.DataPropertyName = "FullName"
+        Me.DataGridViewTextBoxColumn13.HeaderText = "Full Name"
+        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
+        Me.DataGridViewTextBoxColumn13.ReadOnly = True
+        Me.DataGridViewTextBoxColumn13.Width = 150
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        Me.DataGridViewTextBoxColumn11.DataPropertyName = "phone"
+        Me.DataGridViewTextBoxColumn11.HeaderText = "Phone"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        Me.DataGridViewTextBoxColumn11.ReadOnly = True
+        Me.DataGridViewTextBoxColumn11.Width = 80
+        '
+        'DataGridViewTextBoxColumn15
+        '
+        Me.DataGridViewTextBoxColumn15.DataPropertyName = "Sex"
+        Me.DataGridViewTextBoxColumn15.HeaderText = "Sex"
+        Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
+        Me.DataGridViewTextBoxColumn15.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "destination"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Destination"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "purpose"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Purpose"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "time_in"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Time in"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
+        Me.DataGridViewTextBoxColumn7.Width = 120
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "time_out"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Time out"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.ReadOnly = True
+        Me.DataGridViewTextBoxColumn8.Width = 120
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.DataPropertyName = "ID_surrendered"
+        Me.DataGridViewTextBoxColumn10.HeaderText = "ID Surrendered"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn14
+        '
+        Me.DataGridViewTextBoxColumn14.DataPropertyName = "alert"
+        Me.DataGridViewTextBoxColumn14.HeaderText = "Alert"
+        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
+        Me.DataGridViewTextBoxColumn14.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn16
+        '
+        Me.DataGridViewTextBoxColumn16.DataPropertyName = "Entry"
+        Me.DataGridViewTextBoxColumn16.HeaderText = "Entry"
+        Me.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16"
+        Me.DataGridViewTextBoxColumn16.ReadOnly = True
+        Me.DataGridViewTextBoxColumn16.Width = 60
+        '
+        'DataGridViewTextBoxColumn17
+        '
+        Me.DataGridViewTextBoxColumn17.DataPropertyName = "Exited"
+        Me.DataGridViewTextBoxColumn17.HeaderText = "Exited"
+        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
+        Me.DataGridViewTextBoxColumn17.ReadOnly = True
+        Me.DataGridViewTextBoxColumn17.Width = 60
+        '
+        'VisitorsBindingSource
+        '
+        Me.VisitorsBindingSource.DataMember = "Visitors"
+        Me.VisitorsBindingSource.DataSource = Me.Db1DS
+        '
+        'Db1DS
+        '
+        Me.Db1DS.DataSetName = "db1DS"
+        Me.Db1DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'VisitorsTableAdapter
+        '
+        Me.VisitorsTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BadgesTableAdapter = Nothing
+        Me.TableAdapterManager.Company_MembersTableAdapter = Nothing
+        Me.TableAdapterManager.companyloginsTableAdapter = Nothing
+        Me.TableAdapterManager.CompanyTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = SecurityBook.db1DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.usersTableAdapter = Nothing
+        Me.TableAdapterManager.VehiclesTableAdapter = Nothing
+        Me.TableAdapterManager.VIPTableAdapter = Nothing
+        Me.TableAdapterManager.VisitorsTableAdapter = Me.VisitorsTableAdapter
+        '
         'adminVisitors
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -284,9 +294,9 @@ Partial Class adminVisitors
         Me.Controls.Add(Me.VisitorsDataGridView)
         Me.Name = "adminVisitors"
         Me.Size = New System.Drawing.Size(800, 500)
-        CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VisitorsDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

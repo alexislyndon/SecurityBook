@@ -8391,7 +8391,7 @@ Namespace db1DSTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(8) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(9) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        visit_ID, fname, mname, lname, CASE WHEN sex = 'm' THEN 'Male' WHEN"& _ 
@@ -8400,10 +8400,8 @@ Namespace db1DSTableAdapters
                 "    CASE WHEN exited = 'm' THEN 'Main Gate' WHEN exited = 'b' THEN 'Back Gate' E"& _ 
                 "LSE 'Other' END AS Exited, destination, purpose, time_in, time_out, badge_number"& _ 
                 ", portrait, id_pic, id_back, ID_surrendered, phone, userid, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  "& _ 
-                "       FullName, alert"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Visitors"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        ((exited = @exit)"& _ 
-                " OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (ISNULL(@exit, '') = NULL))"
+                "       FullName, alert"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Visitors"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@exit", Global.System.Data.SqlDbType.[Char], 1, Global.System.Data.ParameterDirection.Input, 0, 0, "exited", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT        CASE WHEN entry = 'm' THEN 'Main Gate' WHEN entry = 'b' THEN 'Back "& _ 
@@ -8481,7 +8479,14 @@ Namespace db1DSTableAdapters
             Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@badge", Global.System.Data.SqlDbType.VarChar, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "badge_number", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(7) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(7).Connection = Me.Connection
-            Me._commandCollection(7).CommandText = "SELECT        CASE WHEN entry = 'm' THEN 'Main Gate' WHEN entry = 'b' THEN 'Back "& _ 
+            Me._commandCollection(7).CommandText = "UPDATE       Visitors"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                exited = @exited, time_out = time_in"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"W"& _ 
+                "HERE        (visit_ID = @visit_ID) AND (time_out IS NULL)"
+            Me._commandCollection(7).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@exited", Global.System.Data.SqlDbType.[Char], 1, Global.System.Data.ParameterDirection.Input, 0, 0, "exited", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visit_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(8) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(8).Connection = Me.Connection
+            Me._commandCollection(8).CommandText = "SELECT        CASE WHEN entry = 'm' THEN 'Main Gate' WHEN entry = 'b' THEN 'Back "& _ 
                 "Gate' END AS Entry, CASE WHEN exited = 'm' THEN 'Main Gate' WHEN exited = 'b' TH"& _ 
                 "EN 'Back Gate' ELSE 'Other' END AS Exited, Visitors.FullName, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                "& _ 
                 "         Visitors.ID_surrendered, CASE WHEN sex = 'm' THEN 'Male' WHEN sex = 'f'"& _ 
@@ -8493,34 +8498,31 @@ Namespace db1DSTableAdapters
                 "ON Visitors.userid = users.id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        ((Visitors.exited IS NULL) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"     "& _ 
                 "                    (Visitors.time_out IS NULL)) and  (Visitors.time_in >= CAST("& _ 
                 "CONVERT(date, GETDATE()) AS datetime))"
-            Me._commandCollection(7).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(8) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(8).Connection = Me.Connection
-            Me._commandCollection(8).CommandText = "SELECT        Visitors.visit_ID, Visitors.fname, Visitors.mname, Visitors.lname, "& _ 
+            Me._commandCollection(8).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(9) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(9).Connection = Me.Connection
+            Me._commandCollection(9).CommandText = "SELECT        Visitors.visit_ID, Visitors.fname, Visitors.mname, Visitors.lname, "& _ 
                 "CASE WHEN sex = 'm' THEN 'Male' WHEN sex = 'f' THEN 'Female' ELSE 'Other' END AS"& _ 
                 " Sex, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         CASE WHEN entry = 'm' THEN 'Main Gate' WHEN ent"& _ 
                 "ry = 'b' THEN 'Back Gate' END AS Entry, CASE WHEN exited = 'm' THEN 'Main Gate' "& _ 
-                "WHEN exited = 'b' THEN 'Back Gate' END AS Exited, Visitors.destination, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"      "& _ 
-                "                   Visitors.purpose, Visitors.time_in, Visitors.time_out, Visito"& _ 
-                "rs.badge_number, Visitors.portrait, Visitors.id_pic, Visitors.id_back, Visitors."& _ 
-                "ID_surrendered, Visitors.phone, Visitors.userid, Visitors.FullName, Visitors.ale"& _ 
-                "rt, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         users.name, users.designation"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Vi"& _ 
-                "sitors INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         users ON Visitors.userid = users.id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Visitors.visit_ID = @visit_ID)"
-            Me._commandCollection(8).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(8).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visit_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+                "WHEN exited = 'b' THEN 'Back Gate' WHEN exited = 'a' THEN 'Forced Checkout' END "& _ 
+                "AS Exited, Visitors.destination, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Visitors.purpose, Vi"& _ 
+                "sitors.time_in, Visitors.time_out, Visitors.badge_number, Visitors.portrait, Vis"& _ 
+                "itors.id_pic, Visitors.id_back, Visitors.ID_surrendered, Visitors.phone, Visitor"& _ 
+                "s.userid, Visitors.FullName, Visitors.alert, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         users.na"& _ 
+                "me, users.designation"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Visitors INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                    "& _ 
+                "     users ON Visitors.userid = users.id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Visitors.visit_ID = @vis"& _ 
+                "it_ID)"
+            Me._commandCollection(9).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(9).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visit_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As db1DS.VisitorsDataTable, ByVal _exit As String) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As db1DS.VisitorsDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (_exit Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(_exit,String)
-            End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -8532,13 +8534,8 @@ Namespace db1DSTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal _exit As String) As db1DS.VisitorsDataTable
+        Public Overloads Overridable Function GetData() As db1DS.VisitorsDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (_exit Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(_exit,String)
-            End If
             Dim dataTable As db1DS.VisitorsDataTable = New db1DS.VisitorsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -8614,7 +8611,7 @@ Namespace db1DSTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
         Public Overloads Overridable Function InsideVisitors(ByVal dataTable As db1DS.VisitorsDataTable) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(7)
+            Me.Adapter.SelectCommand = Me.CommandCollection(8)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -8627,7 +8624,7 @@ Namespace db1DSTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
         Public Overloads Overridable Function GetInsideVisitors() As db1DS.VisitorsDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(7)
+            Me.Adapter.SelectCommand = Me.CommandCollection(8)
             Dim dataTable As db1DS.VisitorsDataTable = New db1DS.VisitorsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -8638,25 +8635,13 @@ Namespace db1DSTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
         Public Overloads Overridable Function View(ByVal dataTable As db1DS.VisitorsDataTable, ByVal visit_ID As Integer) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(8)
+            Me.Adapter.SelectCommand = Me.CommandCollection(9)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(visit_ID,Integer)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
             Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
             Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function getview(ByVal visit_ID As Integer) As db1DS.VisitorsDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(8)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(visit_ID,Integer)
-            Dim dataTable As db1DS.VisitorsDataTable = New db1DS.VisitorsDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9294,6 +9279,34 @@ Namespace db1DSTableAdapters
             Else
                 Return New Global.System.Nullable(Of Integer)(CType(returnValue,Integer))
             End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
+        Public Overloads Overridable Function ForceCheckout(ByVal exited As String, ByVal visit_ID As Integer) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(7)
+            If (exited Is Nothing) Then
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(0).Value = CType(exited,String)
+            End If
+            command.Parameters(1).Value = CType(visit_ID,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
         End Function
     End Class
     

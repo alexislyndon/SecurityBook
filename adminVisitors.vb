@@ -1,16 +1,16 @@
 ﻿Public Class adminVisitors
     Private Sub adminVisitors_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.VisitorsTableAdapter.InsideVisitors(Me.Db1DS.Visitors) 'CheckedInToday
+        Me.VisitorsTableAdapter.Fill(Me.Db1DS.Visitors) 'CheckedInToday
     End Sub
     Public Sub refresher()
-        Me.VisitorsTableAdapter.InsideVisitors(Me.Db1DS.Visitors)
+        Me.VisitorsTableAdapter.Fill(Me.Db1DS.Visitors)
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         If CheckBox1.CheckState = CheckState.Checked Then
-            Me.VisitorsTableAdapter.CheckedInToday(Me.Db1DS.Visitors)
+            Me.VisitorsTableAdapter.Fill(Me.Db1DS.Visitors)
         Else
-            Me.VisitorsTableAdapter.InsideVisitors(Me.Db1DS.Visitors)
+            Me.VisitorsTableAdapter.Fill(Me.Db1DS.Visitors)
         End If
     End Sub
 
