@@ -23,6 +23,7 @@ Partial Class adminVehicles
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Db1DS = New SecurityBook.db1DS()
@@ -97,8 +98,12 @@ Partial Class adminVehicles
         Me.VehiclesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.VehiclesDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9})
         Me.VehiclesDataGridView.DataSource = Me.VehiclesBindingSource
+        Me.VehiclesDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.VehiclesDataGridView.Location = New System.Drawing.Point(3, 164)
         Me.VehiclesDataGridView.Name = "VehiclesDataGridView"
+        Me.VehiclesDataGridView.ReadOnly = True
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.VehiclesDataGridView.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.VehiclesDataGridView.Size = New System.Drawing.Size(794, 333)
         Me.VehiclesDataGridView.TabIndex = 23
         '
@@ -115,6 +120,7 @@ Partial Class adminVehicles
         Me.DataGridViewTextBoxColumn6.DataPropertyName = "plate"
         Me.DataGridViewTextBoxColumn6.HeaderText = "Plate"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
         Me.DataGridViewTextBoxColumn6.Width = 80
         '
         'DataGridViewTextBoxColumn2
@@ -122,18 +128,21 @@ Partial Class adminVehicles
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "make"
         Me.DataGridViewTextBoxColumn2.HeaderText = "Make"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
         '
         'DataGridViewTextBoxColumn3
         '
         Me.DataGridViewTextBoxColumn3.DataPropertyName = "model"
         Me.DataGridViewTextBoxColumn3.HeaderText = "Model"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
         '
         'DataGridViewTextBoxColumn10
         '
         Me.DataGridViewTextBoxColumn10.DataPropertyName = "driver"
         Me.DataGridViewTextBoxColumn10.HeaderText = "Driver Name"
         Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.ReadOnly = True
         Me.DataGridViewTextBoxColumn10.Width = 110
         '
         'DataGridViewTextBoxColumn4
@@ -141,6 +150,7 @@ Partial Class adminVehicles
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "color"
         Me.DataGridViewTextBoxColumn4.HeaderText = "Color"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
         Me.DataGridViewTextBoxColumn4.Width = 85
         '
         'DataGridViewTextBoxColumn5
@@ -148,12 +158,14 @@ Partial Class adminVehicles
         Me.DataGridViewTextBoxColumn5.DataPropertyName = "type"
         Me.DataGridViewTextBoxColumn5.HeaderText = "Type"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
         '
         'DataGridViewTextBoxColumn7
         '
         Me.DataGridViewTextBoxColumn7.DataPropertyName = "time_in"
         Me.DataGridViewTextBoxColumn7.HeaderText = "Time In"
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
         Me.DataGridViewTextBoxColumn7.Width = 120
         '
         'DataGridViewTextBoxColumn8
@@ -161,6 +173,7 @@ Partial Class adminVehicles
         Me.DataGridViewTextBoxColumn8.DataPropertyName = "time_out"
         Me.DataGridViewTextBoxColumn8.HeaderText = "Time Out"
         Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.ReadOnly = True
         Me.DataGridViewTextBoxColumn8.Width = 120
         '
         'DataGridViewTextBoxColumn9
@@ -168,6 +181,7 @@ Partial Class adminVehicles
         Me.DataGridViewTextBoxColumn9.DataPropertyName = "name"
         Me.DataGridViewTextBoxColumn9.HeaderText = "Guard on Duty"
         Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.ReadOnly = True
         Me.DataGridViewTextBoxColumn9.Width = 110
         '
         'adminVehicles
