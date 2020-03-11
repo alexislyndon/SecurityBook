@@ -294,11 +294,11 @@ Partial Class ADMIN
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1000, 500)
         Me.ControlBox = False
-        Me.Controls.Add(Me.AdminVehicles1)
-        Me.Controls.Add(Me.AdminVisitors1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.sidepanel)
+        Me.Controls.Add(Me.AdminVehicles1)
+        Me.Controls.Add(Me.AdminVisitors1)
         Me.Controls.Add(Me.AdminDASH1)
         Me.Controls.Add(Me.AdminVIP1)
         Me.Controls.Add(Me.AdminUsers1)
