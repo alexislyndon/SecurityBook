@@ -26,8 +26,8 @@ Partial Class ADMIN
         Me.sidepanel = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.vipbtn = New System.Windows.Forms.Button()
+        Me.visitorpassbtn = New System.Windows.Forms.Button()
         Me.usersbtn = New System.Windows.Forms.Button()
         Me.vehiclesbtn = New System.Windows.Forms.Button()
         Me.visitorsbtn = New System.Windows.Forms.Button()
@@ -55,8 +55,8 @@ Partial Class ADMIN
         Me.sidepanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.sidepanel.Controls.Add(Me.Panel1)
         Me.sidepanel.Controls.Add(Me.Label2)
-        Me.sidepanel.Controls.Add(Me.Button4)
-        Me.sidepanel.Controls.Add(Me.Button3)
+        Me.sidepanel.Controls.Add(Me.vipbtn)
+        Me.sidepanel.Controls.Add(Me.visitorpassbtn)
         Me.sidepanel.Controls.Add(Me.usersbtn)
         Me.sidepanel.Controls.Add(Me.vehiclesbtn)
         Me.sidepanel.Controls.Add(Me.visitorsbtn)
@@ -88,35 +88,35 @@ Partial Class ADMIN
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Logged in as"
         '
-        'Button4
+        'vipbtn
         '
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.Button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer))
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Tai Le", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.Color.Silver
-        Me.Button4.Location = New System.Drawing.Point(16, 340)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(184, 35)
-        Me.Button4.TabIndex = 1
-        Me.Button4.Text = "VIP"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.vipbtn.FlatAppearance.BorderSize = 0
+        Me.vipbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.vipbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer))
+        Me.vipbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.vipbtn.Font = New System.Drawing.Font("Microsoft Tai Le", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.vipbtn.ForeColor = System.Drawing.Color.Silver
+        Me.vipbtn.Location = New System.Drawing.Point(16, 340)
+        Me.vipbtn.Name = "vipbtn"
+        Me.vipbtn.Size = New System.Drawing.Size(184, 35)
+        Me.vipbtn.TabIndex = 1
+        Me.vipbtn.Text = "VIP"
+        Me.vipbtn.UseVisualStyleBackColor = True
         '
-        'Button3
+        'visitorpassbtn
         '
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer))
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Tai Le", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.Silver
-        Me.Button3.Location = New System.Drawing.Point(16, 300)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(184, 35)
-        Me.Button3.TabIndex = 1
-        Me.Button3.Text = "Visitor Pass"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.visitorpassbtn.FlatAppearance.BorderSize = 0
+        Me.visitorpassbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.visitorpassbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer))
+        Me.visitorpassbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.visitorpassbtn.Font = New System.Drawing.Font("Microsoft Tai Le", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.visitorpassbtn.ForeColor = System.Drawing.Color.Silver
+        Me.visitorpassbtn.Location = New System.Drawing.Point(16, 300)
+        Me.visitorpassbtn.Name = "visitorpassbtn"
+        Me.visitorpassbtn.Size = New System.Drawing.Size(184, 35)
+        Me.visitorpassbtn.TabIndex = 1
+        Me.visitorpassbtn.Text = "Visitor Pass"
+        Me.visitorpassbtn.UseVisualStyleBackColor = True
         '
         'usersbtn
         '
@@ -327,9 +327,9 @@ Partial Class ADMIN
     Friend WithEvents Timer4 As Timer
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents visitorpassbtn As Button
     Friend WithEvents Timer5 As Timer
-    Friend WithEvents Button4 As Button
+    Friend WithEvents vipbtn As Button
     Friend WithEvents Timer6 As Timer
     Friend WithEvents AdminUsers1 As adminUsers
     Friend WithEvents AdminBadges1 As adminBadges

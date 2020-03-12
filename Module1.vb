@@ -97,6 +97,7 @@ Module Module1
         MAINGATE.ViewVisitor1.refresher()
         BACKGATE.ViewVisitor1.refresher()
         MAINGATE.AddVehicle1.refresher()
+        ADMIN.AdminVisitors1.refresher()
     End Sub
 
 

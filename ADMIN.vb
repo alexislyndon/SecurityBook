@@ -61,6 +61,7 @@
         Timer2.Start()
         visitorsbtn.BackColor = Color.FromArgb(45, 45, 45)
         AdminVisitors1.Visible = True
+        Me.AdminVisitors1.refresher()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles vehiclesbtn.Click
@@ -139,8 +140,8 @@
         visitorsbtn.BackColor = Color.FromArgb(35, 35, 35)
         vehiclesbtn.BackColor = Color.FromArgb(35, 35, 35)
         usersbtn.BackColor = Color.FromArgb(35, 35, 35)
-        Button3.BackColor = Color.FromArgb(35, 35, 35)
-        Button4.BackColor = Color.FromArgb(35, 35, 35)
+        visitorpassbtn.BackColor = Color.FromArgb(35, 35, 35)
+        vipbtn.BackColor = Color.FromArgb(35, 35, 35)
 
         AdminBadges1.Visible = False
         AdminUsers1.Visible = False
@@ -151,7 +152,7 @@
 
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click 'close button
         Dim logout = MessageBox.Show("Log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
         If logout = vbYes Then
             endsession()
@@ -159,23 +160,23 @@
             Me.Close()
         End If
     End Sub
-    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click 'minimize nutton
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles visitorpassbtn.Click
         falsifier()
         tem.Y = Panel1.Location.Y
         Timer5.Start()
-        Button3.BackColor = Color.FromArgb(45, 45, 45)
+        visitorpassbtn.BackColor = Color.FromArgb(45, 45, 45)
         AdminBadges1.Visible = True
 
     End Sub
-    Private Sub Button4_Click_1(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click_1(sender As Object, e As EventArgs) Handles vipbtn.Click
         falsifier()
         tem.Y = Panel1.Location.Y
         Timer5.Start()
-        Button4.BackColor = Color.FromArgb(45, 45, 45)
+        vipbtn.BackColor = Color.FromArgb(45, 45, 45)
         AdminVIP1.Visible = True
 
     End Sub

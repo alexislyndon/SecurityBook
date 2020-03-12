@@ -30,7 +30,7 @@
         TextBox13.Text = god
         If gate = "a" Then
             Button1.Visible = False
-            If (Db1DS.Visitors.Rows(0).Item("time_out") Is Nothing) Then
+            If (Db1DS.Visitors.Rows(0).Item("time_out") Is Nothing) Or (Db1DS.Visitors.Rows(0).Item("Exited").ToString = "") Then
                 Button4.Visible = True
             End If
         Else
