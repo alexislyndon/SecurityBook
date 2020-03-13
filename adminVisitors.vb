@@ -19,17 +19,28 @@ Public Class adminVisitors
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.VisitorsTableAdapter.Fill(Me.Db1DS.Visitors)
-        Me.Refresh()
+        Clear(Me)
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim timefrom As Date = DateTimePicker1.Value
         Dim timeto As Date = DateTimePicker2.Value.AddSeconds(84398)
         Dim entry, exited As String
-        MsgBox(CheckedListBox1.Items.Item(0).ToString)
-        'If CheckedListBox1.Items.Item(0) Then
-
-        'End If
+        'MsgBox(CheckedListBox1.CheckedIndices.Item(0))
+        If CheckedListBox1.CheckedIndices.Count = 1 Then
+            If CheckedListBox1.CheckedIndices.Item(0) = 0 Then
+                entry = "m"
+            ElseIf CheckedListBox1.CheckedIndices.Item(0) = 1 Then
+                entry = "b"
+            End If
+        End If
+        If CheckedListBox2.CheckedIndices.Count = 1 Then
+            If CheckedListBox2.CheckedIndices.Item(0) = 0 Then
+                exited = "m"
+            ElseIf CheckedListBox2.CheckedIndices.Item(0) = 1 Then
+                exited = "b"
+            End If
+        End If
         For Each ctrls In Me.Controls
             ctrls.Text = byeSpace(ctrls.Text)
         Next
