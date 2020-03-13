@@ -8414,30 +8414,23 @@ Namespace db1DSTableAdapters
                 "ber, Visitors.portrait, Visitors.id_pic, Visitors.id_back, Visitors.ID_surrender"& _ 
                 "ed, Visitors.phone, Visitors.userid, Visitors.FullName, Visitors.alert, users.na"& _ 
                 "me, users.designation"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Visitors INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                    "& _ 
-                "     users ON Visitors.userid = users.id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Visitors.visit_ID = @vis"& _ 
-                "it_ID OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         ISNULL(@visit_ID, '') = '') AND (Visitors.lna"& _ 
-                "me = @lastname OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         ISNULL(@lastname, '') = '') AND (Vis"& _ 
-                "itors.fname = @firstname OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         ISNULL(@firstname, '') = '"& _ 
-                "') AND (Visitors.mname = @middlename OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         ISNULL(@middle"& _ 
-                "name, '') = '') AND (Visitors.destination LIKE + '%' + @destination + '%' OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  "& _ 
-                "                       ISNULL(@destination, '') = '') AND (Visitors.time_in = @t"& _ 
-                "ime_in OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         ISNULL(@time_in, '') = '') AND (Visitors.ent"& _ 
-                "ry = @entry OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         ISNULL(@entry, '') = '') AND (Visitors."& _ 
-                "exited = @exited OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         ISNULL(@exited, '') = '') AND (Vis"& _ 
-                "itors.userid = @guardonduty OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         ISNULL(@guardonduty, ''"& _ 
-                ") = '') AND (Visitors.phone = @phone OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         ISNULL(@phone,"& _ 
-                " '') = '')"
+                "     users ON Visitors.userid = users.id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(lname LIKE +'%'+@lastname+'%'"& _ 
+                " OR ISNULL(@lastname, '') = '') AND"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(fname LIKE +'%'+@firstname+'%' OR ISNULL(@"& _ 
+                "firstname, '') = '') AND"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(mname LIKE +'%'+@middlename+'%' OR ISNULL(@middlename"& _ 
+                ", '') = '') AND"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(destination LIKE +'%'+@destination+'%' OR ISNULL(@destination,"& _ 
+                " '') = '') AND"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(time_in > @timefrom) AND"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(time_in < @timeto) AND"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(entry = @en"& _ 
+                "try OR ISNULL(@entry, '') = '') AND"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(exited = @exited OR ISNULL(@exited, '') = "& _ 
+                "'') AND"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(userid = @guardonduty OR ISNULL(@guardonduty, '') = '')"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visit_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lastname", Global.System.Data.SqlDbType.VarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "lname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@firstname", Global.System.Data.SqlDbType.VarChar, 35, Global.System.Data.ParameterDirection.Input, 0, 0, "fname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@middlename", Global.System.Data.SqlDbType.VarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "mname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@destination", Global.System.Data.SqlDbType.VarChar, 35, Global.System.Data.ParameterDirection.Input, 0, 0, "destination", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@time_in", Global.System.Data.SqlDbType.DateTime2, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "time_in", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@timefrom", Global.System.Data.SqlDbType.DateTime2, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "time_in", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@timeto", Global.System.Data.SqlDbType.DateTime2, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "time_in", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@entry", Global.System.Data.SqlDbType.[Char], 1, Global.System.Data.ParameterDirection.Input, 0, 0, "entry", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@exited", Global.System.Data.SqlDbType.[Char], 1, Global.System.Data.ParameterDirection.Input, 0, 0, "exited", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@guardonduty", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "userid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@phone", Global.System.Data.SqlDbType.VarChar, 25, Global.System.Data.ParameterDirection.Input, 0, 0, "phone", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "SELECT        CASE WHEN entry = 'm' THEN 'Main Gate' WHEN entry = 'b' THEN 'Back "& _ 
@@ -8566,33 +8559,37 @@ Namespace db1DSTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function AdvSearch(ByVal dataTable As db1DS.VisitorsDataTable, ByVal visit_ID As Integer, ByVal lastname As String, ByVal firstname As String, ByVal middlename As String, ByVal destination As String, ByVal time_in As String, ByVal entry As String, ByVal exited As String, ByVal guardonduty As Global.System.Nullable(Of Integer), ByVal phone As String) As Integer
+        Public Overloads Overridable Function AdvSearch(ByVal dataTable As db1DS.VisitorsDataTable, ByVal lastname As String, ByVal firstname As String, ByVal middlename As String, ByVal destination As String, ByVal timefrom As String, ByVal timeto As String, ByVal entry As String, ByVal exited As String, ByVal guardonduty As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(visit_ID,Integer)
             If (lastname Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(lastname,String)
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(lastname,String)
             End If
             If (firstname Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.SelectCommand.Parameters(2).Value = CType(firstname,String)
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(firstname,String)
             End If
             If (middlename Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.SelectCommand.Parameters(3).Value = CType(middlename,String)
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(middlename,String)
             End If
             If (destination Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(destination,String)
+            End If
+            If (timefrom Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.SelectCommand.Parameters(4).Value = CType(destination,String)
+                Me.Adapter.SelectCommand.Parameters(4).Value = CType(timefrom,String)
             End If
-            If (time_in Is Nothing) Then
+            If (timeto Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.SelectCommand.Parameters(5).Value = CType(time_in,String)
+                Me.Adapter.SelectCommand.Parameters(5).Value = CType(timeto,String)
             End If
             If (entry Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(6).Value = Global.System.DBNull.Value
@@ -8608,11 +8605,6 @@ Namespace db1DSTableAdapters
                 Me.Adapter.SelectCommand.Parameters(8).Value = CType(guardonduty.Value,Integer)
             Else
                 Me.Adapter.SelectCommand.Parameters(8).Value = Global.System.DBNull.Value
-            End If
-            If (phone Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(9).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(9).Value = CType(phone,String)
             End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -8625,33 +8617,37 @@ Namespace db1DSTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetAdvSearch(ByVal visit_ID As Integer, ByVal lastname As String, ByVal firstname As String, ByVal middlename As String, ByVal destination As String, ByVal time_in As String, ByVal entry As String, ByVal exited As String, ByVal guardonduty As Global.System.Nullable(Of Integer), ByVal phone As String) As db1DS.VisitorsDataTable
+        Public Overloads Overridable Function GetAdvSearch(ByVal lastname As String, ByVal firstname As String, ByVal middlename As String, ByVal destination As String, ByVal timefrom As String, ByVal timeto As String, ByVal entry As String, ByVal exited As String, ByVal guardonduty As Global.System.Nullable(Of Integer)) As db1DS.VisitorsDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(visit_ID,Integer)
             If (lastname Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(lastname,String)
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(lastname,String)
             End If
             If (firstname Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.SelectCommand.Parameters(2).Value = CType(firstname,String)
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(firstname,String)
             End If
             If (middlename Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.SelectCommand.Parameters(3).Value = CType(middlename,String)
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(middlename,String)
             End If
             If (destination Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(3).Value = CType(destination,String)
+            End If
+            If (timefrom Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.SelectCommand.Parameters(4).Value = CType(destination,String)
+                Me.Adapter.SelectCommand.Parameters(4).Value = CType(timefrom,String)
             End If
-            If (time_in Is Nothing) Then
+            If (timeto Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.SelectCommand.Parameters(5).Value = CType(time_in,String)
+                Me.Adapter.SelectCommand.Parameters(5).Value = CType(timeto,String)
             End If
             If (entry Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(6).Value = Global.System.DBNull.Value
@@ -8667,11 +8663,6 @@ Namespace db1DSTableAdapters
                 Me.Adapter.SelectCommand.Parameters(8).Value = CType(guardonduty.Value,Integer)
             Else
                 Me.Adapter.SelectCommand.Parameters(8).Value = Global.System.DBNull.Value
-            End If
-            If (phone Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(9).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.SelectCommand.Parameters(9).Value = CType(phone,String)
             End If
             Dim dataTable As db1DS.VisitorsDataTable = New db1DS.VisitorsDataTable()
             Me.Adapter.Fill(dataTable)

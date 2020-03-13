@@ -39,8 +39,7 @@ Partial Class adminVisitors
         Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VisitorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Db1DS = New SecurityBook.db1DS()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.v_idbox = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
@@ -48,13 +47,23 @@ Partial Class adminVisitors
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.VisitorsTableAdapter = New SecurityBook.db1DSTableAdapters.VisitorsTableAdapter()
-        Me.TableAdapterManager = New SecurityBook.db1DSTableAdapters.TableAdapterManager()
         Me.CheckedListBox1 = New System.Windows.Forms.CheckedListBox()
         Me.CheckedListBox2 = New System.Windows.Forms.CheckedListBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.first = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.middle = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.last = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.destination = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.VisitorsTableAdapter = New SecurityBook.db1DSTableAdapters.VisitorsTableAdapter()
+        Me.TableAdapterManager = New SecurityBook.db1DSTableAdapters.TableAdapterManager()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.VisitorsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -182,23 +191,12 @@ Partial Class adminVisitors
         Me.Db1DS.DataSetName = "db1DS"
         Me.Db1DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'CheckBox1
+        'v_idbox
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(670, 220)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(127, 17)
-        Me.CheckBox1.TabIndex = 3
-        Me.CheckBox1.Text = "Include Checked Out"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(53, 172)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(67, 20)
-        Me.TextBox1.TabIndex = 4
-        Me.TextBox1.Visible = False
+        Me.v_idbox.Location = New System.Drawing.Point(19, 94)
+        Me.v_idbox.Name = "v_idbox"
+        Me.v_idbox.Size = New System.Drawing.Size(39, 20)
+        Me.v_idbox.TabIndex = 4
         '
         'Panel1
         '
@@ -221,50 +219,154 @@ Partial Class adminVisitors
         'DateTimePicker1
         '
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(53, 90)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(487, 83)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(91, 20)
         Me.DateTimePicker1.TabIndex = 21
-        Me.DateTimePicker1.Visible = False
         '
         'DateTimePicker2
         '
         Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker2.Location = New System.Drawing.Point(53, 116)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(487, 109)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(91, 20)
         Me.DateTimePicker2.TabIndex = 21
-        Me.DateTimePicker2.Visible = False
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(31, 122)
+        Me.Label2.Location = New System.Drawing.Point(465, 115)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(16, 13)
         Me.Label2.TabIndex = 22
         Me.Label2.Text = "to"
-        Me.Label2.Visible = False
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(20, 96)
+        Me.Label3.Location = New System.Drawing.Point(454, 89)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(27, 13)
         Me.Label3.TabIndex = 22
         Me.Label3.Text = "from"
-        Me.Label3.Visible = False
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(50, 74)
+        Me.Label4.Location = New System.Drawing.Point(484, 67)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(67, 13)
         Me.Label4.TabIndex = 22
         Me.Label4.Text = "Filter by date"
-        Me.Label4.Visible = False
+        '
+        'CheckedListBox1
+        '
+        Me.CheckedListBox1.FormattingEnabled = True
+        Me.CheckedListBox1.Items.AddRange(New Object() {"Main Gate", "Back Gate"})
+        Me.CheckedListBox1.Location = New System.Drawing.Point(617, 94)
+        Me.CheckedListBox1.Name = "CheckedListBox1"
+        Me.CheckedListBox1.Size = New System.Drawing.Size(81, 34)
+        Me.CheckedListBox1.TabIndex = 23
+        '
+        'CheckedListBox2
+        '
+        Me.CheckedListBox2.FormattingEnabled = True
+        Me.CheckedListBox2.Items.AddRange(New Object() {"Main Gate", "Back Gate"})
+        Me.CheckedListBox2.Location = New System.Drawing.Point(704, 94)
+        Me.CheckedListBox2.Name = "CheckedListBox2"
+        Me.CheckedListBox2.Size = New System.Drawing.Size(81, 34)
+        Me.CheckedListBox2.TabIndex = 24
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(617, 77)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(31, 13)
+        Me.Label5.TabIndex = 25
+        Me.Label5.Text = "Entry"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(701, 77)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(24, 13)
+        Me.Label6.TabIndex = 25
+        Me.Label6.Text = "Exit"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(18, 78)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(40, 13)
+        Me.Label7.TabIndex = 25
+        Me.Label7.Text = "Visit ID"
+        '
+        'first
+        '
+        Me.first.Location = New System.Drawing.Point(79, 94)
+        Me.first.Name = "first"
+        Me.first.Size = New System.Drawing.Size(81, 20)
+        Me.first.TabIndex = 26
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(76, 78)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(57, 13)
+        Me.Label8.TabIndex = 25
+        Me.Label8.Text = "First Name"
+        '
+        'middle
+        '
+        Me.middle.Location = New System.Drawing.Point(197, 94)
+        Me.middle.Name = "middle"
+        Me.middle.Size = New System.Drawing.Size(81, 20)
+        Me.middle.TabIndex = 28
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(194, 78)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(69, 13)
+        Me.Label9.TabIndex = 27
+        Me.Label9.Text = "Middle Name"
+        '
+        'last
+        '
+        Me.last.Location = New System.Drawing.Point(314, 94)
+        Me.last.Name = "last"
+        Me.last.Size = New System.Drawing.Size(81, 20)
+        Me.last.TabIndex = 30
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(311, 78)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(58, 13)
+        Me.Label10.TabIndex = 29
+        Me.Label10.Text = "Last Name"
+        '
+        'destination
+        '
+        Me.destination.Location = New System.Drawing.Point(19, 146)
+        Me.destination.Name = "destination"
+        Me.destination.Size = New System.Drawing.Size(81, 20)
+        Me.destination.TabIndex = 32
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(16, 130)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(60, 13)
+        Me.Label11.TabIndex = 31
+        Me.Label11.Text = "Destination"
         '
         'VisitorsTableAdapter
         '
@@ -283,56 +385,39 @@ Partial Class adminVisitors
         Me.TableAdapterManager.VIPTableAdapter = Nothing
         Me.TableAdapterManager.VisitorsTableAdapter = Me.VisitorsTableAdapter
         '
-        'CheckedListBox1
+        'Button1
         '
-        Me.CheckedListBox1.FormattingEnabled = True
-        Me.CheckedListBox1.Items.AddRange(New Object() {"Main Gate", "Back Gate"})
-        Me.CheckedListBox1.Location = New System.Drawing.Point(348, 90)
-        Me.CheckedListBox1.Name = "CheckedListBox1"
-        Me.CheckedListBox1.Size = New System.Drawing.Size(81, 34)
-        Me.CheckedListBox1.TabIndex = 23
+        Me.Button1.Location = New System.Drawing.Point(722, 214)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 33
+        Me.Button1.Text = "Filter"
+        Me.Button1.UseVisualStyleBackColor = True
         '
-        'CheckedListBox2
+        'Button2
         '
-        Me.CheckedListBox2.FormattingEnabled = True
-        Me.CheckedListBox2.Items.AddRange(New Object() {"Main Gate", "Back Gate"})
-        Me.CheckedListBox2.Location = New System.Drawing.Point(435, 90)
-        Me.CheckedListBox2.Name = "CheckedListBox2"
-        Me.CheckedListBox2.Size = New System.Drawing.Size(81, 34)
-        Me.CheckedListBox2.TabIndex = 24
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(348, 73)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(31, 13)
-        Me.Label5.TabIndex = 25
-        Me.Label5.Text = "Entry"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(432, 73)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(24, 13)
-        Me.Label6.TabIndex = 25
-        Me.Label6.Text = "Exit"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(52, 156)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(68, 13)
-        Me.Label7.TabIndex = 25
-        Me.Label7.Text = "Visitor's Pass"
+        Me.Button2.Location = New System.Drawing.Point(3, 214)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 34
+        Me.Button2.Text = "Reset"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'adminVisitors
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.destination)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.last)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.middle)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.first)
         Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.CheckedListBox2)
@@ -344,8 +429,7 @@ Partial Class adminVisitors
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.v_idbox)
         Me.Controls.Add(Me.VisitorsDataGridView)
         Me.Name = "adminVisitors"
         Me.Size = New System.Drawing.Size(800, 500)
@@ -376,8 +460,7 @@ Partial Class adminVisitors
     Friend WithEvents DataGridViewTextBoxColumn14 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn16 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn17 As DataGridViewTextBoxColumn
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents v_idbox As TextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents DateTimePicker1 As DateTimePicker
@@ -390,4 +473,14 @@ Partial Class adminVisitors
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
+    Friend WithEvents first As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents middle As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents last As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents destination As TextBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class
