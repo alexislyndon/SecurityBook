@@ -1,6 +1,8 @@
 ﻿Imports System.ComponentModel
 
 Public Class adminVisitors
+    Dim entry, exited As String
+
     Private Sub adminVisitors_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.VisitorsTableAdapter.Fill(Me.Db1DS.Visitors) 'CheckedInToday
         Me.VisitorsDataGridView.Sort(Me.VisitorsDataGridView.Columns("DataGridViewTextBoxColumn1"), ListSortDirection.Descending)
@@ -23,12 +25,18 @@ Public Class adminVisitors
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim timefrom As Date = DateTimePicker1.Value
         Dim timeto As Date = DateTimePicker2.Value.AddSeconds(84398)
+        Dim entry, exited As String
+        MsgBox(CheckedListBox1.Items.Item(0).ToString)
+        'If CheckedListBox1.Items.Item(0) Then
 
+        'End If
         For Each ctrls In Me.Controls
             ctrls.Text = byeSpace(ctrls.Text)
         Next
         If v_idbox.Text.Length = 0 Then
-            Me.VisitorsTableAdapter.AdvSearch(Me.Db1DS.Visitors, last.Text, first.Text, middle.Text, destination.Text,)
+            Me.Db1DS.EnforceConstraints = False
+
+            Me.VisitorsTableAdapter.AdvSearch(Me.Db1DS.Visitors, last.Text, first.Text, middle.Text, destination.Text, timefrom, timeto, entry, exited)
 
         Else
             Me.VisitorsTableAdapter.View(Me.Db1DS.Visitors, v_idbox.Text)
