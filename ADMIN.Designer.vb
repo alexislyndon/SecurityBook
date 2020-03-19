@@ -24,6 +24,7 @@ Partial Class ADMIN
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.sidepanel = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.vipbtn = New System.Windows.Forms.Button()
@@ -47,12 +48,14 @@ Partial Class ADMIN
         Me.AdminDASH1 = New SecurityBook.adminDASH()
         Me.AdminVisitors1 = New SecurityBook.adminVisitors()
         Me.AdminVehicles1 = New SecurityBook.adminVehicles()
+        Me.Timer7 = New System.Windows.Forms.Timer(Me.components)
         Me.sidepanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'sidepanel
         '
         Me.sidepanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.sidepanel.Controls.Add(Me.Label3)
         Me.sidepanel.Controls.Add(Me.Panel1)
         Me.sidepanel.Controls.Add(Me.Label2)
         Me.sidepanel.Controls.Add(Me.vipbtn)
@@ -66,6 +69,17 @@ Partial Class ADMIN
         Me.sidepanel.Name = "sidepanel"
         Me.sidepanel.Size = New System.Drawing.Size(200, 500)
         Me.sidepanel.TabIndex = 0
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(12, 67)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(64, 21)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "admiin"
         '
         'Panel1
         '
@@ -84,12 +98,13 @@ Partial Class ADMIN
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(13, 54)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(68, 13)
+        Me.Label2.Size = New System.Drawing.Size(71, 13)
         Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Logged in as"
+        Me.Label2.Text = "Logged in as:"
         '
         'vipbtn
         '
+        Me.vipbtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.vipbtn.FlatAppearance.BorderSize = 0
         Me.vipbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
         Me.vipbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer))
@@ -105,6 +120,7 @@ Partial Class ADMIN
         '
         'visitorpassbtn
         '
+        Me.visitorpassbtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.visitorpassbtn.FlatAppearance.BorderSize = 0
         Me.visitorpassbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
         Me.visitorpassbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer))
@@ -120,6 +136,7 @@ Partial Class ADMIN
         '
         'usersbtn
         '
+        Me.usersbtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.usersbtn.FlatAppearance.BorderSize = 0
         Me.usersbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
         Me.usersbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer))
@@ -135,6 +152,7 @@ Partial Class ADMIN
         '
         'vehiclesbtn
         '
+        Me.vehiclesbtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.vehiclesbtn.FlatAppearance.BorderSize = 0
         Me.vehiclesbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
         Me.vehiclesbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer))
@@ -150,6 +168,7 @@ Partial Class ADMIN
         '
         'visitorsbtn
         '
+        Me.visitorsbtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.visitorsbtn.FlatAppearance.BorderSize = 0
         Me.visitorsbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
         Me.visitorsbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer))
@@ -165,6 +184,7 @@ Partial Class ADMIN
         '
         'dashbtn
         '
+        Me.dashbtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.dashbtn.FlatAppearance.BorderSize = 0
         Me.dashbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
         Me.dashbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer))
@@ -239,6 +259,7 @@ Partial Class ADMIN
         '
         'Timer6
         '
+        Me.Timer6.Interval = 15
         '
         'AdminUsers1
         '
@@ -286,6 +307,10 @@ Partial Class ADMIN
         Me.AdminVehicles1.Size = New System.Drawing.Size(800, 500)
         Me.AdminVehicles1.TabIndex = 7
         Me.AdminVehicles1.Visible = False
+        '
+        'Timer7
+        '
+        Me.Timer7.Interval = 15
         '
         'ADMIN
         '
@@ -337,4 +362,6 @@ Partial Class ADMIN
     Friend WithEvents AdminDASH1 As adminDASH
     Friend WithEvents AdminVisitors1 As adminVisitors
     Friend WithEvents AdminVehicles1 As adminVehicles
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Timer7 As Timer
 End Class

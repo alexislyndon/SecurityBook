@@ -24,20 +24,26 @@
 
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.VisitorsTableAdapter.View(Me.Db1DS.Visitors, visitID)
-        Dim god = Db1DS.Visitors.Rows(0).Item("name")
+        Try
+            Me.VisitorsTableAdapter.View(Me.Db1DS.Visitors, visitID)
+            Dim god = Db1DS.Visitors.Rows(0).Item("name")
 
-        TextBox13.Text = god
-        If gate = "a" Then
-            Button1.Visible = False
-            If (Db1DS.Visitors.Rows(0).Item("time_out") Is Nothing) Or (Db1DS.Visitors.Rows(0).Item("Exited").ToString = "") Then
-                Button4.Visible = True
+            TextBox13.Text = god
+            If gate = "a" Then
+                Button1.Visible = False
+                If (Db1DS.Visitors.Rows(0).Item("time_out") Is Nothing) Or (Db1DS.Visitors.Rows(0).Item("Exited").ToString = "") Then
+                    Button4.Visible = True
+                End If
+            Else
+
             End If
-        Else
+            Me.Text = "Visitor Info"
+            'MsgBox(DB1DataSet1.Tables(0).Rows(0).Item("firstname")) 'Db1DS1.Tables(0).Rows(0).Item("Guard")
 
-        End If
-        Me.Text = "Visitor Info"
-        'MsgBox(DB1DataSet1.Tables(0).Rows(0).Item("firstname")) 'Db1DS1.Tables(0).Rows(0).Item("Guard")
+        Catch ex As Exception
+            MsgBox("Nothing is selected.")
+            Me.Close()
+        End Try
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

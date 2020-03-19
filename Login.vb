@@ -113,16 +113,11 @@
                 If ex.Message = "There was no row at position 0." Then
 
                 Else
-
-                    MsgBox(ex.Message)
+                    'MsgBox(ex.Message)
+                    MsgBox("Wrong username or password. Please try again.")
                 End If
-                'MsgBox("Wrong username or password. Please try again.")
             End Try
         End If
-    End Sub
-
-    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 
     Private Sub closelbl_Click(sender As Object, e As EventArgs) Handles closelbl.Click

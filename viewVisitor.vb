@@ -55,9 +55,12 @@
     End Sub
 
     Private Sub VisitorsDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles VisitorsDataGridView.CellDoubleClick
-        Dim id As Integer = VisitorsDataGridView.SelectedCells.Item(0).Value
-        Dim pv As New PopView(id, Session.s_gate)
-        pv.Show()
+        If VisitorsDataGridView.RowCount > 0 Then
+            Dim id As Integer = VisitorsDataGridView.SelectedCells.Item(0).Value
+            Dim pv As New PopView(id, Session.s_gate)
+            pv.Show()
+
+        End If
     End Sub
 
     Private Sub filter_TextChanged(sender As Object, e As EventArgs) Handles filter.GotFocus
@@ -80,4 +83,5 @@
             Me.VisitorsTableAdapter.filterbybadge(Db1DS.Visitors, filter.Text.Trim)
         End If
     End Sub
+
 End Class

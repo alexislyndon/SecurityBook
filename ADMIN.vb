@@ -44,11 +44,17 @@
     Private Sub ADMIN_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Panel1.Visible = True
         tem.X = 10
-
+        Label3.Text = Session.s_uname
     End Sub
 
     Private Sub dashbtn_Click(sender As Object, e As EventArgs) Handles dashbtn.Click
         falsifier()
+        If Panel1.Location.Y Mod 5 <> 0 Then
+            Dim resetloc As Point
+            resetloc.Y = 140
+            resetloc.X = 10
+            Panel1.Location = resetloc
+        End If
         tem.Y = Panel1.Location.Y
         Timer1.Start()
         dashbtn.BackColor = Color.FromArgb(45, 45, 45)
@@ -150,6 +156,13 @@
         AdminVisitors1.Visible = False
         AdminVehicles1.Visible = False
 
+        Timer1.Stop()
+        Timer2.Stop()
+        Timer3.Stop()
+        Timer4.Stop()
+        Timer5.Stop()
+        Timer6.Stop()
+
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click 'close button
@@ -175,7 +188,7 @@
     Private Sub Button4_Click_1(sender As Object, e As EventArgs) Handles vipbtn.Click
         falsifier()
         tem.Y = Panel1.Location.Y
-        Timer5.Start()
+        Timer6.Start()
         vipbtn.BackColor = Color.FromArgb(45, 45, 45)
         AdminVIP1.Visible = True
 
@@ -206,4 +219,18 @@
         End If
         Panel1.Location = tem
     End Sub
+
+    Private Sub Timer7_Tick(sender As Object, e As EventArgs) Handles Timer7.Tick
+        If tem.Y > y7 Then
+            tem.Y -= 5
+        End If
+        If tem.Y < y7 Then
+            tem.Y += 5
+        End If
+        If tem.Y = y7 Then
+            Timer7.Stop()
+        End If
+        Panel1.Location = tem
+    End Sub
+
 End Class

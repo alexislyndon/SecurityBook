@@ -119,9 +119,16 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click 'Add Visitors
+
+        falsifier()
+        If Panel1.Location.Y Mod 5 <> 0 Then
+            Dim resetloc As Point
+            resetloc.Y = 250
+            resetloc.X = 3
+            Panel1.Location = resetloc
+        End If
         tem.Y = Panel1.Location.Y
         Timer2.Start()
-        falsifier()
         Threading.Thread.Sleep(100)
         Application.DoEvents()
         AddVisitor1.Visible = True
@@ -129,36 +136,35 @@
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click 'View Visitors
+        falsifier()
         tem.Y = Panel1.Location.Y
         Timer3.Start()
-        falsifier()
         ViewVisitor1.Visible = True
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click 'Vehicles
+        falsifier()
         tem.Y = Panel1.Location.Y
         Timer4.Start()
-        falsifier()
         AddVehicle1.Visible = True
 
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        falsifier()
         tem.Y = Panel1.Location.Y
         Timer5.Start()
-        falsifier()
         ServiceproviderUC1.Visible = True
     End Sub
 
     Private Sub MAINGATE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Label5.Text = "Logged in as: " & vbCrLf & Session.s_uname
+        Label6.Text = Session.s_uname
         AddVisitor1.Visible = True
         Panel1.Visible = True
         tem.X = 3
     End Sub
 
     Private Sub Timer6_Tick(sender As Object, e As EventArgs) Handles Timer6.Tick
-        'Label3.Text = Date.Now.ToString("dddd") & vbCrLf & vbCrLf & Date.Now.ToString("dd - MMM - yyyy")
         Label3.Text = Date.Now.ToString("dd MMMM yyyy")
 
         Label4.Text = Date.Now.ToString("dddd")
@@ -191,6 +197,11 @@
         AddVehicle1.Visible = False
         ServiceproviderUC1.Visible = False
 
-    End Sub
+        Timer1.Stop()
+        Timer2.Stop()
+        Timer3.Stop()
+        Timer4.Stop()
+        Timer5.Stop()
 
+    End Sub
 End Class

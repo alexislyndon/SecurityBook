@@ -4,8 +4,14 @@ Public Class adminVisitors
     Dim entry, exited As String
 
     Private Sub adminVisitors_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DateTimePicker1.CustomFormat = "MMM - dd - yyyy"
+        DateTimePicker2.CustomFormat = "MMM - dd - yyyy"
+
         Me.VisitorsTableAdapter.Fill(Me.Db1DS.Visitors) 'CheckedInToday
         Me.VisitorsDataGridView.Sort(Me.VisitorsDataGridView.Columns("DataGridViewTextBoxColumn1"), ListSortDirection.Descending)
+
+        Me.DateTimePicker1.Value = Me.VisitorsTableAdapter.Early()
+
     End Sub
     Public Sub refresher()
         Me.VisitorsTableAdapter.Fill(Me.Db1DS.Visitors)
