@@ -100,12 +100,13 @@
                     MAINGATE.Show()
                     Me.Close()
                     logger("Logged in to MAIN GATE PANEL")
-
+                    Me.MainbackTableAdapter1.manthegate(id, name, "main")
                 ElseIf designation = "back" Then
                     startsession(id, name, uname, gate)
                     BACKGATE.Show()
                     Me.Close()
                     logger("Logged in to BACK GATE PANEL")
+                    Me.MainbackTableAdapter1.manthegate(id, name, "back")
 
                 End If
                 Me.Hide()

@@ -9,7 +9,7 @@
     Dim y4 As Integer = 430
     Dim y5 As Integer = 490
 
-    Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseDown, sidepanel.MouseDown
+    Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseDown, sidepanel.MouseDown, SecurityBooklbl.MouseDown, AddVisitor1.MouseDown
 
         If e.Button = MouseButtons.Left Then
             IsFormBeingDragged = True
@@ -18,14 +18,14 @@
         End If
     End Sub
 
-    Private Sub Form1_MouseUp(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseUp, sidepanel.MouseDown
+    Private Sub Form1_MouseUp(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseUp, sidepanel.MouseUp, SecurityBooklbl.MouseUp, AddVisitor1.MouseUp
 
         If e.Button = MouseButtons.Left Then
             IsFormBeingDragged = False
         End If
     End Sub
 
-    Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseMove, sidepanel.MouseDown
+    Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseMove, sidepanel.MouseMove, SecurityBooklbl.MouseMove, AddVisitor1.MouseMove
 
         If IsFormBeingDragged Then
             Dim temp As Point = New Point()
@@ -144,7 +144,7 @@
     End Sub
 
     Private Sub MAINGATE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Label5.Text = "Logged in as: " & vbCrLf & Session.s_uname
+        Label6.Text = Session.s_uname
         AddVisitor1.Visible = True
         Panel1.Visible = True
         tem.X = 3
@@ -178,4 +178,5 @@
     Private Sub sidepanel_Paint(sender As Object, e As PaintEventArgs) Handles sidepanel.Paint
 
     End Sub
+
 End Class

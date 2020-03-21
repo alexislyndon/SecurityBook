@@ -89,9 +89,9 @@ Partial Class MAINGATE
         Me.Label6.ForeColor = System.Drawing.Color.GreenYellow
         Me.Label6.Location = New System.Drawing.Point(9, 735)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(56, 25)
+        Me.Label6.Size = New System.Drawing.Size(93, 25)
         Me.Label6.TabIndex = 11
-        Me.Label6.Text = "main"
+        Me.Label6.Text = "someone"
         '
         'Label5
         '
@@ -357,7 +357,7 @@ Partial Class MAINGATE
         'SecurityBooklbl
         '
         Me.SecurityBooklbl.AutoSize = True
-        Me.SecurityBooklbl.BackColor = System.Drawing.Color.Snow
+        Me.SecurityBooklbl.BackColor = System.Drawing.Color.Transparent
         Me.SecurityBooklbl.Font = New System.Drawing.Font("Microsoft PhagsPa", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SecurityBooklbl.ForeColor = System.Drawing.Color.Black
         Me.SecurityBooklbl.Location = New System.Drawing.Point(948, -2)

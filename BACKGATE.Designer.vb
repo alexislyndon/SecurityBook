@@ -47,8 +47,13 @@ Partial Class BACKGATE
         Me.maximizebtn = New System.Windows.Forms.Button()
         Me.ViewVisitor1 = New SecurityBook.viewVisitor()
         Me.AddVisitor1 = New SecurityBook.AddVisitor()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.SecurityBooklbl = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.sidepanel.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'closelbl
@@ -64,6 +69,7 @@ Partial Class BACKGATE
         'sidepanel
         '
         Me.sidepanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.sidepanel.Controls.Add(Me.Label6)
         Me.sidepanel.Controls.Add(Me.Label5)
         Me.sidepanel.Controls.Add(Me.Panel1)
         Me.sidepanel.Controls.Add(Me.Button5)
@@ -302,11 +308,54 @@ Partial Class BACKGATE
         '
         'AddVisitor1
         '
+        Me.AddVisitor1.BackColor = System.Drawing.Color.Snow
         Me.AddVisitor1.Location = New System.Drawing.Point(250, 0)
         Me.AddVisitor1.Name = "AddVisitor1"
         Me.AddVisitor1.Size = New System.Drawing.Size(1116, 768)
         Me.AddVisitor1.TabIndex = 5
         Me.AddVisitor1.Visible = False
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.Panel5)
+        Me.Panel3.ForeColor = System.Drawing.Color.White
+        Me.Panel3.Location = New System.Drawing.Point(947, 27)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(320, 3)
+        Me.Panel3.TabIndex = 14
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.Panel5.Location = New System.Drawing.Point(0, 42)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(129, 1)
+        Me.Panel5.TabIndex = 8
+        '
+        'SecurityBooklbl
+        '
+        Me.SecurityBooklbl.AutoSize = True
+        Me.SecurityBooklbl.BackColor = System.Drawing.Color.Transparent
+        Me.SecurityBooklbl.Font = New System.Drawing.Font("Microsoft PhagsPa", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SecurityBooklbl.ForeColor = System.Drawing.Color.Black
+        Me.SecurityBooklbl.Location = New System.Drawing.Point(948, -2)
+        Me.SecurityBooklbl.Name = "SecurityBooklbl"
+        Me.SecurityBooklbl.Size = New System.Drawing.Size(142, 27)
+        Me.SecurityBooklbl.TabIndex = 13
+        Me.SecurityBooklbl.Text = "SecurityBook"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft PhagsPa", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.GreenYellow
+        Me.Label6.Location = New System.Drawing.Point(7, 734)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(93, 25)
+        Me.Label6.TabIndex = 15
+        Me.Label6.Text = "someone"
         '
         'BACKGATE
         '
@@ -314,6 +363,8 @@ Partial Class BACKGATE
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1366, 768)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.SecurityBooklbl)
         Me.Controls.Add(Me.maximizebtn)
         Me.Controls.Add(Me.minimizebtn)
         Me.Controls.Add(Me.closelbl)
@@ -325,7 +376,9 @@ Partial Class BACKGATE
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).EndInit()
         Me.sidepanel.ResumeLayout(False)
         Me.sidepanel.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -353,4 +406,8 @@ Partial Class BACKGATE
     Friend WithEvents AddVisitor1 As AddVisitor
     Friend WithEvents ViewVisitor1 As viewVisitor
     Friend WithEvents Label5 As Label
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents SecurityBooklbl As Label
+    Friend WithEvents Label6 As Label
 End Class

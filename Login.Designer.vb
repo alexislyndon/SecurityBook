@@ -37,6 +37,7 @@ Partial Class Login
         Me.SecurityBooklbl = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.MainbackTableAdapter1 = New SecurityBook.db1DSTableAdapters.mainbackTableAdapter()
         CType(Me.Db1DS1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -178,6 +179,10 @@ Partial Class Login
         Me.Panel5.Size = New System.Drawing.Size(129, 1)
         Me.Panel5.TabIndex = 8
         '
+        'MainbackTableAdapter1
+        '
+        Me.MainbackTableAdapter1.ClearBeforeFill = True
+        '
         'Login
         '
         Me.AcceptButton = Me.loginbtn
@@ -223,4 +228,5 @@ Partial Class Login
     Friend WithEvents SecurityBooklbl As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel5 As Panel
+    Friend WithEvents MainbackTableAdapter1 As db1DSTableAdapters.mainbackTableAdapter
 End Class
