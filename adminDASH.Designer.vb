@@ -23,6 +23,11 @@ Partial Class adminDASH
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -35,12 +40,10 @@ Partial Class adminDASH
         Me.Label8 = New System.Windows.Forms.Label()
         Me.VisitorsTableAdapter1 = New SecurityBook.db1DSTableAdapters.VisitorsTableAdapter()
         Me.Db1DS1 = New SecurityBook.db1DS()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.AdminBadges1 = New SecurityBook.adminBadges()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -51,29 +54,89 @@ Partial Class adminDASH
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(120, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Label16)
+        Me.Panel3.Controls.Add(Me.Label15)
         Me.Panel3.Controls.Add(Me.Label14)
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Controls.Add(Me.Label2)
         Me.Panel3.Controls.Add(Me.Label12)
         Me.Panel3.Controls.Add(Me.Label13)
-        Me.Panel3.Location = New System.Drawing.Point(66, 261)
+        Me.Panel3.Location = New System.Drawing.Point(35, 249)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(200, 150)
+        Me.Panel3.Size = New System.Drawing.Size(273, 150)
         Me.Panel3.TabIndex = 8
         Me.Panel3.Visible = False
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Candara", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label14.Location = New System.Drawing.Point(5, 10)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(81, 26)
+        Me.Label14.TabIndex = 7
+        Me.Label14.Text = "Vehicles"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Candara", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label1.Location = New System.Drawing.Point(93, 46)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(75, 29)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Today"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Candara", 24.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label2.Location = New System.Drawing.Point(115, 75)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(28, 39)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "1"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Candara", 24.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label12.Location = New System.Drawing.Point(19, 75)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(45, 39)
+        Me.Label12.TabIndex = 5
+        Me.Label12.Text = "10"
+        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Candara", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label13.Location = New System.Drawing.Point(27, 46)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(33, 29)
+        Me.Label13.TabIndex = 6
+        Me.Label13.Text = "In"
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(213, Byte), Integer), CType(CType(220, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.AdminBadges1)
+        Me.Panel2.Controls.Add(Me.Label9)
+        Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Controls.Add(Me.Label11)
         Me.Panel2.Controls.Add(Me.Label10)
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Controls.Add(Me.Label3)
-        Me.Panel2.Location = New System.Drawing.Point(66, 89)
+        Me.Panel2.Location = New System.Drawing.Point(35, 61)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(200, 150)
+        Me.Panel2.Size = New System.Drawing.Size(273, 166)
         Me.Panel2.TabIndex = 9
         '
         'Label6
@@ -81,7 +144,7 @@ Partial Class adminDASH
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Candara", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label6.Location = New System.Drawing.Point(108, 71)
+        Me.Label6.Location = New System.Drawing.Point(93, 60)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(75, 29)
         Me.Label6.TabIndex = 1
@@ -92,7 +155,7 @@ Partial Class adminDASH
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Candara", 24.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label11.Location = New System.Drawing.Point(130, 100)
+        Me.Label11.Location = New System.Drawing.Point(115, 89)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(28, 39)
         Me.Label11.TabIndex = 1
@@ -104,7 +167,7 @@ Partial Class adminDASH
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Candara", 24.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label10.Location = New System.Drawing.Point(31, 100)
+        Me.Label10.Location = New System.Drawing.Point(25, 89)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(45, 39)
         Me.Label10.TabIndex = 1
@@ -116,7 +179,7 @@ Partial Class adminDASH
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Candara", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label5.Location = New System.Drawing.Point(37, 71)
+        Me.Label5.Location = New System.Drawing.Point(31, 60)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(33, 29)
         Me.Label5.TabIndex = 1
@@ -125,11 +188,11 @@ Partial Class adminDASH
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Candara", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Candara", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.Label3.Location = New System.Drawing.Point(5, 6)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(95, 26)
+        Me.Label3.Size = New System.Drawing.Size(122, 33)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "VISITORS"
         '
@@ -137,9 +200,9 @@ Partial Class adminDASH
         '
         Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.Panel4.Controls.Add(Me.Label7)
-        Me.Panel4.Location = New System.Drawing.Point(534, 89)
+        Me.Panel4.Location = New System.Drawing.Point(568, 61)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(201, 322)
+        Me.Panel4.Size = New System.Drawing.Size(201, 338)
         Me.Panel4.TabIndex = 10
         Me.Panel4.Visible = False
         '
@@ -158,9 +221,9 @@ Partial Class adminDASH
         '
         Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(70, Byte), Integer))
         Me.Panel5.Controls.Add(Me.Label8)
-        Me.Panel5.Location = New System.Drawing.Point(299, 89)
+        Me.Panel5.Location = New System.Drawing.Point(351, 61)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(201, 322)
+        Me.Panel5.Size = New System.Drawing.Size(201, 338)
         Me.Panel5.TabIndex = 11
         Me.Panel5.Visible = False
         '
@@ -184,70 +247,49 @@ Partial Class adminDASH
         Me.Db1DS1.DataSetName = "db1DS"
         Me.Db1DS1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'Label1
+        'Label4
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Candara", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label1.Location = New System.Drawing.Point(108, 75)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(75, 29)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Today"
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Candara", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label4.Location = New System.Drawing.Point(174, 60)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(96, 29)
+        Me.Label4.TabIndex = 1
+        Me.Label4.Text = "All Time"
         '
-        'Label2
+        'Label9
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Candara", 24.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label2.Location = New System.Drawing.Point(130, 104)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(28, 39)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "1"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Candara", 24.0!, System.Drawing.FontStyle.Italic)
+        Me.Label9.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label9.Location = New System.Drawing.Point(203, 89)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(28, 39)
+        Me.Label9.TabIndex = 2
+        Me.Label9.Text = "1"
         '
-        'Label12
+        'Label15
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Candara", 24.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label12.Location = New System.Drawing.Point(31, 104)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(45, 39)
-        Me.Label12.TabIndex = 5
-        Me.Label12.Text = "10"
-        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Candara", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label15.Location = New System.Drawing.Point(174, 46)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(96, 29)
+        Me.Label15.TabIndex = 8
+        Me.Label15.Text = "All Time"
         '
-        'Label13
+        'Label16
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Candara", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label13.Location = New System.Drawing.Point(37, 75)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(33, 29)
-        Me.Label13.TabIndex = 6
-        Me.Label13.Text = "In"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Candara", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label14.Location = New System.Drawing.Point(5, 10)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(81, 26)
-        Me.Label14.TabIndex = 7
-        Me.Label14.Text = "Vehicles"
-        '
-        'AdminBadges1
-        '
-        Me.AdminBadges1.Location = New System.Drawing.Point(200, 0)
-        Me.AdminBadges1.Name = "AdminBadges1"
-        Me.AdminBadges1.Size = New System.Drawing.Size(800, 500)
-        Me.AdminBadges1.TabIndex = 8
-        Me.AdminBadges1.Visible = False
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Candara", 24.0!, System.Drawing.FontStyle.Italic)
+        Me.Label16.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label16.Location = New System.Drawing.Point(203, 75)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(28, 39)
+        Me.Label16.TabIndex = 9
+        Me.Label16.Text = "1"
         '
         'adminDASH
         '
@@ -274,7 +316,6 @@ Partial Class adminDASH
 
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents AdminBadges1 As adminBadges
     Friend WithEvents Label6 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label10 As Label
@@ -291,4 +332,8 @@ Partial Class adminDASH
     Friend WithEvents Label2 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label4 As Label
 End Class
