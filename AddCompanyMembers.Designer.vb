@@ -24,7 +24,7 @@ Partial Class AddCompanyMembers
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.companyid = New System.Windows.Forms.TextBox()
-        Me.name = New System.Windows.Forms.TextBox()
+        Me.membername = New System.Windows.Forms.TextBox()
         Me.designation = New System.Windows.Forms.TextBox()
         Me.entrycode = New System.Windows.Forms.TextBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
@@ -58,11 +58,11 @@ Partial Class AddCompanyMembers
         '
         'name
         '
-        Me.name.Location = New System.Drawing.Point(46, 133)
-        Me.name.MaxLength = 50
-        Me.name.Name = "name"
-        Me.name.Size = New System.Drawing.Size(136, 20)
-        Me.name.TabIndex = 1
+        Me.membername.Location = New System.Drawing.Point(46, 133)
+        Me.membername.MaxLength = 50
+        Me.membername.Name = "name"
+        Me.membername.Size = New System.Drawing.Size(136, 20)
+        Me.membername.TabIndex = 1
         '
         'designation
         '
@@ -167,11 +167,11 @@ Partial Class AddCompanyMembers
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.entrycode)
         Me.Controls.Add(Me.designation)
-        Me.Controls.Add(Me.name)
+        Me.Controls.Add(Me.membername)
         Me.Controls.Add(Me.companyid)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        '''Me.name = "AddCompanyMembers"
+        Me.name = "AddCompanyMembers"
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -180,7 +180,7 @@ Partial Class AddCompanyMembers
 
     Friend WithEvents Label1 As Label
     Friend WithEvents companyid As TextBox
-    Friend WithEvents name As TextBox
+    Friend WithEvents membername As TextBox
     Friend WithEvents designation As TextBox
     Friend WithEvents entrycode As TextBox
     Friend WithEvents DateTimePicker1 As DateTimePicker

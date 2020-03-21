@@ -23,7 +23,6 @@
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles addCompany.Click
 
-
     End Sub
 
     Private Sub addMembers_Click(sender As Object, e As EventArgs) Handles addMembers.Click

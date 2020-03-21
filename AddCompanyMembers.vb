@@ -16,4 +16,8 @@
     Private Sub AddCompanyMembers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         companyid.Text = i
     End Sub
+
+    Private Sub addmember_Click(sender As Object, e As EventArgs) Handles addmember.Click
+
+    End Sub
 End Class

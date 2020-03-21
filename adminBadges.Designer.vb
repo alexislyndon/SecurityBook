@@ -99,6 +99,7 @@ Partial Class adminBadges
         'BadgesDataGridView
         '
         Me.BadgesDataGridView.AutoGenerateColumns = False
+        Me.BadgesDataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.BadgesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.BadgesDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2})
         Me.BadgesDataGridView.DataSource = Me.BadgesBindingSource

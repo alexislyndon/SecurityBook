@@ -109,7 +109,7 @@ Partial Class AddVisitor
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.SystemColors.Control
+        Me.Label4.BackColor = System.Drawing.Color.Snow
         Me.Label4.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(235, 103)
         Me.Label4.Name = "Label4"
@@ -132,7 +132,7 @@ Partial Class AddVisitor
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.SystemColors.Control
+        Me.Label3.BackColor = System.Drawing.Color.Snow
         Me.Label3.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(444, 23)
         Me.Label3.Name = "Label3"
@@ -143,7 +143,7 @@ Partial Class AddVisitor
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.SystemColors.Control
+        Me.Label2.BackColor = System.Drawing.Color.Snow
         Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(235, 23)
         Me.Label2.Name = "Label2"
@@ -154,7 +154,7 @@ Partial Class AddVisitor
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.SystemColors.Control
+        Me.Label5.BackColor = System.Drawing.Color.Snow
         Me.Label5.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(26, 98)
         Me.Label5.Name = "Label5"
@@ -165,7 +165,7 @@ Partial Class AddVisitor
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.SystemColors.Control
+        Me.Label1.BackColor = System.Drawing.Color.Snow
         Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(26, 23)
         Me.Label1.Name = "Label1"
@@ -247,7 +247,7 @@ Partial Class AddVisitor
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.SystemColors.Control
+        Me.Label7.BackColor = System.Drawing.Color.Snow
         Me.Label7.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(26, 103)
         Me.Label7.Name = "Label7"
@@ -268,7 +268,7 @@ Partial Class AddVisitor
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.SystemColors.Control
+        Me.Label11.BackColor = System.Drawing.Color.Snow
         Me.Label11.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.Location = New System.Drawing.Point(293, 103)
         Me.Label11.Name = "Label11"
@@ -279,7 +279,7 @@ Partial Class AddVisitor
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.SystemColors.Control
+        Me.Label10.BackColor = System.Drawing.Color.Snow
         Me.Label10.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(293, 31)
         Me.Label10.Name = "Label10"
@@ -290,7 +290,7 @@ Partial Class AddVisitor
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.SystemColors.Control
+        Me.Label6.BackColor = System.Drawing.Color.Snow
         Me.Label6.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(23, 31)
         Me.Label6.Name = "Label6"
@@ -478,6 +478,7 @@ Partial Class AddVisitor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Snow
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.uclabel)

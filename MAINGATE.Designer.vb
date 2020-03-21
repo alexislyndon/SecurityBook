@@ -48,6 +48,9 @@ Partial Class MAINGATE
         Me.maximizebtn = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.closebtn = New System.Windows.Forms.PictureBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.SecurityBooklbl = New System.Windows.Forms.Label()
         Me.AddVisitor1 = New SecurityBook.AddVisitor()
         Me.ViewVisitor1 = New SecurityBook.viewVisitor()
         Me.AddVehicle1 = New SecurityBook.AddVehicle()
@@ -55,6 +58,7 @@ Partial Class MAINGATE
         Me.sidepanel.SuspendLayout()
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.closebtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'sidepanel
@@ -331,8 +335,40 @@ Partial Class MAINGATE
         Me.closebtn.TabIndex = 6
         Me.closebtn.TabStop = False
         '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.Panel5)
+        Me.Panel3.ForeColor = System.Drawing.Color.White
+        Me.Panel3.Location = New System.Drawing.Point(947, 27)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(320, 3)
+        Me.Panel3.TabIndex = 12
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.Panel5.Location = New System.Drawing.Point(0, 42)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(129, 1)
+        Me.Panel5.TabIndex = 8
+        '
+        'SecurityBooklbl
+        '
+        Me.SecurityBooklbl.AutoSize = True
+        Me.SecurityBooklbl.BackColor = System.Drawing.Color.Snow
+        Me.SecurityBooklbl.Font = New System.Drawing.Font("Microsoft PhagsPa", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SecurityBooklbl.ForeColor = System.Drawing.Color.Black
+        Me.SecurityBooklbl.Location = New System.Drawing.Point(948, -2)
+        Me.SecurityBooklbl.Name = "SecurityBooklbl"
+        Me.SecurityBooklbl.Size = New System.Drawing.Size(142, 27)
+        Me.SecurityBooklbl.TabIndex = 11
+        Me.SecurityBooklbl.Text = "SecurityBook"
+        '
         'AddVisitor1
         '
+        Me.AddVisitor1.BackColor = System.Drawing.Color.Snow
         Me.AddVisitor1.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.AddVisitor1.Location = New System.Drawing.Point(250, 0)
         Me.AddVisitor1.Name = "AddVisitor1"
@@ -350,6 +386,7 @@ Partial Class MAINGATE
         '
         'AddVehicle1
         '
+        Me.AddVehicle1.BackColor = System.Drawing.Color.Snow
         Me.AddVehicle1.Location = New System.Drawing.Point(250, 0)
         Me.AddVehicle1.Name = "AddVehicle1"
         Me.AddVehicle1.Size = New System.Drawing.Size(1116, 768)
@@ -370,6 +407,8 @@ Partial Class MAINGATE
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1366, 768)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.SecurityBooklbl)
         Me.Controls.Add(Me.maximizebtn)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.closebtn)
@@ -382,11 +421,14 @@ Partial Class MAINGATE
         Me.Controls.Add(Me.ServiceproviderUC1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "MAINGATE"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.sidepanel.ResumeLayout(False)
         Me.sidepanel.PerformLayout()
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.closebtn, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -419,4 +461,7 @@ Partial Class MAINGATE
     Friend WithEvents ServiceproviderUC1 As serviceproviderUC
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents SecurityBooklbl As Label
 End Class

@@ -94,6 +94,7 @@ Partial Class adminVehicles
         'VehiclesDataGridView
         '
         Me.VehiclesDataGridView.AutoGenerateColumns = False
+        Me.VehiclesDataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.VehiclesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.VehiclesDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
         Me.VehiclesDataGridView.DataSource = Me.VehiclesBindingSource

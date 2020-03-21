@@ -9,7 +9,7 @@
     Dim y4 As Integer = 430
     Dim y5 As Integer = 490
 
-    Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseDown, sidepanel.MouseDown, AddVisitor1.MouseDown
+    Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseDown, sidepanel.MouseDown, AddVisitor1.MouseDown, SecurityBooklbl.MouseDown
 
         If e.Button = MouseButtons.Left Then
             IsFormBeingDragged = True
@@ -18,14 +18,14 @@
         End If
     End Sub
 
-    Private Sub Form1_MouseUp(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseUp, sidepanel.MouseUp, AddVisitor1.MouseUp
+    Private Sub Form1_MouseUp(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseUp, sidepanel.MouseUp, AddVisitor1.MouseUp, SecurityBooklbl.MouseUp
 
         If e.Button = MouseButtons.Left Then
             IsFormBeingDragged = False
         End If
     End Sub
 
-    Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseMove, sidepanel.MouseMove, AddVisitor1.MouseMove
+    Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseMove, sidepanel.MouseMove, AddVisitor1.MouseMove, SecurityBooklbl.MouseMove
 
         If IsFormBeingDragged Then
             Dim temp As Point = New Point()
@@ -133,6 +133,7 @@
         Application.DoEvents()
         AddVisitor1.Visible = True
         AddVisitor1.Timer1.Start()
+        AddVisitor1.ErrorProvider1.Clear()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click 'View Visitors
@@ -147,7 +148,7 @@
         tem.Y = Panel1.Location.Y
         Timer4.Start()
         AddVehicle1.Visible = True
-
+        AddVehicle1.ErrorProvider1.Clear()
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -204,4 +205,5 @@
         Timer5.Stop()
 
     End Sub
+
 End Class

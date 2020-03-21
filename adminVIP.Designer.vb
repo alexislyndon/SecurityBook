@@ -124,6 +124,7 @@ Partial Class adminVIP
         'CompanyDataGridView
         '
         Me.CompanyDataGridView.AutoGenerateColumns = False
+        Me.CompanyDataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.CompanyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.CompanyDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
         Me.CompanyDataGridView.DataSource = Me.CompanyBindingSource
@@ -183,6 +184,7 @@ Partial Class adminVIP
         'Company_MembersDataGridView
         '
         Me.Company_MembersDataGridView.AutoGenerateColumns = False
+        Me.Company_MembersDataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.Company_MembersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Company_MembersDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11})
         Me.Company_MembersDataGridView.DataSource = Me.Company_MembersBindingSource
@@ -236,6 +238,7 @@ Partial Class adminVIP
         'CompanyloginsDataGridView
         '
         Me.CompanyloginsDataGridView.AutoGenerateColumns = False
+        Me.CompanyloginsDataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.CompanyloginsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.CompanyloginsDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17})
         Me.CompanyloginsDataGridView.DataSource = Me.CompanyloginsBindingSource

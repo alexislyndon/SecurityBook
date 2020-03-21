@@ -128,6 +128,7 @@ Partial Class adminUsers
         'UsersDataGridView
         '
         Me.UsersDataGridView.AutoGenerateColumns = False
+        Me.UsersDataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.UsersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.UsersDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7})
         Me.UsersDataGridView.DataSource = Me.UsersBindingSource
