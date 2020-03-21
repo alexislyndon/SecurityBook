@@ -55,6 +55,7 @@ Partial Class MAINGATE
         Me.ViewVisitor1 = New SecurityBook.viewVisitor()
         Me.AddVehicle1 = New SecurityBook.AddVehicle()
         Me.ServiceproviderUC1 = New SecurityBook.serviceproviderUC()
+        Me.MainbackTableAdapter1 = New SecurityBook.db1DSTableAdapters.mainbackTableAdapter()
         Me.sidepanel.SuspendLayout()
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.closebtn, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -401,6 +402,10 @@ Partial Class MAINGATE
         Me.ServiceproviderUC1.TabIndex = 9
         Me.ServiceproviderUC1.Visible = False
         '
+        'MainbackTableAdapter1
+        '
+        Me.MainbackTableAdapter1.ClearBeforeFill = True
+        '
         'MAINGATE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -464,4 +469,5 @@ Partial Class MAINGATE
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel5 As Panel
     Friend WithEvents SecurityBooklbl As Label
+    Friend WithEvents MainbackTableAdapter1 As db1DSTableAdapters.mainbackTableAdapter
 End Class

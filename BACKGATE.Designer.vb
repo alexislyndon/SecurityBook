@@ -25,6 +25,7 @@ Partial Class BACKGATE
         Me.components = New System.ComponentModel.Container()
         Me.closelbl = New System.Windows.Forms.PictureBox()
         Me.sidepanel = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -50,7 +51,7 @@ Partial Class BACKGATE
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.SecurityBooklbl = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.MainbackTableAdapter1 = New SecurityBook.db1DSTableAdapters.mainbackTableAdapter()
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.sidepanel.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -86,6 +87,17 @@ Partial Class BACKGATE
         Me.sidepanel.Name = "sidepanel"
         Me.sidepanel.Size = New System.Drawing.Size(250, 768)
         Me.sidepanel.TabIndex = 1
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft PhagsPa", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.GreenYellow
+        Me.Label6.Location = New System.Drawing.Point(7, 734)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(93, 25)
+        Me.Label6.TabIndex = 15
+        Me.Label6.Text = "someone"
         '
         'Label5
         '
@@ -346,16 +358,9 @@ Partial Class BACKGATE
         Me.SecurityBooklbl.TabIndex = 13
         Me.SecurityBooklbl.Text = "SecurityBook"
         '
-        'Label6
+        'MainbackTableAdapter1
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft PhagsPa", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.GreenYellow
-        Me.Label6.Location = New System.Drawing.Point(7, 734)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(93, 25)
-        Me.Label6.TabIndex = 15
-        Me.Label6.Text = "someone"
+        Me.MainbackTableAdapter1.ClearBeforeFill = True
         '
         'BACKGATE
         '
@@ -410,4 +415,5 @@ Partial Class BACKGATE
     Friend WithEvents Panel5 As Panel
     Friend WithEvents SecurityBooklbl As Label
     Friend WithEvents Label6 As Label
+    Friend WithEvents MainbackTableAdapter1 As db1DSTableAdapters.mainbackTableAdapter
 End Class

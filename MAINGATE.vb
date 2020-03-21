@@ -40,11 +40,12 @@
     Private Sub closelbl_Click(sender As Object, e As EventArgs) Handles closebtn.Click
         Dim logout = MessageBox.Show("Log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
         If logout = vbYes Then
-
+            Me.MainbackTableAdapter1.unmanthegate("main")
             endsession()
             Login.Show()
             Me.Close()
         End If
+
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
