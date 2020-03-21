@@ -3,7 +3,7 @@
     Private MouseDownX As Integer
     Private MouseDownY As Integer
 
-    Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseDown
+    Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseDown, SecurityBooklbl.MouseDown
 
         If e.Button = MouseButtons.Left Then
             IsFormBeingDragged = True
@@ -12,14 +12,14 @@
         End If
     End Sub
 
-    Private Sub Form1_MouseUp(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseUp
+    Private Sub Form1_MouseUp(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseUp, SecurityBooklbl.MouseUp
 
         If e.Button = MouseButtons.Left Then
             IsFormBeingDragged = False
         End If
     End Sub
 
-    Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseMove
+    Private Sub Form1_MouseMove(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseMove, SecurityBooklbl.MouseMove
 
         If IsFormBeingDragged Then
             Dim temp As Point = New Point()
@@ -123,4 +123,5 @@
     Private Sub closelbl_Click(sender As Object, e As EventArgs) Handles closelbl.Click
         Me.Close()
     End Sub
+
 End Class

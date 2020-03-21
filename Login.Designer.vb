@@ -34,11 +34,15 @@ Partial Class Login
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.SecurityBooklbl = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         CType(Me.Db1DS1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'loginbtn
@@ -48,9 +52,9 @@ Partial Class Login
         Me.loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.loginbtn.Font = New System.Drawing.Font("Microsoft PhagsPa", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.loginbtn.ForeColor = System.Drawing.Color.White
-        Me.loginbtn.Location = New System.Drawing.Point(116, 283)
+        Me.loginbtn.Location = New System.Drawing.Point(121, 315)
         Me.loginbtn.Name = "loginbtn"
-        Me.loginbtn.Size = New System.Drawing.Size(89, 40)
+        Me.loginbtn.Size = New System.Drawing.Size(118, 40)
         Me.loginbtn.TabIndex = 3
         Me.loginbtn.Text = "Login"
         Me.loginbtn.UseVisualStyleBackColor = False
@@ -59,11 +63,11 @@ Partial Class Login
         '
         Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft JhengHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft JhengHei", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.ForeColor = System.Drawing.Color.Gray
-        Me.TextBox1.Location = New System.Drawing.Point(110, 166)
+        Me.TextBox1.Location = New System.Drawing.Point(130, 203)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 18)
+        Me.TextBox1.Size = New System.Drawing.Size(100, 22)
         Me.TextBox1.TabIndex = 1
         Me.TextBox1.Text = "Username"
         Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -72,11 +76,11 @@ Partial Class Login
         '
         Me.TextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft JhengHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.Font = New System.Drawing.Font("Microsoft JhengHei", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox2.ForeColor = System.Drawing.Color.Gray
-        Me.TextBox2.Location = New System.Drawing.Point(110, 212)
+        Me.TextBox2.Location = New System.Drawing.Point(130, 249)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 18)
+        Me.TextBox2.Size = New System.Drawing.Size(100, 22)
         Me.TextBox2.TabIndex = 2
         Me.TextBox2.Text = "Password"
         Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -93,7 +97,7 @@ Partial Class Login
         'closelbl
         '
         Me.closelbl.Image = Global.SecurityBook.My.Resources.Resources.Contols___Add_On_36_512
-        Me.closelbl.Location = New System.Drawing.Point(287, -3)
+        Me.closelbl.Location = New System.Drawing.Point(326, -1)
         Me.closelbl.Name = "closelbl"
         Me.closelbl.Size = New System.Drawing.Size(36, 36)
         Me.closelbl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -104,9 +108,9 @@ Partial Class Login
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.Panel1.Controls.Add(Me.Panel4)
-        Me.Panel1.Location = New System.Drawing.Point(96, 185)
+        Me.Panel1.Location = New System.Drawing.Point(110, 224)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(129, 1)
+        Me.Panel1.Size = New System.Drawing.Size(140, 1)
         Me.Panel1.TabIndex = 7
         '
         'Panel4
@@ -120,9 +124,10 @@ Partial Class Login
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(121, 27)
+        Me.PictureBox1.Location = New System.Drawing.Point(135, 72)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(78, 85)
+        Me.PictureBox1.Size = New System.Drawing.Size(90, 90)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
         '
@@ -130,9 +135,9 @@ Partial Class Login
         '
         Me.Panel2.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.Panel2.Controls.Add(Me.Panel6)
-        Me.Panel2.Location = New System.Drawing.Point(96, 234)
+        Me.Panel2.Location = New System.Drawing.Point(110, 273)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(129, 1)
+        Me.Panel2.Size = New System.Drawing.Size(140, 1)
         Me.Panel2.TabIndex = 7
         '
         'Panel6
@@ -143,14 +148,46 @@ Partial Class Login
         Me.Panel6.Size = New System.Drawing.Size(129, 1)
         Me.Panel6.TabIndex = 8
         '
+        'SecurityBooklbl
+        '
+        Me.SecurityBooklbl.AutoSize = True
+        Me.SecurityBooklbl.Font = New System.Drawing.Font("Microsoft PhagsPa", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SecurityBooklbl.ForeColor = System.Drawing.Color.White
+        Me.SecurityBooklbl.Location = New System.Drawing.Point(1, 3)
+        Me.SecurityBooklbl.Name = "SecurityBooklbl"
+        Me.SecurityBooklbl.Size = New System.Drawing.Size(142, 27)
+        Me.SecurityBooklbl.TabIndex = 9
+        Me.SecurityBooklbl.Text = "SecurityBook"
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.Panel5)
+        Me.Panel3.ForeColor = System.Drawing.Color.White
+        Me.Panel3.Location = New System.Drawing.Point(0, 32)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(320, 3)
+        Me.Panel3.TabIndex = 10
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.Panel5.Location = New System.Drawing.Point(0, 42)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(129, 1)
+        Me.Panel5.TabIndex = 8
+        '
         'Login
         '
         Me.AcceptButton = Me.loginbtn
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(320, 352)
+        Me.ClientSize = New System.Drawing.Size(360, 400)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.SecurityBooklbl)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -166,6 +203,7 @@ Partial Class Login
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -182,4 +220,7 @@ Partial Class Login
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel6 As Panel
+    Friend WithEvents SecurityBooklbl As Label
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel5 As Panel
 End Class
