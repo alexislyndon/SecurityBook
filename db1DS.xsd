@@ -744,7 +744,7 @@ WHERE        (visit_ID = @visit_ID) AND (time_out IS NULL)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="db1ConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorGetMethodName="EarlyDate" GeneratorSourceName="Early" Modifier="Public" Name="Early" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="EarlyDate" UserSourceName="Early">
+              <DbSource ConnectionRef="db1ConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorGetMethodName="EarlyDate" GeneratorSourceName="Early" Modifier="Public" Name="Early" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="Early">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        MIN(time_in) AS EarliestDate
@@ -753,7 +753,7 @@ FROM            Visitors</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="db1ConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="filterbybadge" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="filterbybadge" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="filterbybadge">
+              <DbSource ConnectionRef="db1ConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="filterbybadge" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="filterbybadge" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="filterbybadge">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        CASE WHEN entry = 'm' THEN 'Main Gate' WHEN entry = 'b' THEN 'Back Gate' END AS Entry, Visitors.FullName, Visitors.ID_surrendered, 
@@ -768,7 +768,7 @@ WHERE        (Visitors.time_in &gt;= CAST(CONVERT(date, GETDATE()) AS datetime))
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="db1ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ForceCheckout" Modifier="Public" Name="ForceCheckout" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="ForceCheckout">
+              <DbSource ConnectionRef="db1ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ForceCheckout" Modifier="Public" Name="ForceCheckout" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="ForceCheckout">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Visitors
@@ -795,7 +795,7 @@ WHERE        ((Visitors.exited IS NULL) OR
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="db1ConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="View" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorGetMethodName="getview" GeneratorSourceName="View" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="View">
+              <DbSource ConnectionRef="db1ConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="View" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorGetMethodName="getview" GeneratorSourceName="View" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="View">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Visitors.visit_ID, Visitors.fname, Visitors.mname, Visitors.lname, CASE WHEN sex = 'm' THEN 'Male' WHEN sex = 'f' THEN 'Female' ELSE 'Other' END AS Sex, 
@@ -1085,6 +1085,63 @@ WHERE        (code = @code)</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="mainbackTableAdapter" GeneratorDataComponentClassName="mainbackTableAdapter" Name="mainback" UserDataComponentName="mainbackTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="db1ConnectionString (MySettings)" DbObjectName="dbo.mainback" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[mainback] WHERE (([gate] = @Original_gate) AND ((@IsNull_mannedby = 1 AND [mannedby] IS NULL) OR ([mannedby] = @Original_mannedby)) AND ((@IsNull_ismanned = 1 AND [ismanned] IS NULL) OR ([ismanned] = @Original_ismanned)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_gate" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="gate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_mannedby" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="mannedby" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_mannedby" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="mannedby" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ismanned" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ismanned" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@Original_ismanned" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="ismanned" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[mainback] ([gate], [mannedby], [ismanned]) VALUES (@gate, @mannedby, @ismanned);
+SELECT gate, mannedby, ismanned FROM mainback WHERE (gate = @gate)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@gate" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="gate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@mannedby" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="mannedby" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@ismanned" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="ismanned" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT gate, mannedby, ismanned FROM dbo.mainback</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[mainback] SET [gate] = @gate, [mannedby] = @mannedby, [ismanned] = @ismanned WHERE (([gate] = @Original_gate) AND ((@IsNull_mannedby = 1 AND [mannedby] IS NULL) OR ([mannedby] = @Original_mannedby)) AND ((@IsNull_ismanned = 1 AND [ismanned] IS NULL) OR ([ismanned] = @Original_ismanned)));
+SELECT gate, mannedby, ismanned FROM mainback WHERE (gate = @gate)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@gate" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="gate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@mannedby" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="mannedby" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@ismanned" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="ismanned" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_gate" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="gate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_mannedby" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="mannedby" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_mannedby" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="mannedby" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ismanned" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ismanned" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@Original_ismanned" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="ismanned" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="gate" DataSetColumn="gate" />
+              <Mapping SourceColumn="mannedby" DataSetColumn="mannedby" />
+              <Mapping SourceColumn="ismanned" DataSetColumn="ismanned" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1093,7 +1150,7 @@ WHERE        (code = @code)</CommandText>
   <xs:element name="db1DS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="db1DS" msprop:Generator_UserDSName="db1DS">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Badges" msprop:Generator_TableClassName="BadgesDataTable" msprop:Generator_TableVarName="tableBadges" msprop:Generator_RowChangedName="BadgesRowChanged" msprop:Generator_TablePropName="Badges" msprop:Generator_RowDeletingName="BadgesRowDeleting" msprop:Generator_RowChangingName="BadgesRowChanging" msprop:Generator_RowEvHandlerName="BadgesRowChangeEventHandler" msprop:Generator_RowDeletedName="BadgesRowDeleted" msprop:Generator_RowClassName="BadgesRow" msprop:Generator_UserTableName="Badges" msprop:Generator_RowEvArgName="BadgesRowChangeEvent">
+        <xs:element name="Badges" msprop:Generator_TableClassName="BadgesDataTable" msprop:Generator_TableVarName="tableBadges" msprop:Generator_TablePropName="Badges" msprop:Generator_RowDeletingName="BadgesRowDeleting" msprop:Generator_RowChangingName="BadgesRowChanging" msprop:Generator_RowEvHandlerName="BadgesRowChangeEventHandler" msprop:Generator_RowDeletedName="BadgesRowDeleted" msprop:Generator_UserTableName="Badges" msprop:Generator_RowChangedName="BadgesRowChanged" msprop:Generator_RowEvArgName="BadgesRowChangeEvent" msprop:Generator_RowClassName="BadgesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="badge" msprop:Generator_ColumnVarNameInTable="columnbadge" msprop:Generator_ColumnPropNameInRow="badge" msprop:Generator_ColumnPropNameInTable="badgeColumn" msprop:Generator_UserColumnName="badge">
@@ -1107,7 +1164,7 @@ WHERE        (code = @code)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="users" msprop:Generator_TableClassName="usersDataTable" msprop:Generator_TableVarName="tableusers" msprop:Generator_RowChangedName="usersRowChanged" msprop:Generator_TablePropName="users" msprop:Generator_RowDeletingName="usersRowDeleting" msprop:Generator_RowChangingName="usersRowChanging" msprop:Generator_RowEvHandlerName="usersRowChangeEventHandler" msprop:Generator_RowDeletedName="usersRowDeleted" msprop:Generator_RowClassName="usersRow" msprop:Generator_UserTableName="users" msprop:Generator_RowEvArgName="usersRowChangeEvent">
+        <xs:element name="users" msprop:Generator_TableClassName="usersDataTable" msprop:Generator_TableVarName="tableusers" msprop:Generator_TablePropName="users" msprop:Generator_RowDeletingName="usersRowDeleting" msprop:Generator_RowChangingName="usersRowChanging" msprop:Generator_RowEvHandlerName="usersRowChangeEventHandler" msprop:Generator_RowDeletedName="usersRowDeleted" msprop:Generator_UserTableName="users" msprop:Generator_RowChangedName="usersRowChanged" msprop:Generator_RowEvArgName="usersRowChangeEvent" msprop:Generator_RowClassName="usersRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1144,7 +1201,7 @@ WHERE        (code = @code)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Vehicles" msprop:Generator_TableClassName="VehiclesDataTable" msprop:Generator_TableVarName="tableVehicles" msprop:Generator_RowChangedName="VehiclesRowChanged" msprop:Generator_TablePropName="Vehicles" msprop:Generator_RowDeletingName="VehiclesRowDeleting" msprop:Generator_RowChangingName="VehiclesRowChanging" msprop:Generator_RowEvHandlerName="VehiclesRowChangeEventHandler" msprop:Generator_RowDeletedName="VehiclesRowDeleted" msprop:Generator_RowClassName="VehiclesRow" msprop:Generator_UserTableName="Vehicles" msprop:Generator_RowEvArgName="VehiclesRowChangeEvent">
+        <xs:element name="Vehicles" msprop:Generator_TableClassName="VehiclesDataTable" msprop:Generator_TableVarName="tableVehicles" msprop:Generator_TablePropName="Vehicles" msprop:Generator_RowDeletingName="VehiclesRowDeleting" msprop:Generator_RowChangingName="VehiclesRowChanging" msprop:Generator_RowEvHandlerName="VehiclesRowChangeEventHandler" msprop:Generator_RowDeletedName="VehiclesRowDeleted" msprop:Generator_UserTableName="Vehicles" msprop:Generator_RowChangedName="VehiclesRowChanged" msprop:Generator_RowEvArgName="VehiclesRowChangeEvent" msprop:Generator_RowClassName="VehiclesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -1196,7 +1253,7 @@ WHERE        (code = @code)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VIP" msprop:Generator_TableClassName="VIPDataTable" msprop:Generator_TableVarName="tableVIP" msprop:Generator_RowChangedName="VIPRowChanged" msprop:Generator_TablePropName="VIP" msprop:Generator_RowDeletingName="VIPRowDeleting" msprop:Generator_RowChangingName="VIPRowChanging" msprop:Generator_RowEvHandlerName="VIPRowChangeEventHandler" msprop:Generator_RowDeletedName="VIPRowDeleted" msprop:Generator_RowClassName="VIPRow" msprop:Generator_UserTableName="VIP" msprop:Generator_RowEvArgName="VIPRowChangeEvent">
+        <xs:element name="VIP" msprop:Generator_TableClassName="VIPDataTable" msprop:Generator_TableVarName="tableVIP" msprop:Generator_TablePropName="VIP" msprop:Generator_RowDeletingName="VIPRowDeleting" msprop:Generator_RowChangingName="VIPRowChanging" msprop:Generator_RowEvHandlerName="VIPRowChangeEventHandler" msprop:Generator_RowDeletedName="VIPRowDeleted" msprop:Generator_UserTableName="VIP" msprop:Generator_RowChangedName="VIPRowChanged" msprop:Generator_RowEvArgName="VIPRowChangeEvent" msprop:Generator_RowClassName="VIPRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="vip_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnvip_ID" msprop:Generator_ColumnPropNameInRow="vip_ID" msprop:Generator_ColumnPropNameInTable="vip_IDColumn" msprop:Generator_UserColumnName="vip_ID" type="xs:int" />
@@ -1281,7 +1338,7 @@ WHERE        (code = @code)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Visitors" msprop:Generator_TableClassName="VisitorsDataTable" msprop:Generator_TableVarName="tableVisitors" msprop:Generator_RowChangedName="VisitorsRowChanged" msprop:Generator_TablePropName="Visitors" msprop:Generator_RowDeletingName="VisitorsRowDeleting" msprop:Generator_RowChangingName="VisitorsRowChanging" msprop:Generator_RowEvHandlerName="VisitorsRowChangeEventHandler" msprop:Generator_RowDeletedName="VisitorsRowDeleted" msprop:Generator_RowClassName="VisitorsRow" msprop:Generator_UserTableName="Visitors" msprop:Generator_RowEvArgName="VisitorsRowChangeEvent">
+        <xs:element name="Visitors" msprop:Generator_TableClassName="VisitorsDataTable" msprop:Generator_TableVarName="tableVisitors" msprop:Generator_TablePropName="Visitors" msprop:Generator_RowDeletingName="VisitorsRowDeleting" msprop:Generator_RowChangingName="VisitorsRowChanging" msprop:Generator_RowEvHandlerName="VisitorsRowChangeEventHandler" msprop:Generator_RowDeletedName="VisitorsRowDeleted" msprop:Generator_UserTableName="Visitors" msprop:Generator_RowChangedName="VisitorsRowChanged" msprop:Generator_RowEvArgName="VisitorsRowChangeEvent" msprop:Generator_RowClassName="VisitorsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="visit_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnvisit_ID" msprop:Generator_ColumnPropNameInRow="visit_ID" msprop:Generator_ColumnPropNameInTable="visit_IDColumn" msprop:Generator_UserColumnName="visit_ID" type="xs:int" />
@@ -1380,7 +1437,7 @@ WHERE        (code = @code)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Company" msprop:Generator_TableClassName="CompanyDataTable" msprop:Generator_TableVarName="tableCompany" msprop:Generator_RowChangedName="CompanyRowChanged" msprop:Generator_TablePropName="Company" msprop:Generator_RowDeletingName="CompanyRowDeleting" msprop:Generator_RowChangingName="CompanyRowChanging" msprop:Generator_RowEvHandlerName="CompanyRowChangeEventHandler" msprop:Generator_RowDeletedName="CompanyRowDeleted" msprop:Generator_RowClassName="CompanyRow" msprop:Generator_UserTableName="Company" msprop:Generator_RowEvArgName="CompanyRowChangeEvent">
+        <xs:element name="Company" msprop:Generator_TableClassName="CompanyDataTable" msprop:Generator_TableVarName="tableCompany" msprop:Generator_TablePropName="Company" msprop:Generator_RowDeletingName="CompanyRowDeleting" msprop:Generator_RowChangingName="CompanyRowChanging" msprop:Generator_RowEvHandlerName="CompanyRowChangeEventHandler" msprop:Generator_RowDeletedName="CompanyRowDeleted" msprop:Generator_UserTableName="Company" msprop:Generator_RowChangedName="CompanyRowChanged" msprop:Generator_RowEvArgName="CompanyRowChangeEvent" msprop:Generator_RowClassName="CompanyRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1415,7 +1472,7 @@ WHERE        (code = @code)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Company_Members" msprop:Generator_TableClassName="Company_MembersDataTable" msprop:Generator_TableVarName="tableCompany_Members" msprop:Generator_RowChangedName="Company_MembersRowChanged" msprop:Generator_TablePropName="Company_Members" msprop:Generator_RowDeletingName="Company_MembersRowDeleting" msprop:Generator_RowChangingName="Company_MembersRowChanging" msprop:Generator_RowEvHandlerName="Company_MembersRowChangeEventHandler" msprop:Generator_RowDeletedName="Company_MembersRowDeleted" msprop:Generator_RowClassName="Company_MembersRow" msprop:Generator_UserTableName="Company_Members" msprop:Generator_RowEvArgName="Company_MembersRowChangeEvent">
+        <xs:element name="Company_Members" msprop:Generator_TableClassName="Company_MembersDataTable" msprop:Generator_TableVarName="tableCompany_Members" msprop:Generator_TablePropName="Company_Members" msprop:Generator_RowDeletingName="Company_MembersRowDeleting" msprop:Generator_RowChangingName="Company_MembersRowChanging" msprop:Generator_RowEvHandlerName="Company_MembersRowChangeEventHandler" msprop:Generator_RowDeletedName="Company_MembersRowDeleted" msprop:Generator_UserTableName="Company_Members" msprop:Generator_RowChangedName="Company_MembersRowChanged" msprop:Generator_RowEvArgName="Company_MembersRowChangeEvent" msprop:Generator_RowClassName="Company_MembersRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="companyid" msprop:Generator_ColumnVarNameInTable="columncompanyid" msprop:Generator_ColumnPropNameInRow="companyid" msprop:Generator_ColumnPropNameInTable="companyidColumn" msprop:Generator_UserColumnName="companyid" type="xs:int" />
@@ -1444,7 +1501,7 @@ WHERE        (code = @code)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="companylogins" msprop:Generator_TableClassName="companyloginsDataTable" msprop:Generator_TableVarName="tablecompanylogins" msprop:Generator_RowChangedName="companyloginsRowChanged" msprop:Generator_TablePropName="companylogins" msprop:Generator_RowDeletingName="companyloginsRowDeleting" msprop:Generator_RowChangingName="companyloginsRowChanging" msprop:Generator_RowEvHandlerName="companyloginsRowChangeEventHandler" msprop:Generator_RowDeletedName="companyloginsRowDeleted" msprop:Generator_RowClassName="companyloginsRow" msprop:Generator_UserTableName="companylogins" msprop:Generator_RowEvArgName="companyloginsRowChangeEvent">
+        <xs:element name="companylogins" msprop:Generator_TableClassName="companyloginsDataTable" msprop:Generator_TableVarName="tablecompanylogins" msprop:Generator_TablePropName="companylogins" msprop:Generator_RowDeletingName="companyloginsRowDeleting" msprop:Generator_RowChangingName="companyloginsRowChanging" msprop:Generator_RowEvHandlerName="companyloginsRowChangeEventHandler" msprop:Generator_RowDeletedName="companyloginsRowDeleted" msprop:Generator_UserTableName="companylogins" msprop:Generator_RowChangedName="companyloginsRowChanged" msprop:Generator_RowEvArgName="companyloginsRowChangeEvent" msprop:Generator_RowClassName="companyloginsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1471,6 +1528,21 @@ WHERE        (code = @code)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="mainback" msprop:Generator_TableClassName="mainbackDataTable" msprop:Generator_TableVarName="tablemainback" msprop:Generator_TablePropName="mainback" msprop:Generator_RowDeletingName="mainbackRowDeleting" msprop:Generator_RowChangingName="mainbackRowChanging" msprop:Generator_RowEvHandlerName="mainbackRowChangeEventHandler" msprop:Generator_RowDeletedName="mainbackRowDeleted" msprop:Generator_UserTableName="mainback" msprop:Generator_RowChangedName="mainbackRowChanged" msprop:Generator_RowEvArgName="mainbackRowChangeEvent" msprop:Generator_RowClassName="mainbackRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="gate" msprop:Generator_ColumnVarNameInTable="columngate" msprop:Generator_ColumnPropNameInRow="gate" msprop:Generator_ColumnPropNameInTable="gateColumn" msprop:Generator_UserColumnName="gate">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="mannedby" msprop:Generator_ColumnVarNameInTable="columnmannedby" msprop:Generator_ColumnPropNameInRow="mannedby" msprop:Generator_ColumnPropNameInTable="mannedbyColumn" msprop:Generator_UserColumnName="mannedby" type="xs:int" minOccurs="0" />
+              <xs:element name="ismanned" msprop:Generator_ColumnVarNameInTable="columnismanned" msprop:Generator_ColumnPropNameInRow="ismanned" msprop:Generator_ColumnPropNameInTable="ismannedColumn" msprop:Generator_UserColumnName="ismanned" type="xs:unsignedByte" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1504,13 +1576,18 @@ WHERE        (code = @code)</CommandText>
       <xs:selector xpath=".//mstns:companylogins" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
+    <xs:unique name="mainback_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:mainback" />
+      <xs:field xpath="mstns:gate" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Vehicles_users" msdata:parent="users" msdata:child="Vehicles" msdata:parentkey="id" msdata:childkey="userid" msprop:Generator_UserChildTable="Vehicles" msprop:Generator_ChildPropName="GetVehiclesRows" msprop:Generator_UserRelationName="FK_Vehicles_users" msprop:Generator_RelationVarName="relationFK_Vehicles_users" msprop:Generator_UserParentTable="users" msprop:Generator_ParentPropName="usersRow" />
-      <msdata:Relationship name="FK_Vehicles_Badges" msdata:parent="Badges" msdata:child="Visitors" msdata:parentkey="badge" msdata:childkey="badge_number" msprop:Generator_UserChildTable="Visitors" msprop:Generator_ChildPropName="GetVisitorsRows" msprop:Generator_UserRelationName="FK_Vehicles_Badges" msprop:Generator_RelationVarName="relationFK_Vehicles_Badges" msprop:Generator_UserParentTable="Badges" msprop:Generator_ParentPropName="BadgesRow" />
-      <msdata:Relationship name="FK_Visitors_users" msdata:parent="users" msdata:child="Visitors" msdata:parentkey="id" msdata:childkey="userid" msprop:Generator_UserChildTable="Visitors" msprop:Generator_ChildPropName="GetVisitorsRows" msprop:Generator_UserRelationName="FK_Visitors_users" msprop:Generator_RelationVarName="relationFK_Visitors_users" msprop:Generator_UserParentTable="users" msprop:Generator_ParentPropName="usersRow" />
-      <msdata:Relationship name="FK_Company_Members_ToTable" msdata:parent="Company" msdata:child="Company_Members" msdata:parentkey="id" msdata:childkey="companyid" msprop:Generator_UserChildTable="Company_Members" msprop:Generator_ChildPropName="GetCompany_MembersRows" msprop:Generator_UserRelationName="FK_Company_Members_ToTable" msprop:Generator_RelationVarName="relationFK_Company_Members_ToTable" msprop:Generator_UserParentTable="Company" msprop:Generator_ParentPropName="CompanyRow" />
+      <msdata:Relationship name="FK_Vehicles_users" msdata:parent="users" msdata:child="Vehicles" msdata:parentkey="id" msdata:childkey="userid" msprop:Generator_UserChildTable="Vehicles" msprop:Generator_ChildPropName="GetVehiclesRows" msprop:Generator_UserRelationName="FK_Vehicles_users" msprop:Generator_ParentPropName="usersRow" msprop:Generator_RelationVarName="relationFK_Vehicles_users" msprop:Generator_UserParentTable="users" />
+      <msdata:Relationship name="FK_Vehicles_Badges" msdata:parent="Badges" msdata:child="Visitors" msdata:parentkey="badge" msdata:childkey="badge_number" msprop:Generator_UserChildTable="Visitors" msprop:Generator_ChildPropName="GetVisitorsRows" msprop:Generator_UserRelationName="FK_Vehicles_Badges" msprop:Generator_ParentPropName="BadgesRow" msprop:Generator_RelationVarName="relationFK_Vehicles_Badges" msprop:Generator_UserParentTable="Badges" />
+      <msdata:Relationship name="FK_Visitors_users" msdata:parent="users" msdata:child="Visitors" msdata:parentkey="id" msdata:childkey="userid" msprop:Generator_UserChildTable="Visitors" msprop:Generator_ChildPropName="GetVisitorsRows" msprop:Generator_UserRelationName="FK_Visitors_users" msprop:Generator_ParentPropName="usersRow" msprop:Generator_RelationVarName="relationFK_Visitors_users" msprop:Generator_UserParentTable="users" />
+      <msdata:Relationship name="FK_Company_Members_ToTable" msdata:parent="Company" msdata:child="Company_Members" msdata:parentkey="id" msdata:childkey="companyid" msprop:Generator_UserChildTable="Company_Members" msprop:Generator_ChildPropName="GetCompany_MembersRows" msprop:Generator_UserRelationName="FK_Company_Members_ToTable" msprop:Generator_ParentPropName="CompanyRow" msprop:Generator_RelationVarName="relationFK_Company_Members_ToTable" msprop:Generator_UserParentTable="Company" />
+      <msdata:Relationship name="FK_mainback_users" msdata:parent="users" msdata:child="mainback" msdata:parentkey="id" msdata:childkey="mannedby" msprop:Generator_UserChildTable="mainback" msprop:Generator_ChildPropName="GetmainbackRows" msprop:Generator_UserRelationName="FK_mainback_users" msprop:Generator_ParentPropName="usersRow" msprop:Generator_RelationVarName="relationFK_mainback_users" msprop:Generator_UserParentTable="users" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
