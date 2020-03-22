@@ -41,7 +41,7 @@ Partial Class SPLASH
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
-        Me.PictureBox1.WaitOnLoad = True
+        Me.PictureBox1.UseWaitCursor = True
         '
         'Panel1
         '
@@ -52,6 +52,7 @@ Partial Class SPLASH
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(672, 428)
         Me.Panel1.TabIndex = 1
+        Me.Panel1.UseWaitCursor = True
         '
         'Label1
         '
@@ -63,6 +64,7 @@ Partial Class SPLASH
         Me.Label1.Size = New System.Drawing.Size(254, 49)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "SecurityBook"
+        Me.Label1.UseWaitCursor = True
         '
         'SPLASH
         '
@@ -74,9 +76,11 @@ Partial Class SPLASH
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "SPLASH"
+        Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "SPLASH"
+        Me.Text = "SecurityBook"
         Me.TopMost = True
+        Me.UseWaitCursor = True
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

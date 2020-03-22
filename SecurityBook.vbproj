@@ -171,6 +171,7 @@
     <Compile Include="adminVisitors.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="captureID.Designer.vb">
       <DependentUpon>captureID.vb</DependentUpon>
     </Compile>

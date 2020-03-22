@@ -9,6 +9,11 @@
     Dim y4 As Integer = 430
     Dim y5 As Integer = 490
 
+    Private Sub closer() Handles Me.FormClosing
+        Me.MainbackTableAdapter1.unmanthegate("main")
+        endsession()
+        Login.Show()
+    End Sub
     Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseDown, sidepanel.MouseDown, SecurityBooklbl.MouseDown, AddVisitor1.MouseDown
 
         If e.Button = MouseButtons.Left Then

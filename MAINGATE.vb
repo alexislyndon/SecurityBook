@@ -9,6 +9,11 @@
     Dim y4 As Integer = 430
     Dim y5 As Integer = 490
 
+    Private Sub closer() Handles Me.FormClosing
+        Me.MainbackTableAdapter1.unmanthegate("main")
+        endsession()
+        Login.Show()
+    End Sub
     Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles MyBase.MouseDown, sidepanel.MouseDown, AddVisitor1.MouseDown, SecurityBooklbl.MouseDown
 
         If e.Button = MouseButtons.Left Then
@@ -40,9 +45,7 @@
     Private Sub closelbl_Click(sender As Object, e As EventArgs) Handles closebtn.Click
         Dim logout = MessageBox.Show("Log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
         If logout = vbYes Then
-            Me.MainbackTableAdapter1.unmanthegate("main")
-            endsession()
-            Login.Show()
+
             Me.Close()
         End If
 
@@ -176,10 +179,6 @@
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles minimizebtn.Click
         Me.WindowState = FormWindowState.Minimized
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles closebtn.Click
-        Me.Close()
     End Sub
 
     Private Sub maximizebtn_Click(sender As Object, e As EventArgs) Handles maximizebtn.Click

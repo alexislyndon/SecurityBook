@@ -125,4 +125,12 @@
         Me.Close()
     End Sub
 
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Dim dataDirectory As String = String.Format("{0}\Logs\", Environment.CurrentDirectory)
+        MsgBox(dataDirectory.ToString)
+    End Sub
 End Class
