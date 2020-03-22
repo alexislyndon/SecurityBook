@@ -31,7 +31,7 @@
         refresher()
     End Sub
 
-    Private Sub UsersDataGridView_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles UsersDataGridView.CellContentDoubleClick
+    Private Sub UsersDataGridView_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles UsersDataGridView.CellDoubleClick
         If UsersDataGridView.RowCount > 0 Then
             Dim id = UsersDataGridView.SelectedCells.Item(0).Value
             Dim amu As New adminManageUsers(id)

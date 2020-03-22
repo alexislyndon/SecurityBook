@@ -25,6 +25,7 @@ Partial Class adminManageUsers
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(adminManageUsers))
         Me.idbx = New System.Windows.Forms.TextBox()
+        Me.Db1DS = New SecurityBook.db1DS()
         Me.usernamebx = New System.Windows.Forms.TextBox()
         Me.passwordbx = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
@@ -41,7 +42,6 @@ Partial Class adminManageUsers
         Me.UsersTableAdapter1 = New SecurityBook.db1DSTableAdapters.usersTableAdapter()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Db1DS = New SecurityBook.db1DS()
         Me.UsersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,14 +49,21 @@ Partial Class adminManageUsers
         '
         'idbx
         '
+        Me.idbx.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Db1DS, "users.id", True))
         Me.idbx.Location = New System.Drawing.Point(34, 26)
         Me.idbx.Name = "idbx"
         Me.idbx.ReadOnly = True
         Me.idbx.Size = New System.Drawing.Size(41, 20)
         Me.idbx.TabIndex = 0
         '
+        'Db1DS
+        '
+        Me.Db1DS.DataSetName = "db1DS"
+        Me.Db1DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'usernamebx
         '
+        Me.usernamebx.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Db1DS, "users.username", True))
         Me.usernamebx.Location = New System.Drawing.Point(12, 141)
         Me.usernamebx.Name = "usernamebx"
         Me.usernamebx.Size = New System.Drawing.Size(113, 20)
@@ -64,6 +71,7 @@ Partial Class adminManageUsers
         '
         'passwordbx
         '
+        Me.passwordbx.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Db1DS, "users.password", True))
         Me.passwordbx.Location = New System.Drawing.Point(146, 141)
         Me.passwordbx.Name = "passwordbx"
         Me.passwordbx.Size = New System.Drawing.Size(113, 20)
@@ -71,6 +79,7 @@ Partial Class adminManageUsers
         '
         'TextBox3
         '
+        Me.TextBox3.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Db1DS, "users.created", True))
         Me.TextBox3.Location = New System.Drawing.Point(12, 98)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.ReadOnly = True
@@ -115,6 +124,7 @@ Partial Class adminManageUsers
         '
         'namebx
         '
+        Me.namebx.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Db1DS, "users.name", True))
         Me.namebx.Location = New System.Drawing.Point(146, 98)
         Me.namebx.Name = "namebx"
         Me.namebx.Size = New System.Drawing.Size(113, 20)
@@ -165,9 +175,9 @@ Partial Class adminManageUsers
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(115, 4)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(148, 13)
+        Me.Label7.Size = New System.Drawing.Size(112, 13)
         Me.Label7.TabIndex = 4
-        Me.Label7.Text = "Double click to change status"
+        Me.Label7.Text = "Click to change status"
         '
         'UsersTableAdapter1
         '
@@ -175,6 +185,7 @@ Partial Class adminManageUsers
         '
         'ComboBox1
         '
+        Me.ComboBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Db1DS, "users.designation", True))
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"admin", "main", "back"})
@@ -191,11 +202,6 @@ Partial Class adminManageUsers
         Me.Label8.Size = New System.Drawing.Size(63, 13)
         Me.Label8.TabIndex = 6
         Me.Label8.Text = "Designation"
-        '
-        'Db1DS
-        '
-        Me.Db1DS.DataSetName = "db1DS"
-        Me.Db1DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'UsersBindingSource
         '

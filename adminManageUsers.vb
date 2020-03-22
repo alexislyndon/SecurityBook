@@ -1,11 +1,5 @@
 ﻿Public Class adminManageUsers
     Dim id As Integer
-    Private Sub adminManageUsers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'Db1DS.users' table. You can move, or remove it, as needed.
-        Me.UsersTableAdapter1.Fill(Me.Db1DS.users)
-
-    End Sub
-
     Public Sub New(id As Integer)
         Me.id = id
         ' This call is required by the designer.
@@ -14,7 +8,13 @@
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
-    Private Sub TextBox1_DoubleClick(sender As Object, e As EventArgs) Handles TextBox1.DoubleClick
+    Private Sub adminManageUsers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'Db1DS.users' table. You can move, or remove it, as needed.
+        Me.UsersTableAdapter1.ManageUser(Me.Db1DS.users, id)
+
+    End Sub
+
+    Private Sub TextBox1_DoubleClick(sender As Object, e As EventArgs) Handles TextBox1.Click
         If TextBox1.Text = "Active" Then
             Try
                 Me.UsersTableAdapter1.DeactivateUser(id)
