@@ -23,6 +23,7 @@ Partial Class ADMIN
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ADMIN))
         Me.sidepanel = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -287,6 +288,7 @@ Partial Class ADMIN
         '
         'AdminDASH1
         '
+        Me.AdminDASH1.BackColor = System.Drawing.Color.Snow
         Me.AdminDASH1.Location = New System.Drawing.Point(200, 0)
         Me.AdminDASH1.Name = "AdminDASH1"
         Me.AdminDASH1.Size = New System.Drawing.Size(800, 500)
@@ -294,6 +296,7 @@ Partial Class ADMIN
         '
         'AdminVisitors1
         '
+        Me.AdminVisitors1.BackColor = System.Drawing.Color.White
         Me.AdminVisitors1.Location = New System.Drawing.Point(200, 0)
         Me.AdminVisitors1.Name = "AdminVisitors1"
         Me.AdminVisitors1.Size = New System.Drawing.Size(800, 500)
@@ -322,13 +325,14 @@ Partial Class ADMIN
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.sidepanel)
-        Me.Controls.Add(Me.AdminVehicles1)
-        Me.Controls.Add(Me.AdminVisitors1)
         Me.Controls.Add(Me.AdminDASH1)
         Me.Controls.Add(Me.AdminVIP1)
         Me.Controls.Add(Me.AdminUsers1)
         Me.Controls.Add(Me.AdminBadges1)
+        Me.Controls.Add(Me.AdminVehicles1)
+        Me.Controls.Add(Me.AdminVisitors1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ADMIN"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "w"

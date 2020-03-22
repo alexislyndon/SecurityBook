@@ -58,6 +58,7 @@
         tem.Y = Panel1.Location.Y
         Timer1.Start()
         dashbtn.BackColor = Color.FromArgb(45, 45, 45)
+        AdminDASH1.refresher()
         AdminDASH1.Visible = True
     End Sub
 

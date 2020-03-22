@@ -64,6 +64,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>sb transparent.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Emgu.CV">
       <HintPath>..\Security Logbook\bin\Debug\Emgu.CV.dll</HintPath>
@@ -248,6 +251,12 @@
     <Compile Include="adminBadges.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="SPLASH.Designer.vb">
+      <DependentUpon>SPLASH.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SPLASH.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="viewVisitor.Designer.vb">
       <DependentUpon>viewVisitor.vb</DependentUpon>
     </Compile>
@@ -319,6 +328,9 @@
     <EmbeddedResource Include="serviceproviderUC.resx">
       <DependentUpon>serviceproviderUC.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SPLASH.resx">
+      <DependentUpon>SPLASH.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="viewVisitor.resx">
       <DependentUpon>viewVisitor.vb</DependentUpon>
     </EmbeddedResource>
@@ -377,6 +389,8 @@
       <DependentUpon>db1.mdf</DependentUpon>
     </Content>
     <Content Include="License-LGPL.txt" />
+    <Content Include="sb transparent.ico" />
+    <Content Include="sb.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="packages\Emgu.CV.runtime.windows.4.2.0.3662\build\Emgu.CV.runtime.windows.targets" Condition="Exists('packages\Emgu.CV.runtime.windows.4.2.0.3662\build\Emgu.CV.runtime.windows.targets')" />

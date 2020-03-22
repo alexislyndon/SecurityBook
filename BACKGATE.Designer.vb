@@ -23,7 +23,7 @@ Partial Class BACKGATE
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.closelbl = New System.Windows.Forms.PictureBox()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BACKGATE))
         Me.sidepanel = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -52,20 +52,11 @@ Partial Class BACKGATE
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.SecurityBooklbl = New System.Windows.Forms.Label()
         Me.MainbackTableAdapter1 = New SecurityBook.db1DSTableAdapters.mainbackTableAdapter()
-        CType(Me.closelbl, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.closelbl = New System.Windows.Forms.PictureBox()
         Me.sidepanel.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        CType(Me.closelbl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'closelbl
-        '
-        Me.closelbl.Image = Global.SecurityBook.My.Resources.Resources.Contols___Add_On_36_512
-        Me.closelbl.Location = New System.Drawing.Point(1332, -1)
-        Me.closelbl.Name = "closelbl"
-        Me.closelbl.Size = New System.Drawing.Size(36, 36)
-        Me.closelbl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.closelbl.TabIndex = 0
-        Me.closelbl.TabStop = False
         '
         'sidepanel
         '
@@ -362,6 +353,16 @@ Partial Class BACKGATE
         '
         Me.MainbackTableAdapter1.ClearBeforeFill = True
         '
+        'closelbl
+        '
+        Me.closelbl.Image = Global.SecurityBook.My.Resources.Resources.Contols___Add_On_36_512
+        Me.closelbl.Location = New System.Drawing.Point(1332, -1)
+        Me.closelbl.Name = "closelbl"
+        Me.closelbl.Size = New System.Drawing.Size(36, 36)
+        Me.closelbl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.closelbl.TabIndex = 0
+        Me.closelbl.TabStop = False
+        '
         'BACKGATE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -377,11 +378,13 @@ Partial Class BACKGATE
         Me.Controls.Add(Me.AddVisitor1)
         Me.Controls.Add(Me.ViewVisitor1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "BACKGATE"
-        CType(Me.closelbl, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.sidepanel.ResumeLayout(False)
         Me.sidepanel.PerformLayout()
         Me.Panel3.ResumeLayout(False)
+        CType(Me.closelbl, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

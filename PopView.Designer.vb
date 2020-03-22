@@ -492,6 +492,7 @@ Partial Class PopView
         Me.TableAdapterManager.companyloginsTableAdapter = Nothing
         Me.TableAdapterManager.CompanyTableAdapter = Nothing
         Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.mainbackTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = SecurityBook.db1DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.usersTableAdapter = Nothing
         Me.TableAdapterManager.VehiclesTableAdapter = Nothing
@@ -542,6 +543,7 @@ Partial Class PopView
         Me.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VisitorsBindingSource, "FullName", True))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "PopView"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).EndInit()

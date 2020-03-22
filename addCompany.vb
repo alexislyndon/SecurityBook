@@ -1,7 +1,7 @@
 ﻿Public Class addCompany
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.CompanyTableAdapter1.AddCompany(name.Text.Trim, address.Text.Trim, super.Text.Trim, phone.Text.Trim)
+        Me.CompanyTableAdapter1.AddCompany(companyname.Text.Trim, address.Text.Trim, super.Text.Trim, phone.Text.Trim)
         MsgBox("Successfully added Company.")
         ADMIN.AdminVIP1.refresher()
         Me.Close()

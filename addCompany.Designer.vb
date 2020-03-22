@@ -23,7 +23,7 @@ Partial Class addCompany
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.name = New System.Windows.Forms.TextBox()
+        Me.companyname = New System.Windows.Forms.TextBox()
         Me.address = New System.Windows.Forms.TextBox()
         Me.super = New System.Windows.Forms.TextBox()
         Me.phone = New System.Windows.Forms.TextBox()
@@ -47,13 +47,13 @@ Partial Class addCompany
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "ADD COMPANY"
         '
-        'name
+        'companyname
         '
-        Me.name.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.name.Location = New System.Drawing.Point(142, 87)
-        Me.name.Name = "name"
-        Me.name.Size = New System.Drawing.Size(100, 32)
-        Me.name.TabIndex = 1
+        Me.companyname.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.companyname.Location = New System.Drawing.Point(142, 87)
+        Me.companyname.Name = "companyname"
+        Me.companyname.Size = New System.Drawing.Size(100, 32)
+        Me.companyname.TabIndex = 1
         '
         'address
         '
@@ -153,10 +153,10 @@ Partial Class addCompany
         Me.Controls.Add(Me.phone)
         Me.Controls.Add(Me.super)
         Me.Controls.Add(Me.address)
-        Me.Controls.Add(Me.name)
+        Me.Controls.Add(Me.companyname)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        '''Me.name = "addCompany"
+        Me.Name = "addCompany"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -165,7 +165,7 @@ Partial Class addCompany
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents name As TextBox
+    Friend WithEvents companyname As TextBox
     Friend WithEvents address As TextBox
     Friend WithEvents super As TextBox
     Friend WithEvents phone As TextBox

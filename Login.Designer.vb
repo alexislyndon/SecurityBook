@@ -201,6 +201,7 @@ Partial Class Login
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.loginbtn)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.Db1DS1, System.ComponentModel.ISupportInitialize).EndInit()

@@ -23,6 +23,7 @@ Partial Class MAINGATE
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MAINGATE))
         Me.sidepanel = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -425,6 +426,7 @@ Partial Class MAINGATE
         Me.Controls.Add(Me.AddVehicle1)
         Me.Controls.Add(Me.ServiceproviderUC1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "MAINGATE"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.sidepanel.ResumeLayout(False)
