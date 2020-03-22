@@ -261,7 +261,6 @@ Partial Class adminVIP
         Me.CompanyloginsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.CompanyloginsDataGridView.Size = New System.Drawing.Size(309, 383)
         Me.CompanyloginsDataGridView.TabIndex = 8
-        Me.CompanyloginsDataGridView.Visible = False
         '
         'DataGridViewTextBoxColumn12
         '

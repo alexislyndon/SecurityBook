@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SecurityBook", "SecurityBook.vbproj", "{34C24ABF-CBC2-449C-A140-35C20F3BC856}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SecurityBook v1", "..\SecurityBook v1\SecurityBook v1.vdproj", "{8342936B-1FF3-4456-9760-7FA2EF7773BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{34C24ABF-CBC2-449C-A140-35C20F3BC856}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34C24ABF-CBC2-449C-A140-35C20F3BC856}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34C24ABF-CBC2-449C-A140-35C20F3BC856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8342936B-1FF3-4456-9760-7FA2EF7773BE}.Debug|Any CPU.ActiveCfg = Debug
+		{8342936B-1FF3-4456-9760-7FA2EF7773BE}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
