@@ -26,7 +26,6 @@ Partial Class adminVIP
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.addCompany = New System.Windows.Forms.Button()
         Me.addMembers = New System.Windows.Forms.Button()
         Me.CompanyDataGridView = New System.Windows.Forms.DataGridView()
@@ -94,32 +93,35 @@ Partial Class adminVIP
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "COMPANY"
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(239, 260)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(28, 72)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = ">>"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'addCompany
         '
+        Me.addCompany.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.addCompany.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.addCompany.FlatAppearance.BorderSize = 0
+        Me.addCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.addCompany.Font = New System.Drawing.Font("Microsoft New Tai Lue", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.addCompany.ForeColor = System.Drawing.Color.White
         Me.addCompany.Location = New System.Drawing.Point(114, 77)
         Me.addCompany.Name = "addCompany"
         Me.addCompany.Size = New System.Drawing.Size(106, 23)
         Me.addCompany.TabIndex = 5
         Me.addCompany.Text = "Add company"
-        Me.addCompany.UseVisualStyleBackColor = True
+        Me.addCompany.UseVisualStyleBackColor = False
         '
         'addMembers
         '
+        Me.addMembers.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.addMembers.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.addMembers.FlatAppearance.BorderSize = 0
+        Me.addMembers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.addMembers.Font = New System.Drawing.Font("Microsoft New Tai Lue", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.addMembers.ForeColor = System.Drawing.Color.White
         Me.addMembers.Location = New System.Drawing.Point(395, 74)
         Me.addMembers.Name = "addMembers"
         Me.addMembers.Size = New System.Drawing.Size(102, 23)
         Me.addMembers.TabIndex = 5
         Me.addMembers.Text = "Add members"
-        Me.addMembers.UseVisualStyleBackColor = True
+        Me.addMembers.UseVisualStyleBackColor = False
         '
         'CompanyDataGridView
         '
@@ -304,6 +306,7 @@ Partial Class adminVIP
         Me.TableAdapterManager.companyloginsTableAdapter = Nothing
         Me.TableAdapterManager.CompanyTableAdapter = Nothing
         Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.mainbackTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = SecurityBook.db1DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.usersTableAdapter = Nothing
         Me.TableAdapterManager.VehiclesTableAdapter = Nothing
@@ -351,7 +354,6 @@ Partial Class adminVIP
         Me.Controls.Add(Me.CompanyDataGridView)
         Me.Controls.Add(Me.addMembers)
         Me.Controls.Add(Me.addCompany)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -378,7 +380,6 @@ Partial Class adminVIP
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Button1 As Button
     Friend WithEvents addCompany As Button
     Friend WithEvents addMembers As Button
     Friend WithEvents CompanyTableAdapter As db1DSTableAdapters.CompanyTableAdapter

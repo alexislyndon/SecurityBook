@@ -7,7 +7,7 @@
         Me.Close()
     End Sub
 
-    Private Sub closelbl_Click(sender As Object, e As EventArgs) Handles closelbl.Click
+    Private Sub closelbl_Click(sender As Object, e As EventArgs) 
         Me.Close()
     End Sub
 

@@ -1,4 +1,5 @@
-﻿Public Class Login
+﻿Imports System.IO
+Public Class Login
     Private IsFormBeingDragged As Boolean = False
     Private MouseDownX As Integer
     Private MouseDownY As Integer
@@ -111,11 +112,10 @@
                 End If
                 Me.Hide()
             Catch ex As Exception
-                If ex.Message = "There was no row at position 0." Then
-
-                Else
-                    'MsgBox(ex.Message)
+                If ex.Message = "There is no row at position 0." Then
                     MsgBox("Wrong username or password. Please try again.")
+                Else
+                    MsgBox(ex.Message)
                 End If
             End Try
         End If
@@ -130,7 +130,10 @@
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        Dim dataDirectory As String = String.Format("{0}\Logs\", Environment.CurrentDirectory)
+        'String.Format("{0}\Logs\sblogs.txt", Directory.GetCurrentDirectory())
+        'Dim dataDirectory As String = String.Format("{0}\Logs\", Environment.CurrentDirectory)
+        Dim dataDirectory As String = String.Format("{0}\Logs\sblogs.txt", Directory.GetCurrentDirectory())
+
         MsgBox(dataDirectory.ToString)
     End Sub
 End Class

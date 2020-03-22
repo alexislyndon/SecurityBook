@@ -27,11 +27,17 @@ Module Session
     End Function
 
     Public Sub logger(action As String)
-        Dim path As String = "d:\securitylogs.txt"
+        'Directory.GetCurrentDirectory()
+        'Dim dataDirectory As String = String.Format("{0}\Logs\sblogs.txt", Environment.CurrentDirectory)
+        Dim dataDirectory As String = String.Format("{0}\sblogs.txt", Directory.GetCurrentDirectory())
+
+        Dim path As String = dataDirectory '"d:\sblogs.txt"
 
         ' This text is added only once to the file. 
         If Not File.Exists(path) Then
-            Using sw As StreamWriter = File.CreateText(path)
+            'Using sw As StreamWriter = File.CreateText(path)
+            Using sw As StreamWriter = File.AppendText(path)
+                MsgBox("yawaaaaaaaaa")
                 sw.WriteLine("##### Log file for Security Logbook #####")
             End Using
         End If

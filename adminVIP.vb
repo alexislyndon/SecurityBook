@@ -6,7 +6,7 @@
         Me.CompanyloginsTableAdapter.Fill(Db1DS.companylogins)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         Dim i As Integer = CompanyDataGridView.SelectedRows.Item(0).Cells.Item("DataGridViewTextBoxColumn1").Value
         Me.Company_MembersTableAdapter.companymembers(Db1DS.Company_Members, i)
     End Sub

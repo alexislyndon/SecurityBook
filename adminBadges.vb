@@ -1,5 +1,5 @@
 ﻿Public Class adminBadges
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click 'add
         Dim s As String = ""
         For Each item In ListBox1.Items
             Try
@@ -13,7 +13,7 @@
         Next
     End Sub
 
-    Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox1.KeyPress
+    Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox1.KeyPress 'stage
         If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
             For l_index As Integer = 0 To ListBox1.Items.Count - 1
                 If CStr(ListBox1.Items(l_index)) = TextBox1.Text Then
@@ -32,4 +32,7 @@
         Me.BadgesTableAdapter1.Fill(Db1DS.Badges)
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click 'clear
+        ListBox1.Items.Clear()
+    End Sub
 End Class
