@@ -9,8 +9,8 @@
     Dim y4 As Integer = 430
     Dim y5 As Integer = 490
 
-    Private Sub closer() Handles Me.FormClosing
-        Me.MainbackTableAdapter1.unmanthegate("main")
+    Private Sub closer() Handles Me.Closed
+        Me.MainbackTableAdapter1.unmanthegate("back")
         endsession()
         Login.Show()
     End Sub
@@ -46,8 +46,6 @@
         Dim logout = MessageBox.Show("Log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
         If logout = vbYes Then
             Me.MainbackTableAdapter1.unmanthegate("back")
-            endsession()
-            Login.Show()
             Me.Close()
         End If
     End Sub

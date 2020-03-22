@@ -60,13 +60,15 @@ Partial Class adminVisitors
         Me.Label10 = New System.Windows.Forms.Label()
         Me.destination = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Filterbtn = New System.Windows.Forms.Button()
+        Me.Resetbtn = New System.Windows.Forms.Button()
         Me.VisitorsTableAdapter = New SecurityBook.db1DSTableAdapters.VisitorsTableAdapter()
         Me.TableAdapterManager = New SecurityBook.db1DSTableAdapters.TableAdapterManager()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         CType(Me.VisitorsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'VisitorsDataGridView
@@ -76,11 +78,11 @@ Partial Class adminVisitors
         Me.VisitorsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.VisitorsDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17})
         Me.VisitorsDataGridView.DataSource = Me.VisitorsBindingSource
-        Me.VisitorsDataGridView.Location = New System.Drawing.Point(3, 243)
+        Me.VisitorsDataGridView.Location = New System.Drawing.Point(3, 208)
         Me.VisitorsDataGridView.Name = "VisitorsDataGridView"
         Me.VisitorsDataGridView.ReadOnly = True
         Me.VisitorsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.VisitorsDataGridView.Size = New System.Drawing.Size(794, 254)
+        Me.VisitorsDataGridView.Size = New System.Drawing.Size(794, 289)
         Me.VisitorsDataGridView.TabIndex = 2
         '
         'DataGridViewTextBoxColumn1
@@ -194,7 +196,8 @@ Partial Class adminVisitors
         '
         'v_idbox
         '
-        Me.v_idbox.Location = New System.Drawing.Point(19, 94)
+        Me.v_idbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.v_idbox.Location = New System.Drawing.Point(93, 108)
         Me.v_idbox.Name = "v_idbox"
         Me.v_idbox.Size = New System.Drawing.Size(39, 20)
         Me.v_idbox.TabIndex = 4
@@ -219,8 +222,10 @@ Partial Class adminVisitors
         '
         'DateTimePicker1
         '
+        Me.DateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(487, 83)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(158, 108)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(111, 20)
         Me.DateTimePicker1.TabIndex = 21
@@ -229,8 +234,10 @@ Partial Class adminVisitors
         'DateTimePicker2
         '
         Me.DateTimePicker2.Checked = False
+        Me.DateTimePicker2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DateTimePicker2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker2.Location = New System.Drawing.Point(487, 109)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(275, 108)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(111, 20)
         Me.DateTimePicker2.TabIndex = 21
@@ -238,7 +245,8 @@ Partial Class adminVisitors
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(465, 115)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(272, 92)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(16, 13)
         Me.Label2.TabIndex = 22
@@ -247,7 +255,8 @@ Partial Class adminVisitors
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(454, 89)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(155, 92)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(27, 13)
         Me.Label3.TabIndex = 22
@@ -256,26 +265,29 @@ Partial Class adminVisitors
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(484, 67)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(155, 76)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(67, 13)
+        Me.Label4.Size = New System.Drawing.Size(99, 16)
         Me.Label4.TabIndex = 22
         Me.Label4.Text = "Filter by date"
         '
         'CheckedListBox1
         '
+        Me.CheckedListBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckedListBox1.FormattingEnabled = True
         Me.CheckedListBox1.Items.AddRange(New Object() {"Main Gate", "Back Gate"})
-        Me.CheckedListBox1.Location = New System.Drawing.Point(617, 94)
+        Me.CheckedListBox1.Location = New System.Drawing.Point(123, 33)
         Me.CheckedListBox1.Name = "CheckedListBox1"
         Me.CheckedListBox1.Size = New System.Drawing.Size(81, 34)
         Me.CheckedListBox1.TabIndex = 23
         '
         'CheckedListBox2
         '
+        Me.CheckedListBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckedListBox2.FormattingEnabled = True
         Me.CheckedListBox2.Items.AddRange(New Object() {"Main Gate", "Back Gate"})
-        Me.CheckedListBox2.Location = New System.Drawing.Point(704, 94)
+        Me.CheckedListBox2.Location = New System.Drawing.Point(218, 33)
         Me.CheckedListBox2.Name = "CheckedListBox2"
         Me.CheckedListBox2.Size = New System.Drawing.Size(81, 34)
         Me.CheckedListBox2.TabIndex = 24
@@ -283,7 +295,8 @@ Partial Class adminVisitors
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(617, 77)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(123, 16)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(31, 13)
         Me.Label5.TabIndex = 25
@@ -292,7 +305,8 @@ Partial Class adminVisitors
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(701, 77)
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(215, 16)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(24, 13)
         Me.Label6.TabIndex = 25
@@ -301,7 +315,8 @@ Partial Class adminVisitors
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(18, 78)
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(92, 92)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(40, 13)
         Me.Label7.TabIndex = 25
@@ -309,7 +324,8 @@ Partial Class adminVisitors
         '
         'first
         '
-        Me.first.Location = New System.Drawing.Point(79, 94)
+        Me.first.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.first.Location = New System.Drawing.Point(6, 33)
         Me.first.Name = "first"
         Me.first.Size = New System.Drawing.Size(81, 20)
         Me.first.TabIndex = 26
@@ -317,7 +333,8 @@ Partial Class adminVisitors
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(76, 78)
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(3, 17)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(57, 13)
         Me.Label8.TabIndex = 25
@@ -325,7 +342,8 @@ Partial Class adminVisitors
         '
         'middle
         '
-        Me.middle.Location = New System.Drawing.Point(197, 94)
+        Me.middle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.middle.Location = New System.Drawing.Point(6, 70)
         Me.middle.Name = "middle"
         Me.middle.Size = New System.Drawing.Size(81, 20)
         Me.middle.TabIndex = 28
@@ -333,7 +351,8 @@ Partial Class adminVisitors
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(194, 78)
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(3, 54)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(69, 13)
         Me.Label9.TabIndex = 27
@@ -341,7 +360,8 @@ Partial Class adminVisitors
         '
         'last
         '
-        Me.last.Location = New System.Drawing.Point(314, 94)
+        Me.last.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.last.Location = New System.Drawing.Point(6, 108)
         Me.last.Name = "last"
         Me.last.Size = New System.Drawing.Size(81, 20)
         Me.last.TabIndex = 30
@@ -349,7 +369,8 @@ Partial Class adminVisitors
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(311, 78)
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(3, 92)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(58, 13)
         Me.Label10.TabIndex = 29
@@ -357,7 +378,8 @@ Partial Class adminVisitors
         '
         'destination
         '
-        Me.destination.Location = New System.Drawing.Point(19, 146)
+        Me.destination.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.destination.Location = New System.Drawing.Point(392, 108)
         Me.destination.Name = "destination"
         Me.destination.Size = New System.Drawing.Size(81, 20)
         Me.destination.TabIndex = 32
@@ -365,29 +387,38 @@ Partial Class adminVisitors
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(16, 130)
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(389, 92)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(60, 13)
         Me.Label11.TabIndex = 31
         Me.Label11.Text = "Destination"
         '
-        'Button1
+        'Filterbtn
         '
-        Me.Button1.Location = New System.Drawing.Point(722, 214)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 33
-        Me.Button1.Text = "Filter"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Filterbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Filterbtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Filterbtn.FlatAppearance.BorderSize = 0
+        Me.Filterbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Filterbtn.ForeColor = System.Drawing.Color.White
+        Me.Filterbtn.Location = New System.Drawing.Point(400, 17)
+        Me.Filterbtn.Name = "Filterbtn"
+        Me.Filterbtn.Size = New System.Drawing.Size(81, 35)
+        Me.Filterbtn.TabIndex = 33
+        Me.Filterbtn.Text = "Filter"
+        Me.Filterbtn.UseVisualStyleBackColor = False
         '
-        'Button2
+        'Resetbtn
         '
-        Me.Button2.Location = New System.Drawing.Point(3, 214)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 34
-        Me.Button2.Text = "Reset"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Resetbtn.BackColor = System.Drawing.Color.Gainsboro
+        Me.Resetbtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Resetbtn.ForeColor = System.Drawing.Color.DimGray
+        Me.Resetbtn.Location = New System.Drawing.Point(400, 58)
+        Me.Resetbtn.Name = "Resetbtn"
+        Me.Resetbtn.Size = New System.Drawing.Size(81, 25)
+        Me.Resetbtn.TabIndex = 34
+        Me.Resetbtn.Text = "Reset"
+        Me.Resetbtn.UseVisualStyleBackColor = False
         '
         'VisitorsTableAdapter
         '
@@ -400,46 +431,60 @@ Partial Class adminVisitors
         Me.TableAdapterManager.Company_MembersTableAdapter = Nothing
         Me.TableAdapterManager.companyloginsTableAdapter = Nothing
         Me.TableAdapterManager.CompanyTableAdapter = Nothing
+        Me.TableAdapterManager.mainbackTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = SecurityBook.db1DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.usersTableAdapter = Nothing
         Me.TableAdapterManager.VehiclesTableAdapter = Nothing
         Me.TableAdapterManager.VIPTableAdapter = Nothing
         Me.TableAdapterManager.VisitorsTableAdapter = Me.VisitorsTableAdapter
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.first)
+        Me.GroupBox1.Controls.Add(Me.Filterbtn)
+        Me.GroupBox1.Controls.Add(Me.Resetbtn)
+        Me.GroupBox1.Controls.Add(Me.v_idbox)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.destination)
+        Me.GroupBox1.Controls.Add(Me.CheckedListBox2)
+        Me.GroupBox1.Controls.Add(Me.CheckedListBox1)
+        Me.GroupBox1.Controls.Add(Me.Label9)
+        Me.GroupBox1.Controls.Add(Me.Label11)
+        Me.GroupBox1.Controls.Add(Me.middle)
+        Me.GroupBox1.Controls.Add(Me.last)
+        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.DateTimePicker2)
+        Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.GroupBox1.Location = New System.Drawing.Point(3, 61)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(487, 141)
+        Me.GroupBox1.TabIndex = 36
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Advanced Search"
+        '
         'adminVisitors
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.destination)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.last)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.middle)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.first)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.CheckedListBox2)
-        Me.Controls.Add(Me.CheckedListBox1)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.DateTimePicker2)
-        Me.Controls.Add(Me.DateTimePicker1)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.v_idbox)
         Me.Controls.Add(Me.VisitorsDataGridView)
         Me.Name = "adminVisitors"
         Me.Size = New System.Drawing.Size(800, 500)
         CType(Me.VisitorsDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -485,6 +530,7 @@ Partial Class adminVisitors
     Friend WithEvents Label10 As Label
     Friend WithEvents destination As TextBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents Filterbtn As Button
+    Friend WithEvents Resetbtn As Button
+    Friend WithEvents GroupBox1 As GroupBox
 End Class

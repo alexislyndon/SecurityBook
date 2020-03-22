@@ -23,12 +23,14 @@ Public Class adminVisitors
         pv.Show()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Resetbtn.Click
         Me.VisitorsTableAdapter.Fill(Me.Db1DS.Visitors)
-        Clear(Me)
+        Me.DateTimePicker1.Value = Me.VisitorsTableAdapter.Early()
+        Clear(Me.GroupBox1)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Filterbtn.Click
         Dim timefrom As Date = DateTimePicker1.Value
         Dim timeto As Date = DateTimePicker2.Value.AddSeconds(84398)
         Dim entry, exited As String
@@ -60,4 +62,6 @@ Public Class adminVisitors
 
         End If
     End Sub
+
+
 End Class

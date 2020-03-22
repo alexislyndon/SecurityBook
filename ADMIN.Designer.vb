@@ -50,12 +50,14 @@ Partial Class ADMIN
         Me.AdminVisitors1 = New SecurityBook.adminVisitors()
         Me.AdminVehicles1 = New SecurityBook.adminVehicles()
         Me.Timer7 = New System.Windows.Forms.Timer(Me.components)
+        Me.SecurityBooklbl = New System.Windows.Forms.Label()
         Me.sidepanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'sidepanel
         '
         Me.sidepanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.sidepanel.Controls.Add(Me.SecurityBooklbl)
         Me.sidepanel.Controls.Add(Me.Label3)
         Me.sidepanel.Controls.Add(Me.Panel1)
         Me.sidepanel.Controls.Add(Me.Label2)
@@ -264,6 +266,7 @@ Partial Class ADMIN
         '
         'AdminUsers1
         '
+        Me.AdminUsers1.BackColor = System.Drawing.Color.Snow
         Me.AdminUsers1.Location = New System.Drawing.Point(200, 0)
         Me.AdminUsers1.Name = "AdminUsers1"
         Me.AdminUsers1.Size = New System.Drawing.Size(800, 500)
@@ -314,6 +317,18 @@ Partial Class ADMIN
         'Timer7
         '
         Me.Timer7.Interval = 15
+        '
+        'SecurityBooklbl
+        '
+        Me.SecurityBooklbl.AutoSize = True
+        Me.SecurityBooklbl.BackColor = System.Drawing.Color.Transparent
+        Me.SecurityBooklbl.Font = New System.Drawing.Font("Microsoft PhagsPa", 21.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SecurityBooklbl.ForeColor = System.Drawing.Color.White
+        Me.SecurityBooklbl.Location = New System.Drawing.Point(2, 453)
+        Me.SecurityBooklbl.Name = "SecurityBooklbl"
+        Me.SecurityBooklbl.Size = New System.Drawing.Size(199, 38)
+        Me.SecurityBooklbl.TabIndex = 17
+        Me.SecurityBooklbl.Text = "SecurityBook"
         '
         'ADMIN
         '
@@ -368,4 +383,5 @@ Partial Class ADMIN
     Friend WithEvents AdminVehicles1 As adminVehicles
     Friend WithEvents Label3 As Label
     Friend WithEvents Timer7 As Timer
+    Friend WithEvents SecurityBooklbl As Label
 End Class

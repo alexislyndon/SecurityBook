@@ -181,6 +181,7 @@ Partial Class viewVisitor
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.GreenYellow
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft JhengHei", 12.0!, System.Drawing.FontStyle.Bold)
@@ -212,6 +213,7 @@ Partial Class viewVisitor
         Me.TableAdapterManager.Company_MembersTableAdapter = Nothing
         Me.TableAdapterManager.companyloginsTableAdapter = Nothing
         Me.TableAdapterManager.CompanyTableAdapter = Nothing
+        Me.TableAdapterManager.mainbackTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = SecurityBook.db1DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.usersTableAdapter = Nothing
         Me.TableAdapterManager.VehiclesTableAdapter = Nothing
