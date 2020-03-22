@@ -21,7 +21,7 @@
         Me.Company_MembersTableAdapter.companymembers(Db1DS.Company_Members, i)
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles addCompany.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles addCompanybtn.Click
         addCompany.Show()
     End Sub
 

@@ -28,16 +28,15 @@ Module Session
 
     Public Sub logger(action As String)
         'Directory.GetCurrentDirectory()
+        'Application.StartupPath() 
         'Dim dataDirectory As String = String.Format("{0}\Logs\sblogs.txt", Environment.CurrentDirectory)
-        Dim dataDirectory As String = String.Format("{0}\sblogs.txt", Directory.GetCurrentDirectory())
+        Dim dataDirectory As String = String.Format("{0}\sblogs.txt", Application.StartupPath())
 
-        Dim path As String = dataDirectory '"d:\sblogs.txt"
+        Dim path As String = dataDirectory '"C:\sblogs.txt"
 
         ' This text is added only once to the file. 
         If Not File.Exists(path) Then
-            'Using sw As StreamWriter = File.CreateText(path)
-            Using sw As StreamWriter = File.AppendText(path)
-                MsgBox("yawaaaaaaaaa")
+            Using sw As StreamWriter = File.CreateText(path)
                 sw.WriteLine("##### Log file for Security Logbook #####")
             End Using
         End If

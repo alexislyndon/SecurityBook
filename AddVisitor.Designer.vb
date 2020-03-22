@@ -331,7 +331,7 @@ Partial Class AddVisitor
         'dest
         '
         Me.dest.FormattingEnabled = True
-        Me.dest.Items.AddRange(New Object() {"Registrar", "Finance"})
+        Me.dest.Items.AddRange(New Object() {"Registrar", "Finance", "Admissions", "Clinic", "Agriculture", "Education", "Arts and Sciences", "Engineering", "Computer Studies", "SBM", "Law", "Med", "Nursing", "PPO", "Campus Ministry", "Magis"})
         Me.dest.Location = New System.Drawing.Point(21, 56)
         Me.dest.Name = "dest"
         Me.dest.Size = New System.Drawing.Size(196, 29)

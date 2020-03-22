@@ -129,11 +129,4 @@ Public Class Login
 
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        'String.Format("{0}\Logs\sblogs.txt", Directory.GetCurrentDirectory())
-        'Dim dataDirectory As String = String.Format("{0}\Logs\", Environment.CurrentDirectory)
-        Dim dataDirectory As String = String.Format("{0}\Logs\sblogs.txt", Directory.GetCurrentDirectory())
-
-        MsgBox(dataDirectory.ToString)
-    End Sub
 End Class

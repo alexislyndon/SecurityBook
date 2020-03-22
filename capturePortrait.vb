@@ -33,6 +33,8 @@ Public Class capturePortrait
             PictureBox1.Image = cap.QueryFrame.ToBitmap() 'Second line
         Catch ex As Exception
             MsgBox("There was an unexpected error. Please restart the application.")
+            Timer1.Stop()
+            Me.Close()
         End Try
         'Label1.Text = Date.Now.ToString("ddMMMyyyyddd") & vbCrLf & Date.Now.ToString("HH:mm:ss")
         'Label1.Text = Date.Now.ToString("yyyy:MMM:dd:hh:mm:ss")

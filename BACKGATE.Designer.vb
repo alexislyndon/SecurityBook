@@ -51,6 +51,7 @@ Partial Class BACKGATE
         Me.AddVisitor1 = New SecurityBook.AddVisitor()
         Me.MainbackTableAdapter1 = New SecurityBook.db1DSTableAdapters.mainbackTableAdapter()
         Me.closelbl = New System.Windows.Forms.PictureBox()
+        Me.ServiceproviderUC1 = New SecurityBook.serviceproviderUC()
         Me.sidepanel.SuspendLayout()
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -150,9 +151,8 @@ Partial Class BACKGATE
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(238, 50)
         Me.Button4.TabIndex = 2
-        Me.Button4.Text = "Placeholder"
+        Me.Button4.Text = "VIP"
         Me.Button4.UseVisualStyleBackColor = True
-        Me.Button4.Visible = False
         '
         'Button3
         '
@@ -343,6 +343,14 @@ Partial Class BACKGATE
         Me.closelbl.TabIndex = 0
         Me.closelbl.TabStop = False
         '
+        'ServiceproviderUC1
+        '
+        Me.ServiceproviderUC1.Location = New System.Drawing.Point(250, 0)
+        Me.ServiceproviderUC1.Name = "ServiceproviderUC1"
+        Me.ServiceproviderUC1.Size = New System.Drawing.Size(1116, 768)
+        Me.ServiceproviderUC1.TabIndex = 7
+        Me.ServiceproviderUC1.Visible = False
+        '
         'BACKGATE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -355,6 +363,7 @@ Partial Class BACKGATE
         Me.Controls.Add(Me.sidepanel)
         Me.Controls.Add(Me.AddVisitor1)
         Me.Controls.Add(Me.ViewVisitor1)
+        Me.Controls.Add(Me.ServiceproviderUC1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "BACKGATE"
@@ -394,4 +403,5 @@ Partial Class BACKGATE
     Friend WithEvents Label6 As Label
     Friend WithEvents MainbackTableAdapter1 As db1DSTableAdapters.mainbackTableAdapter
     Friend WithEvents SecurityBooklbl As Label
+    Friend WithEvents ServiceproviderUC1 As serviceproviderUC
 End Class

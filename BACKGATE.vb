@@ -137,7 +137,9 @@
         Timer3.Start()
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click 'VIP
+        falsifier()
+        ServiceproviderUC1.Visible = True
         tem.Y = Panel1.Location.Y
         Timer4.Start()
     End Sub
@@ -176,6 +178,7 @@
     Public Sub falsifier()
         AddVisitor1.Visible = False
         ViewVisitor1.Visible = False
+        ServiceproviderUC1.Visible = False
 
     End Sub
 

@@ -26,7 +26,7 @@ Partial Class adminVIP
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.addCompany = New System.Windows.Forms.Button()
+        Me.addCompanybtn = New System.Windows.Forms.Button()
         Me.addMembers = New System.Windows.Forms.Button()
         Me.CompanyDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -96,20 +96,20 @@ Partial Class adminVIP
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "COMPANY"
         '
-        'addCompany
+        'addCompanybtn
         '
-        Me.addCompany.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.addCompany.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.addCompany.FlatAppearance.BorderSize = 0
-        Me.addCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.addCompany.Font = New System.Drawing.Font("Microsoft New Tai Lue", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.addCompany.ForeColor = System.Drawing.Color.White
-        Me.addCompany.Location = New System.Drawing.Point(376, 59)
-        Me.addCompany.Name = "addCompany"
-        Me.addCompany.Size = New System.Drawing.Size(106, 23)
-        Me.addCompany.TabIndex = 5
-        Me.addCompany.Text = "Add company"
-        Me.addCompany.UseVisualStyleBackColor = False
+        Me.addCompanybtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.addCompanybtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.addCompanybtn.FlatAppearance.BorderSize = 0
+        Me.addCompanybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.addCompanybtn.Font = New System.Drawing.Font("Microsoft New Tai Lue", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.addCompanybtn.ForeColor = System.Drawing.Color.White
+        Me.addCompanybtn.Location = New System.Drawing.Point(376, 59)
+        Me.addCompanybtn.Name = "addCompanybtn"
+        Me.addCompanybtn.Size = New System.Drawing.Size(106, 23)
+        Me.addCompanybtn.TabIndex = 5
+        Me.addCompanybtn.Text = "Add company"
+        Me.addCompanybtn.UseVisualStyleBackColor = False
         '
         'addMembers
         '
@@ -369,7 +369,7 @@ Partial Class adminVIP
         Me.Controls.Add(Me.Company_MembersDataGridView)
         Me.Controls.Add(Me.CompanyDataGridView)
         Me.Controls.Add(Me.addMembers)
-        Me.Controls.Add(Me.addCompany)
+        Me.Controls.Add(Me.addCompanybtn)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -396,7 +396,7 @@ Partial Class adminVIP
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents addCompany As Button
+    Friend WithEvents addCompanybtn As Button
     Friend WithEvents addMembers As Button
     Friend WithEvents CompanyTableAdapter As db1DSTableAdapters.CompanyTableAdapter
     Friend WithEvents CompanyDataGridView As DataGridView

@@ -26,7 +26,14 @@ Public Class captureID
     End Sub
 
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
-        PictureBox1.Image = cap.QueryFrame.ToBitmap() 'Second line
+        Try
+
+            PictureBox1.Image = cap.QueryFrame.ToBitmap() 'Second line
+        Catch ex As Exception
+            MsgBox("There was an unexpected error. Please restart the application.")
+            Timer1.Stop()
+            Me.Close()
+        End Try
         'Label1.Text = Date.Now.ToString("yyyy:MMM:dd:hh:mm:ss")
     End Sub
 
