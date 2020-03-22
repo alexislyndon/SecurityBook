@@ -36,13 +36,13 @@ Partial Class adminManageUsers
         Me.namebx = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.UsersTableAdapter1 = New SecurityBook.db1DSTableAdapters.usersTableAdapter()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.UsersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -148,21 +148,9 @@ Partial Class adminManageUsers
         Me.Label6.TabIndex = 2
         Me.Label6.Text = "Status"
         '
-        'TextBox1
-        '
-        Me.TextBox1.BackColor = System.Drawing.Color.LightGreen
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.Color.Snow
-        Me.TextBox1.Location = New System.Drawing.Point(137, 20)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(126, 28)
-        Me.TextBox1.TabIndex = 0
-        Me.TextBox1.Text = "Active"
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Button1
         '
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button1.Location = New System.Drawing.Point(179, 186)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(80, 23)
@@ -208,11 +196,26 @@ Partial Class adminManageUsers
         Me.UsersBindingSource.DataMember = "users"
         Me.UsersBindingSource.DataSource = Me.Db1DS
         '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.Gray
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button2.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Button2.ForeColor = System.Drawing.Color.Snow
+        Me.Button2.Location = New System.Drawing.Point(137, 22)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(122, 30)
+        Me.Button2.TabIndex = 7
+        Me.Button2.Text = "Active"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'adminManageUsers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(271, 221)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Label7)
@@ -227,7 +230,6 @@ Partial Class adminManageUsers
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.passwordbx)
         Me.Controls.Add(Me.usernamebx)
-        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.idbx)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -251,7 +253,6 @@ Partial Class adminManageUsers
     Friend WithEvents namebx As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Label7 As Label
     Friend WithEvents UsersTableAdapter1 As db1DSTableAdapters.usersTableAdapter
@@ -259,4 +260,5 @@ Partial Class adminManageUsers
     Friend WithEvents Label8 As Label
     Friend WithEvents Db1DS As db1DS
     Friend WithEvents UsersBindingSource As BindingSource
+    Friend WithEvents Button2 As Button
 End Class

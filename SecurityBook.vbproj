@@ -190,6 +190,12 @@
     <Compile Include="capturePortrait.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CreateNewUser.Designer.vb">
+      <DependentUpon>CreateNewUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CreateNewUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="db1DS.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -310,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="capturePortrait.resx">
       <DependentUpon>capturePortrait.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateNewUser.resx">
+      <DependentUpon>CreateNewUser.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gateVIP.resx">
       <DependentUpon>gateVIP.vb</DependentUpon>

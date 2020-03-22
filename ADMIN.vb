@@ -86,6 +86,7 @@
         Timer4.Start()
         usersbtn.BackColor = Color.FromArgb(45, 45, 45)
         AdminUsers1.Visible = True
+        AdminUsers1.refresher()
 
     End Sub
 
