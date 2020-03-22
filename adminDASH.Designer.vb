@@ -39,6 +39,7 @@ Partial Class adminDASH
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.backguard = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
@@ -50,7 +51,6 @@ Partial Class adminDASH
         Me.VehiclesTableAdapter1 = New SecurityBook.db1DSTableAdapters.VehiclesTableAdapter()
         Me.MainbackTableAdapter1 = New SecurityBook.db1DSTableAdapters.mainbackTableAdapter()
         Me.UsersTableAdapter1 = New SecurityBook.db1DSTableAdapters.usersTableAdapter()
-        Me.backguard = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -257,6 +257,17 @@ Partial Class adminDASH
         Me.Panel4.Size = New System.Drawing.Size(201, 338)
         Me.Panel4.TabIndex = 10
         '
+        'backguard
+        '
+        Me.backguard.AutoSize = True
+        Me.backguard.Font = New System.Drawing.Font("Century", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.backguard.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.backguard.Location = New System.Drawing.Point(3, 95)
+        Me.backguard.Name = "backguard"
+        Me.backguard.Size = New System.Drawing.Size(156, 23)
+        Me.backguard.TabIndex = 4
+        Me.backguard.Text = "Guard on Duty"
+        '
         'Label9
         '
         Me.Label9.AutoSize = True
@@ -343,17 +354,6 @@ Partial Class adminDASH
         'UsersTableAdapter1
         '
         Me.UsersTableAdapter1.ClearBeforeFill = True
-        '
-        'backguard
-        '
-        Me.backguard.AutoSize = True
-        Me.backguard.Font = New System.Drawing.Font("Century", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.backguard.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.backguard.Location = New System.Drawing.Point(3, 95)
-        Me.backguard.Name = "backguard"
-        Me.backguard.Size = New System.Drawing.Size(156, 23)
-        Me.backguard.TabIndex = 4
-        Me.backguard.Text = "Guard on Duty"
         '
         'adminDASH
         '

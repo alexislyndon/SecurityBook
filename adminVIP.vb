@@ -22,7 +22,7 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles addCompany.Click
-
+        addCompany.Show()
     End Sub
 
     Private Sub addMembers_Click(sender As Object, e As EventArgs) Handles addMembers.Click
@@ -34,4 +34,5 @@
     Public Sub refresher()
         Me.CompanyTableAdapter.Fill(Db1DS.Company)
     End Sub
+
 End Class

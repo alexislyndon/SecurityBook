@@ -34,6 +34,7 @@ Partial Class AddCompanyMembers
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.addmember = New System.Windows.Forms.Button()
+        Me.Company_MembersTableAdapter1 = New SecurityBook.db1DSTableAdapters.Company_MembersTableAdapter()
         Me.SuspendLayout()
         '
         'companyid
@@ -70,6 +71,7 @@ Partial Class AddCompanyMembers
         '
         'DateTimePicker1
         '
+        Me.DateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DateTimePicker1.Location = New System.Drawing.Point(105, 125)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
@@ -123,6 +125,7 @@ Partial Class AddCompanyMembers
         'addmember
         '
         Me.addmember.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.addmember.Cursor = System.Windows.Forms.Cursors.Hand
         Me.addmember.FlatAppearance.BorderSize = 0
         Me.addmember.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.addmember.Font = New System.Drawing.Font("Microsoft New Tai Lue", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -134,10 +137,15 @@ Partial Class AddCompanyMembers
         Me.addmember.Text = "Add Member"
         Me.addmember.UseVisualStyleBackColor = False
         '
+        'Company_MembersTableAdapter1
+        '
+        Me.Company_MembersTableAdapter1.ClearBeforeFill = True
+        '
         'AddCompanyMembers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Snow
         Me.ClientSize = New System.Drawing.Size(326, 203)
         Me.Controls.Add(Me.addmember)
         Me.Controls.Add(Me.Label4)
@@ -169,4 +177,5 @@ Partial Class AddCompanyMembers
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents addmember As Button
+    Friend WithEvents Company_MembersTableAdapter1 As db1DSTableAdapters.Company_MembersTableAdapter
 End Class

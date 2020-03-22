@@ -69,27 +69,30 @@ Partial Class adminVIP
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(543, 87)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(488, 90)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(47, 13)
+        Me.Label1.Size = New System.Drawing.Size(68, 21)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "LOGINS"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(270, 87)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(3, 259)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(61, 13)
+        Me.Label2.Size = New System.Drawing.Size(87, 21)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "MEMBERS"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(17, 87)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft PhagsPa", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(3, 64)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(60, 13)
+        Me.Label3.Size = New System.Drawing.Size(91, 21)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "COMPANY"
         '
@@ -101,7 +104,7 @@ Partial Class adminVIP
         Me.addCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.addCompany.Font = New System.Drawing.Font("Microsoft New Tai Lue", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.addCompany.ForeColor = System.Drawing.Color.White
-        Me.addCompany.Location = New System.Drawing.Point(114, 77)
+        Me.addCompany.Location = New System.Drawing.Point(376, 59)
         Me.addCompany.Name = "addCompany"
         Me.addCompany.Size = New System.Drawing.Size(106, 23)
         Me.addCompany.TabIndex = 5
@@ -116,7 +119,7 @@ Partial Class adminVIP
         Me.addMembers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.addMembers.Font = New System.Drawing.Font("Microsoft New Tai Lue", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.addMembers.ForeColor = System.Drawing.Color.White
-        Me.addMembers.Location = New System.Drawing.Point(395, 74)
+        Me.addMembers.Location = New System.Drawing.Point(380, 257)
         Me.addMembers.Name = "addMembers"
         Me.addMembers.Size = New System.Drawing.Size(102, 23)
         Me.addMembers.TabIndex = 5
@@ -130,11 +133,12 @@ Partial Class adminVIP
         Me.CompanyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.CompanyDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
         Me.CompanyDataGridView.DataSource = Me.CompanyBindingSource
-        Me.CompanyDataGridView.Location = New System.Drawing.Point(20, 103)
+        Me.CompanyDataGridView.Location = New System.Drawing.Point(0, 88)
         Me.CompanyDataGridView.Name = "CompanyDataGridView"
         Me.CompanyDataGridView.ReadOnly = True
+        Me.CompanyDataGridView.RowHeadersWidth = 10
         Me.CompanyDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.CompanyDataGridView.Size = New System.Drawing.Size(200, 380)
+        Me.CompanyDataGridView.Size = New System.Drawing.Size(482, 166)
         Me.CompanyDataGridView.TabIndex = 6
         '
         'DataGridViewTextBoxColumn1
@@ -148,30 +152,31 @@ Partial Class adminVIP
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "name"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "name"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Name"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
         '
         'DataGridViewTextBoxColumn3
         '
         Me.DataGridViewTextBoxColumn3.DataPropertyName = "address"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "address"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Address"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         Me.DataGridViewTextBoxColumn3.ReadOnly = True
         '
         'DataGridViewTextBoxColumn4
         '
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "supervisor"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "supervisor"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Supervisor"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         Me.DataGridViewTextBoxColumn4.ReadOnly = True
         '
         'DataGridViewTextBoxColumn5
         '
         Me.DataGridViewTextBoxColumn5.DataPropertyName = "superphone"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "superphone"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Phone"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        Me.DataGridViewTextBoxColumn5.Width = 90
         '
         'CompanyBindingSource
         '
@@ -190,45 +195,50 @@ Partial Class adminVIP
         Me.Company_MembersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Company_MembersDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11})
         Me.Company_MembersDataGridView.DataSource = Me.Company_MembersBindingSource
-        Me.Company_MembersDataGridView.Location = New System.Drawing.Point(273, 103)
+        Me.Company_MembersDataGridView.Location = New System.Drawing.Point(0, 283)
         Me.Company_MembersDataGridView.Name = "Company_MembersDataGridView"
         Me.Company_MembersDataGridView.ReadOnly = True
+        Me.Company_MembersDataGridView.RowHeadersWidth = 10
         Me.Company_MembersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Company_MembersDataGridView.Size = New System.Drawing.Size(224, 380)
+        Me.Company_MembersDataGridView.Size = New System.Drawing.Size(482, 214)
         Me.Company_MembersDataGridView.TabIndex = 7
         '
         'DataGridViewTextBoxColumn7
         '
         Me.DataGridViewTextBoxColumn7.DataPropertyName = "companyid"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "companyid"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Company ID"
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         Me.DataGridViewTextBoxColumn7.ReadOnly = True
+        Me.DataGridViewTextBoxColumn7.Width = 60
         '
         'DataGridViewTextBoxColumn8
         '
         Me.DataGridViewTextBoxColumn8.DataPropertyName = "name"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "name"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Name"
         Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
         Me.DataGridViewTextBoxColumn8.ReadOnly = True
+        Me.DataGridViewTextBoxColumn8.Width = 120
         '
         'DataGridViewTextBoxColumn9
         '
         Me.DataGridViewTextBoxColumn9.DataPropertyName = "designation"
-        Me.DataGridViewTextBoxColumn9.HeaderText = "designation"
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Designation"
         Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
         Me.DataGridViewTextBoxColumn9.ReadOnly = True
+        Me.DataGridViewTextBoxColumn9.Width = 80
         '
         'DataGridViewTextBoxColumn10
         '
         Me.DataGridViewTextBoxColumn10.DataPropertyName = "entrycode"
-        Me.DataGridViewTextBoxColumn10.HeaderText = "entrycode"
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Entry Code"
         Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
         Me.DataGridViewTextBoxColumn10.ReadOnly = True
+        Me.DataGridViewTextBoxColumn10.Width = 50
         '
         'DataGridViewTextBoxColumn11
         '
         Me.DataGridViewTextBoxColumn11.DataPropertyName = "expiry"
-        Me.DataGridViewTextBoxColumn11.HeaderText = "expiry"
+        Me.DataGridViewTextBoxColumn11.HeaderText = "Expiry"
         Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
         Me.DataGridViewTextBoxColumn11.ReadOnly = True
         '
@@ -244,12 +254,14 @@ Partial Class adminVIP
         Me.CompanyloginsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.CompanyloginsDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17})
         Me.CompanyloginsDataGridView.DataSource = Me.CompanyloginsBindingSource
-        Me.CompanyloginsDataGridView.Location = New System.Drawing.Point(546, 103)
+        Me.CompanyloginsDataGridView.Location = New System.Drawing.Point(488, 114)
         Me.CompanyloginsDataGridView.Name = "CompanyloginsDataGridView"
         Me.CompanyloginsDataGridView.ReadOnly = True
+        Me.CompanyloginsDataGridView.RowHeadersWidth = 50
         Me.CompanyloginsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.CompanyloginsDataGridView.Size = New System.Drawing.Size(225, 380)
+        Me.CompanyloginsDataGridView.Size = New System.Drawing.Size(309, 383)
         Me.CompanyloginsDataGridView.TabIndex = 8
+        Me.CompanyloginsDataGridView.Visible = False
         '
         'DataGridViewTextBoxColumn12
         '
@@ -257,6 +269,7 @@ Partial Class adminVIP
         Me.DataGridViewTextBoxColumn12.HeaderText = "id"
         Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
         Me.DataGridViewTextBoxColumn12.ReadOnly = True
+        Me.DataGridViewTextBoxColumn12.Width = 30
         '
         'DataGridViewTextBoxColumn13
         '
@@ -264,6 +277,7 @@ Partial Class adminVIP
         Me.DataGridViewTextBoxColumn13.HeaderText = "code"
         Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
         Me.DataGridViewTextBoxColumn13.ReadOnly = True
+        Me.DataGridViewTextBoxColumn13.Width = 40
         '
         'DataGridViewTextBoxColumn14
         '
@@ -285,6 +299,7 @@ Partial Class adminVIP
         Me.DataGridViewTextBoxColumn16.HeaderText = "gatein"
         Me.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16"
         Me.DataGridViewTextBoxColumn16.ReadOnly = True
+        Me.DataGridViewTextBoxColumn16.Width = 60
         '
         'DataGridViewTextBoxColumn17
         '
@@ -292,6 +307,7 @@ Partial Class adminVIP
         Me.DataGridViewTextBoxColumn17.HeaderText = "gateout"
         Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
         Me.DataGridViewTextBoxColumn17.ReadOnly = True
+        Me.DataGridViewTextBoxColumn17.Width = 60
         '
         'CompanyloginsBindingSource
         '
@@ -347,6 +363,7 @@ Partial Class adminVIP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Snow
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.CompanyloginsDataGridView)
@@ -386,24 +403,24 @@ Partial Class adminVIP
     Friend WithEvents CompanyDataGridView As DataGridView
     Friend WithEvents Company_MembersTableAdapter As db1DSTableAdapters.Company_MembersTableAdapter
     Friend WithEvents Company_MembersDataGridView As DataGridView
+    Friend WithEvents CompanyloginsTableAdapter As db1DSTableAdapters.companyloginsTableAdapter
+    Friend WithEvents CompanyloginsDataGridView As DataGridView
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label4 As Label
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
-    Friend WithEvents CompanyloginsTableAdapter As db1DSTableAdapters.companyloginsTableAdapter
-    Friend WithEvents CompanyloginsDataGridView As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn14 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn16 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn17 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label4 As Label
 End Class
