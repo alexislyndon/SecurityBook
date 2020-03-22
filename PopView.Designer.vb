@@ -543,7 +543,8 @@ Partial Class PopView
         Me.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VisitorsBindingSource, "FullName", True))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "PopView"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "View Visitor - SecurityBook"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Db1DS, System.ComponentModel.ISupportInitialize).EndInit()

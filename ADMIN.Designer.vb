@@ -335,7 +335,7 @@ Partial Class ADMIN
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ADMIN"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "w"
+        Me.Text = "SecurityBook - Admin Panel"
         Me.sidepanel.ResumeLayout(False)
         Me.sidepanel.PerformLayout()
         Me.ResumeLayout(False)

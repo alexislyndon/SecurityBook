@@ -29,6 +29,7 @@ Partial Class capturePortrait
         Me.Freeze = New System.Windows.Forms.Button()
         Me.Unfreeze = New System.Windows.Forms.Button()
         Me.closelbl = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -103,6 +104,16 @@ Partial Class capturePortrait
         Me.closelbl.TabIndex = 2
         Me.closelbl.TabStop = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(184, 5)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(145, 19)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Capture Visitor Portrait"
+        '
         'capturePortrait
         '
         Me.AcceptButton = Me.Save
@@ -111,6 +122,7 @@ Partial Class capturePortrait
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(374, 335)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.closelbl)
         Me.Controls.Add(Me.Unfreeze)
         Me.Controls.Add(Me.Freeze)
@@ -119,9 +131,11 @@ Partial Class capturePortrait
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "capturePortrait"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.Text = "Capture Portrait - SecurityBook"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -131,4 +145,5 @@ Partial Class capturePortrait
     Friend WithEvents Freeze As Button
     Friend WithEvents Unfreeze As Button
     Friend WithEvents closelbl As PictureBox
+    Friend WithEvents Label1 As Label
 End Class

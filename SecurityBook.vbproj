@@ -147,6 +147,12 @@
     <Compile Include="adminDASH.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="adminManageUsers.Designer.vb">
+      <DependentUpon>adminManageUsers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="adminManageUsers.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="adminUsers.Designer.vb">
       <DependentUpon>adminUsers.vb</DependentUpon>
     </Compile>
@@ -283,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="adminDASH.resx">
       <DependentUpon>adminDASH.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminManageUsers.resx">
+      <DependentUpon>adminManageUsers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="adminUsers.resx">
       <DependentUpon>adminUsers.vb</DependentUpon>

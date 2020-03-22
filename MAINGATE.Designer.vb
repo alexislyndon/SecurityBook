@@ -26,6 +26,7 @@ Partial Class MAINGATE
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MAINGATE))
         Me.sidepanel = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.SecurityBooklbl = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -49,24 +50,21 @@ Partial Class MAINGATE
         Me.maximizebtn = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.closebtn = New System.Windows.Forms.PictureBox()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.SecurityBooklbl = New System.Windows.Forms.Label()
+        Me.MainbackTableAdapter1 = New SecurityBook.db1DSTableAdapters.mainbackTableAdapter()
         Me.AddVisitor1 = New SecurityBook.AddVisitor()
         Me.ViewVisitor1 = New SecurityBook.viewVisitor()
         Me.AddVehicle1 = New SecurityBook.AddVehicle()
         Me.ServiceproviderUC1 = New SecurityBook.serviceproviderUC()
-        Me.MainbackTableAdapter1 = New SecurityBook.db1DSTableAdapters.mainbackTableAdapter()
         Me.sidepanel.SuspendLayout()
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.closebtn, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'sidepanel
         '
         Me.sidepanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(70, Byte), Integer))
         Me.sidepanel.Controls.Add(Me.Label6)
+        Me.sidepanel.Controls.Add(Me.SecurityBooklbl)
         Me.sidepanel.Controls.Add(Me.Label5)
         Me.sidepanel.Controls.Add(Me.Panel1)
         Me.sidepanel.Controls.Add(Me.Button5)
@@ -89,18 +87,32 @@ Partial Class MAINGATE
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft PhagsPa", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.GreenYellow
-        Me.Label6.Location = New System.Drawing.Point(9, 735)
+        Me.Label6.Location = New System.Drawing.Point(12, 665)
         Me.Label6.Name = "Label6"
+        Me.Label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.Label6.Size = New System.Drawing.Size(93, 25)
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "someone"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'SecurityBooklbl
+        '
+        Me.SecurityBooklbl.AutoSize = True
+        Me.SecurityBooklbl.BackColor = System.Drawing.Color.Transparent
+        Me.SecurityBooklbl.Font = New System.Drawing.Font("Microsoft PhagsPa", 27.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SecurityBooklbl.ForeColor = System.Drawing.Color.White
+        Me.SecurityBooklbl.Location = New System.Drawing.Point(-4, 710)
+        Me.SecurityBooklbl.Name = "SecurityBooklbl"
+        Me.SecurityBooklbl.Size = New System.Drawing.Size(254, 49)
+        Me.SecurityBooklbl.TabIndex = 11
+        Me.SecurityBooklbl.Text = "SecurityBook"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(3, 700)
+        Me.Label5.Location = New System.Drawing.Point(12, 637)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(139, 28)
         Me.Label5.TabIndex = 10
@@ -337,36 +349,9 @@ Partial Class MAINGATE
         Me.closebtn.TabIndex = 6
         Me.closebtn.TabStop = False
         '
-        'Panel3
+        'MainbackTableAdapter1
         '
-        Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel3.Controls.Add(Me.Panel5)
-        Me.Panel3.ForeColor = System.Drawing.Color.White
-        Me.Panel3.Location = New System.Drawing.Point(947, 27)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(320, 3)
-        Me.Panel3.TabIndex = 12
-        '
-        'Panel5
-        '
-        Me.Panel5.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.Panel5.Location = New System.Drawing.Point(0, 42)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(129, 1)
-        Me.Panel5.TabIndex = 8
-        '
-        'SecurityBooklbl
-        '
-        Me.SecurityBooklbl.AutoSize = True
-        Me.SecurityBooklbl.BackColor = System.Drawing.Color.Transparent
-        Me.SecurityBooklbl.Font = New System.Drawing.Font("Microsoft PhagsPa", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SecurityBooklbl.ForeColor = System.Drawing.Color.Black
-        Me.SecurityBooklbl.Location = New System.Drawing.Point(948, -2)
-        Me.SecurityBooklbl.Name = "SecurityBooklbl"
-        Me.SecurityBooklbl.Size = New System.Drawing.Size(142, 27)
-        Me.SecurityBooklbl.TabIndex = 11
-        Me.SecurityBooklbl.Text = "SecurityBook"
+        Me.MainbackTableAdapter1.ClearBeforeFill = True
         '
         'AddVisitor1
         '
@@ -403,18 +388,12 @@ Partial Class MAINGATE
         Me.ServiceproviderUC1.TabIndex = 9
         Me.ServiceproviderUC1.Visible = False
         '
-        'MainbackTableAdapter1
-        '
-        Me.MainbackTableAdapter1.ClearBeforeFill = True
-        '
         'MAINGATE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1366, 768)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.SecurityBooklbl)
         Me.Controls.Add(Me.maximizebtn)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.closebtn)
@@ -429,13 +408,12 @@ Partial Class MAINGATE
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "MAINGATE"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "SecurityBook - Main Gate"
         Me.sidepanel.ResumeLayout(False)
         Me.sidepanel.PerformLayout()
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.closebtn, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -468,8 +446,6 @@ Partial Class MAINGATE
     Friend WithEvents ServiceproviderUC1 As serviceproviderUC
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Panel5 As Panel
     Friend WithEvents SecurityBooklbl As Label
     Friend WithEvents MainbackTableAdapter1 As db1DSTableAdapters.mainbackTableAdapter
 End Class

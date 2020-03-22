@@ -204,6 +204,7 @@ Partial Class Login
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "SecurityBook - Login"
         CType(Me.Db1DS1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)

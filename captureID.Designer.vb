@@ -33,6 +33,7 @@ Partial Class captureID
         Me.Backbtn = New System.Windows.Forms.Button()
         Me.closelbl = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -162,6 +163,16 @@ Partial Class captureID
         'Timer1
         '
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(353, 5)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(113, 19)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "Capture Visitor ID"
+        '
         'captureID
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -169,6 +180,7 @@ Partial Class captureID
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(516, 341)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.closelbl)
         Me.Controls.Add(Me.Unfreeze)
         Me.Controls.Add(Me.Freeze)
@@ -181,11 +193,13 @@ Partial Class captureID
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "captureID"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.Text = "Capture ID - SecurityBook"
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.closelbl, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -199,4 +213,5 @@ Partial Class captureID
     Friend WithEvents Backbtn As Button
     Friend WithEvents closelbl As PictureBox
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents Label1 As Label
 End Class

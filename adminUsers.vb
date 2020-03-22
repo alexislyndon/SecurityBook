@@ -4,17 +4,17 @@
         Me.UsersTableAdapter.Fill(Db1DS.users)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.UsersTableAdapter.CreateUser(user.Text.Trim, pass.Text.Trim, des.Text.Trim, personname.Text.Trim, 1)
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        'Me.UsersTableAdapter.CreateUser(user.Text.Trim, pass.Text.Trim, des.Text.Trim, personname.Text.Trim, 1)
         refresher()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
         Me.UsersTableAdapter.Update(Db1DS.users)
         refresher()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
         Dim i As Integer = Db1DS.users.Rows(0).Item(0)
         Me.UsersTableAdapter.DeactivateUser(i)
         refresher()
@@ -25,9 +25,17 @@
 
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs)
         Dim i As Integer = Db1DS.users.Rows(0).Item(0)
         Me.UsersTableAdapter.ActivateUser(i)
         refresher()
+    End Sub
+
+    Private Sub UsersDataGridView_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles UsersDataGridView.CellContentDoubleClick
+        If UsersDataGridView.RowCount > 0 Then
+            Dim id = UsersDataGridView.SelectedCells.Item(0).Value
+            Dim amu As New adminManageUsers(id)
+            amu.Show()
+        End If
     End Sub
 End Class
